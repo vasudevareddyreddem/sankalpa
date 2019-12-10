@@ -41,7 +41,7 @@
                               </div>
                            </div>
 						   <div class="form-group col-md-6">
-                              <label class="col-lg-4 control-label">Leave Type</label>
+                              <label class="col-lg-4 control-label">Employee name</label>
                               <div class="col-md-8">
                                  <select name="emp_id" class="form-control">
 								 <option value="">Select</option>

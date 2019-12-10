@@ -162,8 +162,9 @@
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
+					<?php if($hms_details['role_id']!=2){ ?>
 					<li> <a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard </a></li>
-
+					<?php } ?>
 					
 					
 					<?php if($hms_details['role_id']==3){ ?>
@@ -196,21 +197,7 @@
 						</li>
 						
 					<?php }else if($hms_details['role_id']==2){ ?>
-						<li class="treeview">
-								<a href="#"> <i class="fa fa-pagelines" aria-hidden="true"></i><span>LEAVES</span>
-									<span class="pull-right-container">
-									  <i class="fa fa-angle-left pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu" style="display: none;">
-									<li> <a href="<?php echo base_url('leaves/add'); ?>">Apply </a></li>
-									<li><a href="<?php echo base_url('leaves'); ?>">List</a></li>
-								</ul>
-							</li>
-								<li class="treeview"> <a href="<?php echo base_url('holidays/view'); ?>"><i class="fa fa-list"></i>HOLIDAYS </a></li>							
-								<li class="treeview"> <a href="<?php echo base_url('document/view'); ?>"><i class="fa fa-file-text" aria-hidden="true"></i>DOCUMENTS </a></li>							
-								<li class="treeview"> <a href="<?php echo base_url('payslip/download'); ?>"><i class="fa fa-paypal" aria-hidden="true"></i>PAYSLIPS </a></li>
-								<li class="treeview"> <a href="<?php echo base_url('assignwork/lists'); ?>"><i class="fa fa-paypal" aria-hidden="true"></i>Assign Work </a></li>							
+						<li class="treeview"> <a href="<?php echo base_url('assignwork/lists'); ?>"><i class="fa fa-paypal" aria-hidden="true"></i>Assign Work </a></li>							
 								
 					<?php } ?>
 					<?php if(isset($m_list) && count($m_list)>0){ ?>
@@ -253,28 +240,7 @@
 								</li>
 							
 					<?php $cnt++;} ?>
-					<?php } ?>
-					<?php if($hms_details['role_id']==2){ ?>
-							<li class="treeview">
-								<a href="#"> <i class="fa fa-pagelines" aria-hidden="true"></i><span>Resignation</span>
-									<span class="pull-right-container">
-									  <i class="fa fa-angle-left pull-right"></i>
-									</span>
-								</a>
-								<ul class="treeview-menu" style="display: none;">
-									<li> <a href="<?php echo base_url('resignation'); ?>">Add </a></li>
-									<li><a href="<?php echo base_url('Resignation/lists'); ?>">List</a></li>
-								</ul>
-							</li>
-							<li class="treeview">
-								<a href="<?php echo base_url('employee/calendar'); ?>"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><span>Calendar</span>
-									<span class="pull-right-container">
-									  <i class="fa fa-angle-left pull-right"></i>
-									</span>
-								</a>
-							</li>
-						
-					<?php } ?>
+					<?php } ?>					
 					<li> <a href="<?php echo base_url('suggestion'); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i>SUGGESTION </a></li>
 					
 				</ul>

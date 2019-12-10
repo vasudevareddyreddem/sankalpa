@@ -28,10 +28,9 @@
 							<th>From date</th>
 							<th>To date</th>
 							<th>Employee name</th>
-							<th>Comment</th>
+							<th>Work</th>
 							<th>Days</th>
 							<th>Status</th>
-							<th>Reason</th>
 							<th>Assign By</th>
 							<th>Action</th>
 						</tr>
@@ -46,11 +45,11 @@
 							<td><?php echo isset($li['message'])?$li['message']:''; ?></td>
 							<td><?php echo isset($li['total_day'])?$li['total_day']:''; ?></td>
 							<td><?php if($li['status']==1){ echo "Approved";}else if($li['status']==0){ echo "Pending"; }else if($li['status']==2){ echo "Rejected"; } ?></td>
-							<td><?php echo isset($li['reason'])?$li['reason']:''; ?></td>
 							<td><?php echo isset($li['assignby'])?$li['assignby']:''; ?></td>
 							<td> 
+							<a href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>" data-toggle="tooltip" title="View"><i class="fa fa-file btn btn-warning"></i></a>
 							<?php if($li['status']==0){ ?>
-									<a href="#" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
+								<a href="#" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
 							<?php } ?>
 							</td>
 							
@@ -65,10 +64,9 @@
 							<th>From date</th>
 							<th>To date</th>
 							<th>Employee name</th>
-							<th>Comment</th>
+							<th>Work</th>
 							<th>Days</th>
 							<th>Status</th>
-							<th>Reason</th>
 							<th>Assign By</th>
 							<th>Action</th>
 						</tr>

@@ -34,6 +34,25 @@ class Work_model extends CI_Model
 		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
 		$this->db->where('aw.emp_id',$emp);
 		return $this->db->get()->result_array();	
+	}	
+	public  function view_work_details($id){
+		$this->db->select('*')->from('assign_work as aw');
+		$this->db->where('aw.a_w_id',$id);
+		return $this->db->get()->row_array();
+	}	
+	public  function work_update($id,$d){
+		$this->db->where('a_w_id',$id);
+		return $this->db->update('assign_work',$d);
+	}	
+	public  function save_work_comments($d){
+		$this->db->insert('assign_work_comments',$d);
+        return $this->db->insert_id();
+	}
+	public  function view_work_comment($id){
+		$this->db->select('awc.commet,awc.created_at,a.name')->from('assign_work_comments as awc');
+		$this->db->join('admin as a','a.a_id=awc.created_by','left');
+		$this->db->where('awc.a_w_id',$id);
+		return $this->db->get()->result_array();
 	}
 	
 	
