@@ -1,6 +1,6 @@
 /*
 SQLyog Community v11.52 (64 bit)
-MySQL - 10.1.32-MariaDB : Database - hms
+MySQL - 10.1.32-MariaDB : Database - sankalpa
 *********************************************************************
 */
 
