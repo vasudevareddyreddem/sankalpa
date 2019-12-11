@@ -18,6 +18,12 @@
 .bg-profile{
        
 }
+.login-bg-feed{
+       background: url(../img/login_bg-fedd.jpg) ;
+  background-repeat: repeat;
+  height:100%;
+  
+}
 .login-bg{
        background: url(../img/login_bg.jpg) no-repeat no-repeat;
   background-position: center;

@@ -40,10 +40,7 @@
 	<!-- bootstrap wysihtml5 - text editor -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/back/css/bootstrap3-wysihtml5.min.css">
 	<!-- jQuery 2.2.3 -->
-	<script src="<?php echo base_url(); ?>assets/back/js/jquery-2.2.3.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
-	<script src="<?php echo base_url(); ?>assets/back/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/back/js/bootstrapValidator.min.js"></script>
+
 	
 
 	
@@ -79,30 +76,6 @@
 .feed-radio{
 	margin-top:15px;
 }
-.opd-box{
-	height:80px;
-	width:100%;
-	background:#2e3097;
-	border:2px solid #ddd;
-	text-align:center;
-	line-height:80px;
-}
-.ipd-box{
-	height:80px;
-	width:100%;
-	background:#d6000a;
-	border:2px solid #ddd;
-	text-align:center;
-	line-height:80px;
-}
-.ipd-box-li{
-	height:80px;
-	width:100%;
-	background:#6db10f;
-	border:2px solid #ddd;
-	text-align:center;
-	line-height:80px;
-}
 </style>
 <body class="login-bg-feed">
 	<div class="" style="display:flex;justify-content: center;">
@@ -118,42 +91,113 @@
 		<div class="row">
 			<div class="container-fluid" >
 			<div class="col-md-12 text-center mb-4">
-				<h2>Customer Feeback Form</h2>
+				<h2>Customer Feeback view</h2>
 			</div>
-		
-			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/opd'); ?>">
-					<div class="opd-box">
-						<h1>OPD Feeback</h1>
-					</div>
-			</a>
-			<div class="clearfix">&nbsp;</div>
-			 </div> 
-			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/ipd'); ?>">
-					<div class="ipd-box">
-						<h1>IPD Feeback</h1>
-					</div>
-			</a>
-			<div class="clearfix">&nbsp;</div>
-			 </div> 
-			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/list_view'); ?>">
-					<div class="ipd-box-li">
-						<h1>IPD & OPD List</h1>
-					</div>
-			</a>
-			<div class="clearfix">&nbsp;</div>
-			 </div> 
-		
-			 	
+			<div class="col-md-6 col-md-offset-3 ">
+		<table  class="table  table-bordered" style="width:100%">
+      
+        <tbody>
+		<tr>
+                <td>Name</td>
+                <td>Sai Kirshna</td>
+            </tr>
+            <tr>
+                <td>Mobile No</td>
+                <td>850022xxx</td>
+            </tr> 
+			<tr>
+                <td>Email Id</td>
+                <td>info@gmail.com</td>
+            </tr>
+			<tr>
+                <td>1.OPD Registration & Billing Process</td>
+                <td>Good</td>
+            </tr>
+			<tr>
+                <td>2.Doctor Consultation</td>
+                <td>Average</td>
+            </tr>
+			<tr>
+                <td>3.Diagnostic Services</td>
+                <td>Average</td>
+            </tr>
+			<tr>
+                <td>4.Nurses & Other Staff Service</td>
+                <td>Average</td>
+            </tr>
+			<tr>
+                <td>5.Pharmacy Service</td>
+                <td>Average</td>
+            </tr>
+			<tr>
+                <td>6.Overall OP Services Experience</td>
+                <td>Average</td>
+            </tr>
+			<tr>
+                <td>7.Do you recommend Sankalpa to others</td>
+                <td>yes</td>
+            </tr>
+			<tr>
+                <td>8.Other Comments</td>
+                <td style="width:50%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</td>
+            </tr>
+           
+            
+        </tbody>
+        
+    </table>
+			</div>
 			
+			<div class="col-md-12 text-center">
+				<a class="btn btn-primary" href="<?php echo base_url('home/list_view'); ?>">Back to Home </a>
+				
+			</div>
 			</div>
 			
 		</div>
 			
 	</div>
 	</div>
+	
+	<script src="<?php echo base_url(); ?>assets/back/js/jquery-2.2.3.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="<?php echo base_url(); ?>assets/back/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/back/js/bootstrapValidator.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/js/dataTables.bootstrap.min.js"></script>
+
+<script src="<?php echo base_url(); ?>assets/back/js/select2.full.min.js"></script>
+
+
+<script src="<?php echo base_url(); ?>assets/back/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url(); ?>assets/back/js/demo.js"></script>
+
+<script src="<?php echo base_url(); ?>assets/back/js/icheck.min.js"></script>
+
+<script>
+
+	$(function () {
+	    //Initialize Select2 Elements
+	    $(".select2").select2();
+
+	$(function () {
+	   
+	    $('#example').DataTable({
+	 
+	      "lengthChange": true,
+	      "searching": true,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": true
+	    });
+	  });
+
+	
+	   
+	  });
+</script>
+
+
 </body>
 </html>
-

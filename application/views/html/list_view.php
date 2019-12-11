@@ -40,10 +40,7 @@
 	<!-- bootstrap wysihtml5 - text editor -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/back/css/bootstrap3-wysihtml5.min.css">
 	<!-- jQuery 2.2.3 -->
-	<script src="<?php echo base_url(); ?>assets/back/js/jquery-2.2.3.min.js"></script>
-	<!-- Bootstrap 3.3.7 -->
-	<script src="<?php echo base_url(); ?>assets/back/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/back/js/bootstrapValidator.min.js"></script>
+
 	
 
 	
@@ -79,30 +76,6 @@
 .feed-radio{
 	margin-top:15px;
 }
-.opd-box{
-	height:80px;
-	width:100%;
-	background:#2e3097;
-	border:2px solid #ddd;
-	text-align:center;
-	line-height:80px;
-}
-.ipd-box{
-	height:80px;
-	width:100%;
-	background:#d6000a;
-	border:2px solid #ddd;
-	text-align:center;
-	line-height:80px;
-}
-.ipd-box-li{
-	height:80px;
-	width:100%;
-	background:#6db10f;
-	border:2px solid #ddd;
-	text-align:center;
-	line-height:80px;
-}
 </style>
 <body class="login-bg-feed">
 	<div class="" style="display:flex;justify-content: center;">
@@ -117,36 +90,38 @@
 			
 		<div class="row">
 			<div class="container-fluid" >
-			<div class="col-md-12 text-center mb-4">
-				<h2>Customer Feeback Form</h2>
+			<div class="col-md-12 text-center">
+				<h2>Customer Feeback List</h2>
 			</div>
-		
-			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/opd'); ?>">
-					<div class="opd-box">
-						<h1>OPD Feeback</h1>
-					</div>
-			</a>
-			<div class="clearfix">&nbsp;</div>
-			 </div> 
-			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/ipd'); ?>">
-					<div class="ipd-box">
-						<h1>IPD Feeback</h1>
-					</div>
-			</a>
-			<div class="clearfix">&nbsp;</div>
-			 </div> 
-			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/list_view'); ?>">
-					<div class="ipd-box-li">
-						<h1>IPD & OPD List</h1>
-					</div>
-			</a>
-			<div class="clearfix">&nbsp;</div>
-			 </div> 
-		
-			 	
+			<div class="col-md-12 ">
+		<table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>OP/IP Num</th>
+                <th>Mobile No</th>
+                <th>Email</th>
+                <th>Date of Upload</th>
+                <th>Feedback View</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Saikrishna</td>
+                <td>SAN1120</td>
+                <td>8500226782</td>
+                <td>sai@gamil.com</td>
+                <td>2011/04/25</td>
+                <td><a class="btn btn-primary btn-xs" href="<?php echo base_url('home/feed_view'); ?>">View</a></td>
+            </tr>
+           
+            
+        </tbody>
+        
+    </table>
+			</div>
+			
 			
 			</div>
 			
@@ -154,6 +129,46 @@
 			
 	</div>
 	</div>
+	
+	<script src="<?php echo base_url(); ?>assets/back/js/jquery-2.2.3.min.js"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script src="<?php echo base_url(); ?>assets/back/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/back/js/bootstrapValidator.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/back/js/dataTables.bootstrap.min.js"></script>
+
+<script src="<?php echo base_url(); ?>assets/back/js/select2.full.min.js"></script>
+
+
+<script src="<?php echo base_url(); ?>assets/back/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url(); ?>assets/back/js/demo.js"></script>
+
+<script src="<?php echo base_url(); ?>assets/back/js/icheck.min.js"></script>
+
+<script>
+
+	$(function () {
+	    //Initialize Select2 Elements
+	    $(".select2").select2();
+
+	$(function () {
+	   
+	    $('#example').DataTable({
+	 
+	      "lengthChange": true,
+	      "searching": true,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": true
+	    });
+	  });
+
+	
+	   
+	  });
+</script>
+
+
 </body>
 </html>
-

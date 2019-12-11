@@ -25,13 +25,33 @@
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
 					 <div class=" row ">
-                        <div class="col-md-12">
-							<div class="form-group col-md-6">
-								<p>From Date :<?php echo isset($w_d['from_date'])?$w_d['from_date']:''; ?></p>
-								<p>To Date :<?php echo isset($w_d['to_date'])?$w_d['to_date']:''; ?></p>
-								<p>Total Days :<?php echo isset($w_d['total_day'])?$w_d['total_day']:''; ?></p>
-								<p>Work:<?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
-						    </div>						   
+                        <div class="col-md-6 table-responsive">
+						<table class="table table-bordered">
+							<tr>
+								<td><strong>Assign To</strong></td>
+								<td>Siva kumar reddy</td>
+							</tr>
+							<tr>
+								<td><strong>From Date</strong></td>
+								<td><?php echo isset($w_d['from_date'])?$w_d['from_date']:''; ?></td>
+							</tr>
+							<tr>
+								<td><strong>To Date</strong></td>
+								<td><?php echo isset($w_d['to_date'])?$w_d['to_date']:''; ?></td>
+							</tr>
+							<tr>
+								<td><strong>No of Days</strong></td>
+								<td><?php echo isset($w_d['total_day'])?$w_d['total_day']:''; ?></td>
+							</tr>
+							<tr>
+								
+								<td colspan="2">
+									
+									<p><strong>Description:</strong> <?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
+								</td>
+							</tr>
+						</table>
+												   
                         </div> 
 					</div>						
 				  </fieldset>
