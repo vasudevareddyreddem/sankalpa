@@ -145,7 +145,7 @@ input[type="radio"]:checked {
 					<div class="card-cust" style="margin-top:10px;">
 						<div class="row">
 						<div class="col-md-7">
-						<h3>1.Admission Process</h3>
+						<h3>1.OPD Registration & Billing Process</h3>
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
@@ -182,7 +182,7 @@ input[type="radio"]:checked {
 					<div class="card-cust" style="margin-top:10px;">
 						<div class="row">
 						<div class="col-md-7">
-						<h3>2.Wards & Rooms Cleanliness</h3>
+						<h3>2.Doctor Consultation</h3>
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
@@ -219,7 +219,7 @@ input[type="radio"]:checked {
 					<div class="card-cust" style="margin-top:10px;">
 						<div class="row">
 						<div class="col-md-7">
-						<h3>3.Toilets Cleanliness</h3>
+						<h3>3.Diagnostic Services</h3>
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
@@ -256,7 +256,7 @@ input[type="radio"]:checked {
 					<div class="card-cust" style="margin-top:10px;">
 						<div class="row">
 						<div class="col-md-7">
-						<h3>4.Room Service & Facilities</h3>
+						<h3>4.Nurses & Other Staff Service</h3>
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
@@ -293,7 +293,7 @@ input[type="radio"]:checked {
 					<div class="card-cust" style="margin-top:10px;">
 						<div class="row">
 						<div class="col-md-7">
-						<h3>5.Nursing Services</h3>
+						<h3>5.Pharmacy Service</h3>
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
@@ -330,7 +330,7 @@ input[type="radio"]:checked {
 					<div class="card-cust" style="margin-top:10px;">
 						<div class="row">
 						<div class="col-md-7">
-						<h3>6.Treating Doctor Services</h3>
+						<h3>6.Overall OP Services Experience</h3>
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
@@ -364,171 +364,22 @@ input[type="radio"]:checked {
 						</div>
 						</div>
 					</div>
-					<div class="card-cust" style="margin-top:10px;">
-						<div class="row">
-						<div class="col-md-7">
-						<h3>7.House Keeping & Security Services</h3>
-						</div>
-						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
-							<div class="feed-radio">
-								<input type="radio"  name="qus7" value="Very Poor" required>
-							</div>
-							<small>Very Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus7" value="Poor" required>
-							</div>
-							<small>Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus7" value="Average" required>
-							</div>
-							<small>Average</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus7" value="Good" required>
-							</div>
-							<small>Good</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio"  name="qus7" value="Excellent" required>
-							</div>
-							<small>Excellent</small>
-						</div>
-						</div>
-					</div>
-					<div class="card-cust" style="margin-top:10px;">
-						<div class="row">
-						<div class="col-md-7">
-						<h3>8.Admin Staff Services</h3>
-						</div>
-						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
-							<div class="feed-radio">
-								<input type="radio"  name="qus8" value="Very Poor" required>
-							</div>
-							<small>Very Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Poor" required>
-							</div>
-							<small>Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Average" required>
-							</div>
-							<small>Average</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Good" required>
-							</div>
-							<small>Good</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Excellent" required>
-							</div>
-							<small>Excellent</small>
-						</div>
-						</div>
-					</div>
-					<div class="card-cust" style="margin-top:10px;">
-						<div class="row">
-						<div class="col-md-7">
-						<h3>9.Food Quality & Dietician Services</h3>
-						</div>
-						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Very Poor" required>
-							</div>
-							<small>Very Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Poor" required>
-							</div>
-							<small>Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Average" required>
-							</div>
-							<small>Average</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Good" required>
-							</div>
-							<small>Good</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Excellent" required>
-							</div>
-							<small>Excellent</small>
-						</div>
-						</div>
-					</div>
-					<div class="card-cust" style="margin-top:10px;">
-						<div class="row">
-						<div class="col-md-7">
-						<h3>10.Billing & Discharge Process</h3>
-						</div>
-						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Very Poor" required>
-							</div>
-							<small>Very Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Poor" required>
-							</div>
-							<small>Poor</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Average" required>
-							</div>
-							<small>Average</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Good" required>
-							</div>
-							<small>Good</small>
-						</div>
-						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Excellent" required>
-							</div>
-							<small>Excellent</small>
-						</div>
-						</div>
-					</div>
-					
 					
 					
 					<div class="card-cust" style="margin-top:10px;">
 						<div class="row">
 						<div class="col-md-7">
-						<h3>11.Do you recommend Sankalpa to others</h3>
+						<h3>7.Do you recommend Sankalpa to others</h3>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus11" value="Yes" required>
+								<input type="radio" name="qus7" value="Yes" required>
 							</div>
 							<small>Yes</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus11" value="No" required>
+								<input type="radio"  name="qus7" value="No" required>
 							</div>
 							<small>No</small>
 						</div>
@@ -537,7 +388,7 @@ input[type="radio"]:checked {
 					<div class="card-cust form-group" style="margin-top:10px;padding-bottom:10px;">
 						<div class="row">
 						<div class="col-md-12">
-						<h3>12.Other Comments</h3>
+						<h3>8.Other Comments</h3>
 						
 							<textarea class="form-control" name="comment" rows="4" placeholder="Enter Comments here"></textarea>
 						</div>
