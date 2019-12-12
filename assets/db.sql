@@ -135,11 +135,11 @@ CREATE TABLE `assign_work` (
   `updated_at` datetime DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`a_w_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `assign_work` */
 
-insert  into `assign_work`(`a_w_id`,`emp_id`,`from_date`,`to_date`,`total_day`,`message`,`status`,`created_at`,`updated_at`,`created_by`) values (1,54,'12/03/2019','12/18/2019','12','sdsadsbdjgsjajsdgjkgfds',0,'2019-12-09 18:44:47',NULL,1),(2,58,'12/12/2019','12/19/2019','6','Testing purpose ',0,'2019-12-09 18:51:12',NULL,1),(3,59,'12/01/2019','12/02/2019','1','Testing  purpose ',3,'2019-12-10 16:55:45','2019-12-10 18:52:48',1),(4,59,'12/10/2019','12/11/2019','2','Testing purpose ',1,'2019-12-10 18:07:45','2019-12-10 18:53:02',1),(5,54,'12/01/2019','12/03/2019','2','Testing  p',0,'2019-12-10 18:14:00',NULL,1),(6,59,'12/18/2019','12/25/2019','6','like t his',1,'2019-12-10 19:22:00','2019-12-10 19:22:29',1);
+insert  into `assign_work`(`a_w_id`,`emp_id`,`from_date`,`to_date`,`total_day`,`message`,`status`,`created_at`,`updated_at`,`created_by`) values (1,54,'12/03/2019','12/18/2019','12','sdsadsbdjgsjajsdgjkgfds',0,'2019-12-09 18:44:47',NULL,1),(2,58,'12/12/2019','12/19/2019','6','Testing purpose ',0,'2019-12-09 18:51:12',NULL,1),(3,59,'12/01/2019','12/02/2019','1','Testing  purpose ',3,'2019-12-10 16:55:45','2019-12-10 18:52:48',1),(4,59,'12/10/2019','12/11/2019','2','Testing purpose ',1,'2019-12-10 18:07:45','2019-12-10 18:53:02',1),(5,54,'12/01/2019','12/03/2019','2','Testing  p',0,'2019-12-10 18:14:00',NULL,1),(6,59,'12/18/2019','12/25/2019','6','like t his',1,'2019-12-10 19:22:00','2019-12-10 19:22:29',1),(7,55,'12/04/2019','12/18/2019','11','testing ',0,'2019-12-12 15:16:59',NULL,1),(8,58,'12/19/2019','12/25/2019','5','tes',0,'2019-12-12 15:17:32',NULL,1),(9,55,'12/03/2019','12/09/2019','5','nn',0,'2019-12-12 15:19:56',NULL,1),(10,54,'12/24/2019','12/26/2019','3','rrr',0,'2019-12-12 15:22:53',NULL,1),(11,58,'12/24/2019','12/26/2019','3','rrr',0,'2019-12-12 15:22:53',NULL,1);
 
 /*Table structure for table `assign_work_comments` */
 
@@ -158,32 +158,6 @@ CREATE TABLE `assign_work_comments` (
 /*Data for the table `assign_work_comments` */
 
 insert  into `assign_work_comments`(`w_a_c_id`,`a_w_id`,`commet`,`status`,`created_at`,`created_by`) values (1,4,'Testing purpose ',1,'2019-12-10 07:11:06',59),(2,3,'testing   purpose ',1,'2019-12-10 07:12:37',59),(3,3,'Testing  nfkbsajkdfb dsf',1,'2019-12-10 07:21:33',59),(4,6,'testi fjnf  fjkbsjdbf',1,'2019-12-10 07:22:13',1),(5,6,'testing   purpose  ',1,'2019-12-10 07:24:08',59);
-
-/*Table structure for table `attendance_regulation` */
-
-DROP TABLE IF EXISTS `attendance_regulation`;
-
-CREATE TABLE `attendance_regulation` (
-  `a_r_id` int(11) NOT NULL AUTO_INCREMENT,
-  `emp_id` int(11) DEFAULT NULL,
-  `a_date` varchar(250) DEFAULT NULL,
-  `to_time` varchar(250) DEFAULT NULL,
-  `from_time` varchar(250) DEFAULT NULL,
-  `adding_time` varchar(250) DEFAULT NULL,
-  `reason` text,
-  `comment` text,
-  `status` int(11) DEFAULT '0',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(11) DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `read_cnt` int(11) DEFAULT '0',
-  PRIMARY KEY (`a_r_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
-
-/*Data for the table `attendance_regulation` */
-
-insert  into `attendance_regulation`(`a_r_id`,`emp_id`,`a_date`,`to_time`,`from_time`,`adding_time`,`reason`,`comment`,`status`,`created_at`,`updated_at`,`created_by`,`updated_by`,`read_cnt`) values (2,59,'2019-11-13',NULL,NULL,'2','resting  purpose','dfdfds',2,'2019-11-21 23:13:50','2019-11-21 23:13:50',59,1,0),(3,59,'2019-11-20',NULL,NULL,'6','xcxzcZXvXCv',NULL,1,'2019-11-24 20:23:38','2019-11-24 20:23:38',59,1,0),(4,59,'2019-11-13','02:15 PM','05:30 PM','3:15','vcbxcvbxcvbxcvbxcvb',NULL,1,'2019-12-01 19:54:40','2019-12-01 19:54:40',59,1,1),(5,59,'2019-11-12','11:15 AM','01:30 AM','9:45','bvbzcx',NULL,0,'2019-12-01 19:50:42','2019-11-24 20:23:49',59,1,0),(6,59,'2019-11-22','01:45 PM','08:45 PM','7:0','testing ',NULL,0,'2019-12-01 19:50:41','2019-11-24 20:56:13',59,1,0),(7,59,'2019-11-13','10:00 AM','11:00 PM','13:0','testing  purpose  like  this ',NULL,0,'2019-12-01 19:50:40','2019-11-28 23:11:40',59,1,0),(8,59,'2019-11-13','10:00 AM','11:00 PM','13:0','testing',NULL,0,'2019-12-01 19:50:40','2019-11-28 23:25:54',59,1,0);
 
 /*Table structure for table `branches` */
 
@@ -241,57 +215,6 @@ CREATE TABLE `department` (
 /*Data for the table `department` */
 
 insert  into `department`(`d_id`,`name`,`status`,`created_at`,`updated_at`,`created_by`) values (1,'Department one',1,'2019-09-18 12:02:44','2019-09-18 12:02:44',1),(2,'Department two',1,'2019-05-22 11:16:18','0000-00-00 00:00:00',1),(3,'Department three',1,'2019-05-22 11:54:52','2019-05-22 11:54:52',1),(4,'testing ',1,'2019-09-18 11:57:41','0000-00-00 00:00:00',1),(5,'testing five',1,'2019-09-23 20:09:56','0000-00-00 00:00:00',1);
-
-/*Table structure for table `documents` */
-
-DROP TABLE IF EXISTS `documents`;
-
-CREATE TABLE `documents` (
-  `d_id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` text,
-  `description` text,
-  `document` varchar(250) DEFAULT NULL,
-  `status` int(11) DEFAULT '1',
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`d_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
-/*Data for the table `documents` */
-
-insert  into `documents`(`d_id`,`title`,`description`,`document`,`status`,`created_at`,`updated_at`,`created_by`) values (1,'Title one','Description','1569295807.pdf',1,'2019-09-24 09:00:07','0000-00-00 00:00:00',1),(2,'','dfsgsdfg','1569294825.xlsx',2,'2019-09-24 08:49:41','2019-09-24 08:49:41',1),(3,'Title','Description','1569295797.pdf',1,'2019-09-24 08:59:56','0000-00-00 00:00:00',1);
-
-/*Table structure for table `emp_leave_apply_tab` */
-
-DROP TABLE IF EXISTS `emp_leave_apply_tab`;
-
-CREATE TABLE `emp_leave_apply_tab` (
-  `leave_id` int(11) NOT NULL AUTO_INCREMENT,
-  `leave_type` varchar(200) NOT NULL,
-  `no_of_days` int(3) NOT NULL,
-  `from_date` date NOT NULL,
-  `to_date` date DEFAULT NULL,
-  `status` varchar(200) NOT NULL DEFAULT 'pending',
-  `applied_date` date NOT NULL,
-  PRIMARY KEY (`leave_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `emp_leave_apply_tab` */
-
-/*Table structure for table `emp_leaves_tab` */
-
-DROP TABLE IF EXISTS `emp_leaves_tab`;
-
-CREATE TABLE `emp_leaves_tab` (
-  `e_l_id` int(11) NOT NULL AUTO_INCREMENT,
-  `e_id` int(11) NOT NULL,
-  `leave_type` varchar(20) NOT NULL,
-  `l_date` date NOT NULL,
-  UNIQUE KEY `r` (`e_l_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `emp_leaves_tab` */
 
 /*Table structure for table `employee` */
 
@@ -447,6 +370,37 @@ CREATE TABLE `empployee` (
 
 insert  into `empployee`(`e_id`,`role_id`,`e_emplouee_id`,`e_join_date`,`e_f_name`,`e_l_name`,`e_login_name`,`e_email_personal`,`e_email_work`,`e_password`,`e_org_password`,`e_mobile_personal`,`e_mobile_work`,`e_designation`,`e_supervisor`,`e_department`,`e_sub_department`,`e_shift`,`e_c_adress`,`e_c_city`,`e_c_district`,`e_c_state`,`e_c_country`,`e_p_address`,`e_p_city`,`e_p_district`,`e_p_state`,`e_p_country`,`e_profile_pic`,`e_document`,`e_bank_name`,`e_account_number`,`e_bank_h_name`,`e_bank_ifcs_code`,`e_c_p_name`,`e_c_p_mobile`,`e_c_p_email`,`e_c_p_relationship`,`e_c_p_address`,`status`,`created_at`,`updated_at`,`created_by`,`login_status`) values (1,1,'sdfd','10-10-2018','admin','vc','siva','vnvb@gmail.com','admin@gmail.com','e10adc3949ba59abbe56e057f20f883e','123456','1122332222','vb','1','A','22','8','9','gthgf','ghg','bv','Kerala','','hjh','vbc','nbm','Assam','','1529651798.jpg','','mnm','1222222222','TYUJHYH','SBIN0000830','dryhd','4325353533','xvf@gmail.com','gfh','gf',1,'2018-11-06 08:15:19','2018-11-06 08:15:19',0,0),(2,3,'Super11','10-10-2018','Super11','Super11','super','Super11@gmail.com','Super11@gmail.com','e10adc3949ba59abbe56e057f20f883e','123456','8500050944','8500050944','8','A','21','8','9','kadapa','mydukur','kadapa','Kerala','','kadapa','mydukur','kadapa','Maharashtra','','1529651798.jpg','','Sbi','32473655713','vasu','SBIN0002671','vasu','8500050944','vasu@gmail.com','me','kadapa',1,'2018-11-02 13:55:37','2018-11-02 13:55:37',0,0),(3,2,'mjnbm','10-12-2018','kasi','vc','hr','vasu@gmail.com','vasu@gmail.com','e10adc3949ba59abbe56e057f20f883e','123456','7013319026','vb','2','B','21','7','9','dgf','hgg','ghjg','Andhra Pradesh','','gh','vbc','nbm','Bihar','','1523883473.jpg','','mnm','1222222222','mn','SBIN0000830','ghng','4325353533','xvf@gmail.com','gfh','ghgf',1,'2018-11-02 13:52:41','2018-11-02 13:52:41',0,1),(4,2,'hrms-10','10-12-2018','kasi','vc','hr','vnvb@gmail.com','kasi@gmail.com','e10adc3949ba59abbe56e057f20f883e','123456','4254325325','hg','3','A','22','8','9','fghf','fgf','dfg','Andhra Pradesh','','fhfg','fhg','GHJG','Telangana','','1527764168.png','','mnm','1222222222','HGJ','SBIN0000830','ghng','4325353533','xvf@gmail.com','gfh','fghf',1,'2018-11-02 14:45:55','2018-11-02 14:45:55',0,0),(5,8,'mjnbm','10-12-2018','bcv','vc','kaka','vnvb@gmail.com','kamal@gmail.com','e10adc3949ba59abbe56e057f20f883e','123456','4254325325','hg','3','A','21','9','10','ghj','fgh','GHJG','Andhra Pradesh','','ghj','fgh','GHJG','Andhra Pradesh','','1523883473.jpg','1519212661.docx','ghg','1234555222','gjh','SBIN0000830','dryhd','4325353533','xvf@gmail.com','gfh','ghjgjh',1,'2018-11-05 14:43:13','2018-11-05 14:43:13',0,0),(7,3,'mjnbm','10-12-2018','bcv','vc','kal','vnvb@gmail.com','kal@gmail.com','e10adc3949ba59abbe56e057f20f883e','123456','4254325325','hg','3','A','21','9','9','rfgf','dfg','fgf','Arunachal Pradesh','','fghf','fgf','fg','Manipur','','','','fghf','1222222222','fhg','SBIN0000830','ghng','4325353533','xvf@gmail.com','gfh','fgbf',1,'2018-11-06 08:20:10','2018-11-06 08:20:10',0,0),(8,2,'mjnbm','10-12-2018','bcv','vc','hr','vnvb@gmail.com','vana@gmail.com','e10adc3949ba59abbe56e057f20f883e','123456','1122332222','vb','2','A','21','9','9','fgf','fgh','fgh','Arunachal Pradesh','','fgh','gh','gh','Andhra Pradesh','','1523883473.jpg','1527924854.docx','mnm','1222222222','mn','SBIN0000830','ghng','4325353533','xvf@gmail.com','gfh','fghf',1,'2018-11-06 08:22:02','2018-11-06 08:22:02',0,1);
 
+/*Table structure for table `feed_back` */
+
+DROP TABLE IF EXISTS `feed_back`;
+
+CREATE TABLE `feed_back` (
+  `f_b_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) DEFAULT NULL,
+  `type` varchar(250) DEFAULT NULL,
+  `p_no` varchar(250) DEFAULT NULL,
+  `email_id` varchar(250) DEFAULT NULL,
+  `phone_no` varchar(250) DEFAULT NULL,
+  `qus1` varchar(250) DEFAULT NULL,
+  `qus2` varchar(250) DEFAULT NULL,
+  `qus3` varchar(250) DEFAULT NULL,
+  `qus4` varchar(250) DEFAULT NULL,
+  `qus5` varchar(250) DEFAULT NULL,
+  `qus6` varchar(250) DEFAULT NULL,
+  `qus7` varchar(250) DEFAULT NULL,
+  `qus8` varchar(250) DEFAULT NULL,
+  `qus9` varchar(250) DEFAULT NULL,
+  `qus10` varchar(250) DEFAULT NULL,
+  `qus11` varchar(250) DEFAULT NULL,
+  `comment` text,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`f_b_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `feed_back` */
+
+insert  into `feed_back`(`f_b_id`,`name`,`type`,`p_no`,`email_id`,`phone_no`,`qus1`,`qus2`,`qus3`,`qus4`,`qus5`,`qus6`,`qus7`,`qus8`,`qus9`,`qus10`,`qus11`,`comment`,`created_at`) values (1,'vasudevareddy','OPD','pd110','vasu@gmail.com','7896541230','Average','Poor','Very Poor','Poor','Average','Good','Excellent','Good','Average','Poor','Yes','Other Comments testing purpose ','2019-12-12 12:48:13'),(2,'Vasudevareddy','OPD','pd111','Environ@gmail.com','7896541230','Very Poor','Poor','Average','Good','Excellent','Good','Average','Poor','Very Poor','Poor','No','TESTING','2019-12-12 02:46:38');
+
 /*Table structure for table `holidays` */
 
 DROP TABLE IF EXISTS `holidays`;
@@ -466,49 +420,6 @@ CREATE TABLE `holidays` (
 /*Data for the table `holidays` */
 
 insert  into `holidays`(`h_id`,`date`,`festival`,`day_name`,`status`,`created_at`,`updated_at`,`created_by`) values (1,'09/19/2019','one','Monday',1,'2019-09-24 10:09:39','2019-09-24 10:09:27',1),(2,'10/21/2019','two','Tuesday',1,'2019-10-13 13:52:18','0000-00-00 00:00:00',1);
-
-/*Table structure for table `leaves` */
-
-DROP TABLE IF EXISTS `leaves`;
-
-CREATE TABLE `leaves` (
-  `l_id` int(11) NOT NULL AUTO_INCREMENT,
-  `from_date` varchar(250) DEFAULT NULL,
-  `to_date` varchar(250) DEFAULT NULL,
-  `total_day` varchar(250) DEFAULT NULL,
-  `l_type` int(11) DEFAULT NULL,
-  `message` text,
-  `reason` text,
-  `status` int(11) DEFAULT '0' COMMENT '0=pending;1=approved;2=reject',
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `a_id` int(11) DEFAULT NULL,
-  `approvedby` int(11) DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`l_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
-
-/*Data for the table `leaves` */
-
-insert  into `leaves`(`l_id`,`from_date`,`to_date`,`total_day`,`l_type`,`message`,`reason`,`status`,`created_at`,`updated_at`,`a_id`,`approvedby`,`created_by`) values (5,'10/01/2019','10/03/2019','2',2,'ll',NULL,1,'0000-00-00 00:00:00','2019-10-01 14:52:32',54,1,NULL),(6,'11/06/2019','11/08/2019','2',1,'tesing  purpose',NULL,1,'0000-00-00 00:00:00',NULL,54,NULL,NULL),(11,'10/08/2019','10/08/2019','0',1,'xcZXc',NULL,1,'0000-00-00 00:00:00',NULL,52,NULL,1),(19,'10/17/2019','10/18/2019','1',2,'sdsa',NULL,1,'0000-00-00 00:00:00','2019-10-03 16:03:09',52,51,1),(20,'10/24/2019','10/25/2019','1',1,'cvxzcv','xcxvzxcvzx',2,'0000-00-00 00:00:00','2019-10-13 13:13:26',55,1,1),(21,'10/30/2019','10/31/2019','1',1,'xcZC','zXCZXCzxc',2,'0000-00-00 00:00:00','2019-10-13 13:18:07',58,1,1),(22,'10/18/2019','10/21/2019','1',1,'cxzczx','hello your  leave rejected',2,'0000-00-00 00:00:00','2019-10-13 13:58:59',58,51,58),(23,'10/25/2019','10/28/2019','2',1,'xcxc',NULL,1,'0000-00-00 00:00:00','2019-11-24 21:00:00',55,1,1),(24,'11/07/2019','11/07/2019','1',1,'testing purpose',NULL,1,'0000-00-00 00:00:00','2019-11-15 17:56:24',59,1,59),(25,'11/26/2019','11/26/2019','1',1,'testing ',NULL,1,'0000-00-00 00:00:00','2019-11-20 15:55:44',59,1,59),(26,'12/10/2019','12/10/2019','1',2,'jhkjhjjh','testing bz  CvnbxcjgxZ mxzcjzBXJcxz',2,'0000-00-00 00:00:00','2019-11-24 20:59:50',59,1,59),(27,'12/23/2019','12/23/2019','1',2,'gttttt',NULL,1,'0000-00-00 00:00:00','2019-11-24 21:05:29',59,1,59),(28,'11/28/2019','11/28/2019','1',3,'testing',NULL,0,'0000-00-00 00:00:00',NULL,59,NULL,59);
-
-/*Table structure for table `leaves_days` */
-
-DROP TABLE IF EXISTS `leaves_days`;
-
-CREATE TABLE `leaves_days` (
-  `l_d_id` int(11) NOT NULL AUTO_INCREMENT,
-  `sick` int(11) DEFAULT NULL,
-  `causal` int(11) DEFAULT NULL,
-  `sat_day` int(11) DEFAULT '0',
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`l_d_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
-/*Data for the table `leaves_days` */
-
-insert  into `leaves_days`(`l_d_id`,`sick`,`causal`,`sat_day`,`updated_at`,`updated_by`) values (1,2,8,0,'2019-11-29 19:36:45',1);
 
 /*Table structure for table `login_details` */
 
@@ -549,11 +460,11 @@ CREATE TABLE `login_report` (
   `from_time` varchar(250) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4648 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4649 DEFAULT CHARSET=latin1;
 
 /*Data for the table `login_report` */
 
-insert  into `login_report`(`id`,`a_id`,`code`,`login_time`,`logout_time`,`hours`,`create_at`,`creatde_at`,`diff_time`,`reason`,`comment`,`updated_time`,`to_time`,`from_time`,`updated_by`) values (4591,56,'','2019-10-03 16:56:05','0000-00-00 00:00:00',NULL,'2019-10-03',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4592,55,'TS55','2019-10-03 20:23:01','0000-00-00 00:00:00',NULL,'2019-10-03',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4593,1,'','2019-10-04 21:08:26','0000-00-00 00:00:00',NULL,'2019-10-04',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4594,1,'','2019-10-05 08:19:49','2019-10-05 10:29:12','2:9','2019-10-05',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4595,55,'TS55','2019-10-05 08:43:56','2019-10-05 11:39:50','2:55','2019-10-05',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4596,1,'','2019-10-09 16:15:35','0000-00-00 00:00:00',NULL,'2019-10-09',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4597,1,'','2019-10-11 10:17:47','2019-10-11 19:40:19','9:22','2019-10-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4598,55,'TS55','2019-10-11 11:10:45','0000-00-00 00:00:00',NULL,'2019-10-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4599,49,'','2019-10-11 11:31:49','2019-10-11 12:08:38','0:36','2019-10-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4600,1,'','2019-10-13 11:01:07','2019-10-13 20:53:14','9:52','2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4601,58,'TS58','2019-10-13 11:18:36','2019-10-13 14:01:57','2:43','2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4602,51,'','2019-10-13 13:57:11','2019-10-13 14:25:23','0:28','2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4603,54,'TN54','2019-10-13 14:02:28','0000-00-00 00:00:00',NULL,'2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4604,1,'','2019-10-14 10:36:44','0000-00-00 00:00:00',NULL,'2019-10-14',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4605,1,'','2019-10-16 14:37:34','2019-10-16 14:38:08','0:0','2019-10-16',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4606,55,'TS55','2019-10-16 14:39:10','0000-00-00 00:00:00',NULL,'2019-10-16',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4607,1,'','2019-10-20 22:19:59','2019-10-20 22:57:42','0:37','2019-10-20',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4608,55,'TS55','2019-10-20 22:57:49','0000-00-00 00:00:00',NULL,'2019-10-20',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4609,1,'','2019-10-23 22:30:54','2019-10-23 22:31:19','0:0','2019-10-23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4610,55,'TS55','2019-10-23 22:31:28','2019-10-23 23:02:01','0:30','2019-10-23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4611,1,'','2019-10-24 20:01:44','0000-00-00 00:00:00',NULL,'2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4612,55,'TS55','2019-10-24 21:09:33','2019-10-24 21:55:27','0:45','2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4613,49,'','2019-10-24 21:55:53','2019-10-24 22:00:36','0:4','2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4614,51,'','2019-10-24 22:00:52','2019-10-24 22:10:57','0:10','2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4615,56,'','2019-10-24 22:11:29','0000-00-00 00:00:00',NULL,'2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4616,1,'','2019-10-25 08:16:15','0000-00-00 00:00:00',NULL,'2019-10-25',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4617,1,'','2019-11-08 21:26:55','0000-00-00 00:00:00',NULL,'2019-11-08',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4618,1,'','2019-11-10 18:23:38','0000-00-00 00:00:00',NULL,'2019-11-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4619,59,'AP59','2019-11-10 10:15:15','2019-11-10 20:15:15',NULL,'2019-11-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4620,1,'','2019-11-12 18:16:42','0000-00-00 00:00:00',NULL,'2019-11-12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4621,59,'AP59','2019-11-12 10:18:46','2019-11-12 17:04:21','06:20','2019-11-12',NULL,'9:45','bvbzcx','','2019-11-24 20:23:50',NULL,NULL,1),(4622,1,'','2019-11-13 19:46:25','0000-00-00 00:00:00',NULL,'2019-11-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4623,59,'AP59','2019-11-15 16:27:07','2019-11-15 16:28:16','0:1','2019-11-15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4624,1,'','2019-11-15 17:55:59','0000-00-00 00:00:00',NULL,'2019-11-15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4625,59,'AP59','2019-11-20 14:42:06','2019-11-20 17:42:06','08:40','2019-11-20',NULL,'6','xcxzcZXvXCv','','2019-11-24 20:23:38',NULL,NULL,1),(4626,1,'','2019-11-20 15:55:29','0000-00-00 00:00:00',NULL,'2019-11-20',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4627,59,'AP59','2019-11-21 18:55:26','2019-11-21 22:55:26','6:30','2019-11-21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4628,1,'','2019-11-21 19:42:23','0000-00-00 00:00:00',NULL,'2019-11-21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4629,59,'AP59','2019-11-22 19:56:11','2019-11-22 19:56:11','07:00','2019-11-22',NULL,'7:0','testing ','','2019-11-24 20:56:13',NULL,NULL,1),(4630,59,'AP59','2019-11-24 11:28:19','2019-11-24 19:28:19','8:30','2019-11-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4631,1,'','2019-11-24 20:23:05','0000-00-00 00:00:00',NULL,'2019-11-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4632,59,'AP59','2019-11-25 10:23:32','2019-11-25 21:40:29','11:16','2019-11-25',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4633,1,'','2019-11-25 21:40:32','0000-00-00 00:00:00',NULL,'2019-11-25',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4634,1,'','2019-11-26 22:40:40','0000-00-00 00:00:00',NULL,'2019-11-26',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4635,1,'','2019-11-28 20:33:36','0000-00-00 00:00:00',NULL,'2019-11-28',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4636,59,'AP59','2019-11-28 23:08:50','0000-00-00 00:00:00',NULL,'2019-11-28',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4638,59,NULL,'2019-11-13 10:00:00','2019-11-13 11:00:00','16:15','2019-11-13','2019-11-13','3:15','vcbxcvbxcvbxcvbxcvb','','2019-12-01 19:54:40','02:15 PM','05:30 PM',1),(4639,1,'','2019-11-29 16:26:22','0000-00-00 00:00:00',NULL,'2019-11-29',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4640,59,'AP59','2019-11-29 19:37:12','0000-00-00 00:00:00',NULL,'2019-11-29',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4641,1,'','2019-12-01 13:23:40','0000-00-00 00:00:00',NULL,'2019-12-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4642,59,'AP59','2019-12-01 18:52:00','0000-00-00 00:00:00',NULL,'2019-12-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4643,1,'','2019-12-09 18:30:33','2019-12-09 20:51:34','2:21','2019-12-09',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4644,59,'AP59','2019-12-09 18:52:14','0000-00-00 00:00:00',NULL,'2019-12-09',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4645,1,'','2019-12-10 16:45:36','2019-12-10 19:25:21','2:39','2019-12-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4646,59,'AP59','2019-12-10 18:19:19','0000-00-00 00:00:00',NULL,'2019-12-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4647,1,'','2019-12-11 11:13:46','0000-00-00 00:00:00',NULL,'2019-12-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+insert  into `login_report`(`id`,`a_id`,`code`,`login_time`,`logout_time`,`hours`,`create_at`,`creatde_at`,`diff_time`,`reason`,`comment`,`updated_time`,`to_time`,`from_time`,`updated_by`) values (4591,56,'','2019-10-03 16:56:05','0000-00-00 00:00:00',NULL,'2019-10-03',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4592,55,'TS55','2019-10-03 20:23:01','0000-00-00 00:00:00',NULL,'2019-10-03',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4593,1,'','2019-10-04 21:08:26','0000-00-00 00:00:00',NULL,'2019-10-04',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4594,1,'','2019-10-05 08:19:49','2019-10-05 10:29:12','2:9','2019-10-05',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4595,55,'TS55','2019-10-05 08:43:56','2019-10-05 11:39:50','2:55','2019-10-05',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4596,1,'','2019-10-09 16:15:35','0000-00-00 00:00:00',NULL,'2019-10-09',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4597,1,'','2019-10-11 10:17:47','2019-10-11 19:40:19','9:22','2019-10-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4598,55,'TS55','2019-10-11 11:10:45','0000-00-00 00:00:00',NULL,'2019-10-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4599,49,'','2019-10-11 11:31:49','2019-10-11 12:08:38','0:36','2019-10-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4600,1,'','2019-10-13 11:01:07','2019-10-13 20:53:14','9:52','2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4601,58,'TS58','2019-10-13 11:18:36','2019-10-13 14:01:57','2:43','2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4602,51,'','2019-10-13 13:57:11','2019-10-13 14:25:23','0:28','2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4603,54,'TN54','2019-10-13 14:02:28','0000-00-00 00:00:00',NULL,'2019-10-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4604,1,'','2019-10-14 10:36:44','0000-00-00 00:00:00',NULL,'2019-10-14',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4605,1,'','2019-10-16 14:37:34','2019-10-16 14:38:08','0:0','2019-10-16',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4606,55,'TS55','2019-10-16 14:39:10','0000-00-00 00:00:00',NULL,'2019-10-16',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4607,1,'','2019-10-20 22:19:59','2019-10-20 22:57:42','0:37','2019-10-20',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4608,55,'TS55','2019-10-20 22:57:49','0000-00-00 00:00:00',NULL,'2019-10-20',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4609,1,'','2019-10-23 22:30:54','2019-10-23 22:31:19','0:0','2019-10-23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4610,55,'TS55','2019-10-23 22:31:28','2019-10-23 23:02:01','0:30','2019-10-23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4611,1,'','2019-10-24 20:01:44','0000-00-00 00:00:00',NULL,'2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4612,55,'TS55','2019-10-24 21:09:33','2019-10-24 21:55:27','0:45','2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4613,49,'','2019-10-24 21:55:53','2019-10-24 22:00:36','0:4','2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4614,51,'','2019-10-24 22:00:52','2019-10-24 22:10:57','0:10','2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4615,56,'','2019-10-24 22:11:29','0000-00-00 00:00:00',NULL,'2019-10-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4616,1,'','2019-10-25 08:16:15','0000-00-00 00:00:00',NULL,'2019-10-25',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4617,1,'','2019-11-08 21:26:55','0000-00-00 00:00:00',NULL,'2019-11-08',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4618,1,'','2019-11-10 18:23:38','0000-00-00 00:00:00',NULL,'2019-11-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4619,59,'AP59','2019-11-10 10:15:15','2019-11-10 20:15:15',NULL,'2019-11-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4620,1,'','2019-11-12 18:16:42','0000-00-00 00:00:00',NULL,'2019-11-12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4621,59,'AP59','2019-11-12 10:18:46','2019-11-12 17:04:21','06:20','2019-11-12',NULL,'9:45','bvbzcx','','2019-11-24 20:23:50',NULL,NULL,1),(4622,1,'','2019-11-13 19:46:25','0000-00-00 00:00:00',NULL,'2019-11-13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4623,59,'AP59','2019-11-15 16:27:07','2019-11-15 16:28:16','0:1','2019-11-15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4624,1,'','2019-11-15 17:55:59','0000-00-00 00:00:00',NULL,'2019-11-15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4625,59,'AP59','2019-11-20 14:42:06','2019-11-20 17:42:06','08:40','2019-11-20',NULL,'6','xcxzcZXvXCv','','2019-11-24 20:23:38',NULL,NULL,1),(4626,1,'','2019-11-20 15:55:29','0000-00-00 00:00:00',NULL,'2019-11-20',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4627,59,'AP59','2019-11-21 18:55:26','2019-11-21 22:55:26','6:30','2019-11-21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4628,1,'','2019-11-21 19:42:23','0000-00-00 00:00:00',NULL,'2019-11-21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4629,59,'AP59','2019-11-22 19:56:11','2019-11-22 19:56:11','07:00','2019-11-22',NULL,'7:0','testing ','','2019-11-24 20:56:13',NULL,NULL,1),(4630,59,'AP59','2019-11-24 11:28:19','2019-11-24 19:28:19','8:30','2019-11-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4631,1,'','2019-11-24 20:23:05','0000-00-00 00:00:00',NULL,'2019-11-24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4632,59,'AP59','2019-11-25 10:23:32','2019-11-25 21:40:29','11:16','2019-11-25',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4633,1,'','2019-11-25 21:40:32','0000-00-00 00:00:00',NULL,'2019-11-25',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4634,1,'','2019-11-26 22:40:40','0000-00-00 00:00:00',NULL,'2019-11-26',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4635,1,'','2019-11-28 20:33:36','0000-00-00 00:00:00',NULL,'2019-11-28',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4636,59,'AP59','2019-11-28 23:08:50','0000-00-00 00:00:00',NULL,'2019-11-28',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4638,59,NULL,'2019-11-13 10:00:00','2019-11-13 11:00:00','16:15','2019-11-13','2019-11-13','3:15','vcbxcvbxcvbxcvbxcvb','','2019-12-01 19:54:40','02:15 PM','05:30 PM',1),(4639,1,'','2019-11-29 16:26:22','0000-00-00 00:00:00',NULL,'2019-11-29',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4640,59,'AP59','2019-11-29 19:37:12','0000-00-00 00:00:00',NULL,'2019-11-29',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4641,1,'','2019-12-01 13:23:40','0000-00-00 00:00:00',NULL,'2019-12-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4642,59,'AP59','2019-12-01 18:52:00','0000-00-00 00:00:00',NULL,'2019-12-01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4643,1,'','2019-12-09 18:30:33','2019-12-09 20:51:34','2:21','2019-12-09',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4644,59,'AP59','2019-12-09 18:52:14','0000-00-00 00:00:00',NULL,'2019-12-09',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4645,1,'','2019-12-10 16:45:36','2019-12-10 19:25:21','2:39','2019-12-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4646,59,'AP59','2019-12-10 18:19:19','0000-00-00 00:00:00',NULL,'2019-12-10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4647,1,'','2019-12-11 11:13:46','0000-00-00 00:00:00',NULL,'2019-12-11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4648,1,'','2019-12-12 10:10:18','0000-00-00 00:00:00',NULL,'2019-12-12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `modules` */
 
@@ -606,68 +517,6 @@ CREATE TABLE `month_tab` (
 /*Data for the table `month_tab` */
 
 insert  into `month_tab`(`m_id`,`month_name`) values (1,'january'),(2,'february'),(3,'march'),(4,'april'),(5,'may'),(6,'june'),(7,'july'),(8,'august'),(9,'september'),(10,'october'),(11,'november'),(12,'december');
-
-/*Table structure for table `notifications` */
-
-DROP TABLE IF EXISTS `notifications`;
-
-CREATE TABLE `notifications` (
-  `n_id` int(11) NOT NULL AUTO_INCREMENT,
-  `a_id` int(11) DEFAULT NULL,
-  `title` text,
-  `msg` text,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `created_by` int(11) DEFAULT NULL,
-  `read` int(11) DEFAULT '0',
-  PRIMARY KEY (`n_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
-
-/*Data for the table `notifications` */
-
-insert  into `notifications`(`n_id`,`a_id`,`title`,`msg`,`created_at`,`created_by`,`read`) values (32,52,NULL,'Your last month payslip is ready download and check it','2019-10-03 19:34:09',56,0),(33,52,NULL,'Your last month payslip is ready download and check it','2019-10-03 19:38:51',56,0),(34,52,NULL,'Your last month payslip is ready download and check it','2019-10-03 19:39:26',56,0),(35,52,NULL,'Your last month payslip is ready download and check it','2019-10-03 19:41:01',56,0),(36,55,NULL,'Your last month payslip is ready download and check it','2019-10-05 11:17:38',56,1),(37,52,NULL,'Your last month payslip is ready download and check it','2019-10-03 19:50:31',56,0),(38,55,NULL,'Your last month payslip is ready download and check it','2019-10-05 11:17:38',56,1),(39,52,NULL,'Your last month payslip is ready download and check it','2019-10-03 19:52:40',56,0),(40,55,NULL,'Your last month payslip is ready download and check it','2019-10-05 11:17:38',56,1),(41,52,'title','xcZXCZX','2019-10-05 08:41:03',1,0),(42,54,'title','xcZXCZX','2019-10-05 08:41:03',1,0),(43,55,'title','xcZXCZX','2019-10-05 11:19:16',1,1),(44,52,'Testing  Purpose','zxxzczx','2019-10-05 08:41:37',1,0),(45,54,'Testing  Purpose','zxxzczx','2019-10-05 08:41:37',1,0),(46,55,'Testing  Purpose','zxxzczx','2019-10-05 11:18:47',1,1),(47,52,'Testing  Purpose','ghdghg','2019-10-13 11:44:18',1,0),(48,54,'Testing  Purpose','ghdghg','2019-10-13 11:44:18',1,0),(49,55,'Testing  Purpose','ghdghg','2019-10-23 23:01:59',1,1),(50,58,'Testing  Purpose','ghdghg','2019-10-13 11:44:24',1,1),(51,52,'Your last February payslip is ready download and check it','Your last February payslip is ready download and check it','2019-10-13 15:49:21',1,0),(52,55,'Your last February payslip is ready download and check it','Your last February payslip is ready download and check it','2019-10-23 23:01:59',1,1),(53,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 15:51:56',1,0),(54,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(55,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 15:54:39',1,0),(56,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(57,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 15:55:25',1,0),(58,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(59,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 15:56:00',1,0),(60,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(61,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 15:56:33',1,0),(62,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(63,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 15:58:50',1,0),(64,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(65,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 15:59:48',1,0),(66,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(67,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 16:01:45',1,0),(68,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1),(69,52,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-13 16:04:11',1,0),(70,55,'Your last January payslip is ready download and check it','Your last January payslip is ready download and check it','2019-10-23 23:01:59',1,1);
-
-/*Table structure for table `payslips` */
-
-DROP TABLE IF EXISTS `payslips`;
-
-CREATE TABLE `payslips` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `a_id` int(11) DEFAULT NULL,
-  `month` varchar(250) DEFAULT NULL,
-  `inovie_name` varchar(250) DEFAULT NULL,
-  `create_at` datetime DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `update_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=latin1;
-
-/*Data for the table `payslips` */
-
-insert  into `payslips`(`id`,`a_id`,`month`,`inovie_name`,`create_at`,`date`,`created_by`,`update_at`) values (111,52,'February','vasudevareddy_February_2019.pdf','2019-10-03 19:39:26','2019-02-01',56,NULL),(112,52,'February','vasudevareddy_February_2019.pdf','2019-10-03 19:41:01','2019-02-01',56,NULL),(113,55,'February','vasu_February_2019.pdf','2019-10-03 19:41:04','2019-02-01',56,NULL),(114,52,'January','PAN_January_2019.pdf','2019-10-13 15:51:56','2019-01-01',1,'2019-10-13 15:51:56'),(115,55,'January','PAN_January_2019.pdf','2019-10-13 15:51:58','2019-01-01',1,'2019-10-13 15:51:58');
-
-/*Table structure for table `resignationa` */
-
-DROP TABLE IF EXISTS `resignationa`;
-
-CREATE TABLE `resignationa` (
-  `r_id` int(11) NOT NULL AUTO_INCREMENT,
-  `emp_id` int(11) DEFAULT NULL,
-  `reason` longtext,
-  `comment` longtext,
-  `status` int(11) DEFAULT '0',
-  `last_date` varchar(250) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_by` int(11) DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `read_cnt` int(11) DEFAULT '0',
-  PRIMARY KEY (`r_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
-/*Data for the table `resignationa` */
-
-insert  into `resignationa`(`r_id`,`emp_id`,`reason`,`comment`,`status`,`last_date`,`created_at`,`updated_at`,`updated_by`,`created_by`,`read_cnt`) values (1,59,'I hearby agree and request to accept my resignation and process my notice period as per the management decision.\r\n','xxzcZXCZXC',0,'1970-01-01','2019-12-01 19:51:48','2019-11-12 19:19:18',1,59,0),(2,59,'xcZXCZXc','',1,'2020-03-01','2019-12-01 19:54:30','2019-12-01 19:54:30',1,59,1);
 
 /*Table structure for table `role` */
 
@@ -722,24 +571,6 @@ CREATE TABLE `role_options` (
 /*Data for the table `role_options` */
 
 insert  into `role_options`(`r_p_id`,`r_n_id`,`r_option_id`,`status`,`created_at`,`updated_at`,`created_by`) values (10,5,21,1,'2019-06-19 10:03:07','0000-00-00 00:00:00',1),(11,5,22,1,'2019-06-19 10:03:07','0000-00-00 00:00:00',1),(12,6,1,1,'2019-06-25 11:01:47','0000-00-00 00:00:00',1),(13,6,3,1,'2019-06-25 11:01:47','0000-00-00 00:00:00',1),(14,6,13,1,'2019-06-25 11:01:47','0000-00-00 00:00:00',1),(15,7,50,1,'2019-08-27 21:54:49','0000-00-00 00:00:00',1),(16,7,51,1,'2019-08-27 21:54:49','0000-00-00 00:00:00',1),(17,8,1,1,'2019-09-13 14:40:13','0000-00-00 00:00:00',1),(18,8,2,1,'2019-09-13 14:40:13','0000-00-00 00:00:00',1),(19,9,53,1,'2019-09-16 11:21:14','0000-00-00 00:00:00',1),(20,9,54,1,'2019-09-16 11:21:14','0000-00-00 00:00:00',1),(21,9,55,1,'2019-09-16 11:21:14','0000-00-00 00:00:00',1);
-
-/*Table structure for table `shift` */
-
-DROP TABLE IF EXISTS `shift`;
-
-CREATE TABLE `shift` (
-  `s_id` int(11) NOT NULL AUTO_INCREMENT,
-  `shift` varchar(250) DEFAULT NULL,
-  `status` int(11) DEFAULT '1',
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-
-/*Data for the table `shift` */
-
-insert  into `shift`(`s_id`,`shift`,`status`,`created_at`,`updated_at`,`created_by`) values (9,'A',1,'2018-11-02 09:25:32','2018-11-02 09:25:32',0),(10,'B',1,'2018-11-02 09:25:37','2018-11-02 09:25:37',0),(11,'C',1,'2018-11-06 13:47:28','2018-11-06 13:47:28',8);
 
 /*Table structure for table `specialty` */
 
@@ -816,26 +647,6 @@ CREATE TABLE `suggestion_list` (
 /*Data for the table `suggestion_list` */
 
 insert  into `suggestion_list`(`id`,`a_id`,`replayed_id`,`comment`,`type`,`status`,`created_at`,`created_by`) values (1,55,55,'try to  check ','Replay',1,'2019-10-11 11:49:01',NULL),(2,55,55,'ccvxzcv','Replay',1,'2019-10-11 11:49:14',NULL),(3,55,55,'xcvcvxcv','Replay',1,'2019-10-11 11:49:21',NULL),(4,55,1,'cvcxzv','Replayed',1,'2019-10-11 12:10:05',1),(5,55,55,'hllo','Replay',1,'2019-10-11 12:10:37',55),(6,54,1,'hllo  hi  how  are you','Replayed',1,'2019-10-11 12:11:51',1),(7,55,1,'xczXc','Replayed',1,'2019-10-11 12:12:34',1),(8,51,51,'xczXC','Replay',1,'2019-10-13 14:22:20',51),(9,51,51,'dsfasdfsadf','Replay',1,'2019-10-13 14:24:00',51),(10,54,54,'cvzxcvzXVC','Replay',1,'2019-10-13 14:24:15',54);
-
-/*Table structure for table `termination` */
-
-DROP TABLE IF EXISTS `termination`;
-
-CREATE TABLE `termination` (
-  `t_id` int(11) NOT NULL AUTO_INCREMENT,
-  `emp_id` int(11) DEFAULT NULL,
-  `comment` longtext,
-  `document` varchar(250) DEFAULT NULL,
-  `document2` varchar(250) DEFAULT NULL,
-  `document3` varchar(250) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `created_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`t_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
-/*Data for the table `termination` */
-
-insert  into `termination`(`t_id`,`emp_id`,`comment`,`document`,`document2`,`document3`,`created_at`,`created_by`) values (1,52,'fasdfasdfs','1573573417.pdf','1573573417.pdf','1573573417.pdf','2019-11-12 21:13:37',1);
 
 /*Table structure for table `user_departments` */
 

@@ -20,11 +20,14 @@ class Feedback extends CI_Controller {
 	}
 	public function list_view()
 	{	
-		$this->load->view('html/list_view');
+		$data['f_list']=$this->Feedback_model->get_all_feedback_list();
+		$this->load->view('html/list_view',$data);
 	}
-	public function feed_view()
+	public function view()
 	{	
-		$this->load->view('html/feed_view');
+		$fid=base64_decode($this->uri->segment(3));
+		$data['f_d']=$this->Feedback_model->get_get_feedback_details($fid);
+		$this->load->view('html/feed_view',$data);
 	}
 	public function ipd()
 	{	
@@ -33,13 +36,12 @@ class Feedback extends CI_Controller {
 	public function opd()
 	{	
 		$this->load->view('html/opd');
-	}
-	
+	}	
 	public  function opdpost(){
 		$post=$this->input->post();
 		$ad=array(
 			'name'=>isset($post['name'])?$post['name']:'',
-			'type'=>'OPD',
+			'type'=>isset($post['type'])?$post['type']:'',
 			'p_no'=>isset($post['pod_no'])?$post['pod_no']:'',
 			'email_id'=>isset($post['email_id'])?$post['email_id']:'',
 			'phone_no'=>isset($post['phone_no'])?$post['phone_no']:'',
@@ -60,14 +62,19 @@ class Feedback extends CI_Controller {
 		$save=$this->Feedback_model->save_feedback($ad);
 		if(count($save)>0){
 			$this->session->set_flashdata('success',"Feedback sent successfully");
-			redirect('feedback/list_view');
+			if($post['f_type']==1){
+				redirect('feedback/ipd');
+			}else{
+				redirect('feedback/opd');
+			}
 		}else{
 			$this->session->set_flashdata('error',"Technical problem will occured. Please try again");
-			redirect('feedback/opd');
+			if($post['f_type']==1){
+				redirect('feedback/ipd');
+			}else{
+				redirect('feedback/opd');
+			}
 		}
 	}
-	
-	
-	
 	
 }

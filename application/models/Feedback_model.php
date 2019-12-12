@@ -13,11 +13,14 @@ class Feedback_model extends CI_Model
 		$this->db->insert('feed_back',$d);
         return $this->db->insert_id();
 	}
-	public  function view_work_comment($id){
-		$this->db->select('awc.commet,awc.created_at,a.name')->from('assign_work_comments as awc');
-		$this->db->join('admin as a','a.a_id=awc.created_by','left');
-		$this->db->where('awc.a_w_id',$id);
+	public  function get_all_feedback_list(){
+		$this->db->select('fd.*')->from('feed_back as fd');
 		return $this->db->get()->result_array();
+	}
+	public  function get_get_feedback_details($id){
+		$this->db->select('fd.*')->from('feed_back as fd');
+		$this->db->where('fd.f_b_id',$id);
+		return $this->db->get()->row_array();
 	}
 	
 	

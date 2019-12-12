@@ -113,7 +113,9 @@ input[type="radio"]:checked {
 		<div class="row">
 			<div class="container-fluid px-4" >
 			
-			<form action="<?php echo base_url('feedback/opdpost'); ?>" method="post">
+			<form id="defaultForm" action="<?php echo base_url('feedback/opdpost'); ?>" method="post">
+			<input type="hidden" name="f_type" value="0">
+			<input type="hidden" name="type" value="OPD">				
 			<div class="row" style="margin:5px;">
 						<div class="col-md-6">
 						 <div class="form-group">
@@ -147,31 +149,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1" value="Very Poor">
+								<input type="radio"  name="qus1" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1" value="Poor">
+								<input type="radio"  name="qus1" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1" value="Average">
+								<input type="radio"  name="qus1" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1" value="Good">
+								<input type="radio"  name="qus1" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1" value="Excellent">
+								<input type="radio"  name="qus1" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -184,31 +186,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2" value="Very Poor">
+								<input type="radio"  name="qus2" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2" value="Poor">
+								<input type="radio"  name="qus2" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2" value="Average">
+								<input type="radio"  name="qus2" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2" value="Good">
+								<input type="radio"  name="qus2" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2" value="Excellent">
+								<input type="radio"  name="qus2" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -221,31 +223,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3" value="Very Poor">
+								<input type="radio"  name="qus3" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3" value="Poor">
+								<input type="radio"  name="qus3" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3" value="Average">
+								<input type="radio"  name="qus3" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3" value="Good">
+								<input type="radio"  name="qus3" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3" value="Excellent">
+								<input type="radio"  name="qus3" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -258,31 +260,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4" value="Very Poor">
+								<input type="radio"  name="qus4" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4" value="Poor">
+								<input type="radio"  name="qus4" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4" value="Average">
+								<input type="radio"  name="qus4" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus4" value="Good">
+								<input type="radio" name="qus4" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus4" value="Excellent">
+								<input type="radio" name="qus4" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -295,31 +297,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus5" value="Very Poor">
+								<input type="radio" name="qus5" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus5" value="Poor">
+								<input type="radio" name="qus5" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus5" value="Average">
+								<input type="radio" name="qus5" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus5" value="Average">
+								<input type="radio" name="qus5" value="Average" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus5" value="Excellent">
+								<input type="radio"  name="qus5" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -332,31 +334,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus6" value="Very Poor">
+								<input type="radio" name="qus6" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus6" value="Poor">
+								<input type="radio" name="qus6" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus6" value="Average">
+								<input type="radio"  name="qus6" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus6" value="Good">
+								<input type="radio" name="qus6" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus6" value="Excellent">
+								<input type="radio" name="qus6" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -369,31 +371,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus7" value="Very Poor">
+								<input type="radio"  name="qus7" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus7" value="Poor">
+								<input type="radio" name="qus7" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus7" value="Average">
+								<input type="radio" name="qus7" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus7" value="Good">
+								<input type="radio" name="qus7" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus7" value="Excellent">
+								<input type="radio"  name="qus7" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -406,31 +408,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus8" value="Very Poor">
+								<input type="radio"  name="qus8" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Poor">
+								<input type="radio" name="qus8" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Average">
+								<input type="radio" name="qus8" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Good">
+								<input type="radio" name="qus8" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus8" value="Excellent">
+								<input type="radio" name="qus8" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -443,31 +445,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Very Poor">
+								<input type="radio" name="qus9" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Poor">
+								<input type="radio" name="qus9" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Average">
+								<input type="radio" name="qus9" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Good">
+								<input type="radio" name="qus9" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus9" value="Excellent">
+								<input type="radio" name="qus9" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -480,31 +482,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Very Poor">
+								<input type="radio" name="qus10" value="Very Poor" required>
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Poor">
+								<input type="radio" name="qus10" value="Poor" required>
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Average">
+								<input type="radio" name="qus10" value="Average" required>
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Good">
+								<input type="radio" name="qus10" value="Good" required>
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus10" value="Excellent">
+								<input type="radio" name="qus10" value="Excellent" required>
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -520,19 +522,19 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="qus11" value="Yes">
+								<input type="radio" name="qus11" value="Yes" required>
 							</div>
 							<small>Yes</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus11" value="No">
+								<input type="radio"  name="qus11" value="No" required>
 							</div>
 							<small>No</small>
 						</div>
 						</div>
 					</div>
-					<div class="card-cust" style="margin-top:10px;padding-bottom:10px;">
+					<div class="card-cust form-group" style="margin-top:10px;padding-bottom:10px;">
 						<div class="row">
 						<div class="col-md-12">
 						<h3>12.Other Comments</h3>
@@ -556,4 +558,60 @@ input[type="radio"]:checked {
 	</div>
 </body>
 </html>
-
+<script>
+$(document).ready(function() {
+	$('#defaultForm').bootstrapValidator({
+		fields: {
+            name: {
+                validators: {
+					notEmpty: {
+						message: 'Name is required'
+					}
+				}
+            },
+            pod_no: {
+                validators: {
+					notEmpty: {
+						message: 'IP Reg No is required'
+					}
+				}
+            },email_id: {
+                 validators: {
+					notEmpty: {
+						message: 'Email is required'
+					},
+					regexp: {
+					regexp: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+					message: 'Please enter a valid email address. For example johndoe@domain.com.'
+					}
+				}
+            },phone_no: {
+                 validators: {
+					notEmpty: {
+						message: 'Phone  Number is required'
+					},
+					regexp: {
+					regexp:  /^[0-9]{10,14}$/,
+					message:'Phone  Number must be 10 to 14 digits'
+					}
+				
+				}
+            },comment: {
+                 validators: {
+					notEmpty: {
+						message: 'comment is required'
+					}				
+				}
+            },			
+			image: {
+                validators: {
+					regexp: {
+					regexp: "(.*?)\.(png|jpeg|jpg|gif)$",
+					message: 'Uploaded file is not a valid. Only png,jpg,jpeg,gif files are allowed'
+					}
+				}
+            }
+        }
+    });
+});
+</script>

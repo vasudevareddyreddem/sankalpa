@@ -97,17 +97,17 @@
 		<table  class="table  table-bordered" style="width:100%">
       
         <tbody>
-		<tr>
+			<tr>
                 <td>Name</td>
-                <td>Sai Kirshna</td>
+                <td><?php echo isset($f_d['name'])?$f_d['name']:''; ?></td>
             </tr>
             <tr>
                 <td>Mobile No</td>
-                <td>850022xxx</td>
+                <td><?php echo isset($f_d['phone_no'])?$f_d['phone_no']:''; ?></td>
             </tr> 
 			<tr>
                 <td>Email Id</td>
-                <td>info@gmail.com</td>
+                <td><?php echo isset($f_d['email_id'])?$f_d['email_id']:''; ?></td>
             </tr>
 			<tr>
                 <td>1.OPD Registration & Billing Process</td>

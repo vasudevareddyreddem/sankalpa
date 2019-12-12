@@ -107,15 +107,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Saikrishna</td>
-                <td>SAN1120</td>
-                <td>8500226782</td>
-                <td>sai@gamil.com</td>
-                <td>2011/04/25</td>
-                <td><a class="btn btn-primary btn-xs" href="<?php echo base_url('home/feed_view'); ?>">View</a></td>
-            </tr>
-           
+		<?php if(isset($f_list) && count($f_list)>0){ ?>
+			<?php foreach($f_list as $fl){ ?>
+				<tr>
+					<td><?php echo $fl['name']; ?></td>
+					<td><?php echo $fl['p_no']; ?></td>
+					<td><?php echo $fl['phone_no']; ?></td>
+					<td><?php echo $fl['email_id']; ?></td>
+					<td><?php echo $fl['created_at']; ?></td>
+					<td><a class="btn btn-primary btn-xs" href="<?php echo base_url('feedback/view/'.base64_encode($fl['f_b_id'])); ?>">View</a></td>
+				</tr>
+			<?php } ?>
+		<?php } ?>
             
         </tbody>
         
@@ -147,22 +150,15 @@
 <script src="<?php echo base_url(); ?>assets/back/js/icheck.min.js"></script>
 
 <script>
-
+$(document).ready(function() {
+    $('#example').DataTable( {
+        "order": [[ 4, "desc" ]]
+    } );
+} );
 	$(function () {
 	    //Initialize Select2 Elements
 	    $(".select2").select2();
 
-	$(function () {
-	   
-	    $('#example').DataTable({
-	 
-	      "lengthChange": true,
-	      "searching": true,
-	      "ordering": true,
-	      "info": true,
-	      "autoWidth": true
-	    });
-	  });
 
 	
 	   
