@@ -81,9 +81,9 @@
 	<div class="" style="display:flex;justify-content: center;">
 	<div class="page-container">
 		<div  style="background:#f5f5f5;padding:20px;width:100%;height:120px;border-bottom:1px solid #ddd" >
-			<div class="col-md-12 text-center">
+			<a href="<?php echo base_url(''); ?>"><div class="col-md-12 text-center">
 				<img style="height:100px;margin:0 auto;" class="img-responsive" src="<?php echo base_url(); ?>assets/back/img/logo.png">
-			</div>
+			</div></a>
 			
 		</div>
 		<div class="clearfix">&nbsp;</div>

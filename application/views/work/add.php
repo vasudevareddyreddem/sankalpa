@@ -43,7 +43,7 @@
 						   <div class="form-group col-md-6">
                               <label class="col-lg-4 control-label">Employee name</label>
                               <div class="col-md-8">
-                                 <select name="emp_id" class="form-control">
+                                 <select name="emp_id[]" class="form-control select2" multiple>
 								 <option value="">Select</option>
 								 <?php if(isset($e_list) && count($e_list)>0){ ?>
 								 <?php foreach($e_list as $li){ ?>
@@ -102,7 +102,7 @@ $(document).ready(function() {
 						message: 'Comment is required'
 					}
 				}
-               }, emp_id: {
+               }, 'emp_id[]': {
                   validators: {
 					notEmpty: {
 						message: 'Employee Name is required'

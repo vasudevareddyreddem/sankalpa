@@ -18,22 +18,7 @@ class Home extends CI_Controller {
 	{	
 		$this->load->view('html/index');
 	}
-	public function list_view()
-	{	
-		$this->load->view('html/list_view');
-	}
-	public function feed_view()
-	{	
-		$this->load->view('html/feed_view');
-	}
-	public function ipd()
-	{	
-		$this->load->view('html/ipd');
-	}
-	public function opd()
-	{	
-		$this->load->view('html/opd');
-	}
+	
 	
 	
 	

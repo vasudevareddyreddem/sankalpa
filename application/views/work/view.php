@@ -47,7 +47,7 @@
 								
 								<td colspan="2">
 									
-									<p><strong>Description:</strong> <?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
+									<p><strong>Work:</strong> <?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
 								</td>
 							</tr>
 						</table>

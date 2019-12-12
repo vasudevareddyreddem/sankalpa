@@ -101,9 +101,9 @@ input[type="radio"]:checked {
 	<div class="" style="display:flex;justify-content: center;">
 	<div class="page-container">
 		<div  style="background:#f5f5f5;padding:20px;width:100%;height:120px;border-bottom:1px solid #ddd" >
-			<div class="col-md-12 text-center">
+			<a href="<?php echo base_url(''); ?>"><div class="col-md-12 text-center">
 				<img style="height:100px;margin:0 auto;" class="img-responsive" src="<?php echo base_url(); ?>assets/back/img/logo.png">
-			</div>
+			</div></a>
 			
 		</div>
 		<div class="clearfix">&nbsp;</div>
@@ -116,30 +116,30 @@ input[type="radio"]:checked {
 			<div class="container-fluid px-4" >
 			
 			
-				<form>
+				<form action="<?php echo base_url('feedback/opdpost'); ?>" method="post">				
 				<div class="row" style="margin:5px;">
 						<div class="col-md-6">
 						 <div class="form-group">
 							<label>Name</label>
-							<input type="text" class="form-control"  placeholder="Enter Your Name">
+							<input type="text" class="form-control" name="name"  placeholder="Enter Your Name">
 						  </div>
 						</div>
 						<div class="col-md-6">
 						 <div class="form-group">
-							<label>IP Reg No</label>
-							<input type="text" class="form-control"  placeholder="Enter Your Name">
+							<label>IP Reg No</label> 
+							<input type="text" class="form-control" name="pod_no"  placeholder="Enter Your Name">
 						  </div>
 						</div>
 						<div class="col-md-6">
 						 <div class="form-group">
 							<label>Email Id</label>
-							<input type="text" class="form-control"  placeholder="Enter Your Name">
+							<input type="text" class="form-control" name="email_id"  placeholder="Enter Your Name">
 						  </div>
 						</div>
 						<div class="col-md-6">
 						 <div class="form-group">
 							<label>Phone No</label>
-							<input type="text" class="form-control"  placeholder="Enter Your Name">
+							<input type="text" class="form-control" name="phone_no"  placeholder="Enter Your Name">
 						  </div>
 						</div>
 					</div>
@@ -150,31 +150,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1">
+								<input type="radio" name="qus1" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1">
+								<input type="radio"  name="qus1" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1">
+								<input type="radio"  name="qus1" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1">
+								<input type="radio" name="qus1" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus1">
+								<input type="radio" name="qus1" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -187,31 +187,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2">
+								<input type="radio"  name="qus2" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2">
+								<input type="radio" name="qus2" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2">
+								<input type="radio" name="qus2" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2">
+								<input type="radio" name="qus2" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus2">
+								<input type="radio" name="qus2" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -224,31 +224,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3">
+								<input type="radio" name="qus3" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3">
+								<input type="radio" name="qus3" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3">
+								<input type="radio" name="qus3" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3">
+								<input type="radio" name="qus3" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus3">
+								<input type="radio" name="qus3" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -261,31 +261,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4">
+								<input type="radio" name="qus4" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4">
+								<input type="radio" name="qus4" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4">
+								<input type="radio" name="qus4" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4">
+								<input type="radio" name="qus4" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus4">
+								<input type="radio" name="qus4" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -298,31 +298,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus5">
+								<input type="radio"  name="qus5" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus5">
+								<input type="radio" name="qus5" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus5">
+								<input type="radio" name="qus5" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus5">
+								<input type="radio" name="qus5" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus5">
+								<input type="radio" name="qus5" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -335,31 +335,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus6">
+								<input type="radio" name="qus6" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus6">
+								<input type="radio" name="qus6" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus6">
+								<input type="radio" name="qus6" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus6">
+								<input type="radio" name="qus6" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus6">
+								<input type="radio" name="qus6" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -372,31 +372,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus7">
+								<input type="radio"  name="qus7" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus7">
+								<input type="radio" name="qus7" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus7">
+								<input type="radio" name="qus7" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus7">
+								<input type="radio" name="qus7" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus7">
+								<input type="radio" name="qus7" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -409,31 +409,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus8">
+								<input type="radio" name="qus8" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus8">
+								<input type="radio" name="qus8" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus8">
+								<input type="radio" name="qus8" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus8">
+								<input type="radio" name="qus8" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus8">
+								<input type="radio" name="qus8" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -446,31 +446,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus9">
+								<input type="radio" name="qus9" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus9">
+								<input type="radio" name="qus9" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus9">
+								<input type="radio"  name="qus9" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus9">
+								<input type="radio" name="qus9" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus9">
+								<input type="radio" name="qus9" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -483,31 +483,31 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus10">
+								<input type="radio" name="qus10" value="Very Poor">
 							</div>
 							<small>Very Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus10">
+								<input type="radio" name="qus10" value="Poor">
 							</div>
 							<small>Poor</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus10">
+								<input type="radio" name="qus10" value="Average">
 							</div>
 							<small>Average</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus10">
+								<input type="radio" name="qus10" value="Good">
 							</div>
 							<small>Good</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus10">
+								<input type="radio" name="qus10" value="Excellent">
 							</div>
 							<small>Excellent</small>
 						</div>
@@ -523,13 +523,13 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus11">
+								<input type="radio" name="qus11" value="Yes">
 							</div>
 							<small>Yes</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio"  name="qus11">
+								<input type="radio" name="qus11" value="No">
 							</div>
 							<small>No</small>
 						</div>
@@ -540,12 +540,12 @@ input[type="radio"]:checked {
 						<div class="col-md-12">
 						<h3>12.Other Comments</h3>
 						
-							<textarea class="form-control" rows="4">Enter Comments here</textarea>
+							<textarea class="form-control" name="comment" rows="4" placeholder="Enter Comments here"></textarea>
 						</div>
 						</div>
 					</div>
 					<div class="mt-4 text-center">
-						<button class="btn btn-primary ">Submit Feedback</button>
+						<button type="submit" class="btn btn-primary ">Submit Feedback</button>
 					</div>
 				</form>
 			 

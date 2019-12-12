@@ -8,7 +8,7 @@ class Employee extends sidebar {
 		parent::__construct();	
 	
 		$this->load->model('Employee_model');
-		$this->load->model('Pending_model');
+		//$this->load->model('Pending_model');
 	}
 	public function index()
 	{	

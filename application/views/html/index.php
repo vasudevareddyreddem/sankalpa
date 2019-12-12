@@ -108,9 +108,9 @@
 	<div class="" style="display:flex;justify-content: center;">
 	<div class="page-container">
 		<div  style="background:#f5f5f5;padding:20px;width:100%;height:120px;border-bottom:1px solid #ddd" >
-			<div class="col-md-12 text-center">
+			<a href="<?php echo base_url(''); ?>"><div class="col-md-12 text-center">
 				<img style="height:100px;margin:0 auto;" class="img-responsive" src="<?php echo base_url(); ?>assets/back/img/logo.png">
-			</div>
+			</div></a>
 			
 		</div>
 		<div class="clearfix">&nbsp;</div>
@@ -122,7 +122,7 @@
 			</div>
 		
 			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/opd'); ?>">
+					<a style="color:#fff" href="<?php echo base_url('feedback/opd'); ?>">
 					<div class="opd-box">
 						<h1>OPD Feeback</h1>
 					</div>
@@ -130,7 +130,7 @@
 			<div class="clearfix">&nbsp;</div>
 			 </div> 
 			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/ipd'); ?>">
+					<a style="color:#fff" href="<?php echo base_url('feedback/ipd'); ?>">
 					<div class="ipd-box">
 						<h1>IPD Feeback</h1>
 					</div>
@@ -138,7 +138,7 @@
 			<div class="clearfix">&nbsp;</div>
 			 </div> 
 			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('home/list_view'); ?>">
+					<a style="color:#fff" href="<?php echo base_url('feedback/list_view'); ?>">
 					<div class="ipd-box-li">
 						<h1>IPD & OPD List</h1>
 					</div>

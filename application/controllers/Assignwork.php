@@ -87,7 +87,7 @@ class Assignwork extends sidebar {
 			}else{
 				$holidays=array();
 			}
-			//echo '<pre>';print_r($holidays);exit;
+			//echo '<pre>';print_r($post);exit;
 			
 			
 			$start = new DateTime($fd);
@@ -107,17 +107,21 @@ class Assignwork extends sidebar {
 					$days--;
 				}
 			}
-			$add=array(
-					'from_date'=>isset($post['from_date'])?$post['from_date']:'',
-					'to_date'=>isset($post['to_date'])?$post['to_date']:'',
-					'total_day'=>isset($days)?$days:'',
-					'emp_id'=>isset($post['emp_id'])?$post['emp_id']:'',
-					'message'=>isset($post['message'])?$post['message']:'',
-					'created_at'=>date('Y-m-d H:i:s'),
-					'created_by'=>isset($l_data['a_id'])?$l_data['a_id']:'',
-					);
-				//echo '<pre>';print_r($add);exit;
-				$save=$this->Work_model->save_work($add);
+			foreach($post['emp_id'] as $li){
+					if($li!=''){
+					$add=array(
+						'from_date'=>isset($post['from_date'])?$post['from_date']:'',
+						'to_date'=>isset($post['to_date'])?$post['to_date']:'',
+						'total_day'=>isset($days)?$days:'',
+						'emp_id'=>isset($li)?$li:'',
+						'message'=>isset($post['message'])?$post['message']:'',
+						'created_at'=>date('Y-m-d H:i:s'),
+						'created_by'=>isset($l_data['a_id'])?$l_data['a_id']:'',
+						);
+					//echo '<pre>';print_r($add);exit;
+					$save=$this->Work_model->save_work($add);
+					}
+				}
 				if(count($save)>0){
 					$this->session->set_flashdata('success',"Assignwork added successfully");	
 					redirect('assignwork');

@@ -16,7 +16,6 @@
 			
 			<!-- /.box-header -->
 			<div class="box-body table-responsive">
-				<a href="<?php echo base_url('calendar/index'); ?>" class="btn btn-warning" style="margin:6px;">Go to calendar</a>
 				<table id="example1" class="table table-bordered table-striped">
 					<thead>
 						<tr>

@@ -35,43 +35,7 @@
 					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
-			<div class="col-lg-6 col-xs-12">
-				<!-- small box -->
-				<div class="small-box bg-blue">
-					<div class="inner">
-						<h3><?php echo isset($hr_act['cnt'])?$hr_act['cnt']:''; ?></h3>
-						<p>TOTAL HR ACCOUNTS</p>
-					</div>
-					<div class="icon"> <i class="fa fa-list"></i>
-					</div> <a href="<?php echo base_url('user/lists'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
-			<!-- ./col -->
 			
-			<!-- ./col -->
-			<div class="col-lg-6 col-xs-12">
-				<!-- small box -->
-				<div class="small-box bg-yellow">
-					<div class="inner">
-						<h3><?php echo isset($manager_act['cnt'])?$manager_act['cnt']:''; ?></h3>
-						<p>TOTAL MANAGER ACCOUNTS</p>
-					</div>
-					<div class="icon"> <i class="fa fa-list"></i>
-					</div> <a href="<?php echo base_url('user/lists'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
-			<!-- ./col -->
-			<div class="col-lg-6 col-xs-12">
-				<!-- small box -->
-				<div class="small-box bg-yellow">
-					<div class="inner">
-						<h3><?php echo isset($account_act['cnt'])?$account_act['cnt']:''; ?></h3>
-						<p>TOTAL ACCOUNTS  COUNT</p>
-					</div>
-					<div class="icon"> <i class="fa fa-list"></i>
-					</div> <a href="<?php echo base_url('user/lists'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
 			
 			
 			<!-- ./col -->

@@ -28,8 +28,8 @@ class Sidebar extends CI_Controller {
 					$data['m_list']=$this->Admin_model->get_user_menu_list($l_data['a_id']);
 					//echo $this->db->last_query();
 				}
-				$data['noti']=$this->Admin_model->get_emp_notification($l_data['a_id']);
-				$data['read_cnt']=$this->Admin_model->get_unred_emp_notification($l_data['a_id']);
+				//$data['noti']=$this->Admin_model->get_emp_notification($l_data['a_id']);
+				//$data['read_cnt']=$this->Admin_model->get_unred_emp_notification($l_data['a_id']);
 				//echo '<pre>';print_r($data);exit;
 				$this->load->view('admin/header',$data);
 			}else{
