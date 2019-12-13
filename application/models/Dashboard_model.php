@@ -63,8 +63,7 @@ class Dashboard_model extends CI_Model
 		$this->db->join('admin as a','a.a_id=lr.a_id','left');
 		$this->db->where('a.role_id',2);
 		$this->db->group_by('lr.a_id');
-				$this->db->where('lr.create_at',$date);
-
+		$this->db->where('lr.create_at',$date);
         return $this->db->get()->row_array();
 	}
 	
@@ -76,6 +75,80 @@ class Dashboard_model extends CI_Model
 		$this->db->where('lr.create_at',$date);
 		$this->db->where_in('a.dep_id',$dids);
 		return $this->db->get()->row_array();
+	}
+	
+	
+	/* graphs  purpose */	
+	public  function  get_opd_percentage($t){
+		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
+		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
+		$this->db->where('fb.type','OPD');
+		$this->db->where('fa.answer',$t);
+        return $this->db->get()->row_array();
+	}
+	
+	public  function get_all_opd_tatol($t,$fd,$td){
+		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as  fa');
+		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
+		$this->db->where('fb.type',$t);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
+        return $this->db->get()->row_array();
+	}
+	
+	/* graphs  purpose */	
+	public  function  get_ipd_percentage($t,$fd,$td){
+		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
+		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
+		$this->db->where('fb.type','IPD');
+		$this->db->where('fa.answer',$t);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
+        return $this->db->get()->row_array();
+	}
+	
+	public  function get_all_ipd_tatol($t,$fd,$td){
+		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as  fa');
+		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
+		$this->db->where('fb.type',$t);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
+        return $this->db->get()->row_array();
+	}
+	
+	public  function get_all_questions($type,$fd,$td){
+		$this->db->select('q.q_id,q.qno,q.name,q.type')->from('question as q');
+		$this->db->where('q.type',$type);
+		$this->db->where('q.status',1);		
+		return $this->db->get()->result_array();
+	}
+	
+	public  function  get_question_taotal($qid,$fd,$td){
+		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
+		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
+		$this->db->where('fa.q_id',$qid);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
+        return $this->db->get()->row_array();
+	}
+	
+	public function get_qeu_percentage($qid,$t,$fd,$td){
+		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
+		$this->db->where('fa.q_id',$qid);
+		$this->db->where('fa.answer',$t);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
+        return $this->db->get()->row_array();
 	}
 	
 	

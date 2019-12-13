@@ -27,40 +27,51 @@ class Feedback extends CI_Controller {
 	{	
 		$fid=base64_decode($this->uri->segment(3));
 		$data['f_d']=$this->Feedback_model->get_get_feedback_details($fid);
+		$data['f_q_d']=$this->Feedback_model->get_get_question_details($fid);
+		//echo '<pre>';print_r($data);exit;
 		$this->load->view('html/feed_view',$data);
 	}
 	public function ipd()
 	{	
-		$this->load->view('html/ipd');
+		$d['f_q']=$this->Feedback_model->get_opd_question_list('IPD');
+		//echo '<pre>';print_r($d);exit;
+		$this->load->view('html/ipd',$d);
 	}
 	public function opd()
 	{	
-		$this->load->view('html/opd');
+		$d['f_q']=$this->Feedback_model->get_opd_question_list('OPD');
+		//echo '<pre>';print_r($d);exit;
+		$this->load->view('html/opd',$d);
 	}	
 	public  function opdpost(){
 		$post=$this->input->post();
+		
 		$ad=array(
 			'name'=>isset($post['name'])?$post['name']:'',
 			'type'=>isset($post['type'])?$post['type']:'',
 			'p_no'=>isset($post['pod_no'])?$post['pod_no']:'',
 			'email_id'=>isset($post['email_id'])?$post['email_id']:'',
 			'phone_no'=>isset($post['phone_no'])?$post['phone_no']:'',
-			'qus1'=>isset($post['qus1'])?$post['qus1']:'',
-			'qus2'=>isset($post['qus2'])?$post['qus2']:'',
-			'qus3'=>isset($post['qus3'])?$post['qus3']:'',
-			'qus4'=>isset($post['qus4'])?$post['qus4']:'',
-			'qus5'=>isset($post['qus5'])?$post['qus5']:'',
-			'qus6'=>isset($post['qus6'])?$post['qus6']:'',
-			'qus7'=>isset($post['qus7'])?$post['qus7']:'',
-			'qus8'=>isset($post['qus8'])?$post['qus8']:'',
-			'qus9'=>isset($post['qus9'])?$post['qus9']:'',
-			'qus10'=>isset($post['qus10'])?$post['qus10']:'',
-			'qus11'=>isset($post['qus11'])?$post['qus11']:'',
 			'comment'=>isset($post['comment'])?$post['comment']:'',
+			'recommend'=>isset($post['recommend'])?$post['recommend']:'',
 			'created_at'=>date('Y-m-d h:i:s'),
 		);
+		//echo '<pre>';print_r($post);exit;
 		$save=$this->Feedback_model->save_feedback($ad);
 		if(count($save)>0){
+			
+			$cnt=1;foreach($post['qus'] as $key=>$li){ 
+					$qa=array(
+						'f_b_id'=>isset($save)?$save:'',
+						'qno'=>isset($li)?$li:'',
+						'q_id'=>isset($key)?$key:'',
+						'answer'=>isset($post['anser'][$cnt])?$post['anser'][$cnt]:'',
+						'date'=>date('Y-m-d'),
+						'created_at'=>date('Y-m-d h:i:s'),
+					);
+					$this->Feedback_model->save_question_answer($qa);
+				$cnt++;
+			}
 			$this->session->set_flashdata('success',"Feedback sent successfully");
 			if($post['f_type']==1){
 				redirect('feedback/ipd');

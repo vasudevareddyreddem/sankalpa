@@ -109,38 +109,31 @@
                 <td>Email Id</td>
                 <td><?php echo isset($f_d['email_id'])?$f_d['email_id']:''; ?></td>
             </tr>
+			<?php foreach($f_q_d as $li){ ?>
+				<tr>
+					<td><?php echo $li['qno']; ?>.<?php echo $li['name']; ?></td>
+					<td style="width:50%"><?php echo isset($li['answer'])?$li['answer']:''; ?></td>
+				</tr>
+			<?php } ?>
+			<?php if($f_d['type']=='OPD'){ ?>
+				<tr>
+                <td><?php echo count($f_q_d)+1; ?>.Other Comments</td>
+                <td style="width:50%"><?php echo isset($f_d['comment'])?$f_d['comment']:''; ?></td>
+            </tr>
+			
+			<?php }else{ ?>
 			<tr>
-                <td>1.OPD Registration & Billing Process</td>
-                <td>Good</td>
+                <td><?php echo count($f_q_d)+1; ?>.Do you recommend Sankalpa to others</td>
+                <td><?php echo isset($f_d['comment'])?$f_d['comment']:''; ?></td>
             </tr>
 			<tr>
-                <td>2.Doctor Consultation</td>
-                <td>Average</td>
+                <td><?php echo count($f_q_d)+2; ?>.Other Comments</td>
+                <td style="width:50%"><?php echo isset($f_d['comment'])?$f_d['comment']:''; ?></td>
             </tr>
-			<tr>
-                <td>3.Diagnostic Services</td>
-                <td>Average</td>
-            </tr>
-			<tr>
-                <td>4.Nurses & Other Staff Service</td>
-                <td>Average</td>
-            </tr>
-			<tr>
-                <td>5.Pharmacy Service</td>
-                <td>Average</td>
-            </tr>
-			<tr>
-                <td>6.Overall OP Services Experience</td>
-                <td>Average</td>
-            </tr>
-			<tr>
-                <td>7.Do you recommend Sankalpa to others</td>
-                <td>yes</td>
-            </tr>
-			<tr>
-                <td>8.Other Comments</td>
-                <td style="width:50%">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</td>
-            </tr>
+			<?php } ?>
+		
+			
+		
            
             
         </tbody>
@@ -175,28 +168,7 @@
 
 <script src="<?php echo base_url(); ?>assets/back/js/icheck.min.js"></script>
 
-<script>
 
-	$(function () {
-	    //Initialize Select2 Elements
-	    $(".select2").select2();
-
-	$(function () {
-	   
-	    $('#example').DataTable({
-	 
-	      "lengthChange": true,
-	      "searching": true,
-	      "ordering": true,
-	      "info": true,
-	      "autoWidth": true
-	    });
-	  });
-
-	
-	   
-	  });
-</script>
 
 
 </body>

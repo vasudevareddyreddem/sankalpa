@@ -97,6 +97,7 @@
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
+                <th>Type</th>
                 <th>Name</th>
                 <th>OP/IP Num</th>
                 <th>Mobile No</th>
@@ -110,6 +111,7 @@
 		<?php if(isset($f_list) && count($f_list)>0){ ?>
 			<?php foreach($f_list as $fl){ ?>
 				<tr>
+					<td><?php echo $fl['type']; ?></td>
 					<td><?php echo $fl['name']; ?></td>
 					<td><?php echo $fl['p_no']; ?></td>
 					<td><?php echo $fl['phone_no']; ?></td>
@@ -152,7 +154,7 @@
 <script>
 $(document).ready(function() {
     $('#example').DataTable( {
-        "order": [[ 4, "desc" ]]
+        "order": [[ 5, "desc" ]]
     } );
 } );
 	$(function () {
