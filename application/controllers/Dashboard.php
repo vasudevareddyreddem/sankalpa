@@ -21,14 +21,34 @@ class Dashboard extends sidebar {
 			}else{
 				$fd='';
 				$td='';
+				
 			}
-			$data['f_date']=$fd;
-			$data['t_date']=$td;
+			if(isset($post['pfrom_date']) && $post['pto_date']!=''){
+				$pfd=date("Y-m-d", strtotime($post['pfrom_date']));
+				$ptd=date("Y-m-d", strtotime($post['pto_date']));
+				
+			}else{
+				$pfd='';
+				$ptd='';
+			}
+			$data['f_date']=isset($post['from_date'])?$post['from_date']:'';
+			$data['t_date']=isset($post['to_date'])?$post['to_date']:'';
+			$data['ptype']=isset($post['ptype'])?$post['ptype']:'';
 			if($l_d['role_id']==2){
 				redirect('profile');
 			}else if($l_d['role_id']==1){
+				$ptype=isset($post['ptype'])?$post['ptype']:'';
+				//echo '<pre>';print_r($ptype);exit;
 				$data['emp_act']=$this->Dashboard_model->get_accounts_count(2);
-				$data['emp_present']=$this->Dashboard_model->get_present_absent_list(date('Y-m-d'));
+				$data['emp_present']=$this->Dashboard_model->get_present_absent_list(date('Y-m-d'));				
+				$data['opd_very_poor']=$this->Dashboard_model->month_wise_op_data('Very Poor',$ptype,$pfd,$ptd);
+				$data['opd_poor']=$this->Dashboard_model->month_wise_op_data('Poor',$ptype,$pfd,$ptd);
+				$data['opd_average']=$this->Dashboard_model->month_wise_op_data('Average',$ptype,$pfd,$ptd);
+				$data['opd_good']=$this->Dashboard_model->month_wise_op_data('Good',$ptype,$pfd,$ptd);
+				$data['opd_excellent']=$this->Dashboard_model->month_wise_op_data('Excellent',$ptype,$pfd,$ptd);
+				//echo $this->db->last_query();
+				//echo '<pre>';print_r($data);exit;
+				
 				/* opd */
 				$opd_vp_p=$this->Dashboard_model->get_opd_percentage('Very Poor',$fd,$td);
 				$opd_p_p=$this->Dashboard_model->get_opd_percentage('Poor',$fd,$td);

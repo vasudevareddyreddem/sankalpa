@@ -1,6 +1,237 @@
 <head>
 <script src="<?php echo base_url(); ?>assets/back/js/jquery.canvasjs.min.js"></script>
-	<?php //echo '<pre>';print_r($opd_q_list);exit; ?>
+	<?php 
+$op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_jun1=$op_vp_jul1=$op_vp_aug1=$op_vp_sep1=$op_vp_oct1=$op_vp_nov1=0;
+	if(isset($opd_very_poor) && count($opd_very_poor)>0){
+		foreach($opd_very_poor as $cri){
+		$dat = explode("-", $cri['created_at']);
+			if($dat[1] == 12)
+			{
+			$op_vp_dec1++;
+			}
+			if($dat[1] == 11)
+			{
+				$op_vp_nov1++;
+			}
+			if($dat[1] == 10)
+			{
+				$op_vp_oct1++;
+			}
+			if($dat[1] == '09')
+			{
+				$op_vp_sep1++;
+			}if($dat[1] == '08')
+			{
+				$op_vp_aug1++;
+			}if($dat[1] == '07')
+			{
+				$op_vp_jul1++;
+			}if($dat[1] == '06')
+			{
+				$op_vp_jun1++;
+			}if($dat[1] == '05')
+			{
+				$op_vp_may1++;
+			}if($dat[1] == 04)
+			{
+				$op_vp_apr1++;
+			}if($dat[1] == 03)
+			{
+				$op_vp_mar1++;
+			}if($dat[1] == 02)
+			{
+				$op_vp_feb1++;
+			}if($dat[1] == 01)
+			{
+				$op_vp_jan1++;
+			}
+		}	
+	}
+	$op_p_dec1=$op_p_jan1=$op_p_feb1=$op_p_mar1=$op_p_apr1=$op_p_may1=$op_p_jun1=$op_p_jul1=$op_p_aug1=$op_p_sep1=$op_p_oct1=$op_p_nov1=0;
+	if(isset($opd_poor) && count($opd_poor)>0){
+		foreach($opd_poor as $cri){
+		$dat = explode("-", $cri['created_at']);
+			if($dat[1] == 12)
+			{
+			$op_p_dec1++;
+			}
+			if($dat[1] == 11)
+			{
+				$op_p_nov1++;
+			}
+			if($dat[1] == 10)
+			{
+				$op_p_oct1++;
+			}
+			if($dat[1] == '09')
+			{
+				$op_p_sep1++;
+			}if($dat[1] == '08')
+			{
+				$op_p_aug1++;
+			}if($dat[1] == '07')
+			{
+				$op_p_jul1++;
+			}if($dat[1] == '06')
+			{
+				$op_p_jun1++;
+			}if($dat[1] == '05')
+			{
+				$op_p_may1++;
+			}if($dat[1] == 04)
+			{
+				$op_p_apr1++;
+			}if($dat[1] == 03)
+			{
+				$op_p_mar1++;
+			}if($dat[1] == 02)
+			{
+				$op_p_feb1++;
+			}if($dat[1] == 01)
+			{
+				$op_p_jan1++;
+			}
+		}	
+	}
+	$op_a_dec1=$op_a_jan1=$op_a_feb1=$op_a_mar1=$op_a_apr1=$op_a_may1=$op_a_jun1=$op_a_jul1=$op_a_aug1=$op_a_sep1=$op_a_oct1=$op_a_nov1=0;
+	if(isset($opd_average) && count($opd_average)>0){
+		foreach($opd_average as $cri){
+		$dat = explode("-", $cri['created_at']);
+			if($dat[1] == 12)
+			{
+			$op_a_dec1++;
+			}
+			if($dat[1] == 11)
+			{
+				$op_a_nov1++;
+			}
+			if($dat[1] == 10)
+			{
+				$op_a_oct1++;
+			}
+			if($dat[1] == '09')
+			{
+				$op_a_sep1++;
+			}if($dat[1] == '08')
+			{
+				$op_a_aug1++;
+			}if($dat[1] == '07')
+			{
+				$op_a_jul1++;
+			}if($dat[1] == '06')
+			{
+				$op_a_jun1++;
+			}if($dat[1] == '05')
+			{
+				$op_a_may1++;
+			}if($dat[1] == 04)
+			{
+				$op_a_apr1++;
+			}if($dat[1] == 03)
+			{
+				$op_a_mar1++;
+			}if($dat[1] == 02)
+			{
+				$op_a_feb1++;
+			}if($dat[1] == 01)
+			{
+				$op_a_jan1++;
+			}
+		}	
+	}
+	$op_g_dec1=$op_g_jan1=$op_g_feb1=$op_g_mar1=$op_g_apr1=$op_g_may1=$op_g_jun1=$op_g_jul1=$op_g_aug1=$op_g_sep1=$op_g_oct1=$op_g_nov1=0;
+	if(isset($opd_good) && count($opd_good)>0){
+		foreach($opd_good as $cri){
+		$dat = explode("-", $cri['created_at']);
+			if($dat[1] == 12)
+			{
+			$op_g_dec1++;
+			}
+			if($dat[1] == 11)
+			{
+				$op_g_nov1++;
+			}
+			if($dat[1] == 10)
+			{
+				$op_g_oct1++;
+			}
+			if($dat[1] == '09')
+			{
+				$op_g_sep1++;
+			}if($dat[1] == '08')
+			{
+				$op_g_aug1++;
+			}if($dat[1] == '07')
+			{
+				$op_g_jul1++;
+			}if($dat[1] == '06')
+			{
+				$op_g_jun1++;
+			}if($dat[1] == '05')
+			{
+				$op_g_may1++;
+			}if($dat[1] == 04)
+			{
+				$op_g_apr1++;
+			}if($dat[1] == 03)
+			{
+				$op_g_mar1++;
+			}if($dat[1] == 02)
+			{
+				$op_g_feb1++;
+			}if($dat[1] == 01)
+			{
+				$op_g_jan1++;
+			}
+		}	
+	}
+	$op_e_dec1=$op_e_jan1=$op_e_feb1=$op_e_mar1=$op_e_apr1=$op_e_may1=$op_e_jun1=$op_e_jul1=$op_e_aug1=$op_e_sep1=$op_e_oct1=$op_e_nov1=0;
+	if(isset($opd_excellent) && count($opd_excellent)>0){
+		foreach($opd_excellent as $cri){
+		$dat = explode("-", $cri['created_at']);
+			if($dat[1] == 12)
+			{
+			$op_e_dec1++;
+			}
+			if($dat[1] == 11)
+			{
+				$op_e_nov1++;
+			}
+			if($dat[1] == 10)
+			{
+				$op_e_oct1++;
+			}
+			if($dat[1] == '09')
+			{
+				$op_e_sep1++;
+			}if($dat[1] == '08')
+			{
+				$op_e_aug1++;
+			}if($dat[1] == '07')
+			{
+				$op_e_jul1++;
+			}if($dat[1] == '06')
+			{
+				$op_e_jun1++;
+			}if($dat[1] == '05')
+			{
+				$op_e_may1++;
+			}if($dat[1] == 04)
+			{
+				$op_e_apr1++;
+			}if($dat[1] == 03)
+			{
+				$op_e_mar1++;
+			}if($dat[1] == 02)
+			{
+				$op_e_feb1++;
+			}if($dat[1] == 01)
+			{
+				$op_e_jan1++;
+			}
+		}	
+	}
+	?>
 <script>
 window.onload = function () {
 
@@ -119,6 +350,125 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	<?php } ?>
 
 
+	
+	/* vvvvv*/
+	
+	
+	var pl_options = {
+		title:{
+			text: "<?php echo isset($ptype)?$ptype:'All '; ?> Patient feedback graph"
+		},
+		axisX: {
+			valueFormatString: "DD"
+		},
+		axisY: {
+			title: "Range",
+			includeZero: false,
+		},
+		
+		animationEnabled: true,
+		data: [
+			{
+				name: "Very Poor",
+				type: "spline",
+				showInLegend: true,
+				dataPoints: [
+					{ label: "January", y: <?php echo isset($op_vp_dec1)?$op_vp_dec1:''; ?> },
+					{ label: "February", y: <?php echo isset($op_vp_feb1)?$op_vp_feb1:''; ?> },
+					{ label: "March", y: <?php echo isset($op_vp_mar1)?$op_vp_mar1:''; ?> },
+					{ label: "April", y: <?php echo isset($op_vp_apr1)?$op_vp_apr1:''; ?> },
+					{ label: "May", y: <?php echo isset($op_vp_may1)?$op_vp_may1:''; ?> },
+					{ label: "June", y: <?php echo isset($op_vp_jun1)?$op_vp_jun1:''; ?> },
+					{ label: "July", y: <?php echo isset($op_vp_jul1)?$op_vp_jul1:''; ?> },
+					{ label: "August", y: <?php echo isset($op_vp_aug1)?$op_vp_aug1:''; ?> },
+					{ label: "September", y: <?php echo isset($op_vp_sep1)?$op_vp_sep1:''; ?> },
+					{ label: "October", y: <?php echo isset($op_vp_oct1)?$op_vp_oct1:''; ?> },
+					{ label: "November", y: <?php echo isset($op_vp_nov1)?$op_vp_nov1:''; ?> },
+					{ label: "December", y: <?php echo isset($op_vp_dec1)?$op_vp_dec1:''; ?> },
+				]
+			},{
+				name: "Poor",
+				type: "spline",
+				showInLegend: true,
+				dataPoints: [
+					{ label: "January", y: <?php echo isset($op_p_jan1)?$op_p_jan1:''; ?> },
+					{ label: "February", y: <?php echo isset($op_p_feb1)?$op_p_feb1:''; ?> },
+					{ label: "March", y: <?php echo isset($op_p_mar1)?$op_p_mar1:''; ?> },
+					{ label: "April", y: <?php echo isset($op_p_apr1)?$op_p_apr1:''; ?> },
+					{ label: "May", y: <?php echo isset($op_p_may1)?$op_p_may1:''; ?> },
+					{ label: "June", y: <?php echo isset($op_p_jun1)?$op_p_jun1:''; ?> },
+					{ label: "July", y: <?php echo isset($op_p_jul1)?$op_p_jul1:''; ?> },
+					{ label: "August", y: <?php echo isset($op_p_aug1)?$op_p_aug1:''; ?> },
+					{ label: "September", y: <?php echo isset($op_p_sep1)?$op_p_sep1:''; ?> },
+					{ label: "October", y: <?php echo isset($op_p_oct1)?$op_p_oct1:''; ?> },
+					{ label: "November", y: <?php echo isset($op_p_nov1)?$op_p_nov1:''; ?> },
+					{ label: "December", y: <?php echo isset($op_p_dec1)?$op_p_dec1:''; ?> },
+				]
+			},{
+				name: "Average",
+				type: "spline",
+				showInLegend: true,
+				dataPoints: [
+					{ label: "January", y: <?php echo isset($op_a_jan1)?$op_a_jan1:''; ?> },
+					{ label: "February", y: <?php echo isset($op_a_feb1)?$op_a_feb1:''; ?> },
+					{ label: "March", y: <?php echo isset($op_a_mar1)?$op_a_mar1:''; ?> },
+					{ label: "April", y: <?php echo isset($op_a_apr1)?$op_a_apr1:''; ?> },
+					{ label: "May", y: <?php echo isset($op_a_may1)?$op_a_may1:''; ?> },
+					{ label: "June", y: <?php echo isset($op_a_jun1)?$op_a_jun1:''; ?> },
+					{ label: "July", y: <?php echo isset($op_a_jul1)?$op_a_jul1:''; ?> },
+					{ label: "August", y: <?php echo isset($op_a_aug1)?$op_a_aug1:''; ?> },
+					{ label: "September", y: <?php echo isset($op_a_sep1)?$op_a_sep1:''; ?> },
+					{ label: "October", y: <?php echo isset($op_a_oct1)?$op_a_oct1:''; ?> },
+					{ label: "November", y: <?php echo isset($op_a_nov1)?$op_a_nov1:''; ?> },
+					{ label: "December", y: <?php echo isset($op_a_dec1)?$op_a_dec1:''; ?> },
+				]
+			},{
+				name: "Good",
+				type: "spline",
+				showInLegend: true,
+				dataPoints: [
+					{ label: "January", y: <?php echo isset($op_g_jan1)?$op_g_jan1:''; ?> },
+					{ label: "February", y: <?php echo isset($op_g_feb1)?$op_g_feb1:''; ?> },
+					{ label: "March", y: <?php echo isset($op_g_mar1)?$op_g_mar1:''; ?> },
+					{ label: "April", y: <?php echo isset($op_g_apr1)?$op_g_apr1:''; ?> },
+					{ label: "May", y: <?php echo isset($op_g_may1)?$op_g_may1:''; ?> },
+					{ label: "June", y: <?php echo isset($op_g_jun1)?$op_g_jun1:''; ?> },
+					{ label: "July", y: <?php echo isset($op_g_jul1)?$op_g_jul1:''; ?> },
+					{ label: "August", y: <?php echo isset($op_g_aug1)?$op_g_aug1:''; ?> },
+					{ label: "September", y: <?php echo isset($op_g_sep1)?$op_g_sep1:''; ?> },
+					{ label: "October", y: <?php echo isset($op_g_oct1)?$op_g_oct1:''; ?> },
+					{ label: "November", y: <?php echo isset($op_g_nov1)?$op_g_nov1:''; ?> },
+					{ label: "December", y: <?php echo isset($op_g_dec1)?$op_g_dec1:''; ?> },
+				]
+			},{
+				name: "Excellent",
+				type: "spline",
+				showInLegend: true,
+				dataPoints: [
+					{ label: "January", y: <?php echo isset($op_e_jan1)?$op_e_jan1:''; ?> },
+					{ label: "February", y: <?php echo isset($op_e_feb1)?$op_e_feb1:''; ?> },
+					{ label: "March", y: <?php echo isset($op_e_mar1)?$op_e_mar1:''; ?> },
+					{ label: "April", y: <?php echo isset($op_e_apr1)?$op_e_apr1:''; ?> },
+					{ label: "May", y: <?php echo isset($op_e_may1)?$op_e_may1:''; ?> },
+					{ label: "June", y: <?php echo isset($op_e_jun1)?$op_e_jun1:''; ?> },
+					{ label: "July", y: <?php echo isset($op_e_jul1)?$op_e_jul1:''; ?> },
+					{ label: "August", y: <?php echo isset($op_e_aug1)?$op_e_aug1:''; ?> },
+					{ label: "September", y: <?php echo isset($op_e_sep1)?$op_e_sep1:''; ?> },
+					{ label: "October", y: <?php echo isset($op_e_oct1)?$op_e_oct1:''; ?> },
+					{ label: "November", y: <?php echo isset($op_e_nov1)?$op_e_nov1:''; ?> },
+					{ label: "December", y: <?php echo isset($op_e_dec1)?$op_e_dec1:''; ?> },
+				]
+			},
+			
+			]
+	};
+	$("#all_opd_pie_chart").CanvasJSChart(pl_options);
+	chart.render();
+	
+	
+	
+	/* vvvvv*/
+	
 
 }
 </script>
@@ -161,6 +511,44 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
+			
+			<form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
+			<div class="col-md-4 form-group">
+				<label class=" control-label">Patient Type</label>
+				<div class="">
+				<select class="form-control" name="ptype" required>
+					<option value="">select</option>
+					<option value="OPD" <?php if($ptype=='OPD'){ echo "selected";} ?>>OPD</option>
+					<option value="IPD" <?php if($ptype=='IPD'){ echo "selected";} ?>>IPD</option>
+				</select>
+			</div>
+			</div>
+			<div class="col-md-3 form-group">
+					<label class=" control-label">From Date</label>
+					<div class="">
+						<input type="text" class="form-control datepicker" name="pfrom_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+					</div>
+			</div>
+			<div class="col-md-3 form-group">
+					<label class=" control-label">To Date</label>
+					<div class="">
+						<input type="text" class="form-control datepicker" name="pto_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+					</div>
+			</div>			
+			<div class="col-md-2 form-group">
+					<label class=" control-label">&nbsp;</label>
+					<div class="">
+					<button type="submit" class="btn btn-primary">Search</button>
+					</div>
+			</div>
+			</form>
+			<div class="clearfix">&nbsp;</div>
+			<div class="col-md-12 mt-4">
+				<div id="all_opd_pie_chart" style="height: 300px; width: 100%;"></div>
+			</div>
+			<div class="clearfix">&nbsp;</div>
+			
+			
 			<form id="defaultForm" action="<?php echo base_url('dashboard/index'); ?>" method="post">
 			<div class="col-md-5 form-group">
 					<label class=" control-label">From Date</label>
@@ -180,7 +568,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					<button type="submit" class="btn btn-primary">Search</button>
 					</div>
 			</div>
-			</form>
+			</form>			
 			
 			<div class="col-md-6 mt-4">
 				<div id="opd_pie_chart" style="height: 300px; width: 100%;"></div>

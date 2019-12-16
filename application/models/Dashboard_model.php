@@ -151,6 +151,24 @@ class Dashboard_model extends CI_Model
         return $this->db->get()->row_array();
 	}
 	
+	/* month wise data */
+	
+	public function month_wise_op_data($t,$pt,$fd,$td){
+		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$this->db->select('fa.created_at,COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
+		$this->db->join('question as q','q.q_id=fa.q_id','left');
+		$this->db->where('fa.answer',$t);
+		if($pt!=''){
+			$this->db->where('q.type',$pt);
+		}
+		$this->db->where("DATE_FORMAT(fa.created_at,'%Y')", date('Y'));
+		$this->db->group_by("DATE_FORMAT(fa.created_at,'%m')");
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
+        return $this->db->get()->result_array();
+	}
+	
 	
 	
 	
