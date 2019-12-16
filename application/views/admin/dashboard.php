@@ -579,7 +579,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			<div class="col-md-6 mt-4">
 				<?php if(isset($opd_q_list) && count($opd_q_list)>0){ ?>
 					<?php foreach($opd_q_list as $pli){ ?>
-						<div class="col-md-12 mt-4">
+						<div class=" mt-4">
 							<div id="opd<?php echo $pli['q_id']; ?>" style="height: 300px; width: 100%;"></div>
 						</div>
 					<?php } ?>
@@ -588,7 +588,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			<div class="col-md-6 mt-4">
 				<?php if(isset($ipd_q_list) && count($ipd_q_list)>0){ ?>
 					<?php foreach($ipd_q_list as $ipqli){ ?>
-						<div class="col-md-12 mt-4">
+						<div class=" mt-4">
 							<div id="ipd<?php echo $ipqli['q_id']; ?>" style="height: 300px; width: 100%;"></div>
 						</div>
 					<?php } ?>
