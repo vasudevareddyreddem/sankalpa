@@ -28,6 +28,7 @@ class User extends sidebar {
 			redirect('admin');
 		}
 	}
+	
 	public  function edit(){
 		if($this->session->userdata('hms_details'))
 		{
@@ -653,6 +654,34 @@ class User extends sidebar {
 				$this->session->set_flashdata('error',"Technical problem will occured. Please try again");
 				redirect('user/roleslists');
 			}
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+	}
+	public  function feedback(){
+		if($this->session->userdata('hms_details'))
+		{
+			$this->load->model('Feedback_model');
+			$data['f_list']=$this->Feedback_model->get_all_feedback_list();
+			//echo '<pre>';print_r($data);exit;
+			$this->load->view('role/feedbacklist',$data);
+			$this->load->view('admin/footer');
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+	}
+	public  function feedbackview(){
+		if($this->session->userdata('hms_details'))
+		{
+			$fid=base64_decode($this->uri->segment(3));
+			$this->load->model('Feedback_model');
+			$data['f_d']=$this->Feedback_model->get_get_feedback_details($fid);
+			$data['f_q_d']=$this->Feedback_model->get_get_question_details($fid);
+			//echo '<pre>';print_r($data);exit;
+			$this->load->view('role/feedbackview',$data);
+			$this->load->view('admin/footer');
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');
 			redirect('admin');

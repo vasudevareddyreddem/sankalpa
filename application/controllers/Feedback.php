@@ -54,6 +54,10 @@ class Feedback extends CI_Controller {
 			'phone_no'=>isset($post['phone_no'])?$post['phone_no']:'',
 			'comment'=>isset($post['comment'])?$post['comment']:'',
 			'recommend'=>isset($post['recommend'])?$post['recommend']:'',
+			'location'=>isset($post['location'])?$post['location']:'',
+			'department'=>isset($post['department'])?$post['department']:'',
+			'source'=>isset($post['source'])?$post['source']:'',
+			's_name'=>isset($post['s_name'])?$post['s_name']:'',
 			'created_at'=>date('Y-m-d h:i:s'),
 		);
 		//echo '<pre>';print_r($post);exit;

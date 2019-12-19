@@ -125,8 +125,36 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-6">
 						 <div class="form-group">
-							<label>Patient OPD No</label>
-							<input type="text" class="form-control" name="pod_no"  placeholder="Enter Your Name">
+							<label>Mr No</label>
+							<input type="text" class="form-control" name="pod_no"  placeholder="Enter Mr No">
+						  </div>
+						</div>
+						<div class="col-md-6">
+						 <div class="form-group">
+							<label>Location</label>
+							<input type="text" class="form-control" name="location"  placeholder="Enter Location">
+						  </div>
+						</div>
+						<div class="col-md-6">
+						 <div class="form-group">
+							<label>Department </label>
+							<input type="text" class="form-control" name="department"  placeholder="Enter Department">
+						  </div>
+						</div>
+						<div class="col-md-6">
+						 <div class="form-group">
+							<label>Source </label>
+							<select class="form-control" name="source" onchange="get_source(this.value);">
+								<option value="">Select</option>
+								<option value="Walking">Walking</option>
+								<option value="Referral">Referral</option>
+							</select>
+						  </div>
+						</div>
+						<div class="col-md-6" id="r_fl_id" style="display:none;">
+						 <div class="form-group">
+							<label>Name</label>
+							<input type="text" class="form-control" name="s_name"  placeholder="Enter Your Name">
 						  </div>
 						</div>
 						<div class="col-md-6">
@@ -210,6 +238,14 @@ input[type="radio"]:checked {
 </body>
 </html>
 <script>
+function get_source(val){
+	if(val=='Walking'){
+		$('#r_fl_id').hide();
+	}else{
+		$('#r_fl_id').show();
+	}
+	
+}
 $(document).ready(function() {
 	$('#defaultForm').bootstrapValidator({
 		fields: {
@@ -251,6 +287,24 @@ $(document).ready(function() {
                  validators: {
 					notEmpty: {
 						message: 'comment is required'
+					}				
+				}
+            },department: {
+                 validators: {
+					notEmpty: {
+						message: 'Department is required'
+					}				
+				}
+            },source: {
+                 validators: {
+					notEmpty: {
+						message: 'Source is required'
+					}				
+				}
+            },location: {
+                 validators: {
+					notEmpty: {
+						message: 'Location is required'
 					}				
 				}
             },			

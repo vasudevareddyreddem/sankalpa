@@ -121,7 +121,7 @@
 				<h2>Customer Feeback Form</h2>
 			</div>
 		
-			 <div class="col-md-4">
+			 <div class="col-md-6">
 					<a style="color:#fff" href="<?php echo base_url('feedback/opd'); ?>">
 					<div class="opd-box">
 						<h1>OPD Feeback</h1>
@@ -129,7 +129,7 @@
 			</a>
 			<div class="clearfix">&nbsp;</div>
 			 </div> 
-			 <div class="col-md-4">
+			 <div class="col-md-6">
 					<a style="color:#fff" href="<?php echo base_url('feedback/ipd'); ?>">
 					<div class="ipd-box">
 						<h1>IPD Feeback</h1>
@@ -137,14 +137,7 @@
 			</a>
 			<div class="clearfix">&nbsp;</div>
 			 </div> 
-			 <div class="col-md-4">
-					<a style="color:#fff" href="<?php echo base_url('feedback/list_view'); ?>">
-					<div class="ipd-box-li">
-						<h1>IPD & OPD List</h1>
-					</div>
-			</a>
-			<div class="clearfix">&nbsp;</div>
-			 </div> 
+			
 		
 			 	
 			

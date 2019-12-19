@@ -99,10 +99,13 @@
             <tr>
                 <th>Type</th>
                 <th>Name</th>
-                <th>OP/IP Num</th>
+                <th>Mr No</th>
                 <th>Mobile No</th>
                 <th>Email</th>
-                <th>Date of Upload</th>
+                <th>Department</th>
+                <th>Location</th>
+                <th>Source</th>
+                <th>Date & Time</th>
                 <th>Feedback View</th>
                 
             </tr>
@@ -116,6 +119,9 @@
 					<td><?php echo $fl['p_no']; ?></td>
 					<td><?php echo $fl['phone_no']; ?></td>
 					<td><?php echo $fl['email_id']; ?></td>
+					<td><?php echo $fl['department']; ?></td>
+					<td><?php echo $fl['location']; ?></td>
+					<td><?php echo $fl['source']; ?></td>
 					<td><?php echo $fl['created_at']; ?></td>
 					<td><a class="btn btn-primary btn-xs" href="<?php echo base_url('feedback/view/'.base64_encode($fl['f_b_id'])); ?>">View</a></td>
 				</tr>
@@ -154,7 +160,7 @@
 <script>
 $(document).ready(function() {
     $('#example').DataTable( {
-        "order": [[ 5, "desc" ]]
+        "order": [[ 8, "desc" ]]
     } );
 } );
 	$(function () {

@@ -173,7 +173,7 @@
 					<?php } ?>
 					<?php if($hms_details['role_id']==1){ ?>
 						
-						<li class="treeview">
+						<!--<li class="treeview">
 							<a href="#"> <i class="fa fa-arrows"></i>  <span>Module</span>
 								<span class="pull-right-container">
 								  <i class="fa fa-angle-left pull-right"></i>
@@ -194,6 +194,13 @@
 								<li> <a href="<?php echo base_url('module/menuadd'); ?>">Add </a></li>
 								<li><a href="<?php echo base_url('module/menulist'); ?>">List</a></li>
 							</ul>
+						</li>-->
+						<li class="treeview">
+							<a href="<?php echo base_url('user/feedback'); ?>"> <i class="fa fa-arrows"></i>  <span>Feed Back List</span>
+								<span class="pull-right-container">
+								  <i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
 						</li>
 						
 					<?php }else if($hms_details['role_id']==2){ ?>

@@ -102,6 +102,28 @@
                 <td><?php echo isset($f_d['name'])?$f_d['name']:''; ?></td>
             </tr>
             <tr>
+                <td>Mr No</td>
+                <td><?php echo isset($f_d['p_no'])?$f_d['p_no']:''; ?></td>
+            </tr>
+			<tr>
+                <td>Department</td>
+                <td><?php echo isset($f_d['department'])?$f_d['department']:''; ?></td>
+            </tr>
+			<tr>
+                <td>Location</td>
+                <td><?php echo isset($f_d['location'])?$f_d['location']:''; ?></td>
+            </tr>
+			<tr>
+                <td>Source</td>
+                <td><?php echo isset($f_d['source'])?$f_d['source']:''; ?></td>
+            </tr>
+			<?php if($f_d['source']=='Referral'){ ?>
+				<tr>
+					<td>Referral Name</td>
+					<td><?php echo isset($f_d['s_name'])?$f_d['s_name']:''; ?></td>
+				</tr>
+			<?php } ?>
+			<tr>
                 <td>Mobile No</td>
                 <td><?php echo isset($f_d['phone_no'])?$f_d['phone_no']:''; ?></td>
             </tr> 
