@@ -22,10 +22,7 @@
 </head>
 <body class="login-page login-bg">
 	<div class="login-box login-responsive " >
-	<div class="row  ">
-		<h3 class="text-center head-res" style=""><strong>WELCOME TO HR PORTAL</strong></h3>
-	</div>
-	<hr style="margin:0">
+	
 	<div class="row  ">
 		<div class=" col-md-6 text-center"> <a href="#" class="text-center"><img  style="" class="logo-res img-responsive text-center" src="<?php echo base_url(); ?>assets/back/img/logo.png	"></a>
 		
