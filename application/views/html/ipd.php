@@ -49,6 +49,16 @@
 	
 </head>
 <style>
+h3,h2{
+	font-family: 'Dancing Script', cursive;
+	font-weight:500;
+	
+}
+*{
+	font-family: 'Dancing Script', cursive;
+	font-weight:500;
+	
+}
 @media (max-width: 768px) {
 	.page-container{
 		width:100%!important;

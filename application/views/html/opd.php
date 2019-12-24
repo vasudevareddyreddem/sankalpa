@@ -45,10 +45,20 @@
 	<script src="<?php echo base_url(); ?>assets/back/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/back/js/bootstrapValidator.min.js"></script>
 	
-
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
 	
 </head>
 <style>
+h3,h2{
+	font-family: 'Dancing Script', cursive;
+	font-weight:500;
+	
+}
+*{
+	font-family: 'Dancing Script', cursive;
+	font-weight:500;
+	
+}
 @media (max-width: 768px) {
 	.page-container{
 		width:100%!important;
