@@ -3,6 +3,9 @@
 .canvasjs-chart-toolbar button{
 		display:none;
 }
+.canvasjs-chart-credit{
+display:none;	
+}
 </style>
 <script src="<?php echo base_url(); ?>assets/back/js/jquery.canvasjs.min.js"></script>
 	<?php 
@@ -242,7 +245,10 @@ window.onload = function () {
 
 var options = {
 	title: {
-		text: "OPD Patient Feedback"
+		text: "OPD Patient Feedback",
+		fontWeight:'bold',
+			fontFamily:'Fira Sans',
+			padding:'5',
 	},
 	subtitles: [{
 		text: "As of Given"
@@ -269,7 +275,10 @@ $("#opd_pie_chart").CanvasJSChart(options);
 
 var options = {
 	title: {
-		text: "IPD Patient Feedback"
+		text: "IPD Patient Feedback",
+		fontWeight:'bold',
+			fontFamily:'Fira Sans',
+			padding:'5',
 	},
 	subtitles: [{
 		text: "As of Given"
@@ -297,7 +306,10 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					<?php foreach($opd_q_list as $pqli){ ?>
 					var options = {
 							title: {
-								text: "<?php echo $pqli['qno']; ?>. <?php echo $pqli['name']; ?> Feedback"
+								text: "<?php echo $pqli['qno']; ?>. <?php echo $pqli['name']; ?> Feedback",
+								fontWeight:'bold',
+			fontFamily:'Fira Sans',
+			padding:'5',
 							},
 							subtitles: [{
 								text: "As of Given"
@@ -327,7 +339,10 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					<?php foreach($ipd_q_list as $ipqli){ ?>
 					var options = {
 							title: {
-								text: "<?php echo $ipqli['qno']; ?>. <?php echo $ipqli['name']; ?> Feedback"
+								text: "<?php echo $ipqli['qno']; ?>. <?php echo $ipqli['name']; ?> Feedback",
+								fontWeight:'bold',
+			fontFamily:'Fira Sans',
+			padding:'5',
 							},
 							subtitles: [{
 								text: "As of Given"
@@ -361,7 +376,10 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	
 	var pl_options = {
 		title:{
-			text: "<?php echo isset($ptype)?$ptype:'All '; ?> Patient feedback graph"
+			text: "<?php echo isset($ptype)?$ptype:'All '; ?> Patient feedback graph",
+			fontWeight:'bold',
+			fontFamily:'Fira Sans',
+			padding:'5',
 		},
 		axisX: {
 			valueFormatString: "DD"
@@ -476,7 +494,11 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	var work_options = {
 		exportEnabled: true,
 		title:{
-			text: "Prioritization wise Task graph"
+			text: "Prioritization wise Task graph",
+			fontWeight:'bold',
+			fontFamily:'Fira Sans',
+			padding:'5',
+			
 		},
 		axisX: {
 			valueFormatString: "DD"
