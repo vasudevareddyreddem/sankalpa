@@ -1,12 +1,12 @@
 <div class="content-wrapper">
    <section class="content-header mb-4">
       <h1>
-         Assign Work
+         Assign Task
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-         <li><a href="<?php echo base_url('leaves'); ?>"><i class="fa fa-list"></i> list</a></li>
-         <li class="active">Assign Work</li>
+         <li><a href="<?php echo base_url('assignwork'); ?>"><i class="fa fa-list"></i> list</a></li>
+         <li class="active">Assign Task</li>
       </ol>
    </section>
    <section class="content">
@@ -17,7 +17,7 @@
             <div class=" ">
                <div style="padding:20px;">
 			    <fieldset class="scheduler-border">
-						<legend class="scheduler-border">Assign Work</legend>
+						<legend class="scheduler-border">Assign Task</legend>
                   <form id="defaultForm" method="post" autocomplete="off" class="form-horizontal" action="<?php echo base_url('assignwork/addpost'); ?>" enctype="multipart/form-data">
                      	<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),

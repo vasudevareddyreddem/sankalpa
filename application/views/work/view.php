@@ -1,12 +1,12 @@
 <div class="content-wrapper">
    <section class="content-header mb-4">
       <h1>
-         Assign Work View
+         Assign Task View
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
          <li><a href="<?php echo base_url('leaves'); ?>"><i class="fa fa-list"></i> list</a></li>
-         <li class="active">Assign Work View</li>
+         <li class="active">Assign Task View</li>
       </ol>
    </section>
    <section class="content">
@@ -17,7 +17,7 @@
             <div class=" ">
                <div style="padding:20px;">
 			    <fieldset class="scheduler-border">
-						<legend class="scheduler-border">Assign Work</legend>
+						<legend class="scheduler-border">Assign Task</legend>
                      	<?php $csrf = array(
 								'name' => $this->security->get_csrf_token_name(),
 								'hash' => $this->security->get_csrf_hash()
@@ -32,11 +32,11 @@
 								<td>Siva kumar reddy</td>
 							</tr>
 							<tr>
-								<td><strong>From Date</strong></td>
+								<td><strong>Assigned dat</strong></td>
 								<td><?php echo isset($w_d['from_date'])?$w_d['from_date']:''; ?></td>
 							</tr>
 							<tr>
-								<td><strong>To Date</strong></td>
+								<td><strong>Expected date of completion</strong></td>
 								<td><?php echo isset($w_d['to_date'])?$w_d['to_date']:''; ?></td>
 							</tr>
 							<tr>
@@ -47,7 +47,7 @@
 								
 								<td colspan="2">
 									
-									<p><strong>Work:</strong> <?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
+									<p><strong>Task:</strong> <?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
 								</td>
 							</tr>
 						</table>
