@@ -127,45 +127,11 @@ input[type="radio"]:checked {
 				<form id="defaultForm" action="<?php echo base_url('feedback/opdpost'); ?>" method="post">	
 				<input type="hidden" name="f_type" value="1">				
 				<input type="hidden" name="type" value="IPD">				
-				<div class="row" style="margin:5px;">
+			<div class="row" style="margin:5px;">
 						<div class="col-md-6">
 						 <div class="form-group">
 							<label>Name</label>
 							<input type="text" class="form-control" name="name"  placeholder="Enter Your Name">
-						  </div>
-						</div>
-						<div class="col-md-6">
-						 <div class="form-group">
-							<label>Mr No</label> 
-							<input type="text" class="form-control" name="pod_no"  placeholder="Enter Mr No">
-						  </div>
-						</div>
-						<div class="col-md-6">
-						 <div class="form-group">
-							<label>Location</label>
-							<input type="text" class="form-control" name="location"  placeholder="Enter Location">
-						  </div>
-						</div>
-						<div class="col-md-6">
-						 <div class="form-group">
-							<label>Department</label>
-							<input type="text" class="form-control" name="department"  placeholder="Enter Department">
-						  </div>
-						</div>
-						<div class="col-md-6">
-						 <div class="form-group">
-							<label>Source </label>
-							<select class="form-control" name="source" onchange="get_source(this.value);">
-								<option value="">Select</option>
-								<option value="Walking">Walking</option>
-								<option value="Referral">Referral</option>
-							</select>
-						  </div>
-						</div>
-						<div class="col-md-6" id="r_fl_id" style="display:none;">
-						 <div class="form-group">
-							<label>Name</label>
-							<input type="text" class="form-control" name="s_name"  placeholder="Enter Your Name">
 						  </div>
 						</div>
 						<div class="col-md-6">
@@ -176,10 +142,60 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-6">
 						 <div class="form-group">
-							<label>Phone No</label>
-							<input type="text" class="form-control" name="phone_no"  placeholder="Enter Your Name">
+							<label>Mobile Number</label>
+							<input type="text" class="form-control" name="phone_no"  placeholder="Enter Mobile Number">
 						  </div>
 						</div>
+						<div class="col-md-6">
+						 <div class="form-group">
+							<label>Town </label>
+							<select class="form-control" name="location">
+								<option value="">Select</option>
+								<?php if(isset($l_list) && count($l_list)>0){ ?>
+									<?php foreach($l_list as $li){ ?>
+										<option value="<?php echo $li['l_name']; ?>"><?php echo $li['l_name']; ?></option>
+									<?php } ?>								
+								<?php } ?>								
+							</select>
+						  </div>
+						</div>
+						<div class="col-md-6">
+						 <div class="form-group">
+							<label>Department </label>
+							<select class="form-control" name="department">
+								<option value="">Select</option>
+								<?php if(isset($d_list) && count($d_list)>0){ ?>
+									<?php foreach($d_list as $li){ ?>
+										<option value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+									<?php } ?>								
+								<?php } ?>								
+							</select>
+						  </div>
+						</div>
+						<div class="col-md-6">
+						 <div class="form-group">
+							<label>Source </label>
+							<select class="form-control" name="source">
+								<option value="">Select</option>
+								<option value="Qualified">Qualified</option>
+								<option value="RMP">RMP</option>
+								<option value="Ambulance">Ambulance</option>
+								<option value="Employee">Employee</option>
+								<option value="Others">Others</option>
+								<option value="Health Camp">Health Camp</option>
+								<option value="Demo Tent">Demo Tent</option>
+								<option value="Tata Ace">Tata Ace</option>
+								<option value="Pamphlet">Pamphlet</option>
+								<option value="Hoarding">Hoarding</option>
+								<option value="Cinema Add">Cinema Add</option>
+								<option value="Paper Add">Paper Add</option>
+								<option value="Friend / Relative">Friend / Relative</option>
+								<option value="Old Patient">Old Patient</option>
+							</select>
+						  </div>
+						</div>
+						
+						
 					</div>
 					<?php if(isset($f_q) && count($f_q)>0){ ?>
 						<?php foreach($f_q as $qli){ ?>
@@ -248,9 +264,9 @@ input[type="radio"]:checked {
 					<div class="card-cust form-group" style="margin-top:10px;padding-bottom:10px;">
 						<div class="row">
 						<div class="col-md-12">
-						<h3><?php echo count($f_q)+2; ?>.Other Comments</h3>
+						<h3><?php echo count($f_q)+2; ?>.Any Other Comments</h3>
 						
-							<textarea class="form-control" name="comment" rows="4" placeholder="Enter Comments here" required></textarea>
+							<textarea class="form-control" name="comment" rows="4" placeholder="Enter Any Other Comments here" required></textarea>
 						</div>
 						</div>
 					</div>

@@ -41,6 +41,17 @@ class Feedback_model extends CI_Model
 		return $this->db->get()->result_array();
 	}
 	
+	public  function d_list(){
+		$this->db->select('d_id,name,status,created_at')->from('department');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();
+	}
+	public  function location_list(){
+		$this->db->select('l_id,l_name,status,created_at')->from('locations');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();	
+	}
+	
 	
 	
 	

@@ -19,9 +19,10 @@
 				<table id="example1" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>From date</th>
-							<th>To date</th>
-							<th>Work</th>
+							<th>Assigned date</th>
+							<th>Expected date of completion</th>
+							<th>Prioritization</th>
+							<th>Task Details</th>
 							<th>Days</th>
 							<th>Status</th>
 							<th>Assign By</th>
@@ -34,14 +35,15 @@
 							<tr>
 								<td><?php echo isset($li['from_date'])?$li['from_date']:''; ?></td>
 								<td><?php echo isset($li['to_date'])?$li['to_date']:''; ?></td>
+								<td><?php echo isset($li['prioritization'])?$li['prioritization']:''; ?></td>
 								<td><?php echo isset($li['message'])?$li['message']:''; ?></td>
 								<td><?php echo isset($li['total_day'])?$li['total_day']:''; ?></td>
-								<td><?php if($li['status']==1){ echo "In progress";}else if($li['status']==0){ echo "Pending"; }else if($li['status']==1){ echo "In progress"; }else if($li['status']==2){ echo "Done"; }else if($li['status']==3){ echo "Rejected"; } ?></td>
+								<td><?php if($li['status']==1){ echo "In progress";}else if($li['status']==0){ echo "Pending"; }else if($li['status']==1){ echo "In progress"; }else if($li['status']==2){ echo "Completed"; }else if($li['status']==3){ echo "Rejected"; } ?></td>
 								<td><?php echo isset($li['assignby'])?$li['assignby']:''; ?></td>
 								<td>
 									<a href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>">View</a> |
 									<a href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(1)); ?>">In progress</a> |
-									<a href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(2)); ?>">Done</a> |
+									<a href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(2)); ?>">Completed</a> |
 									<a href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(3)); ?>">Reject</a>
 								</td>							
 							</tr>
@@ -50,9 +52,10 @@
 					</tbody>
 					<tfoot>
 						<tr>
-							<th>From date</th>
-							<th>To date</th>
-							<th>Work</th>
+							<th>Assigned date</th>
+							<th>Expected date of completion</th>
+							<th>Prioritization</th>
+							<th>Task Details</th>
 							<th>Days</th>
 							<th>Status</th>
 							<th>Assign By</th>

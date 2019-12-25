@@ -20,11 +20,10 @@
             <tr>
                 <th>Type</th>
                 <th>Name</th>
-                <th>Mr No</th>
                 <th>Mobile No</th>
                 <th>Email</th>
                 <th>Department</th>
-                <th>Location</th>
+                <th>Town</th>
                 <th>Source</th>
                 <th>Date & Time</th>
                 <th>Feedback View</th>
@@ -37,7 +36,6 @@
 				<tr>
 					<td><?php echo $fl['type']; ?></td>
 					<td><?php echo $fl['name']; ?></td>
-					<td><?php echo $fl['p_no']; ?></td>
 					<td><?php echo $fl['phone_no']; ?></td>
 					<td><?php echo $fl['email_id']; ?></td>
 					<td><?php echo $fl['department']; ?></td>

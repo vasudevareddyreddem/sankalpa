@@ -34,12 +34,17 @@ class Feedback extends CI_Controller {
 	public function ipd()
 	{	
 		$d['f_q']=$this->Feedback_model->get_opd_question_list('IPD');
+		$d['d_list']=$this->Feedback_model->d_list();
+		$d['l_list']=$this->Feedback_model->location_list();
 		//echo '<pre>';print_r($d);exit;
 		$this->load->view('html/ipd',$d);
 	}
 	public function opd()
 	{	
 		$d['f_q']=$this->Feedback_model->get_opd_question_list('OPD');
+		$d['d_list']=$this->Feedback_model->d_list();
+		$d['l_list']=$this->Feedback_model->location_list();
+
 		//echo '<pre>';print_r($d);exit;
 		$this->load->view('html/opd',$d);
 	}	

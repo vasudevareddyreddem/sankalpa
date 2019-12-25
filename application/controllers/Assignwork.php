@@ -112,6 +112,7 @@ class Assignwork extends sidebar {
 					$add=array(
 						'from_date'=>isset($post['from_date'])?$post['from_date']:'',
 						'to_date'=>isset($post['to_date'])?$post['to_date']:'',
+						'prioritization'=>isset($post['prioritization'])?$post['prioritization']:'',
 						'total_day'=>isset($days)?$days:'',
 						'emp_id'=>isset($li)?$li:'',
 						'message'=>isset($post['message'])?$post['message']:'',
@@ -123,7 +124,7 @@ class Assignwork extends sidebar {
 					}
 				}
 				if(count($save)>0){
-					$this->session->set_flashdata('success',"Assignwork added successfully");	
+					$this->session->set_flashdata('success',"Task added successfully");	
 					redirect('assignwork');
 				}else{
 					$this->session->set_flashdata('error',"Technical problem will occured. Please try again");
@@ -147,11 +148,11 @@ class Assignwork extends sidebar {
 			$update=$this->Work_model->work_update($id,$u_d);
 			if(count($update)>0){
 				if($statu==1){
-					$this->session->set_flashdata('success',"Work set as inprogress successfully");
+					$this->session->set_flashdata('success',"Task set as Pending successfully");
 				}else if($statu==2){
-					$this->session->set_flashdata('success',"Work set as done successfully");
+					$this->session->set_flashdata('success',"Task set as Completed successfully");
 				}else if($statu==3){
-					$this->session->set_flashdata('success',"Work set as reject successfully");
+					$this->session->set_flashdata('success',"Task set as reject successfully");
 				}
 				redirect('assignwork/lists');
 			}else{

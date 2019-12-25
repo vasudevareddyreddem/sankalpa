@@ -1,4 +1,9 @@
 <head>
+<style>
+.canvasjs-chart-toolbar button{
+		display:none;
+}
+</style>
 <script src="<?php echo base_url(); ?>assets/back/js/jquery.canvasjs.min.js"></script>
 	<?php 
 $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_jun1=$op_vp_jul1=$op_vp_aug1=$op_vp_sep1=$op_vp_oct1=$op_vp_nov1=0;
@@ -292,7 +297,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					<?php foreach($opd_q_list as $pqli){ ?>
 					var options = {
 							title: {
-								text: "<?php echo $pqli['qno']; ?>.<?php echo $pqli['name']; ?> Feedback"
+								text: "<?php echo $pqli['qno']; ?>. <?php echo $pqli['name']; ?> Feedback"
 							},
 							subtitles: [{
 								text: "As of Given"
@@ -322,7 +327,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					<?php foreach($ipd_q_list as $ipqli){ ?>
 					var options = {
 							title: {
-								text: "<?php echo $ipqli['qno']; ?>.<?php echo $ipqli['name']; ?> Feedback"
+								text: "<?php echo $ipqli['qno']; ?>. <?php echo $ipqli['name']; ?> Feedback"
 							},
 							subtitles: [{
 								text: "As of Given"
@@ -463,11 +468,75 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			]
 	};
 	$("#all_opd_pie_chart").CanvasJSChart(pl_options);
-	chart.render();
 	
 	
 	
 	/* vvvvv*/
+	/*work */
+	var work_options = {
+		exportEnabled: true,
+		title:{
+			text: "Prioritization wise Task graph"
+		},
+		axisX: {
+			valueFormatString: "DD"
+		},
+		axisY: {
+			title: "Task range",
+			includeZero: false,
+		},
+		legend: {
+		itemclick: toggleDataSeries
+		},
+		data: [
+			{
+				type: "column",
+				name: "Completed",
+				color: "green",
+				showInLegend: true,      
+				yValueFormatString: "#,##0.# Task",
+				dataPoints: [
+					{ label: "High", y: <?php echo isset($high_com['cnt'])?$high_com['cnt']:'0'; ?> },
+					{ label: "Medium",  y: <?php echo isset($medi_com['cnt'])?$medi_com['cnt']:'0'; ?> },
+					{ label: "Low",  y: <?php echo isset($low_com['cnt'])?$low_com['cnt']:'0'; ?> }
+				]
+			},{
+				type: "column",
+				name: "Pending",
+				color: "red",
+				showInLegend: true,
+				yValueFormatString: "#,##0.# Task",
+				dataPoints: [
+					{ label: "High", y: <?php echo isset($high_pen['cnt'])?$high_pen['cnt']:'0'; ?> },
+					{ label: "Medium",  y: <?php echo isset($medi_pen['cnt'])?$medi_pen['cnt']:'0'; ?> },
+					{ label: "Low",  y: <?php echo isset($low_pen['cnt'])?$low_pen['cnt']:'0'; ?> }
+				]
+			},{
+				type: "column",
+				name: "In Progress",
+				color: "#aaa",
+				showInLegend: true,
+				yValueFormatString: "#,##0.# Task",
+				dataPoints: [
+					{ label: "High", y: <?php echo isset($high_inp['cnt'])?$high_inp['cnt']:'0'; ?> },
+					{ label: "Medium",  y: <?php echo isset($medi_inp['cnt'])?$medi_inp['cnt']:'0'; ?> },
+					{ label: "Low",  y: <?php echo isset($low_inp['cnt'])?$low_inp['cnt']:'0'; ?> }
+				]
+			}
+			
+			]
+	};
+	$("#chartContainer").CanvasJSChart(work_options);
+	chart.render();
+	function toggleDataSeries(e) {
+	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	} else {
+		e.dataSeries.visible = true;
+	}
+	e.chart.render();
+}
+	/*work */
 	
 
 }
@@ -511,7 +580,9 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
-			
+			<div class="col-md-12 mt-4">
+				<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+			</div>
 			<form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
 			<div class="col-md-4 form-group">
 				<label class=" control-label">Patient Type</label>
@@ -550,17 +621,74 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			
 			
 			<form id="defaultForm" action="<?php echo base_url('dashboard/index'); ?>" method="post">
-			<div class="col-md-5 form-group">
-					<label class=" control-label">From Date</label>
-					<div class="">
-						<input type="text" class="form-control datepicker" name="from_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
-					</div>
+			<div class="col-md-4 form-group">
+				<label class=" control-label">From Date</label>
+				<div class="">
+					<input type="text" class="form-control datepicker" name="from_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+				</div>
 			</div>
-			<div class="col-md-5 form-group">
-					<label class=" control-label">To Date</label>
-					<div class="">
-						<input type="text" class="form-control datepicker" name="to_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
-					</div>
+			<div class="col-md-4 form-group">
+				<label class=" control-label">To Date</label>
+				<div class="">
+					<input type="text" class="form-control datepicker" name="to_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+				</div>
+			</div>
+			
+			<div class="col-md-4">
+			 <div class="form-group">
+				<label>Department </label>
+				<select class="form-control" name="department">
+					<option value="">Select</option>
+					<?php if(isset($d_list) && count($d_list)>0){ ?>
+						<?php foreach($d_list as $li){ ?>
+							<?php if(isset($p_post['department']) && $p_post['department']==$li['name']){ ?>
+								<option selected value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+								<?php }else{ ?>
+								<option value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+							<?php } ?>								
+						<?php } ?>								
+					<?php } ?>								
+				</select>
+			  </div>
+			</div>
+			<div class="col-md-4">
+				 <div class="form-group">
+					<label>Town </label>
+					<select class="form-control" name="location">
+						<option value="">Select</option>
+						<?php if(isset($l_list) && count($l_list)>0){ ?>
+							<?php foreach($l_list as $li){ ?>
+								<?php if(isset($p_post['location']) && $p_post['location']==$li['l_name']){ ?>
+									<option selected value="<?php echo $li['l_name']; ?>"><?php echo $li['l_name']; ?></option>
+								<?php }else{ ?>
+									<option value="<?php echo $li['l_name']; ?>"><?php echo $li['l_name']; ?></option>
+								<?php } ?>
+							<?php } ?>								
+						<?php } ?>								
+					</select>
+				  </div>
+			</div>
+			<div class="col-md-4">
+			 <div class="form-group">
+				<label>Source </label>
+				<select class="form-control" name="source">
+					<option value="">Select</option>
+					<option value="Qualified" <?php if(isset($p_post['source']) && $p_post['source']=="Qualified"){ echo "selected";} ?>>Qualified</option>
+					<option value="RMP" <?php if(isset($p_post['source']) && $p_post['source']=="RMP"){ echo "selected";} ?>>RMP</option>
+					<option value="Ambulance" <?php if(isset($p_post['source']) && $p_post['source']=="Ambulance"){ echo "selected";} ?>>Ambulance</option>
+					<option value="Employee" <?php if(isset($p_post['source']) && $p_post['source']=="Employee"){ echo "selected";} ?>>Employee</option>
+					<option value="Others" <?php if(isset($p_post['source']) && $p_post['source']=="Others"){ echo "selected";} ?>>Others</option>
+					<option value="Health Camp" <?php if(isset($p_post['source']) && $p_post['source']=="Health Camp"){ echo "selected";} ?>>Health Camp</option>
+					<option value="Demo Tent" <?php if(isset($p_post['source']) && $p_post['source']=="Demo Tent"){ echo "selected";} ?>>Demo Tent</option>
+					<option value="Tata Ace" <?php if(isset($p_post['source']) && $p_post['source']=="Tata Ace"){ echo "selected";} ?>>Tata Ace</option>
+					<option value="Pamphlet" <?php if(isset($p_post['source']) && $p_post['source']=="Pamphlet"){ echo "selected";} ?>>Pamphlet</option>
+					<option value="Hoarding" <?php if(isset($p_post['source']) && $p_post['source']=="Hoarding"){ echo "selected";} ?>>Hoarding</option>
+					<option value="Cinema Add" <?php if(isset($p_post['source']) && $p_post['source']=="Cinema Add"){ echo "selected";} ?>>Cinema Add</option>
+					<option value="Paper Add" <?php if(isset($p_post['source']) && $p_post['source']=="Paper Add"){ echo "selected";} ?>>Paper Add</option>
+					<option value="Friend / Relative" <?php if(isset($p_post['source']) && $p_post['source']=="Friend / Relative"){ echo "selected";} ?>>Friend / Relative</option>
+					<option value="Old Patient" <?php if(isset($p_post['source']) && $p_post['source']=="Old Patient"){ echo "selected";} ?>>Old Patient</option>
+				</select>
+			  </div>
 			</div>
 			<div class="col-md-2 form-group">
 					<label class=" control-label">&nbsp;</label>

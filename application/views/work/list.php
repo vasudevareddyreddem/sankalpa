@@ -25,10 +25,11 @@
 				<table id="example1" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>From date</th>
-							<th>To date</th>
+							<th>Assigned date</th>
+							<th>Expected date of completion</th>
+							<th>Prioritization</th>
 							<th>Employee name</th>
-							<th>Work</th>
+							<th>Task Details</th>
 							<th>Days</th>
 							<th>Status</th>
 							<th>Assign By</th>
@@ -41,30 +42,29 @@
 						<tr>
 							<td><?php echo isset($li['from_date'])?$li['from_date']:''; ?></td>
 							<td><?php echo isset($li['to_date'])?$li['to_date']:''; ?></td>
+							<td><?php echo isset($li['prioritization'])?$li['prioritization']:''; ?></td>
 							<td><?php echo isset($li['emp_name'])?$li['emp_name']:''; ?></td>
 							<td><?php echo isset($li['message'])?$li['message']:''; ?></td>
 							<td><?php echo isset($li['total_day'])?$li['total_day']:''; ?></td>
-							<td><?php if($li['status']==1){ echo "Approved";}else if($li['status']==0){ echo "Pending"; }else if($li['status']==2){ echo "Rejected"; } ?></td>
+								<td><?php if($li['status']==1){ echo "In progress";}else if($li['status']==0){ echo "Pending"; }else if($li['status']==1){ echo "In progress"; }else if($li['status']==2){ echo "Completed"; }else if($li['status']==3){ echo "Rejected"; } ?></td>
 							<td><?php echo isset($li['assignby'])?$li['assignby']:''; ?></td>
 							<td> 
 							<a href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>" data-toggle="tooltip" title="View"><i class="fa fa-file btn btn-warning"></i></a>
 							<?php if($li['status']==0){ ?>
 								<a href="#" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
 							<?php } ?>
-							</td>
-							
-						
-							
+							</td>						
 						</tr>
 					<?php } ?>
 					<?php } ?>
 					</tbody>
 					<tfoot>
 						<tr>
-							<th>From date</th>
-							<th>To date</th>
+							<th>Assigned date</th>
+							<th>Expected date of completion</th>
+							<th>Prioritization</th>
 							<th>Employee name</th>
-							<th>Work</th>
+							<th>Task Details</th>
 							<th>Days</th>
 							<th>Status</th>
 							<th>Assign By</th>

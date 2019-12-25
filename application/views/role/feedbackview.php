@@ -29,55 +29,47 @@
                 <td>Name</td>
                 <td><?php echo isset($f_d['name'])?$f_d['name']:''; ?></td>
             </tr>
-            <tr>
-                <td>Mr No</td>
-                <td><?php echo isset($f_d['p_no'])?$f_d['p_no']:''; ?></td>
-            </tr>
-			<tr>
-                <td>Department</td>
-                <td><?php echo isset($f_d['department'])?$f_d['department']:''; ?></td>
-            </tr>
-			<tr>
-                <td>Location</td>
-                <td><?php echo isset($f_d['location'])?$f_d['location']:''; ?></td>
-            </tr>
-			<tr>
-                <td>Source</td>
-                <td><?php echo isset($f_d['source'])?$f_d['source']:''; ?></td>
-            </tr>
-			<?php if($f_d['source']=='Referral'){ ?>
 				<tr>
-					<td>Referral Name</td>
-					<td><?php echo isset($f_d['s_name'])?$f_d['s_name']:''; ?></td>
-				</tr>
-			<?php } ?>
-			<tr>
-                <td>Mobile No</td>
+                <td>Mobile Number</td>
                 <td><?php echo isset($f_d['phone_no'])?$f_d['phone_no']:''; ?></td>
             </tr> 
 			<tr>
                 <td>Email Id</td>
                 <td><?php echo isset($f_d['email_id'])?$f_d['email_id']:''; ?></td>
             </tr>
+			<tr>
+                <td>Location</td>
+                <td><?php echo isset($f_d['location'])?$f_d['location']:''; ?></td>
+            </tr>			
+			<tr>
+                <td>Department</td>
+                <td><?php echo isset($f_d['department'])?$f_d['department']:''; ?></td>
+            </tr>			
+			<tr>
+                <td>Source</td>
+                <td><?php echo isset($f_d['source'])?$f_d['source']:''; ?></td>
+            </tr>
+			
+			
 			<?php foreach($f_q_d as $li){ ?>
 				<tr>
-					<td><?php echo $li['qno']; ?>.<?php echo $li['name']; ?></td>
+					<td><?php echo $li['qno']; ?>. <?php echo $li['name']; ?></td>
 					<td style="width:50%"><?php echo isset($li['answer'])?$li['answer']:''; ?></td>
 				</tr>
 			<?php } ?>
 			<?php if($f_d['type']=='OPD'){ ?>
 				<tr>
-                <td><?php echo count($f_q_d)+1; ?>.Other Comments</td>
+                <td><?php echo count($f_q_d)+1; ?>. Any Other Comments</td>
                 <td style="width:50%"><?php echo isset($f_d['comment'])?$f_d['comment']:''; ?></td>
             </tr>
 			
 			<?php }else{ ?>
 			<tr>
-                <td><?php echo count($f_q_d)+1; ?>.Do you recommend Sankalpa to others</td>
+                <td><?php echo count($f_q_d)+1; ?>. Do you recommend Sankalpa to others</td>
                 <td><?php echo isset($f_d['comment'])?$f_d['comment']:''; ?></td>
             </tr>
 			<tr>
-                <td><?php echo count($f_q_d)+2; ?>.Other Comments</td>
+                <td><?php echo count($f_q_d)+2; ?>. Any Other Comments</td>
                 <td style="width:50%"><?php echo isset($f_d['comment'])?$f_d['comment']:''; ?></td>
             </tr>
 			<?php } ?>

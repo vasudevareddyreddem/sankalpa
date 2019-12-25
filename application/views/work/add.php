@@ -29,17 +29,28 @@
                         <div class=" col-md-12">
                            
 						   <div class="form-group col-md-6">
-                              <label class="col-lg-4 control-label">From Date</label>
+                              <label class="col-lg-4 control-label">Assigned date</label>
                               <div class="col-md-8">
-                                 <input type="text" class="form-control datepicker" name="from_date" placeholder="Enter From Date" value="<?php echo isset($l_da)?$l_da:''; ?>" />
+                                 <input type="text" class="form-control datepicker" name="from_date" placeholder="Select Assigned date" value="<?php echo isset($l_da)?$l_da:''; ?>" />
                               </div>
                            </div>
 						   <div class="form-group col-md-6">
-                              <label class="col-lg-4 control-label">TO Date</label>
+                              <label class="col-lg-4 control-label">Expected date of completion</label>
                               <div class="col-md-8">
-                                 <input type="text" class="form-control datepicker" name="to_date" placeholder="Enter TO Date" value="<?php echo isset($l_da)?$l_da:''; ?>" />
+                                 <input type="text" class="form-control datepicker" name="to_date" placeholder="Select Expected date of completion" value="<?php echo isset($l_da)?$l_da:''; ?>" />
                               </div>
                            </div>
+						   <div class="form-group col-md-6">
+                              <label class="col-lg-4 control-label">Prioritization</label>
+                              <div class="col-md-8">
+                                 <select name="prioritization" class="form-control" >
+								 <option value="">Select</option>
+									<option value="High">High</option>
+									<option value="Low">Low</option>
+									<option value="Medium">Medium</option>
+								 </select>
+                              </div>
+                           </div> 
 						   <div class="form-group col-md-6">
                               <label class="col-lg-4 control-label">Employee name</label>
                               <div class="col-md-8">
@@ -53,10 +64,10 @@
 								 </select>
                               </div>
                            </div>
-						   <div class="form-group col-md-6">
-                              <label class="col-lg-4 control-label">Comment</label>
-                              <div class="col-md-8">
-                                 <textarea type="text" class="form-control" name="message" placeholder="Enter Message" /></textarea>
+						   <div class="form-group col-md-12">
+                              <label class="col-lg-2 control-label">Task Details</label>
+                              <div class="col-md-10">
+                                 <textarea type="text" class="form-control" name="message" placeholder="Enter Task Details" /></textarea>
                               </div>
                            </div>
                         </div>
@@ -94,6 +105,12 @@ $(document).ready(function() {
                    validators: {
 					notEmpty: {
 						message: 'TO date is required'
+					}
+				}
+               }, prioritization: {
+                   validators: {
+					notEmpty: {
+						message: 'Prioritization is required'
 					}
 				}
                }, message: {

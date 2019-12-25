@@ -23,13 +23,13 @@ class Work_model extends CI_Model
 	}
 	
 	public  function work_list($id){
-		$this->db->select('a.name as emp_name,ass.name as assignby,aw.a_w_id,aw.emp_id,aw.from_date,aw.to_date,aw.total_day,aw.message,aw.status,')->from('assign_work as aw');
+		$this->db->select('a.name as emp_name,ass.name as assignby,aw.a_w_id,aw.emp_id,aw.prioritization,aw.from_date,aw.to_date,aw.total_day,aw.message,aw.status,')->from('assign_work as aw');
 		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
 		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
 		return $this->db->get()->result_array();	
 	}
 	public  function emp_work_list($emp){
-		$this->db->select('a.name as emp_name,ass.name as assignby,aw.a_w_id,aw.emp_id,aw.from_date,aw.to_date,aw.total_day,aw.message,aw.status,')->from('assign_work as aw');
+		$this->db->select('a.name as emp_name,ass.name as assignby,aw.a_w_id,aw.emp_id,aw.prioritization,aw.from_date,aw.to_date,aw.total_day,aw.message,aw.status,')->from('assign_work as aw');
 		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
 		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
 		$this->db->where('aw.emp_id',$emp);
