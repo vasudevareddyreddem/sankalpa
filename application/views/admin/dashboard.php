@@ -707,10 +707,10 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			</div>
 			<div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
 			<div class="col-md-6 ">
-				<div id="opd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd;padding:10px;"></div>
+				<div id="opd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
 			</div>
 			<div class="col-md-6 ">
-				<div id="ipd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd;"></div>
+				<div id="ipd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
 			</div>
 			</div>
 		<div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
