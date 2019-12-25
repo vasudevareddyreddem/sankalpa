@@ -263,11 +263,11 @@ var options = {
 		indexLabelFontSize: 15,
 		indexLabel: "{label} - {y}%",
 		dataPoints: [
-			{ y: '<?php echo number_format($opd_vp_p, 2); ?>', label: "Very Poor"},
-			{ y: <?php echo number_format($opd_p_p, 2); ?>, label: "Poor"},
-			{ y: <?php echo number_format($opd_a_p, 2); ?>, label: "Average"},
-			{ y: <?php echo number_format($opd_p_g, 2); ?>, label: "Good" },
-			{ y: <?php echo number_format($opd_e_p, 2); ?>, label: "Excellent"}
+			{ y: '<?php echo number_format($opd_vp_p, 2); ?>', label: "Very Poor",indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc"},
+			{ y: <?php echo number_format($opd_p_p, 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+			{ y: <?php echo number_format($opd_a_p, 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+			{ y: <?php echo number_format($opd_p_g, 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+			{ y: <?php echo number_format($opd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 		]
 	}]
 };
@@ -292,11 +292,11 @@ var options = {
 		indexLabelFontSize: 15,
 		indexLabel: "{label} - {y}%",
 		dataPoints: [
-			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Very Poor", color: "#4f81bc",markerColor: "#4f81bc" },
-			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Poor", color: "#c0504e", markerColor: "#c0504e"},
-			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Average", color: "#9bbb58", markerColor: "#9bbb58"},
-			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Good", color: "#23bfaa", markerColor: "#23bfaa" },
-			{ y: <?php echo number_format($ipd_e_p, 2); ?>, label: "Excellent", color: "#8064a1", markerColor: "#8064a1"}
+			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Very Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
+			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+			{ y: <?php echo number_format($ipd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 		]
 	}]
 };
@@ -322,11 +322,11 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								indexLabelFontSize: 15,
 								indexLabel: "{label} - {y}%",
 								dataPoints: [
-									{ y: '<?php echo number_format($pqli['vp_p'], 2); ?>', label: "Very Poor"},
-									{ y: <?php echo number_format($pqli['p_p'], 2); ?>, label: "Poor"},
-									{ y: <?php echo number_format($pqli['a_p'], 2); ?>, label: "Average"},
-									{ y: <?php echo number_format($pqli['p_g'], 2); ?>, label: "Good" },
-									{ y: <?php echo number_format($pqli['e_p'], 2); ?>, label: "Excellent"}
+									{ y: '<?php echo number_format($pqli['vp_p'], 2); ?>', label: "Very Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
+									{ y: <?php echo number_format($pqli['p_p'], 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+									{ y: <?php echo number_format($pqli['a_p'], 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+									{ y: <?php echo number_format($pqli['p_g'], 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+									{ y: <?php echo number_format($pqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 								]
 							}]
 						};
@@ -354,11 +354,11 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								indexLabelFontSize: 15,
 								indexLabel: "{label} - {y}%",
 								dataPoints: [
-									{ y: '<?php echo number_format($ipqli['vp_p'], 2); ?>', label: "Very Poor"},
-									{ y: <?php echo number_format($ipqli['p_p'], 2); ?>, label: "Poor"},
-									{ y: <?php echo number_format($ipqli['a_p'], 2); ?>, label: "Average"},
-									{ y: <?php echo number_format($ipqli['p_g'], 2); ?>, label: "Good" },
-									{ y: <?php echo number_format($ipqli['e_p'], 2); ?>, label: "Excellent"}
+									{ y: '<?php echo number_format($ipqli['vp_p'], 2); ?>', label: "Very Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
+									{ y: <?php echo number_format($ipqli['p_p'], 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+									{ y: <?php echo number_format($ipqli['a_p'], 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+									{ y: <?php echo number_format($ipqli['p_g'], 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+									{ y: <?php echo number_format($ipqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 								]
 							}]
 						};
