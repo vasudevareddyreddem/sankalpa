@@ -249,10 +249,10 @@ var options = {
 		fontWeight:'bold',
 			fontFamily:'Fira Sans',
 			padding:'5',
+			padding:'5',
+			fontColor:'#3f399d',
 	},
-	subtitles: [{
-		text: "As of Given"
-	}],
+	
 	animationEnabled: true,
 	data: [{
 		type: "pie",
@@ -279,10 +279,9 @@ var options = {
 		fontWeight:'bold',
 			fontFamily:'Fira Sans',
 			padding:'5',
+			fontColor:'#3f399d',
 	},
-	subtitles: [{
-		text: "As of Given"
-	}],
+
 	animationEnabled: true,
 	data: [{
 		type: "pie",
@@ -293,11 +292,11 @@ var options = {
 		indexLabelFontSize: 15,
 		indexLabel: "{label} - {y}%",
 		dataPoints: [
-			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Very Poor"},
-			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Poor"},
-			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Average"},
-			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Good" },
-			{ y: <?php echo number_format($ipd_e_p, 2); ?>, label: "Excellent"}
+			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Very Poor", color: "#4f81bc",markerColor: "#4f81bc" },
+			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Poor", color: "#c0504e", markerColor: "#c0504e"},
+			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Average", color: "#9bbb58", markerColor: "#9bbb58"},
+			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Good", color: "#23bfaa", markerColor: "#23bfaa" },
+			{ y: <?php echo number_format($ipd_e_p, 2); ?>, label: "Excellent", color: "#8064a1", markerColor: "#8064a1"}
 		]
 	}]
 };
@@ -310,10 +309,9 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								fontWeight:'bold',
 			fontFamily:'Fira Sans',
 			padding:'5',
+			fontColor:'#3f399d',
 							},
-							subtitles: [{
-								text: "As of Given"
-							}],
+							
 							animationEnabled: true,
 							data: [{
 								type: "pie",
@@ -343,10 +341,9 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								fontWeight:'bold',
 			fontFamily:'Fira Sans',
 			padding:'5',
+			fontColor:'#3f399d',
 							},
-							subtitles: [{
-								text: "As of Given"
-							}],
+							
 							animationEnabled: true,
 							data: [{
 								type: "pie",
@@ -380,6 +377,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			fontWeight:'bold',
 			fontFamily:'Fira Sans',
 			padding:'5',
+			fontColor:'#3f399d',
 		},
 		axisX: {
 			valueFormatString: "DD"
@@ -498,6 +496,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			fontWeight:'bold',
 			fontFamily:'Fira Sans',
 			padding:'5',
+			fontColor:'#3f399d',
 			
 		},
 		axisX: {
