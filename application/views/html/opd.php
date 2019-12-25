@@ -45,18 +45,18 @@
 	<script src="<?php echo base_url(); ?>assets/back/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/back/js/bootstrapValidator.min.js"></script>
 	
-<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
 	
 </head>
 <style>
 
 h3,h2{
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Fira Sans', sans-serif;
 	font-weight:500;
 	
 }
 *{
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Fira Sans', sans-serif;
 	font-weight:500;
 	
 }
@@ -118,7 +118,7 @@ input[type="radio"]:checked {
 		</div>
 		<div class="clearfix">&nbsp;</div>
 			<div class="col-md-12 text-center">
-				<h2 style="text-decoration: underline;">Customer Feeback Form</h2>
+				<h2 style="text-decoration: underline;">Customer OPD Feeback Form</h2>
 			</div>
 			<div class="clearfix">&nbsp;</div>
 		<div class="row">
