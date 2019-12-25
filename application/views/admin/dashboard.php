@@ -555,7 +555,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	<!-- Main content -->
 	<section class="content">
 		<!-- Small boxes (Stat box) -->
-		<div class="">
+		<div class="row" style="padding:15px;">
 		<!-- ./col -->
 			<div class="col-lg-6 col-xs-12">
 				<!-- small box -->
@@ -583,9 +583,12 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			<div class="col-md-12 mt-4">
 				<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 			</div>
+			</div>
+			<div class="clearfix">&nbsp;</div>
+			<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
 			<form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
-			<div class="col-md-4 form-group">
-				<label class=" control-label">Patient Type</label>
+			<div class="col-md-4 form-group mt-5">
+				<label class=" control-label text-white">Patient Type</label>
 				<div class="">
 				<select class="form-control" name="ptype" required>
 					<option value="">select</option>
@@ -594,41 +597,45 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				</select>
 			</div>
 			</div>
-			<div class="col-md-3 form-group">
-					<label class=" control-label">From Date</label>
+			<div class="col-md-3 form-group mt-5">
+					<label class=" control-label text-white">From Date</label>
 					<div class="">
 						<input type="text" class="form-control datepicker" name="pfrom_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
 					</div>
 			</div>
-			<div class="col-md-3 form-group">
-					<label class=" control-label">To Date</label>
+			<div class="col-md-3 form-group mt-5">
+					<label class=" control-label text-white">To Date</label>
 					<div class="">
 						<input type="text" class="form-control datepicker" name="pto_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
 					</div>
 			</div>			
-			<div class="col-md-2 form-group">
+			<div class="col-md-2 form-group mt-5">
 					<label class=" control-label">&nbsp;</label>
 					<div class="">
 					<button type="submit" class="btn btn-primary">Search</button>
 					</div>
 			</div>
 			</form>
-			<div class="clearfix">&nbsp;</div>
-			<div class="col-md-12 mt-4">
+			</div>
+			<div>
+			
+			<div class="col-md-12">
 				<div id="all_opd_pie_chart" style="height: 300px; width: 100%;"></div>
+			</div>
 			</div>
 			<div class="clearfix">&nbsp;</div>
 			
-			
+			<div class="clearfix">&nbsp;</div>
+			<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
 			<form id="defaultForm" action="<?php echo base_url('dashboard/index'); ?>" method="post">
 			<div class="col-md-4 form-group">
-				<label class=" control-label">From Date</label>
+				<label class=" control-label text-white">From Date</label>
 				<div class="">
 					<input type="text" class="form-control datepicker" name="from_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
 				</div>
 			</div>
 			<div class="col-md-4 form-group">
-				<label class=" control-label">To Date</label>
+				<label class=" control-label text-white">To Date</label>
 				<div class="">
 					<input type="text" class="form-control datepicker" name="to_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
 				</div>
@@ -636,7 +643,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			
 			<div class="col-md-4">
 			 <div class="form-group">
-				<label>Department </label>
+				<label class="text-white">Department </label>
 				<select class="form-control" name="department">
 					<option value="">Select</option>
 					<?php if(isset($d_list) && count($d_list)>0){ ?>
@@ -653,7 +660,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			</div>
 			<div class="col-md-4">
 				 <div class="form-group">
-					<label>Town </label>
+					<label class="text-white">Town </label>
 					<select class="form-control" name="location">
 						<option value="">Select</option>
 						<?php if(isset($l_list) && count($l_list)>0){ ?>
@@ -670,7 +677,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			</div>
 			<div class="col-md-4">
 			 <div class="form-group">
-				<label>Source </label>
+				<label class="text-white">Source </label>
 				<select class="form-control" name="source">
 					<option value="">Select</option>
 					<option value="Qualified" <?php if(isset($p_post['source']) && $p_post['source']=="Qualified"){ echo "selected";} ?>>Qualified</option>
@@ -697,18 +704,21 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					</div>
 			</div>
 			</form>			
-			
-			<div class="col-md-6 mt-4">
-				<div id="opd_pie_chart" style="height: 300px; width: 100%;"></div>
 			</div>
-			<div class="col-md-6 mt-4">
-				<div id="ipd_pie_chart" style="height: 300px; width: 100%;"></div>
+			<div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
+			<div class="col-md-6 ">
+				<div id="opd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd;padding:10px;"></div>
 			</div>
+			<div class="col-md-6 ">
+				<div id="ipd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd;"></div>
+			</div>
+			</div>
+		<div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
 			<div class="col-md-6 mt-4">
 				<?php if(isset($opd_q_list) && count($opd_q_list)>0){ ?>
 					<?php foreach($opd_q_list as $pli){ ?>
 						<div class=" mt-4">
-							<div id="opd<?php echo $pli['q_id']; ?>" style="height: 300px; width: 100%;"></div>
+							<div id="opd<?php echo $pli['q_id']; ?>" style="height: 300px; width: 100%; border:1px solid #ddd"></div>
 						</div>
 					<?php } ?>
 				<?php } ?>
@@ -717,7 +727,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				<?php if(isset($ipd_q_list) && count($ipd_q_list)>0){ ?>
 					<?php foreach($ipd_q_list as $ipqli){ ?>
 						<div class=" mt-4">
-							<div id="ipd<?php echo $ipqli['q_id']; ?>" style="height: 300px; width: 100%;"></div>
+							<div id="ipd<?php echo $ipqli['q_id']; ?>" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
 						</div>
 					<?php } ?>
 				<?php } ?>
