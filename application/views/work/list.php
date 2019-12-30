@@ -46,12 +46,12 @@
 							<td><?php echo isset($li['emp_name'])?$li['emp_name']:''; ?></td>
 							<td><?php echo isset($li['message'])?$li['message']:''; ?></td>
 							<td><?php echo isset($li['total_day'])?$li['total_day']:''; ?></td>
-								<td><?php if($li['status']==1){ echo "In progress";}else if($li['status']==0){ echo "Pending"; }else if($li['status']==1){ echo "In progress"; }else if($li['status']==2){ echo "Completed"; }else if($li['status']==3){ echo "Rejected"; } ?></td>
+								<td><?php if($li['status']==1){ echo "<span class='label label-primary'>In progress</span>";}else if($li['status']==0){ echo "<span class='label label-warning'>Pending</span>"; }else if($li['status']==1){ echo "<span class='label label-primary'>In progress</span>"; }else if($li['status']==2){ echo "<span class='label label-success'>Completed</span>"; }else if($li['status']==3){ echo "<span class='label label-danger'>Rejected</span>"; } ?></td>
 							<td><?php echo isset($li['assignby'])?$li['assignby']:''; ?></td>
 							<td> 
-							<a href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>" data-toggle="tooltip" title="View"><i class="fa fa-file btn btn-warning"></i></a>
+							<a style="margin-top:5px" href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>" data-toggle="tooltip" title="View"><i class="fa fa-file btn btn-warning"></i></a>
 							<?php if($li['status']==0){ ?>
-								<a href="#" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
+								<a style="margin-top:5px" href="#" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
 							<?php } ?>
 							</td>						
 						</tr>

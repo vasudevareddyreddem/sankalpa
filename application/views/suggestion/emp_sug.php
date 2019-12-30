@@ -213,11 +213,11 @@
                               <form action="<?php echo base_url('suggestion/suggestionpost'); ?>" method="post">
                                  <div class="box-footer">
                                     <div class="row">
-                                       <div class="col-md-10">
+                                       <div class="col-md-10" style="margin-top:10px;">
                                           <textarea id="message" name="message" placeholder="Message ..." class="form-control" required=""></textarea>
                                        </div>
                                     
-                                       <div class="col-md-2"> <button type="submit" class="btn btn-primary  waves-effect waves-light">Send</button>
+                                       <div class="col-md-2" style="margin-top:10px;"> <button type="submit" class="btn btn-primary  waves-effect waves-light">Send</button>
                                        </div>
                                     </div>
                                  </div>

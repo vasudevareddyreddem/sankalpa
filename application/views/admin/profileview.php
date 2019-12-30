@@ -31,7 +31,7 @@
               <a href="<?php echo base_url('profile/edit'); ?>" class=" pull-right btn btn-warning btn-sm" style="margin:10px;"> Edit</a>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
+            <div class="box-body table-responsive">
 				<table id="example1" class="table table-bordered table-striped">
 					<tr>
 						<th>Name</th>

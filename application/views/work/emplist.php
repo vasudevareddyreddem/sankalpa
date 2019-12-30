@@ -38,13 +38,16 @@
 								<td><?php echo isset($li['prioritization'])?$li['prioritization']:''; ?></td>
 								<td><?php echo isset($li['message'])?$li['message']:''; ?></td>
 								<td><?php echo isset($li['total_day'])?$li['total_day']:''; ?></td>
-								<td><?php if($li['status']==1){ echo "In progress";}else if($li['status']==0){ echo "Pending"; }else if($li['status']==1){ echo "In progress"; }else if($li['status']==2){ echo "Completed"; }else if($li['status']==3){ echo "Rejected"; } ?></td>
+								<td><?php if($li['status']==1){ echo "<span class='label label-info'>In progress</span>";}else if($li['status']==0){ echo "<span class='label label-warning'>Pending</span>"; }else if($li['status']==1){ echo "<span class='label label-info'>In progress</span>"; }else if($li['status']==2){ echo "<span class='label label-success'>Completed</span>"; }else if($li['status']==3){ echo "<span class='label label-danger'>Rejected</span>"; } ?></td>
 								<td><?php echo isset($li['assignby'])?$li['assignby']:''; ?></td>
 								<td>
-									<a href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>">View</a> |
-									<a href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(1)); ?>">In progress</a> |
-									<a href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(2)); ?>">Completed</a> |
-									<a href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(3)); ?>">Reject</a>
+									<a class="label label-primary" href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>">View</a> 
+									<a class="label label-info" href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(1)); ?>">In progress</a> 
+									
+									<div style="margin-top:10px;">
+									<a class="label label-success" href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(2)); ?>">Completed</a> 
+									<a class="label label-danger" href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(3)); ?>">Reject</a>
+									</div>
 								</td>							
 							</tr>
 						<?php } ?>

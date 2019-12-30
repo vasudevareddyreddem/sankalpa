@@ -32,7 +32,7 @@
 								<td>Siva kumar reddy</td>
 							</tr>
 							<tr>
-								<td><strong>Assigned dat</strong></td>
+								<td><strong>Assigned date</strong></td>
 								<td><?php echo isset($w_d['from_date'])?$w_d['from_date']:''; ?></td>
 							</tr>
 							<tr>
@@ -43,12 +43,16 @@
 								<td><strong>No of Days</strong></td>
 								<td><?php echo isset($w_d['total_day'])?$w_d['total_day']:''; ?></td>
 							</tr>
+							
+						</table>
+												   
+                        </div> 
+						<div class="col-md-6 table-responsive">
+						<table class="table table-bordered">
 							<tr>
-								
-								<td colspan="2">
-									
-									<p><strong>Task:</strong> <?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
-								</td>
+							<td>
+							<p><strong>Task:</strong> <?php echo isset($w_d['message'])?$w_d['message']:''; ?></p>
+							</td>
 							</tr>
 						</table>
 												   
@@ -56,8 +60,9 @@
 					</div>						
 				  </fieldset>
                   <div class="clearfix">&nbsp;</div>
+				  <div class="table-responsive">
 				  <?php if(isset($w_c_list) && count($w_c_list)>0){ ?>
-					  <table id="example1" class="table table-bordered table-striped">
+					  <table id="example1" class="table table-bordered ">
 						  <thead>
 							<tr>
 								<th>Comment</th>
@@ -75,6 +80,7 @@
 						  </thead>
 					  </table>
 				  <?php } ?>
+				  </div>
                   <div class="clearfix">&nbsp;</div>
 				  <form action="<?php echo base_url('assignwork/workcommentpost'); ?>" method="post">
 					<input type="hidden" name="a_w_id" value="<?php echo isset($a_w_id)?$a_w_id:''; ?>">

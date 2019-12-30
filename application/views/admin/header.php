@@ -163,7 +163,7 @@
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
 					<?php if($hms_details['role_id']!=2){ ?>
-					<li> <a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard </a></li>
+					<li> <a href="<?php echo base_url('dashboard'); ?>">Dashboard </a></li>
 					<?php } ?>
 					
 					
@@ -196,7 +196,7 @@
 							</ul>
 						</li>-->
 						<li class="treeview">
-							<a href="<?php echo base_url('user/feedback'); ?>"> <i class="fa fa-arrows"></i>  <span>Feed Back List</span>
+							<a href="<?php echo base_url('user/feedback'); ?>">   <span>Feed Back List</span>
 								<span class="pull-right-container">
 								  <i class="fa fa-angle-left pull-right"></i>
 								</span>
@@ -211,7 +211,7 @@
 					<?php $cnt=1;foreach($m_list as $m_li){ ?>
 							
 								<li class="treeview">
-									<a href="#"> <i class="fa fa-user-plus"></i>  
+									<a href="#">   
 									<span><?php echo isset($m_li['m_name'])?$m_li['m_name']:''; ?></span>
 									<?php if($m_li['m_name']=='Pending  task'){ ?>
 										<span  id="total_a_read" class="label label-warning pull-right" style="margin-right:30px;"></span>
@@ -248,7 +248,7 @@
 							
 					<?php $cnt++;} ?>
 					<?php } ?>					
-					<li> <a href="<?php echo base_url('suggestion'); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i>SUGGESTION </a></li>
+					<li> <a href="<?php echo base_url('suggestion'); ?>">SUGGESTION </a></li>
 					
 				</ul>
 			</section>
