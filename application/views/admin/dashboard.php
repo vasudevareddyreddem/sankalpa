@@ -583,8 +583,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
           <!-- Custom Tabs -->
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li><a href="<?php echo base_url('dashboard/feedback'); ?>">Patient Feedback </a></li>
-              <li><a href="<?php echo base_url('dashboard/employee'); ?>" >Employee Dashboard</a></li>
+              <li class="active"><a href="#tab_1" data-toggle="tab">Patient Feedback </a></li>
+              <li><a href="#tab_2" data-toggle="tab">Employee Dashboard</a></li>
               
             </ul>
             <div class="tab-content">
@@ -767,7 +767,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
-			<div class="col-md-12 mt-4">
+			<div class="col-md-6 mt-4">
 				<div id="chartContainer" style="height: 400px; width: 100%;"></div>
 				<div class="clearfix">&nbsp;</div>
 			</div>
