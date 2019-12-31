@@ -15,6 +15,7 @@ class Assignwork extends sidebar {
 			{
 				$l_data=$this->session->userdata('hms_details');
 				$data['w_list']=$this->Work_model->work_list($l_data['a_id']);
+				$data['emp_l']=$this->Work_model->get_emp_list($l_data['a_id']);
 				$this->load->view('work/list',$data);
 				$this->load->view('admin/footer');
 			}else{
@@ -179,10 +180,10 @@ class Assignwork extends sidebar {
 			$save=$this->Work_model->save_work_comments($cd);
 			if(count($save)>0){
 				$this->session->set_flashdata('success',"Work comment sent successfully");
-				redirect('assignwork/lists');
+				redirect('assignwork/view/'.base64_encode($post['a_w_id']));
 			}else{
 				$this->session->set_flashdata('error',"Technical problem will occured. Please try again");
-				redirect('assignwork/lists');
+				redirect('assignwork/view/'.base64_encode($post['a_w_id']));
 			}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

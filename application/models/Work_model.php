@@ -54,6 +54,25 @@ class Work_model extends CI_Model
 		$this->db->where('awc.a_w_id',$id);
 		return $this->db->get()->result_array();
 	}
+	public  function get_emp_list($id){
+		$this->db->select('a_id,name')->from('admin');
+		$this->db->where('status',1);
+		$this->db->where('role_id',2);
+		return $this->db->get()->result_array();
+	}
+	
+	public  function get_emp_works_list($empid,$pro){
+		$this->db->select('a.name,aw.a_w_id,aw.from_date,aw.to_date,aw.prioritization,aw.to_date,aw.total_day,aw.to_date,aw.message,aw.to_date,aw.status,ass.name as assignby,')->from('assign_work as aw');
+		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
+		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
+
+		if($empid!='ALL'){
+			$this->db->where('aw.emp_id',$empid);
+		}if($pro!='ALL'){
+			$this->db->where('aw.prioritization',$pro);
+		}		
+		return $this->db->get()->result_array();
+	}
 	
 	
 	

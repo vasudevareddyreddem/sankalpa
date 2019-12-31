@@ -5,7 +5,7 @@
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-         <li><a href="<?php echo base_url('leaves'); ?>"><i class="fa fa-list"></i> list</a></li>
+         <li><a href="<?php echo base_url('assignwork/index'); ?>"><i class="fa fa-list"></i> list</a></li>
          <li class="active">Assign Task View</li>
       </ol>
    </section>

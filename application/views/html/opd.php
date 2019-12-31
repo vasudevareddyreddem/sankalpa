@@ -118,7 +118,8 @@ input[type="radio"]:checked {
 		</div>
 		<div class="clearfix">&nbsp;</div>
 			<div class="col-md-12 text-center">
-				<h2 style="text-decoration: underline;">Customer OPD Feeback Form</h2>
+								<h2><span class="bg-primary px-2">Customer OPD Feeback Form</span></h2>
+
 			</div>
 			<div class="clearfix">&nbsp;</div>
 		<div class="row">
@@ -240,11 +241,29 @@ input[type="radio"]:checked {
 						</div>
 						<?php } ?>
 					<?php } ?>
-					
+					<div class="card-cust" style="margin-top:10px;">
+						<div class="row">
+						<div class="col-md-7">
+						<h3><?php echo count($f_q)+1; ?>.Would you recommend sankalpa to others</h3>
+						</div>
+						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
+							<div class="feed-radio">
+								<input type="radio" name="recommend" value="Yes" required>
+							</div>
+							<small>Yes</small>
+						</div>
+						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
+							<div class="feed-radio">
+								<input type="radio" name="recommend" value="No" required>
+							</div>
+							<small>No</small>
+						</div>
+						</div>
+					</div>
 					<div class="card-cust form-group" style="margin-top:10px;padding-bottom:10px;">
 						<div class="row">
 						<div class="col-md-12">
-						<h3><?php echo count($f_q)+1; ?>.Any Other Comments</h3>
+						<h3><?php echo count($f_q)+2; ?>.Any Other Comments</h3>
 						
 							<textarea class="form-control" name="comment" rows="4" placeholder="Enter Any Other Comments here"></textarea>
 						</div>
@@ -265,6 +284,16 @@ input[type="radio"]:checked {
 	</div>
 </body>
 </html>
+<?php if($this->session->flashdata('success')): ?>
+	<div class="alert_msg1 animated slideInUp bg-succ">
+	   <?php echo $this->session->flashdata('success');?> &nbsp; <i class="fa fa-check text-success ico_bac" aria-hidden="true"></i>
+	</div>
+<?php endif; ?>
+<?php if($this->session->flashdata('error')): ?>
+	<div class="alert_msg1 animated slideInUp bg-warn">
+	   <?php echo $this->session->flashdata('error');?> &nbsp; <i class="fa fa-exclamation-triangle text-success ico_bac" aria-hidden="true"></i>
+	</div>
+<?php endif; ?>
 <script>
 $(document).ready(function() {
 	$('#defaultForm').bootstrapValidator({

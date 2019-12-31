@@ -29,19 +29,29 @@
 						
 					</div>
 				</div>
-				<form>
+				<form method="post" action="<?php echo base_url('export/index'); ?>">
 					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
-						<select class="form-control">
-							<option>Select</option>
+						<select class="form-control" name="emp_id">
+							<option value="">Selec Employee Name</option>
+							<option value="ALL">ALL</option>
+							<?php if(isset($emp_l) && count($emp_l)>0){ ?>
+								<?php foreach($emp_l as $li){ ?>
+									<option value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+								<?php } ?>
+							<?php } ?>
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
-					<select class="form-control">
-							<option>Select</option>
-						</select>
+					<select class="form-control" name="priority">
+							<option value="">Select Prioritization</option>
+							<option value="ALL">ALL</option>
+							<option value="High">High</option>
+							<option value="Low">Low</option>
+							<option value="Medium">Medium</option>
+					</select>
 					</div>	
 					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
-						<button class="btn btn-warning">Export</button>
+						<button class="btn btn-warning" type="submit">Export</button>
 					</div>
 				</form>
 			</div>
