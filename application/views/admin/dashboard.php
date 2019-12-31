@@ -25,8 +25,8 @@ display:none;
     cursor: default;
     background-color: #fff;
     border: none;
-border-bottom-color: transparent;
-};
+
+}
 
 </style>
 <script src="<?php echo base_url(); ?>assets/back/js/jquery.canvasjs.min.js"></script>
