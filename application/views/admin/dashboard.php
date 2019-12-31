@@ -1,7 +1,7 @@
 <head>
 <style>
 .canvasjs-chart-toolbar button{
-		display:none;
+		display:none !important;
 }
 .canvasjs-chart-credit{
 display:none;	
