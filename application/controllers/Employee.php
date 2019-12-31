@@ -348,26 +348,11 @@ class Employee extends sidebar {
 			{
 			$l_data=$this->session->userdata('hms_details');
 			$post=$this->input->post();
-					//echo '<pre>';print_r($post);exit;
+					echo '<pre>';print_r($post);
 					if(isset($_FILES['profile_pic']['name']) && $_FILES['profile_pic']['name']!=''){
 					$temp = explode(".", $_FILES["profile_pic"]["name"]);
 					$profile_pic = round(microtime(true)) . '.' . end($temp);
 					move_uploaded_file($_FILES['profile_pic']['tmp_name'], "assets/profile_pic/" . $profile_pic);
-					}
-					if(isset($_FILES['aadhar_pic']['name']) && $_FILES['aadhar_pic']['name']!=''){
-					$temp = explode(".", $_FILES["aadhar_pic"]["name"]);
-					$aadhar_pic = round(microtime(true)) . '.' . end($temp);
-					move_uploaded_file($_FILES['aadhar_pic']['tmp_name'], "assets/document/" . $aadhar_pic);
-					}
-					if(isset($_FILES['pan_pic']['name']) && $_FILES['pan_pic']['name']!=''){
-						$temp = explode(".", $_FILES["pan_pic"]["name"]);
-						$pan_pic = round(microtime(true)) . '.' . end($temp);
-						move_uploaded_file($_FILES['pan_pic']['tmp_name'], "assets/document/" . $pan_pic);
-					}
-					if(isset($_FILES['kye']['name']) && $_FILES['kye']['name']!=''){
-						$temp = explode(".", $_FILES["kye"]["name"]);
-						$kye = round(microtime(true)) . '.' . end($temp);
-						move_uploaded_file($_FILES['kye']['tmp_name'], "assets/document/" . $kye);
 					}
 					$add=array(
 					'role_id'=>2,
@@ -378,23 +363,17 @@ class Employee extends sidebar {
 					'per_mail'=>isset($post['per_mail'])?$post['per_mail']:'',
 					'mobile'=>isset($post['mobile'])?$post['mobile']:'',
 					'emergency_contact_number'=>isset($post['emergency_contact_number'])?$post['emergency_contact_number']:'',
-					'type_of_emp'=>isset($post['type_of_emp'])?$post['type_of_emp']:'',
 					'pwd'=>isset($post['mobile'])?md5($post['mobile']):'',
 					'org_pwd'=>isset($post['mobile'])?$post['mobile']:'',
 					'off_mail'=>isset($post['off_mail'])?$post['off_mail']:'',
 					'branch_id'=>isset($post['branch_id'])?$post['branch_id']:'',
 					'code'=>isset($post['code'])?$post['code']:'',
 					'doj'=>isset($post['doj'])?$post['doj']:'',
-					'dob'=>isset($post['dob'])?$post['dob']:'',
-					'gender'=>isset($post['gender'])?$post['gender']:'',
-					'profile_pic'=>isset($profile_pic)?$profile_pic:'',
-					'aadhar_pic'=>isset($aadhar_pic)?$aadhar_pic:'',
-					'pan_pic'=>isset($pan_pic)?$pan_pic:'',
-					'kye'=>isset($kye)?$kye:'',
-					
+					'profile_pic'=>isset($profile_pic)?$profile_pic:'',					
 					'created_at'=>date('Y-M-d H:i:s'),
 					'created_by'=>isset($l_data['a_id'])?$l_data['a_id']:'',
 					);
+					//echo '<pre>';print_r($add);exit;
 				$save=$this->Employee_model->add_emp_save($add);
 				if(count($save)>0){
 					/*email */
