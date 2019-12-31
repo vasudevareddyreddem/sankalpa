@@ -10,6 +10,24 @@ display:none;
     width:100% !important;
     height:100% !important;
 }
+.nav-tabs-custom>.nav-tabs>li.active {
+    border-top-color: #3f399d;
+	background:#3f399d;
+	color:#fff;
+}
+
+.nav-tabs-custom>.nav-tabs>li.active>a, .nav-tabs-custom>.nav-tabs>li.active:hover>a {
+    background-color: #3f399d;
+    color: #fff;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: none;
+border-bottom-color: transparent;
+};
+
 </style>
 <script src="<?php echo base_url(); ?>assets/back/js/jquery.canvasjs.min.js"></script>
 	<?php 
@@ -741,7 +759,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 		</div>
 		<div class="clearfix">&nbsp;</div>
               </div>
-              <div class="tab-pane active" id="tab_2">
+              <div class="tab-pane " id="tab_2">
               	<div class="row" style="padding:15px;">
 		<!-- ./col -->
 			<div class="col-lg-6 col-xs-12">
@@ -767,7 +785,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
-			<div class="col-md-6 mt-4">
+			</div class="clearfix">&nbsp;</div>
+			<div class="col-md-12 mt-4">
 				<div id="chartContainer" style="height: 400px; width: 100%;"></div>
 				<div class="clearfix">&nbsp;</div>
 			</div>
@@ -778,7 +797,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
               </div>
               <!-- /.tab-pane -->
              
-             
+             	
               <!-- /.tab-pane -->
             </div>
             <!-- /.tab-content -->
@@ -792,6 +811,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	</section>
 	<!-- /.content -->
 </div>
+
 <script type="text/javascript">
  $('.datepicker').datepicker({
 		   format: 'dd-mm-yyyy',
