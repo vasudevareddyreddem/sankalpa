@@ -21,7 +21,6 @@
                 <th>Type</th>
                 <th>Name</th>
                 <th>Mobile No</th>
-                <th>Email</th>
                 <th>Department</th>
                 <th>Town</th>
                 <th>Source</th>
@@ -37,7 +36,6 @@
 					<td><?php echo $fl['type']; ?></td>
 					<td><?php echo $fl['name']; ?></td>
 					<td><?php echo $fl['phone_no']; ?></td>
-					<td><?php echo $fl['email_id']; ?></td>
 					<td><?php echo $fl['department']; ?></td>
 					<td><?php echo $fl['location']; ?></td>
 					<td><?php echo $fl['source']; ?></td>
@@ -60,7 +58,7 @@
 <script>
 $(document).ready(function() {
     $('#example').DataTable( {
-        "order": [[ 8, "desc" ]]
+        "order": [[ 7, "desc" ]]
     } );
 } );
 	$(function () {

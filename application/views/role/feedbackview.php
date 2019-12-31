@@ -33,10 +33,7 @@
                 <td>Mobile Number</td>
                 <td><?php echo isset($f_d['phone_no'])?$f_d['phone_no']:''; ?></td>
             </tr> 
-			<tr>
-                <td>Email Id</td>
-                <td><?php echo isset($f_d['email_id'])?$f_d['email_id']:''; ?></td>
-            </tr>
+			
 			<tr>
                 <td>Location</td>
                 <td><?php echo isset($f_d['location'])?$f_d['location']:''; ?></td>
