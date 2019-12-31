@@ -68,6 +68,7 @@
 							<th>Days</th>
 							<th>Status</th>
 							<th>Assign By</th>
+							<th>Created Date & Time</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -83,6 +84,7 @@
 							<td><?php echo isset($li['total_day'])?$li['total_day']:''; ?></td>
 								<td><?php if($li['status']==1){ echo "<span class='label label-primary'>In progress</span>";}else if($li['status']==0){ echo "<span class='label label-warning'>Pending</span>"; }else if($li['status']==1){ echo "<span class='label label-primary'>In progress</span>"; }else if($li['status']==2){ echo "<span class='label label-success'>Completed</span>"; }else if($li['status']==3){ echo "<span class='label label-danger'>Rejected</span>"; } ?></td>
 							<td><?php echo isset($li['assignby'])?$li['assignby']:''; ?></td>
+							<td><?php echo isset($li['created_at'])?$li['created_at']:''; ?></td>
 							<td> 
 							<a style="margin-top:5px" href="<?php echo base_url('assignwork/view/'.base64_encode($li['a_w_id'])); ?>" data-toggle="tooltip" title="View"><i class="fa fa-file btn btn-warning"></i></a>
 							<?php if($li['status']==0){ ?>
@@ -103,6 +105,7 @@
 							<th>Days</th>
 							<th>Status</th>
 							<th>Assign By</th>
+							<th>Created Date & Time</th>
 							<th>Action</th>
 						</tr>
 					</tfoot>
@@ -120,7 +123,8 @@ $(document).ready(function() {
         return confirm('Are you sure?');
       });
     });
-	$(function () {
-	    $("#example1").DataTable();	   
-	  });
+
+	  	$('#example1').DataTable( {
+			"order": [[ 8, "desc" ]]
+		} );
 </script>

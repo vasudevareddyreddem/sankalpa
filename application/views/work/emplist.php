@@ -46,7 +46,7 @@
 									
 									<div style="margin-top:10px;">
 									<a class="label label-success" href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(2)); ?>">Completed</a> 
-									<a class="label label-danger" href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(3)); ?>">Reject</a>
+									<!--<a class="label label-danger" href="<?php echo base_url('assignwork/status/'.base64_encode($li['a_w_id']).'/'.base64_encode(3)); ?>">Reject</a>-->
 									</div>
 								</td>							
 							</tr>
