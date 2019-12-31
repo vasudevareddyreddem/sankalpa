@@ -785,8 +785,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
 				</div>
 			</div>
-			</div class="clearfix">&nbsp;</div>
-			<div class="col-md-12 mt-4">
+			<div class="clearfix">&nbsp;</div>
+			<div class="col-md-7 mt-4">
 				<div id="chartContainer" style="height: 400px; width: 100%;"></div>
 				<div class="clearfix">&nbsp;</div>
 			</div>
@@ -803,7 +803,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
             <!-- /.tab-content -->
           </div>
           <!-- nav-tabs-custom -->
-        </div>
+
 	
 		
 			
