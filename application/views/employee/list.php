@@ -54,7 +54,7 @@
 								<a href="<?php echo base_url('employee/status/'.base64_encode($li['a_id']).'/'.base64_encode($li['status'])); ?>" class="confirmation"><i class="fa fa-pencil btn btn-success"></i></a>
 								<a href="<?php echo base_url('employee/edit/'.base64_encode($li['a_id'])); ?>"  data-toggle="tooltip" title="Edit"><i class="fa fa-edit btn btn-warning"></i></a>
 								<a href="<?php echo base_url('employee/delete/'.base64_encode($li['a_id'])); ?>" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
-								<a href="<?php echo base_url('employee/view/'.base64_encode($li['a_id'])); ?>" data-toggle="tooltip" title="View" class=""><i class="fa fa-file btn btn-danger"></i></a>
+								<a href="<?php echo base_url('employee/details/'.base64_encode($li['a_id'])); ?>" data-toggle="tooltip" title="View" class=""><i class="fa fa-file btn btn-danger"></i></a>
 							</td>
 							
 						</tr>

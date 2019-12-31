@@ -134,12 +134,12 @@ input[type="radio"]:checked {
 							<input type="text" class="form-control" name="name"  placeholder="Enter Your Name">
 						  </div>
 						</div>
-						<div class="col-md-6">
+						<!--<div class="col-md-6">
 						 <div class="form-group">
 							<label>Email Id</label>
 							<input type="text" class="form-control" name="email_id"  placeholder="Enter Your Name">
 						  </div>
-						</div>
+						</div>-->
 						<div class="col-md-6">
 						 <div class="form-group">
 							<label>Mobile Number</label>
@@ -280,16 +280,6 @@ $(document).ready(function() {
                 validators: {
 					notEmpty: {
 						message: 'IP Reg No is required'
-					}
-				}
-            },email_id: {
-                 validators: {
-					notEmpty: {
-						message: 'Email is required'
-					},
-					regexp: {
-					regexp: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-					message: 'Please enter a valid email address. For example johndoe@domain.com.'
 					}
 				}
             },phone_no: {
