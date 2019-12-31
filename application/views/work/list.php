@@ -14,11 +14,26 @@
 	<section class="content">
 		<div class="box">
 			<div class="box-header bg-primary">
-				<div class="col-md-6">
+				<div class="col-md-2">
 					<div class="">	<a class="btn btn-default st-btn add-student-btn" href="<?php echo base_url('assignwork/add'); ?>"><i class="fa fa-plus"></i> Add</a>
 						
 					</div>
 				</div>
+				<form>
+					<div class="col-md-4">
+						<select class="form-control">
+							<option>Select</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+					<select class="form-control">
+							<option>Select</option>
+						</select>
+					</div>	
+					<div class="col-md-2">
+						<button class="btn btn-warning">Export</button>
+					</div>
+				</form>
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body table-responsive">
