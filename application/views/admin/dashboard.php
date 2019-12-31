@@ -575,38 +575,17 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	</section>
 	<!-- Main content -->
 	<section class="content">
-		<!-- Small boxes (Stat box) -->
-		<div class="row" style="padding:15px;">
-		<!-- ./col -->
-			<div class="col-lg-6 col-xs-12">
-				<!-- small box -->
-				<div class="small-box bg-green">
-					<div class="inner">
-						<h3><?php echo isset($emp_act['cnt'])?$emp_act['cnt']:''; ?></h3>
-						<p>TOTAL EMPLOYEE </p>
-					</div>
-					<div class="icon"> <i class="fa fa-list"></i>
-					</div> <a href="<?php echo base_url('employee'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
-			<!-- ./col -->
-			<div class="col-lg-6 col-xs-12">
-				<!-- small box -->
-				<div class="small-box bg-red">
-					<div class="inner">
-						<h3><?php echo isset($emp_present['cnt'])?$emp_present['cnt']:'0'; ?>/<?php echo isset($emp_act['cnt'])?$emp_act['cnt']:''; ?></h3>
-						<p>PRESENT AND ABSENT EMPLOYEES </p>
-					</div>
-					<div class="icon"> <i class="fa fa-list"></i>
-					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
-			<div class="col-md-12 mt-4">
-				<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-			</div>
-			</div>
-			<div class="clearfix">&nbsp;</div>
-			<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
+	 <div class="col-md-12">
+          <!-- Custom Tabs -->
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab">Patient Feedback </a></li>
+              <li><a href="#tab_2" data-toggle="tab">Employee Dashboard</a></li>
+              
+            </ul>
+            <div class="tab-content">
+			 <div class="tab-pane active" id="tab_1">
+                	<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
 			<form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
 			<div class="col-md-4 form-group mt-5">
 				<label class=" control-label text-white">Patient Type</label>
@@ -645,7 +624,6 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			</div>
 			</div>
 			<div class="clearfix">&nbsp;</div>
-			
 			<div class="clearfix">&nbsp;</div>
 			<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
 			<form id="defaultForm" action="<?php echo base_url('dashboard/index'); ?>" method="post">
@@ -758,6 +736,54 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			<!-- ./col -->
 		</div>
 		<div class="clearfix">&nbsp;</div>
+              </div>
+              <div class="tab-pane " id="tab_2">
+              	<div class="row" style="padding:15px;">
+		<!-- ./col -->
+			<div class="col-lg-6 col-xs-12">
+				<!-- small box -->
+				<div class="small-box bg-green">
+					<div class="inner">
+						<h3><?php echo isset($emp_act['cnt'])?$emp_act['cnt']:''; ?></h3>
+						<p>TOTAL EMPLOYEE </p>
+					</div>
+					<div class="icon"> <i class="fa fa-list"></i>
+					</div> <a href="<?php echo base_url('employee'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<!-- ./col -->
+			<div class="col-lg-6 col-xs-12">
+				<!-- small box -->
+				<div class="small-box bg-red">
+					<div class="inner">
+						<h3><?php echo isset($emp_present['cnt'])?$emp_present['cnt']:'0'; ?>/<?php echo isset($emp_act['cnt'])?$emp_act['cnt']:''; ?></h3>
+						<p>PRESENT AND ABSENT EMPLOYEES </p>
+					</div>
+					<div class="icon"> <i class="fa fa-list"></i>
+					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<div class="col-md-12 mt-4">
+				<div id="chartContainer" style="height: 400px; width: 100%;"></div>
+				<div class="clearfix">&nbsp;</div>
+			</div>
+			</div>
+			<div class="clearfix">&nbsp;</div>
+			
+              </div>
+              <!-- /.tab-pane -->
+             
+             
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- nav-tabs-custom -->
+        </div>
+	
+		
+			
+			
 	</section>
 	<!-- /.content -->
 </div>
