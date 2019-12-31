@@ -1,3 +1,13 @@
+<style>
+.col-xs-2{
+	padding-right:0 !important;
+	padding-left:1px !important;
+}
+.col-xs-5{
+	padding-right:0 !important;
+	padding-left:1px !important;
+}
+</style>
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
@@ -14,23 +24,23 @@
 	<section class="content">
 		<div class="box">
 			<div class="box-header bg-primary">
-				<div class="col-md-2">
+				<div class="col-md-2 mt-2">
 					<div class="">	<a class="btn btn-default st-btn add-student-btn" href="<?php echo base_url('assignwork/add'); ?>"><i class="fa fa-plus"></i> Add</a>
 						
 					</div>
 				</div>
 				<form>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
 						<select class="form-control">
 							<option>Select</option>
 						</select>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
 					<select class="form-control">
 							<option>Select</option>
 						</select>
 					</div>	
-					<div class="col-md-2">
+					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
 						<button class="btn btn-warning">Export</button>
 					</div>
 				</form>
