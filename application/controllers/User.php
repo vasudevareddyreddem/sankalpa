@@ -664,6 +664,8 @@ class User extends sidebar {
 		{
 			$this->load->model('Feedback_model');
 			$data['f_list']=$this->Feedback_model->get_all_feedback_list();
+			$data['d_list']=$this->Feedback_model->d_list();
+			$data['l_list']=$this->Feedback_model->location_list();
 			//echo '<pre>';print_r($data);exit;
 			$this->load->view('role/feedbacklist',$data);
 			$this->load->view('admin/footer');

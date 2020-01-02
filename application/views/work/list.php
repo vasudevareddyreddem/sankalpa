@@ -30,7 +30,17 @@
 					</div>
 				</div>
 				<form method="post" action="<?php echo base_url('export/index'); ?>">
-					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
+				<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+						<div class="">
+							<input type="text" class="form-control datepicker" name="from_date" required placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+						<div class="">
+							<input type="text" class="form-control datepicker" name="to_date" required placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<select class="form-control" name="emp_id">
 							<option value="">Selec Employee Name</option>
 							<option value="ALL">ALL</option>
@@ -41,7 +51,7 @@
 							<?php } ?>
 						</select>
 					</div>
-					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 					<select class="form-control" name="priority">
 							<option value="">Select Prioritization</option>
 							<option value="ALL">ALL</option>
@@ -119,6 +129,10 @@
 </div>
 <script>
 $(document).ready(function() {
+	 $('.datepicker').datepicker({
+		   format: 'yyyy-mm-dd',
+			autoclose: true,	  
+		});
       $('.confirmation').on('click', function() {
         return confirm('Are you sure?');
       });

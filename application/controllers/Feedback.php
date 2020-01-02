@@ -64,17 +64,31 @@ class Feedback extends CI_Controller {
 			'source'=>isset($post['source'])?$post['source']:'',
 			's_name'=>isset($post['s_name'])?$post['s_name']:'',
 			'created_at'=>date('Y-m-d h:i:s'),
+			'date'=>date('Y-m-d'),
 		);
 		//echo '<pre>';print_r($post);exit;
 		$save=$this->Feedback_model->save_feedback($ad);
 		if(count($save)>0){
 			
-			$cnt=1;foreach($post['qus'] as $key=>$li){ 
+			$cnt=1;foreach($post['qus'] as $key=>$li){
+					$p=($post['anser'][$cnt]);
+					if($p=='Very Poor'){
+						$st=1;
+					}else if($p=='Poor'){
+						$st="2";
+					}else if($p=='Average'){
+						$st="3";
+					}else if($p=='Good'){
+						$st="4";
+					}else if($p=='Excellent'){
+						$st="5";
+					}				
 					$qa=array(
 						'f_b_id'=>isset($save)?$save:'',
 						'qno'=>isset($li)?$li:'',
 						'q_id'=>isset($key)?$key:'',
 						'answer'=>isset($post['anser'][$cnt])?$post['anser'][$cnt]:'',
+						'rating'=>isset($st)?$st:'',
 						'date'=>date('Y-m-d'),
 						'created_at'=>date('Y-m-d h:i:s'),
 					);

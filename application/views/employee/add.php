@@ -98,17 +98,7 @@ select{
                     <label class="control-label">Name </label>
                     <input maxlength="100" type="text" name="name" required="required" class="form-control" placeholder="Enter Name" />
                 </div>
-                 <div class="form-group col-md-6">
-                    <label class="control-label">Department </label>
-                    <select name="dep_id" class="form-control" required="required">
-					<option value="">Select</option>
-					<?php if(isset($dep_list) && count($dep_list)>0){ ?>
-					<?php foreach($dep_list as $li){ ?>
-						<option value="<?php echo $li['d_id']; ?>"><?php echo $li['name']; ?></option>
-					<?Php } ?>
-					<?Php } ?>
-					</select>
-                </div>
+                 
 				<div class="form-group col-md-6">
                     <label class="control-label">Designation * </label>
                     <input maxlength="100" type="text" name="designation"  required="required" class="form-control" placeholder="Enter Designation" />

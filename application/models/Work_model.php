@@ -63,7 +63,8 @@ class Work_model extends CI_Model
 		return $this->db->get()->result_array();
 	}
 	
-	public  function get_emp_works_list($empid,$pro){
+	public  function get_emp_works_list($empid,$pro,$from_date,$to_date){
+		$inbetweentime="DATE_FORMAT(aw.created_at,'%Y-%m-%d') BETWEEN '".$from_date."' AND '".$to_date."'";
 		$this->db->select('a.name,aw.a_w_id,aw.from_date,aw.to_date,aw.prioritization,aw.to_date,aw.total_day,aw.to_date,aw.message,aw.to_date,aw.status,ass.name as assignby,')->from('assign_work as aw');
 		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
 		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
@@ -72,8 +73,84 @@ class Work_model extends CI_Model
 			$this->db->where('aw.emp_id',$empid);
 		}if($pro!='ALL'){
 			$this->db->where('aw.prioritization',$pro);
+		}
+		if($from_date!='' && $to_date!=''){
+			$this->db->where($inbetweentime);
 		}		
 		return $this->db->get()->result_array();
+	}
+	
+	public  function get_feedback_list($from_date,$to_date,$type,$depart,$location,$source){
+		$inbetweentime="fb.date BETWEEN '".$from_date."' AND '".$to_date."'";
+		$this->db->select('fb.*')->from('feed_back as fb');
+		if($type!='ALL'){
+			$this->db->where('fb.type',$type);	
+		}if($depart!='ALL'){
+			$this->db->where('fb.department',$depart);	
+		}if($location!='ALL'){
+			$this->db->where('fb.location',$location);	
+		}if($source!='ALL'){
+			$this->db->where('fb.source',$source);	
+		}
+		if($from_date!='' && $to_date!=''){
+			$this->db->where($inbetweentime);
+		}
+		$return=$this->db->get()->result_array();
+		foreach($return as $li){
+			//$get_feed_rating=$this->get_feedback_rating_question($li['f_b_id']);
+			$getfeed_avg=$this->get_feedback_rating_avg($li['f_b_id']);
+			$q_cnt=$this->get_feedback_rating_avg_cnt($li['f_b_id']);
+			$per_c=((($getfeed_avg['tsum'])/(($q_cnt['cnt'])*10))*10);
+			$p=round($per_c);
+			if($p==1){
+				$st="Very Poor";
+			}else if($p==2){
+				$st="Poor";
+			}else if($p==3){
+				$st="Average";
+			}else if($p==4){
+				$st="Good";
+			}else if($p==5){
+				$st="Excellent";
+			}else if($p==0){
+				$st="";
+			}
+			$data[$li['f_b_id']]=$li;
+			//$data[$li['f_b_id']]['q_ans']=isset($get_feed_rating['questionanw'])?$get_feed_rating['questionanw']:'';
+			$data[$li['f_b_id']]['q_percent']=isset($per_c)?number_format($per_c,2):'';
+			$data[$li['f_b_id']]['q_rating']=isset($st)?$st:'';
+			$data[$li['f_b_id']]['q_rating_cnt']=isset($q_cnt['cnt'])?$q_cnt['cnt']:'';
+		}
+		if(!empty($data)){
+			return $data;
+			
+		}
+	}
+	
+	public  function get_feedback_rating_question($f_b_id){
+		$this->db->select('GROUP_CONCAT(concat(q.name," : ",fa.answer)) as questionanw')->from('feed_back_answer as fa');
+		$this->db->join('question as q','q.q_id=fa.q_id','left');
+		$this->db->where('fa.f_b_id',$f_b_id);
+		return $this->db->get()->row_array();
+	}
+	public  function get_feedback_rating_questionqqqq($f_b_id){
+		$this->db->select('GROUP_CONCAT()q.q_id,q.name,fa.answer')->from('feed_back_answer as fa');
+		$this->db->join('question as q','q.q_id=fa.q_id','left');
+		$this->db->where('fa.f_b_id',$f_b_id);
+		return $this->db->get()->result_array();
+	}
+	
+	public  function get_feedback_rating_avg($f_b_id){
+		$this->db->select('SUM(fa.rating) as tsum')->from('feed_back_answer as fa');
+		$this->db->join('question as q','q.q_id=fa.q_id','left');
+		$this->db->where('fa.f_b_id',$f_b_id);
+		return $this->db->get()->row_array();
+	}
+	public  function get_feedback_rating_avg_cnt($f_b_id){
+		$this->db->select('COUNT(fa.rating) as cnt')->from('feed_back_answer as fa');
+		$this->db->join('question as q','q.q_id=fa.q_id','left');
+		$this->db->where('fa.f_b_id',$f_b_id);
+		return $this->db->get()->row_array();
 	}
 	
 	

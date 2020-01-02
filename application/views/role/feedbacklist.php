@@ -13,6 +13,74 @@
 	<!-- Main content -->
 	<section class="content">
 		<div class="box">
+		<div class="box-header bg-primary">
+				<form method="post" action="<?php echo base_url('export/feedbackexport'); ?>">
+					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
+						<div class="">
+							<input type="text" class="form-control datepicker" name="from_date" required placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
+						<div class="">
+							<input type="text" class="form-control datepicker" name="to_date" required placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
+						<select class="form-control" name="type" required>
+							<option value="">Selec Type</option>
+							<option value="ALL">ALL</option>
+							<option value="OPD">OPD</option>
+							<option value="IPD">IPD</option>
+						</select>
+					</div>
+					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
+					<select class="form-control" name="depart" required >
+							<option value="">Select Department</option>
+							<option value="ALL">ALL</option>
+							<?php if(isset($d_list) && count(d_list)>0){ ?>
+								<?php foreach($d_list as $li){ ?>
+									<option value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+								<?php } ?>
+							<?php } ?>
+					</select>
+					</div>	
+				
+					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
+					<select class="form-control" name="location" required>
+							<option value="">Select Location</option>
+							<option value="ALL">ALL</option>
+							<?php if(isset($l_list) && count($l_list)>0){ ?>
+								<?php foreach($l_list as $li){ ?>
+									<option value="<?php echo $li['l_name']; ?>"><?php echo $li['l_name']; ?></option>
+								<?php } ?>
+							<?php } ?>
+					</select>
+					</div>
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+					<select class="form-control" name="source" required>
+							<option value="">Select Source</option>
+							<option value="ALL">ALL</option>
+								<option value="Qualified">Qualified</option>
+								<option value="RMP">RMP</option>
+								<option value="Ambulance">Ambulance</option>
+								<option value="Employee">Employee</option>
+								<option value="Others">Others</option>
+								<option value="Health Camp">Health Camp</option>
+								<option value="Demo Tent">Demo Tent</option>
+								<option value="Tata Ace">Tata Ace</option>
+								<option value="Pamphlet">Pamphlet</option>
+								<option value="Hoarding">Hoarding</option>
+								<option value="Cinema Add">Cinema Add</option>
+								<option value="Paper Add">Paper Add</option>
+								<option value="Friend / Relative">Friend / Relative</option>
+								<option value="Old Patient">Old Patient</option>
+					</select>
+					</div>					
+					<div class="col-md-2 col-xs-12 col-sm-12 mt-2">
+						<button class="btn btn-warning" type="submit">Export</button>
+					</div>
+				</form>
+			</div>
 			<!-- /.box-header -->
 			<div class="box-body table-responsive">
 				<table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -62,6 +130,10 @@ $(document).ready(function() {
     } );
 } );
 	$(function () {
+		 $('.datepicker').datepicker({
+		   format: 'yyyy-mm-dd',
+			autoclose: true,	  
+		});
 	    //Initialize Select2 Elements
 	    $(".select2").select2();
 
