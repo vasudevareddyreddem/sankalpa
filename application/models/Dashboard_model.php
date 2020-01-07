@@ -214,6 +214,13 @@ class Dashboard_model extends CI_Model
 		$this->db->where('aw.status',$st);
 		return $this->db->get()->row_array();
 	}
+	public  function get_emp_work_high_compete($pr,$st,$aid){
+		$this->db->select('COUNT(aw.a_w_id) AS cnt')->from('assign_work as aw');
+		$this->db->where('aw.prioritization',$pr);
+		$this->db->where('aw.status',$st);
+		$this->db->where('aw.emp_id',$aid);
+		return $this->db->get()->row_array();
+	}
 	
 	
 	

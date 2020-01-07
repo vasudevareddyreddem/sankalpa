@@ -51,6 +51,11 @@ class Feedback_model extends CI_Model
 		$this->db->where('status',1);
 		return $this->db->get()->result_array();	
 	}
+	public  function source_list(){
+		$this->db->select('s_id,s_name,status,created_at')->from('source');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();	
+	}
 	
 	
 	

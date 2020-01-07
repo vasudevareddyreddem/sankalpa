@@ -60,20 +60,11 @@
 					<select class="form-control" name="source" required>
 							<option value="">Select Source</option>
 							<option value="ALL">ALL</option>
-								<option value="Qualified">Qualified</option>
-								<option value="RMP">RMP</option>
-								<option value="Ambulance">Ambulance</option>
-								<option value="Employee">Employee</option>
-								<option value="Others">Others</option>
-								<option value="Health Camp">Health Camp</option>
-								<option value="Demo Tent">Demo Tent</option>
-								<option value="Tata Ace">Tata Ace</option>
-								<option value="Pamphlet">Pamphlet</option>
-								<option value="Hoarding">Hoarding</option>
-								<option value="Cinema Add">Cinema Add</option>
-								<option value="Paper Add">Paper Add</option>
-								<option value="Friend / Relative">Friend / Relative</option>
-								<option value="Old Patient">Old Patient</option>
+							<?php if(isset($s_list) && count($s_list)>0){ ?>
+								<?php foreach($s_list as $li){ ?>
+									<option value="<?php echo $li['s_name']; ?>"><?php echo $li['s_name']; ?></option>
+								<?php } ?>								
+							<?php } ?>
 					</select>
 					</div>					
 					<div class="col-md-2 col-xs-12 col-sm-12 mt-2">

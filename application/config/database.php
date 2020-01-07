@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 |	['compress'] Whether or not to use client compression (MySQL only)
 |	['stricton'] TRUE/FALSE - forces 'Strict Mode' connections
-|							- good for ensuring strict SQL while developing
+|							- Very good for ensuring strict SQL while developing
 |	['ssl_options']	Used to set various SSL options that can be used when making SSL connections.
 |	['failover'] array - A array with 0 or more data for connections if the main should fail.
 |	['save_queries'] TRUE/FALSE - Whether to "save" all executed queries.
@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 		'dsn'	=> '',
-		'hostname' => '43.255.154.55',
-		'username' => 'db_sankalpa',
-		'password' => 'db_sankalpa@123',
-		'database' => 'db_sankalpa',
+		'hostname' => 'localhost',
+		'username' => 'root',
+		'password' => '',
+		'database' => 'sankalpa',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => FALSE,

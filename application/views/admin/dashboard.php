@@ -32,8 +32,8 @@ display:none;
 <script src="<?php echo base_url(); ?>assets/back/js/jquery.canvasjs.min.js"></script>
 	<?php 
 $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_jun1=$op_vp_jul1=$op_vp_aug1=$op_vp_sep1=$op_vp_oct1=$op_vp_nov1=0;
-	if(isset($opd_very_poor) && count($opd_very_poor)>0){
-		foreach($opd_very_poor as $cri){
+	if(isset($opd_very_Average) && count($opd_very_Average)>0){
+		foreach($opd_very_Average as $cri){
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
@@ -78,8 +78,8 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		}	
 	}
 	$op_p_dec1=$op_p_jan1=$op_p_feb1=$op_p_mar1=$op_p_apr1=$op_p_may1=$op_p_jun1=$op_p_jul1=$op_p_aug1=$op_p_sep1=$op_p_oct1=$op_p_nov1=0;
-	if(isset($opd_poor) && count($opd_poor)>0){
-		foreach($opd_poor as $cri){
+	if(isset($opd_Average) && count($opd_Average)>0){
+		foreach($opd_Average as $cri){
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
@@ -124,8 +124,8 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		}	
 	}
 	$op_a_dec1=$op_a_jan1=$op_a_feb1=$op_a_mar1=$op_a_apr1=$op_a_may1=$op_a_jun1=$op_a_jul1=$op_a_aug1=$op_a_sep1=$op_a_oct1=$op_a_nov1=0;
-	if(isset($opd_average) && count($opd_average)>0){
-		foreach($opd_average as $cri){
+	if(isset($opd_Good) && count($opd_Good)>0){
+		foreach($opd_Good as $cri){
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
@@ -170,8 +170,8 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		}	
 	}
 	$op_g_dec1=$op_g_jan1=$op_g_feb1=$op_g_mar1=$op_g_apr1=$op_g_may1=$op_g_jun1=$op_g_jul1=$op_g_aug1=$op_g_sep1=$op_g_oct1=$op_g_nov1=0;
-	if(isset($opd_good) && count($opd_good)>0){
-		foreach($opd_good as $cri){
+	if(isset($opd_Very_good) && count($opd_Very_good)>0){
+		foreach($opd_Very_good as $cri){
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
@@ -285,10 +285,10 @@ var options = {
 		indexLabelFontSize: 15,
 		indexLabel: "{label} - {y}%",
 		dataPoints: [
-			{ y: '<?php echo number_format($opd_vp_p, 2); ?>', label: "Very Poor",indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc"},
-			{ y: <?php echo number_format($opd_p_p, 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-			{ y: <?php echo number_format($opd_a_p, 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-			{ y: <?php echo number_format($opd_p_g, 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+			{ y: '<?php echo number_format($opd_vp_p, 2); ?>', label: "Poor",indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc"},
+			{ y: <?php echo number_format($opd_p_p, 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+			{ y: <?php echo number_format($opd_a_p, 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+			{ y: <?php echo number_format($opd_p_g, 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
 			{ y: <?php echo number_format($opd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 		]
 	}]
@@ -314,10 +314,10 @@ var options = {
 		indexLabelFontSize: 15,
 		indexLabel: "{label} - {y}%",
 		dataPoints: [
-			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Very Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
-			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
+			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
 			{ y: <?php echo number_format($ipd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 		]
 	}]
@@ -344,10 +344,10 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								indexLabelFontSize: 15,
 								indexLabel: "{label} - {y}%",
 								dataPoints: [
-									{ y: '<?php echo number_format($pqli['vp_p'], 2); ?>', label: "Very Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
-									{ y: <?php echo number_format($pqli['p_p'], 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-									{ y: <?php echo number_format($pqli['a_p'], 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-									{ y: <?php echo number_format($pqli['p_g'], 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+									{ y: '<?php echo number_format($pqli['vp_p'], 2); ?>', label: "Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
+									{ y: <?php echo number_format($pqli['p_p'], 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+									{ y: <?php echo number_format($pqli['a_p'], 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+									{ y: <?php echo number_format($pqli['p_g'], 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
 									{ y: <?php echo number_format($pqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 								]
 							}]
@@ -376,10 +376,10 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								indexLabelFontSize: 15,
 								indexLabel: "{label} - {y}%",
 								dataPoints: [
-									{ y: '<?php echo number_format($ipqli['vp_p'], 2); ?>', label: "Very Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
-									{ y: <?php echo number_format($ipqli['p_p'], 2); ?>, label: "Poor", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-									{ y: <?php echo number_format($ipqli['a_p'], 2); ?>, label: "Average", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-									{ y: <?php echo number_format($ipqli['p_g'], 2); ?>, label: "Good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
+									{ y: '<?php echo number_format($ipqli['vp_p'], 2); ?>', label: "Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
+									{ y: <?php echo number_format($ipqli['p_p'], 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
+									{ y: <?php echo number_format($ipqli['a_p'], 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
+									{ y: <?php echo number_format($ipqli['p_g'], 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
 									{ y: <?php echo number_format($ipqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
 								]
 							}]
@@ -412,7 +412,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 		animationEnabled: true,
 		data: [
 			{
-				name: "Very Poor",
+				name: "Poor",
 				type: "spline",
 				showInLegend: true,
 				dataPoints: [
@@ -430,7 +430,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					{ label: "December", y: <?php echo isset($op_vp_dec1)?$op_vp_dec1:''; ?> },
 				]
 			},{
-				name: "Poor",
+				name: "Average",
 				type: "spline",
 				showInLegend: true,
 				dataPoints: [
@@ -448,7 +448,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					{ label: "December", y: <?php echo isset($op_p_dec1)?$op_p_dec1:''; ?> },
 				]
 			},{
-				name: "Average",
+				name: "Good",
 				type: "spline",
 				showInLegend: true,
 				dataPoints: [
@@ -466,7 +466,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					{ label: "December", y: <?php echo isset($op_a_dec1)?$op_a_dec1:''; ?> },
 				]
 			},{
-				name: "Good",
+				name: "Very good",
 				type: "spline",
 				showInLegend: true,
 				dataPoints: [
@@ -701,20 +701,15 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				<label class="text-white">Source </label>
 				<select class="form-control" name="source">
 					<option value="">Select</option>
-					<option value="Qualified" <?php if(isset($p_post['source']) && $p_post['source']=="Qualified"){ echo "selected";} ?>>Qualified</option>
-					<option value="RMP" <?php if(isset($p_post['source']) && $p_post['source']=="RMP"){ echo "selected";} ?>>RMP</option>
-					<option value="Ambulance" <?php if(isset($p_post['source']) && $p_post['source']=="Ambulance"){ echo "selected";} ?>>Ambulance</option>
-					<option value="Employee" <?php if(isset($p_post['source']) && $p_post['source']=="Employee"){ echo "selected";} ?>>Employee</option>
-					<option value="Others" <?php if(isset($p_post['source']) && $p_post['source']=="Others"){ echo "selected";} ?>>Others</option>
-					<option value="Health Camp" <?php if(isset($p_post['source']) && $p_post['source']=="Health Camp"){ echo "selected";} ?>>Health Camp</option>
-					<option value="Demo Tent" <?php if(isset($p_post['source']) && $p_post['source']=="Demo Tent"){ echo "selected";} ?>>Demo Tent</option>
-					<option value="Tata Ace" <?php if(isset($p_post['source']) && $p_post['source']=="Tata Ace"){ echo "selected";} ?>>Tata Ace</option>
-					<option value="Pamphlet" <?php if(isset($p_post['source']) && $p_post['source']=="Pamphlet"){ echo "selected";} ?>>Pamphlet</option>
-					<option value="Hoarding" <?php if(isset($p_post['source']) && $p_post['source']=="Hoarding"){ echo "selected";} ?>>Hoarding</option>
-					<option value="Cinema Add" <?php if(isset($p_post['source']) && $p_post['source']=="Cinema Add"){ echo "selected";} ?>>Cinema Add</option>
-					<option value="Paper Add" <?php if(isset($p_post['source']) && $p_post['source']=="Paper Add"){ echo "selected";} ?>>Paper Add</option>
-					<option value="Friend / Relative" <?php if(isset($p_post['source']) && $p_post['source']=="Friend / Relative"){ echo "selected";} ?>>Friend / Relative</option>
-					<option value="Old Patient" <?php if(isset($p_post['source']) && $p_post['source']=="Old Patient"){ echo "selected";} ?>>Old Patient</option>
+					<?php if(isset($s_list) && count($s_list)>0){ ?>
+						<?php foreach($s_list as $li){ ?>
+							<?php if($li['s_name']==$p_post['source']){ ?>
+								<option selected value="<?php echo $li['s_name']; ?>"><?php echo $li['s_name']; ?></option>
+							<?php }else{ ?>
+								<option value="<?php echo $li['s_name']; ?>"><?php echo $li['s_name']; ?></option>
+							<?php } ?>
+						<?php } ?>								
+					<?php } ?>	
 				</select>
 			  </div>
 			</div>

@@ -172,16 +172,16 @@ class Export extends sidebar {
 				$coist='';
 				$p=round($opd_avg);
 				if($p==1){
-					$st="Very Poor";
+					$st="Poor";
 					$coist='4f81bc';
 				}else if($p==2){
-					$st="Poor";
+					$st="Average";
 					$coist='c0504e';
 				}else if($p==3){
-					$st="Average";
+					$st="Good";
 					$coist='9bbb58';
 				}else if($p==4){
-					$st="Good";
+					$st="Very good";
 					$coist='23bfaa';
 				}else if($p==5){
 					$st="Excellent";
@@ -195,16 +195,16 @@ class Export extends sidebar {
 				$cpist='';
 				$ip=round($ipd_avg_val);
 				if($ip==1){
-					$ist="Very Poor";
+					$ist="Poor";
 					$cpist='4f81bc';
 				}else if($ip==2){
-					$ist="Poor";
+					$ist="Average";
 					$cpist='c0504e';
 				}else if($ip==3){
-					$ist="Average";
+					$ist="Good";
 					$cpist='9bbb58';
 				}else if($ip==4){
-					$ist="Good";
+					$ist="Very good";
 					$cpist='23bfaa';
 				}else if($ip==5){
 					$ist="Excellent";
@@ -248,6 +248,90 @@ class Export extends sidebar {
                 //force user to download the Excel file without writing it to server's HD
                 $objWriter->save('php://output');
 		
+	}
+	public function emp_work()
+	{	
+		if($this->session->userdata('hms_details'))
+			{
+				$l_d=$this->session->userdata('hms_details');
+				$this->excel->setActiveSheetIndex(0);
+                //name the worksheet
+                $this->excel->getActiveSheet()->setTitle('GST INVOICE LIST');
+                //set cell A1 content with some text
+                $this->excel->getActiveSheet()->setCellValue('A1', 'S.NO');
+                $this->excel->getActiveSheet()->setCellValue('B1', 'FROM DATE');
+                $this->excel->getActiveSheet()->setCellValue('C1', 'TO DATE');
+                $this->excel->getActiveSheet()->setCellValue('D1', 'PRIORITIZATION');
+                $this->excel->getActiveSheet()->setCellValue('E1', 'TOTAL DAYS');
+                $this->excel->getActiveSheet()->setCellValue('F1', 'MESSAGE');
+                $this->excel->getActiveSheet()->setCellValue('G1', 'STATUS');
+                $this->excel->getActiveSheet()->setCellValue('H1', 'ASSIGN BY');
+                 for($col = ord('A'); $col <= ord('C'); $col++){ //set column dimension $this->excel->getActiveSheet()->getColumnDimension(chr($col))->setAutoSize(true);
+							 //change the font size
+						$this->excel->getActiveSheet()->getStyle(chr($col))->getFont()->setSize(12);
+						$this->excel->getActiveSheet()->getStyle(chr($col))->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+					}
+                //retrive contries table data
+				$post=$this->input->post();
+				//echo '<pre>';print_r($post);
+				$w_list=$this->Work_model->get_emp_works_list($l_d['a_id'],$post['priority'],$post['from_date'],$post['to_date']);
+				//echo $this->db->last_query();
+				//echo '<pre>';print_r($w_list);exit;
+				if(isset($w_list) && count($w_list)>0){
+					$cnt_sno=1;foreach ($w_list as $row){
+						if($row['status']==1){ 						
+							$st= "In progress";
+						}else if($row['status']==0){
+							$st= "Pending";
+						}else if($row['status']==1){
+							$st= "In progress";
+						}else if($row['status']==2){ 
+							$st= "Completed"; 
+						}else if($row['status']==3){ 
+							$st= "Rejected";
+						}
+						//echo '<pre>';print_r($row);
+						$data[$row['a_w_id']]['sno'] = $cnt_sno;
+						//$data[$row['a_w_id']]['name']= $row['name'];
+						$data[$row['a_w_id']]['from_date']= $row['from_date'];
+						$data[$row['a_w_id']]['to_date']= $row['to_date'];
+						$data[$row['a_w_id']]['prioritization']= $row['prioritization'];
+						$data[$row['a_w_id']]['total_day']= $row['total_day'];
+						$data[$row['a_w_id']]['message']= $row['message'];
+						$data[$row['a_w_id']]['status']= $st;
+						$data[$row['a_w_id']]['assignby']= $row['assignby'];
+						
+					$cnt_sno++;}
+				}
+				if(!empty($data)){
+					$in_list=$data;	
+				}else{
+					$in_list=array('No data Available');
+				}
+				$exceldata="";
+				foreach ($in_list as $row){
+						$exceldata[] = $row;
+				}
+				//echo '<pre>';print_r($exceldata);exit;
+               
+                $this->excel->getActiveSheet()->fromArray($exceldata, null, 'A2');
+                 
+                
+                $filename=$l_d['a_id'].'_'.$post['priority'].'_work_shhet_list.xls'; //save our workbook as this file name
+                header('Content-Type: application/vnd.ms-excel'); //mime type
+                header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
+                header('Cache-Control: max-age=0'); //no cache
+ 
+                //save it to Excel5 format (excel 2003 .XLS file), change this to 'Excel2007' (and adjust the filename extension, also the header mime type)
+                //if you want to save it as .XLSX Excel 2007 format
+                $objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');  
+                //force user to download the Excel file without writing it to server's HD
+                $objWriter->save('php://output');
+					
+			}else{
+				$this->session->set_flashdata('error','Please login to continue');
+				redirect('admin');
+			}
 	}
 	
 	

@@ -521,7 +521,7 @@ $config['rest_ignore_http_accept'] = FALSE;
 | Note: If set to TRUE and the request is not AJAX, a 505 response with the
 | error message 'Only AJAX requests are accepted.' will be returned.
 |
-| Hint: This is good for production environments
+| Hint: This is Very good for production environments
 |
 */
 $config['rest_ajax_only'] = FALSE;

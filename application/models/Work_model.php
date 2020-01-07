@@ -103,13 +103,13 @@ class Work_model extends CI_Model
 			$per_c=((($getfeed_avg['tsum'])/(($q_cnt['cnt'])*10))*10);
 			$p=round($per_c);
 			if($p==1){
-				$st="Very Poor";
-			}else if($p==2){
 				$st="Poor";
-			}else if($p==3){
+			}else if($p==2){
 				$st="Average";
-			}else if($p==4){
+			}else if($p==3){
 				$st="Good";
+			}else if($p==4){
+				$st="Very good";
 			}else if($p==5){
 				$st="Excellent";
 			}else if($p==0){
@@ -151,6 +151,15 @@ class Work_model extends CI_Model
 		$this->db->join('question as q','q.q_id=fa.q_id','left');
 		$this->db->where('fa.f_b_id',$f_b_id);
 		return $this->db->get()->row_array();
+	}
+	
+	public  function get_daily_emp_works_list(){
+		$this->db->select('a.name,aw.a_w_id,aw.from_date,aw.to_date,aw.prioritization,aw.to_date,aw.total_day,aw.to_date,aw.message,aw.to_date,aw.status,ass.name as assignby,')->from('assign_work as aw');
+		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
+		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
+		//$this->db->where('aw.emp_id',$empid);
+		$this->db->where('DATE_FORMAT(aw.created_at,"%Y-%m-%d")',date('Y-m-d'));				
+		return $this->db->get()->result_array();
 	}
 	
 	

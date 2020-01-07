@@ -666,6 +666,7 @@ class User extends sidebar {
 			$data['f_list']=$this->Feedback_model->get_all_feedback_list();
 			$data['d_list']=$this->Feedback_model->d_list();
 			$data['l_list']=$this->Feedback_model->location_list();
+			$data['s_list']=$this->Feedback_model->source_list();
 			//echo '<pre>';print_r($data);exit;
 			$this->load->view('role/feedbacklist',$data);
 			$this->load->view('admin/footer');
@@ -681,6 +682,8 @@ class User extends sidebar {
 			$this->load->model('Feedback_model');
 			$data['f_d']=$this->Feedback_model->get_get_feedback_details($fid);
 			$data['f_q_d']=$this->Feedback_model->get_get_question_details($fid);
+			$data['s_list']=$this->Feedback_model->source_list();
+
 			//echo '<pre>';print_r($data);exit;
 			$this->load->view('role/feedbackview',$data);
 			$this->load->view('admin/footer');

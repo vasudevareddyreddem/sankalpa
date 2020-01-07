@@ -31,13 +31,13 @@
 						   <div class="form-group col-md-6">
                               <label class="col-lg-4 control-label">Assigned date</label>
                               <div class="col-md-8">
-                                 <input type="text" class="form-control datepicker" name="from_date" placeholder="Select Assigned date" value="<?php echo isset($l_da)?$l_da:''; ?>" />
+                                 <input type="text" class="form-control datepicker" id="from_date" name="from_date" placeholder="Select Assigned date" value="<?php echo date('d-m-Y'); ?>" />
                               </div>
                            </div>
 						   <div class="form-group col-md-6">
                               <label class="col-lg-4 control-label">Expected date of completion</label>
                               <div class="col-md-8">
-                                 <input type="text" class="form-control datepicker" name="to_date" placeholder="Select Expected date of completion" value="<?php echo isset($l_da)?$l_da:''; ?>" />
+                                 <input type="text" class="form-control datepicker" id="to_date" name="to_date" placeholder="Select Expected date of completion" value="<?php echo date('d-m-Y'); ?>" />
                               </div>
                            </div>
 						   <div class="form-group col-md-6">

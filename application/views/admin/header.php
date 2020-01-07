@@ -162,9 +162,8 @@
 				<!-- sidebar menu: : style can be found in sidebar.less -->
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
-					<?php if($hms_details['role_id']!=2){ ?>
-					<li> <a href="<?php echo base_url('dashboard'); ?>">Dashboard </a></li>
-					<?php } ?>
+					
+					<li> <a href="<?php echo base_url('dashboard'); ?>">DASHBOARD </a></li>
 					
 					
 					<?php if($hms_details['role_id']==3){ ?>
@@ -204,7 +203,7 @@
 						</li>
 						
 					<?php }else if($hms_details['role_id']==2){ ?>
-						<li class="treeview"> <a href="<?php echo base_url('assignwork/lists'); ?>"><i class="fa fa-paypal" aria-hidden="true"></i>Assign Work </a></li>							
+						<li class="treeview"> <a href="<?php echo base_url('assignwork/lists'); ?>"> ASSIGNED TASK </a></li>							
 								
 					<?php } ?>
 					<?php if(isset($m_list) && count($m_list)>0){ ?>

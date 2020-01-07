@@ -179,20 +179,11 @@ input[type="radio"]:checked {
 							<label>Source </label>
 							<select class="form-control" name="source">
 								<option value="">Select</option>
-								<option value="Qualified">Qualified</option>
-								<option value="RMP">RMP</option>
-								<option value="Ambulance">Ambulance</option>
-								<option value="Employee">Employee</option>
-								<option value="Others">Others</option>
-								<option value="Health Camp">Health Camp</option>
-								<option value="Demo Tent">Demo Tent</option>
-								<option value="Tata Ace">Tata Ace</option>
-								<option value="Pamphlet">Pamphlet</option>
-								<option value="Hoarding">Hoarding</option>
-								<option value="Cinema Add">Cinema Add</option>
-								<option value="Paper Add">Paper Add</option>
-								<option value="Friend / Relative">Friend / Relative</option>
-								<option value="Old Patient">Old Patient</option>
+								<?php if(isset($s_list) && count($s_list)>0){ ?>
+									<?php foreach($s_list as $li){ ?>
+										<option value="<?php echo $li['s_name']; ?>"><?php echo $li['s_name']; ?></option>
+									<?php } ?>								
+								<?php } ?>								
 							</select>
 						  </div>
 						</div>
@@ -209,12 +200,6 @@ input[type="radio"]:checked {
 							</div>
 							<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 								<div class="feed-radio">
-									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Very Poor" required>
-								</div>
-								<small>Very Poor</small>
-							</div>
-							<div class="col-md-1 col-xs-2 col-sm-2 text-center">
-								<div class="feed-radio">
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Poor" required>
 								</div>
 								<small>Poor</small>
@@ -230,6 +215,12 @@ input[type="radio"]:checked {
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Good" required>
 								</div>
 								<small>Good</small>
+							</div>
+							<div class="col-md-1 col-xs-2 col-sm-2 text-center">
+								<div class="feed-radio">
+									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Very good" required>
+								</div>
+								<small>Very good</small>
 							</div>
 							<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 								<div class="feed-radio">

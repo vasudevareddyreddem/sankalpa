@@ -36,6 +36,7 @@ class Feedback extends CI_Controller {
 		$d['f_q']=$this->Feedback_model->get_opd_question_list('IPD');
 		$d['d_list']=$this->Feedback_model->d_list();
 		$d['l_list']=$this->Feedback_model->location_list();
+		$d['s_list']=$this->Feedback_model->source_list();
 		//echo '<pre>';print_r($d);exit;
 		$this->load->view('html/ipd',$d);
 	}
@@ -44,6 +45,7 @@ class Feedback extends CI_Controller {
 		$d['f_q']=$this->Feedback_model->get_opd_question_list('OPD');
 		$d['d_list']=$this->Feedback_model->d_list();
 		$d['l_list']=$this->Feedback_model->location_list();
+		$d['s_list']=$this->Feedback_model->source_list();
 
 		//echo '<pre>';print_r($d);exit;
 		$this->load->view('html/opd',$d);
@@ -72,13 +74,13 @@ class Feedback extends CI_Controller {
 			
 			$cnt=1;foreach($post['qus'] as $key=>$li){
 					$p=($post['anser'][$cnt]);
-					if($p=='Very Poor'){
+					if($p=='Poor'){
 						$st=1;
-					}else if($p=='Poor'){
-						$st="2";
 					}else if($p=='Average'){
-						$st="3";
+						$st="2";
 					}else if($p=='Good'){
+						$st="3";
+					}else if($p=='Very good'){
 						$st="4";
 					}else if($p=='Excellent'){
 						$st="5";
