@@ -123,7 +123,7 @@ class Export extends sidebar {
 				//echo $this->db->last_query();
 				//echo '<pre>';print_r($w_list);exit;
 				if(isset($w_list) && count($w_list)>0){
-					$opd_vg=$ipd_avg=$opd_cnt=$ipd_cnt='';$cnt_sno=1;foreach ($w_list as $row){
+					$opc=$ipc=1;$opd_vg=$ipd_avg=$opd_cnt=$ipd_cnt='';$cnt_sno=1;foreach ($w_list as $row){
 						//echo '<pre>';print_r($q_e);
 						$data[$row['f_b_id']]['sno'] = $cnt_sno;
 						$data[$row['f_b_id']]['type']= $row['type'];
@@ -136,15 +136,20 @@ class Export extends sidebar {
 						$data[$row['f_b_id']]['date']= $row['date'];
 						//$data[$row['f_b_id']]['q_rating_cnt']= $row['q_rating_cnt'];
 						if($row['type']=='IPD'){
-							$ipd_cnt +=$row['q_rating_cnt'];
+							$ipd_cnt +=$opc;
 							$ipd_avg +=$row['q_percent'];
 						}else{
-							$opd_cnt +=$row['q_rating_cnt'];
+							$opd_cnt +=$ipc;
 							$opd_vg +=$row['q_percent'];
 						}
 						//$data[$row['f_b_id']]['q_ans']=  str_replace(",","\n",$row['q_ans']);
 						
 					$cnt_sno++;}
+				}else{
+					$ipd_cnt=0;
+					$ipd_avg=0;
+					$opd_cnt=0;
+					$opd_vg=0;					
 				}
 				if(!empty($data)){
 					$in_list=$data;	
@@ -152,21 +157,17 @@ class Export extends sidebar {
 					$in_list=array('No data Available');
 				}
 				
-				if( isset($opd_cnt) && $opd_cnt!=0 && $opd_cnt!='' && $opd_cnt>10){
-					$opd_avg=((($opd_vg)/(($opd_cnt)))*10);
-				}else if($opd_cnt<10 || $opd_cnt<=20){
-					$opd_avg=$opd_vg;
+				if( isset($opd_cnt) && $opd_cnt!=0 && $opd_cnt!=''){
+					$opd_avg=((($opd_vg)/(($opd_cnt)*5))*5);
 				}else{
 					$opd_avg=0;
 				}
-				if(isset($ipd_cnt) && $ipd_cnt!=0 && $ipd_cnt!='' && $ipd_cnt>15){
-					$ipd_avg_val=((($ipd_avg)/(($ipd_cnt)))*10);
-				}else if($ipd_cnt<10 || $ipd_cnt<=20){
-					$ipd_avg_val=$ipd_avg;
+				if(isset($ipd_cnt) && $ipd_cnt!=0 && $ipd_cnt!=''){
+					$ipd_avg_val=((($ipd_avg)/(($ipd_cnt)*5))*5);
+					
 				}else{
 					$ipd_avg_val=0;
 				}
-				//echo $ipd_avg_val;exit;
 				$st="";
 				$coist='';
 				$p=round($opd_avg);
@@ -220,9 +221,17 @@ class Export extends sidebar {
 				
 				 $this->excel->getActiveSheet()->setCellValue('A1', '');
                 $this->excel->getActiveSheet()->setCellValue('B1', 'OVERALL OPD RATING');
-                $this->excel->getActiveSheet()->setCellValue('C1', number_format($opd_avg,2));
+				if($opd_avg!='' && $opd_avg!=0){
+					$this->excel->getActiveSheet()->setCellValue('C1', ($opd_avg));
+				}else{
+					$this->excel->getActiveSheet()->setCellValue('C1', 0);
+				}
                 $this->excel->getActiveSheet()->setCellValue('D1', 'OVERALL IPD RATING');
-                $this->excel->getActiveSheet()->setCellValue('E1', number_format($ipd_avg_val,2));
+				if($opd_avg!='' && $opd_avg!=0){
+					$this->excel->getActiveSheet()->setCellValue('E1', ($ipd_avg_val));
+				}else{
+					$this->excel->getActiveSheet()->setCellValue('E1', 0);
+				}
                 $this->excel->getActiveSheet()->setCellValue('F1', '');
                 $this->excel->getActiveSheet()->setCellValue('G1', '');
                 $this->excel->getActiveSheet()->setCellValue('H1', '');

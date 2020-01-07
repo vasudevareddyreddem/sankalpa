@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
 		$this->load->helper('security');
 		$this->load->library('encryption');
 		$this->load->model('Admin_model');
-		}
+	}
 	public function index()
 	{	
 		if(!$this->session->userdata('hms_details'))
