@@ -67,7 +67,7 @@ h3,h2{
 	}
 }
 .page-container{
-		width:80%;
+		width:85%;
 		border:1px solid #ddd;
 		background:#fff;
 	}
@@ -89,14 +89,15 @@ input[type="radio"] {
   appearance: none;
   /* create custom radiobutton appearance */
   display: inline-block;
-  width: 25px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   padding: 2px;
   /* background-color only for content */
   background-clip: content-box;
   border: 2px solid #0061a5	;
   background-color: #fff;
   border-radius: 50%;
+  cursor:pointer;
 }
 
 /* appearance for checked radiobutton */
@@ -105,6 +106,33 @@ input[type="radio"]:checked {
 }
 .feed-radio{
 	margin-top:15px;
+}
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  background:#8a8cba;
+  height:50px;
+  width:50px;
+  border-radius:50%;
+  padding:2px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+.feed-radio img{
+	width:50px
 }
 </style>
 <body class="login-bg-feed">
@@ -201,30 +229,36 @@ input[type="radio"]:checked {
 							<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 								<div class="feed-radio">
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Poor" required>
+									<img src="<?php echo base_url(); ?>assets/back/img/avg.png">
 								</div>
 								<small>Poor</small>
 							</div>
 							<div class="col-md-1 col-xs-2 col-sm-2 text-center">
+
 								<div class="feed-radio">
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Average" required>
+									<img src="<?php echo base_url(); ?>assets/back/img/avg.png">
 								</div>
 								<small>Average</small>
 							</div>
 							<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 								<div class="feed-radio">
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Good" required>
+									<img src="<?php echo base_url(); ?>assets/back/img/good.png">
 								</div>
 								<small>Good</small>
 							</div>
 							<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 								<div class="feed-radio">
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Very good" required>
+									<img src="<?php echo base_url(); ?>assets/back/img/vgood.png">
 								</div>
 								<small>Very good</small>
 							</div>
 							<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 								<div class="feed-radio">
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Excellent" required>
+									<img src="<?php echo base_url(); ?>assets/back/img/excellent.png">
 								</div>
 								<small>Excellent</small>
 							</div>
@@ -239,13 +273,13 @@ input[type="radio"]:checked {
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="recommend" value="Yes" required>
+								<input style="opacity:1;width:25px;height:25px;position:relative" type="radio" name="recommend" value="Yes" required>
 							</div>
 							<small>Yes</small>
 						</div>
 						<div class="col-md-1 col-xs-2 col-sm-2 text-center">
 							<div class="feed-radio">
-								<input type="radio" name="recommend" value="No" required>
+								<input style="opacity:1;width:25px;height:25px;position:relative" type="radio" name="recommend" value="No" required>
 							</div>
 							<small>No</small>
 						</div>
