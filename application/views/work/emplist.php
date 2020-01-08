@@ -14,23 +14,19 @@
 	<section class="content">
 		<div class="box">
 			<div class="box-header bg-primary">
-				<div class="col-md-2 mt-2">
-					<div class="">	<a class="btn btn-default st-btn add-student-btn" href="<?php echo base_url('assignwork/add'); ?>"><i class="fa fa-plus"></i> Add</a>
-						
-					</div>
-				</div>
+				
 				<form method="post" autocomplete="off" action="<?php echo base_url('export/emp_work'); ?>">
-					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
 						<div class="">
 							<input type="text" class="form-control datepicker" name="from_date" required placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
 						</div>
 					</div>
-					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
 						<div class="">
 							<input type="text" class="form-control datepicker" name="to_date" required placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
 						</div>
 					</div>					
-					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
 						<select class="form-control" name="priority">
 							<option value="">Select Prioritization</option>
 							<option value="ALL">ALL</option>
@@ -39,7 +35,7 @@
 							<option value="Medium">Medium</option>
 						</select>
 					</div>	
-					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
+					<div class="col-md-3 col-xs-2 col-sm-2 mt-2">
 						<button class="btn btn-warning" type="submit">Export</button>
 					</div>
 				</form>
