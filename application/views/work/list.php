@@ -11,25 +11,25 @@
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
-		<h1>
+		<h1 style="margin-top:5px;">
        Assign Task List
       </h1>
 		<ol class="breadcrumb">
-			<li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a>
-			</li>
-			<li class="active">Assign Task List</li>
+			
+			<li ><div style="margin-top:-10px;">
+					<div class="">	<a class="btn btn-primary st-btn add-student-btn" href="<?php echo base_url('assignwork/add'); ?>"><i class="fa fa-plus"></i> Add</a>
+						
+					</div>
+				</div></li>
 		</ol>
 	</section>
 	<!-- Main content -->
 	<section class="content">
 		<div class="box">
 			<div class="box-header bg-primary">
+			<div class="col-md-12">
 			<div class="row">
-				<div class="col-md-2 mt-2">
-					<div class="">	<a class="btn btn-default st-btn add-student-btn" href="<?php echo base_url('assignwork/add'); ?>"><i class="fa fa-plus"></i> Add</a>
-						
-					</div>
-				</div>
+				
 				<form method="post" action="<?php echo base_url('export/index'); ?>">
 				<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<div class="">
@@ -61,7 +61,7 @@
 								<option value="Medium">Medium</option>
 						</select>
 					</div>
-					<div class="col-md-1 col-sm-5 col-xs-5 mt-2">
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<select class="form-control" name="stat">
 							<option value="">Select status</option>
 							<option value="ALL">ALL</option>
@@ -70,11 +70,14 @@
 							<option value="2">Completed</option>
 						</select>
 					</div>	
-					<div class="col-md-1 col-xs-2 col-sm-2 mt-2">
+					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
 						<button class="btn btn-warning" type="submit">Export</button>
 					</div>
+					
 				</form>
 				</div>
+				</div>
+				<div class="col-md-12">
 				<div class="row">
 				<div>&nbsp;</div>
 				<form method="post" action="<?php echo base_url('assignwork/index'); ?>">
@@ -121,6 +124,7 @@
 						<button class="btn btn-warning" type="submit">Search</button>
 					</div>
 				</form>
+				</div>
 				</div>
 			</div>
 			<!-- /.box-header -->
