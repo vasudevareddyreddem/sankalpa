@@ -20,9 +20,6 @@
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Department</th>
-							<th>Branch</th>
-							<th>Code</th>
 							<th>Login time</th>
 							<th>Logout  time</th>
 							<th>Hours</th>
@@ -34,9 +31,6 @@
 					<?php foreach($present_emp as $li){ ?>
 						<tr>
 							<td><?php echo isset($li['name'])?$li['name']:''; ?></td>
-							<td><?php echo isset($li['departname'])?$li['departname']:''; ?></td>
-							<td><?php echo isset($li['branchname'])?$li['branchname']:''; ?></td>
-							<td><?php echo isset($li['code'])?$li['code']:''; ?></td>
 							<td><?php echo isset($li['login_time'])?$li['login_time']:''; ?></td>
 							<td><?php echo isset($li['logout_time'])?$li['logout_time']:''; ?></td>
 							<td><?php echo isset($li['hours'])?$li['hours']:''; ?></td>				
@@ -48,9 +42,6 @@
 					<tfoot>
 						<tr>
 							<th>Name</th>
-							<th>Department</th>
-							<th>Branch</th>
-							<th>Code</th>
 							<th>Login time</th>
 							<th>Logout  time</th>
 							<th>Hours</th>

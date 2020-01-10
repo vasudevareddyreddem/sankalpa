@@ -103,7 +103,7 @@ class Feedback extends CI_Controller {
 				$sender=$this->config->item('sender');
 				$mob=isset($post['phone_no'])?$post['phone_no']:'';
 				$hurl="https://www.google.com/search?ei=HrkVXuPZJZuf4-EPodqNuAo&q=sankalpa+super+speciality+hospita";
-				$msg ="Dear ".$post['name'].", please rate us : ".$hurl." ";
+				$msg ="Dear ".$post['name'].", we'd love to  get your honest feedback about your experience : ".$hurl." ";
 				$ch2 = curl_init();
 				curl_setopt($ch2, CURLOPT_URL,'http://sms.pearlsms.com/public/sms/send');
 				curl_setopt($ch2, CURLOPT_POST, 1);

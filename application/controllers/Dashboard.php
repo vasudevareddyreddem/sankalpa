@@ -62,7 +62,23 @@ class Dashboard extends sidebar {
 			$data['d_list']=$this->Feedback_model->d_list();
 			$data['l_list']=$this->Feedback_model->location_list();
 			$data['s_list']=$this->Feedback_model->source_list();
-
+			
+			foreach($data['d_list'] as $dli){
+				$d_lis=$this->Dashboard_model->get_depart_wise_feed_list($dli['name']);
+				$data['d_part_wise'][$dli['d_id']]=$dli;
+				$data['d_part_wise'][$dli['d_id']]['d_cn']=$d_lis['cnt'];
+			}
+			foreach($data['l_list'] as $lli){
+				$l_lis=$this->Dashboard_model->get_location_wise_feed_list($lli['l_name']);
+				$data['loc_wise'][$lli['l_id']]=$lli;
+				$data['loc_wise'][$lli['l_id']]['d_cn']=$l_lis['cnt'];
+			}
+			foreach($data['s_list'] as $sli){
+				$s_lis=$this->Dashboard_model->get_source_wise_feed_list($sli['s_name']);
+				$data['sou_wise'][$sli['s_id']]=$sli;
+				$data['sou_wise'][$sli['s_id']]['d_cn']=$s_lis['cnt'];
+			}
+			//echo '<pre>';print_r($data);exit;
 			$data['f_date']=isset($post['from_date'])?$post['from_date']:'';
 			$data['t_date']=isset($post['to_date'])?$post['to_date']:'';
 			$data['ptype']=isset($post['ptype'])?$post['ptype']:'';
@@ -105,7 +121,13 @@ class Dashboard extends sidebar {
 				$opd_p_p=$this->Dashboard_model->get_opd_percentage('Average',$fd,$td,$dep,$loc,$sou);
 				$opd_p_g=$this->Dashboard_model->get_opd_percentage('Very good',$fd,$td,$dep,$loc,$sou);
 				$opd_a_p=$this->Dashboard_model->get_opd_percentage('Good',$fd,$td,$dep,$loc,$sou);
-				$opd_e_p=$this->Dashboard_model->get_opd_percentage('Excellent',$fd,$td,$dep,$loc,$sou);				
+				$opd_e_p=$this->Dashboard_model->get_opd_percentage('Excellent',$fd,$td,$dep,$loc,$sou);
+				$data['opd_vp_p_cnt']=$opd_vp_p['cnt'];
+				$data['opd_p_p_cnt']=$opd_p_p['cnt'];
+				$data['opd_a_p_cnt']=$opd_a_p['cnt'];
+				$data['opd_p_g_cnt']=$opd_p_g['cnt'];
+				$data['opd_e_p_cnt']=$opd_e_p['cnt'];	
+				//echo '<pre>';print_r($opd_p_p);exit;				
 				$per_tal=$this->Dashboard_model->get_all_opd_tatol('OPD',$fd,$td,$dep,$loc,$sou);
 				$data['opd_q_c']=isset($per_tal['cnt'])?$per_tal['cnt']:'';
 				if($per_tal['cnt']!=0){
@@ -117,6 +139,7 @@ class Dashboard extends sidebar {
 				}else{
 				$data['opd_vp_p']=$data['opd_p_p']=$data['opd_p_g']=$data['opd_a_p']=$data['opd_e_p']=0;	
 				}
+				//echo '<pre>';print_r($data);exit;
 				/* ipd */
 				$ipd_vp_p=$this->Dashboard_model->get_ipd_percentage('Poor',$fd,$td,$dep,$loc,$sou);
 				$ipd_p_p=$this->Dashboard_model->get_ipd_percentage('Average',$fd,$td,$dep,$loc,$sou);
@@ -124,6 +147,11 @@ class Dashboard extends sidebar {
 				$ipd_a_p=$this->Dashboard_model->get_ipd_percentage('Good',$fd,$td,$dep,$loc,$sou);
 				$ipd_e_p=$this->Dashboard_model->get_ipd_percentage('Excellent',$fd,$td,$dep,$loc,$sou);
 				$iper_tal=$this->Dashboard_model->get_all_ipd_tatol('IPD',$fd,$td,$dep,$loc,$sou);
+				$data['ipd_vp_p_cnt']=$ipd_vp_p['cnt'];
+				$data['ipd_p_p_cnt']=$ipd_p_p['cnt'];
+				$data['ipd_p_g_cnt']=$ipd_p_g['cnt'];
+				$data['ipd_a_p_cnt']=$ipd_a_p['cnt'];
+				$data['ipd_e_p_cnt']=$ipd_e_p['cnt'];
 				$data['ipd_q_c']=isset($iper_tal['cnt'])?$iper_tal['cnt']:'';
 				if($iper_tal['cnt']!=0){
 					$data['ipd_vp_p'] =((($ipd_vp_p['cnt'])/($iper_tal['cnt']))*100);
@@ -164,7 +192,14 @@ class Dashboard extends sidebar {
 					$datas[$oli['q_id']]['p_g']=$qpd_p_g;
 					$datas[$oli['q_id']]['a_p']=$qpd_a_p;
 					$datas[$oli['q_id']]['e_p']=$qpd_e_p;
+					$datas[$oli['q_id']]['poor']=$q_vp_p['cnt'];
+					$datas[$oli['q_id']]['avg']=$q_p_p['cnt'];
+					$datas[$oli['q_id']]['good']=$q_a_p['cnt'];
+					$datas[$oli['q_id']]['vgood']=$q_p_g['cnt'];
+					$datas[$oli['q_id']]['exce']=$q_e_p['cnt'];
+					
 				}
+				//echo '<pre>';print_r($datas);exit;
 				if(!empty($datas)){
 					$data['opd_q_list']=$datas;
 				}
@@ -195,6 +230,11 @@ class Dashboard extends sidebar {
 					$idatas[$ili['q_id']]['p_g']=$iqpd_p_g;
 					$idatas[$ili['q_id']]['a_p']=$iqpd_a_p;
 					$idatas[$ili['q_id']]['e_p']=$iqpd_e_p;
+					$idatas[$ili['q_id']]['poor']=$q_vp_p['cnt'];
+					$idatas[$ili['q_id']]['avg']=$q_p_p['cnt'];
+					$idatas[$ili['q_id']]['good']=$q_a_p['cnt'];
+					$idatas[$ili['q_id']]['vgood']=$q_p_g['cnt'];
+					$idatas[$ili['q_id']]['exce']=$q_e_p['cnt'];
 				}
 				if(!empty($idatas)){
 					$data['ipd_q_list']=$idatas;

@@ -188,6 +188,26 @@ class Dashboard_model extends CI_Model
 		}
         return $this->db->get()->row_array();
 	}
+	/*quaestioncnt */
+	public function get_question_cnt($qid,$t,$fd,$td,$dep,$loc,$sou){
+		$inbetweentime="fa.date BETWEEN '".$fd."' AND '".$td."'";
+		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
+		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
+		$this->db->where('fa.q_id',$qid);
+		$this->db->where('fa.answer',$t);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}if($dep!='' && $dep!='ALL'){
+			$this->db->where('fb.department',$dep);
+		}if($loc!='' && $loc!='ALL'){
+			$this->db->where('fb.location',$loc);
+		}if($sou!='' && $sou!='ALL'){
+			$this->db->where('fb.source',$sou);
+		}
+        return $this->db->get()->row_array();
+	}
+	/*quaestioncnt */
+	
 	
 	/* month wise data */
 	
@@ -237,6 +257,21 @@ class Dashboard_model extends CI_Model
 		$this->db->select('a.name as createby,ib.name,ib.d_time,ib.incident,ib.staff_nurse,ib.image,ib.status,ib.created_at,ib.created_by')->from('incident as ib');
 		$this->db->join('admin as a','a.a_id=ib.created_by','left');
 		return $this->db->get()->result_array();
+	}	
+	public  function get_depart_wise_feed_list($dep){
+		$this->db->select('COUNT(fb.f_b_id) AS cnt')->from('feed_back as fb');
+		$this->db->where('fb.department',$dep);
+		return $this->db->get()->row_array();
+	}
+	public  function get_location_wise_feed_list($loc){
+		$this->db->select('COUNT(fb.f_b_id) AS cnt')->from('feed_back as fb');
+		$this->db->where('fb.location',$loc);
+		return $this->db->get()->row_array();
+	}
+	public  function get_source_wise_feed_list($sou){
+		$this->db->select('COUNT(fb.f_b_id) AS cnt')->from('feed_back as fb');
+		$this->db->where('fb.source',$sou);
+		return $this->db->get()->row_array();
 	}
 	
 	

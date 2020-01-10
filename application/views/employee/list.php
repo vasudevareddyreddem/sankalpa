@@ -26,13 +26,9 @@
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Department</th>
 							<th>Personal Email</th>
 							<th>Mobile</th>
 							<th>Office Email</th>
-							<th>Branch</th>
-							<th>Code</th>
-							<th>DOJ</th>
 							<th>Status</th>
 							<th>Action</th>
 						</tr>
@@ -42,13 +38,9 @@
 					<?php foreach($e_list as $li){ ?>
 						<tr>
 							<td><?php echo isset($li['name'])?$li['name']:''; ?></td>
-							<td><?php echo isset($li['departname'])?$li['departname']:''; ?></td>
 							<td><?php echo isset($li['email'])?$li['email']:''; ?></td>
 							<td><?php echo isset($li['mobile'])?$li['mobile']:''; ?></td>
 							<td><?php echo isset($li['off_mail'])?$li['off_mail']:''; ?></td>
-							<td><?php echo isset($li['branchname'])?$li['branchname']:''; ?></td>
-							<td><?php echo isset($li['code'])?$li['code']:''; ?></td>
-							<td><?php echo isset($li['doj'])?$li['doj']:''; ?></td>
 							<td><?php if($li['status']==1){ echo "Active";}else{ echo "Deactive"; } ?></td>
 							<td> 
 								<a href="<?php echo base_url('employee/status/'.base64_encode($li['a_id']).'/'.base64_encode($li['status'])); ?>" class="confirmation"><i class="fa fa-pencil btn btn-success"></i></a>
@@ -64,13 +56,9 @@
 					<tfoot>
 						<tr>
 							<th>Name</th>
-							<th>Department</th>
 							<th>Personal Email</th>
 							<th>Mobile</th>
 							<th>Office Email</th>
-							<th>Branch</th>
-							<th>Code</th>
-							<th>DOJ</th>
 							<th>Status</th>
 							<th>Action</th>
 						</tr>

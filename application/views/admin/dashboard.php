@@ -266,7 +266,7 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 	?>
 <script>
 window.onload = function () {
- CanvasJS.addColorSet("greenShades",["#ea0001","#f49900","#eed600","#cacd00","#8bd100"]);
+
 var options = {
 	title: {
 		text: "OPD Patient Feedback",
@@ -278,11 +278,12 @@ var options = {
 	},
 	subtitles:[
 		{
-		text: "Total Questions ( <?php echo isset($opd_q_c)?$opd_q_c:''; ?> )",
+		text: "Total Questions ( <?php echo isset($opd_q_c)?$opd_q_c:''; ?> ) :  POOR  ( <?php echo $opd_vp_p_cnt; ?> ), Average  ( <?php echo $opd_p_p_cnt; ?>), Good ( <?php echo $opd_a_p_cnt; ?>) , Very good ( <?php echo $opd_p_g_cnt; ?>), Excellent ( <?php echo $opd_e_p_cnt; ?> )",
 		fontWeight:'bold',
-		fontFamily:'Fira Sans',
+		fontFamily:'Calibri',
 		padding:'5',
 		fontColor:'#a81396',
+		fontSize: 14,
 		}
 	],
 	
@@ -316,11 +317,12 @@ var options = {
 	},
 	subtitles:[
 		{
-		text: "Total Questions ( <?php echo isset($ipd_q_c)?$ipd_q_c:''; ?> )",
+		text: "Total Questions ( <?php echo isset($ipd_q_c)?$ipd_q_c:''; ?> ):  POOR  ( <?php echo $ipd_vp_p_cnt; ?> ), Average  ( <?php echo $ipd_p_p_cnt; ?>), Good ( <?php echo $ipd_a_p_cnt; ?>) , Very good ( <?php echo $ipd_p_g_cnt; ?>), Excellent ( <?php echo $ipd_e_p_cnt; ?> )",
 		fontWeight:'bold',
-		fontFamily:'Fira Sans',
+		fontFamily:'Calibri',
 		padding:'5',
 		fontColor:'#a81396',
+		fontSize: 14,
 		}
 	],
 
@@ -355,11 +357,12 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 							},
 							 subtitles:[
 								{
-								text: "Total Questions ( <?php echo $pqli['questions_cnt']; ?> )",
+								text: "Total Questions ( <?php echo $pqli['questions_cnt']; ?> ) :  POOR  ( <?php echo $pqli['poor']; ?> ), Average  ( <?php echo $pqli['avg']; ?>), Good ( <?php echo $pqli['good']; ?>) , Very good ( <?php echo $pqli['vgood']; ?>), Excellent ( <?php echo $pqli['exce']; ?> )",
 								fontWeight:'bold',
-								fontFamily:'Fira Sans',
+								fontFamily:'Calibri',
 								padding:'5',
 								fontColor:'#a81396',
+								fontSize: 14,
 								}
 							],
 												
@@ -390,17 +393,18 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 							title: {
 								text: "<?php echo $ipqli['qno']; ?>. <?php echo $ipqli['name']; ?> Feedback",
 								fontWeight:'bold',
-			fontFamily:'Fira Sans',
-			padding:'5',
-			fontColor:'#3f399d',
-							},
-							subtitles:[
-								{
-								text: "Total Questions ( <?php echo $ipqli['questions_cnt']; ?> )",
-								fontWeight:'bold',
 								fontFamily:'Fira Sans',
 								padding:'5',
+								fontColor:'#3f399d',
+								},
+							subtitles:[
+								{
+								text: "Total Questions ( <?php echo $ipqli['questions_cnt']; ?> ):  POOR  ( <?php echo $ipqli['poor']; ?> ), Average  ( <?php echo $ipqli['avg']; ?>), Good ( <?php echo $ipqli['good']; ?>) , Very good ( <?php echo $ipqli['vgood']; ?>), Excellent ( <?php echo $ipqli['exce']; ?> )",
+								fontWeight:'bold',
+								fontFamily:'Calibri',
+								padding:'5',
 								fontColor:'#a81396',
+								fontSize: 14,
 								}
 							],
 							
@@ -558,6 +562,94 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	
 	
 	/* vvvvv*/
+	/* department wise bar chart */
+		var all_depart_options = {
+			exportEnabled: true,
+			title:{
+				text: "Department wise Feedback graph",
+				fontWeight:'bold',
+				fontFamily:'Fira Sans',
+				padding:'5',
+				fontColor:'#3f399d',
+				
+			},
+			
+			axisY: {
+				title: "Feedback range count",
+				includeZero: false,
+			},
+			legend: {
+			itemclick: toggleDataSeries
+			},
+			data: [{
+				type: "column",
+				dataPoints: [
+				<?php foreach($d_part_wise as $dpl){ ?>
+					{ label: '<?php echo $dpl['name']; ?>', y: <?php echo $dpl['d_cn']; ?> },
+				<?php } ?>
+				]
+			}]
+		};
+		$("#all_depart_bar_chart").CanvasJSChart(all_depart_options);
+	/* department wise bar chart */
+	/* loca wise bar chart */
+		var all_loc_options = {
+			exportEnabled: true,
+			title:{
+				text: "Location wise Feedback graph",
+				fontWeight:'bold',
+				fontFamily:'Fira Sans',
+				padding:'5',
+				fontColor:'#3f399d',
+				
+			},
+			
+			axisY: {
+				title: "Feedback range count",
+				includeZero: false,
+			},
+			legend: {
+			itemclick: toggleDataSeries
+			},
+			data: [{
+				type: "column",
+				dataPoints: [
+				<?php foreach($loc_wise as $lpl){ ?>
+					{ label: '<?php echo $lpl['l_name']; ?>', y: <?php echo $lpl['d_cn']; ?> },
+				<?php } ?>
+				]
+			}]
+		};
+		$("#all_loc_bar_chart").CanvasJSChart(all_loc_options);
+	/* loc wise bar chart */
+	/* source wise bar chart */
+		var all_sou_options = {
+			exportEnabled: true,
+			title:{
+				text: "Source wise Feedback graph",
+				fontWeight:'bold',
+				fontFamily:'Fira Sans',
+				padding:'5',
+				fontColor:'#3f399d',
+				
+			},
+			axisY: {
+				title: "Feedback range count",
+				includeZero: false,
+			},
+			
+			data: [{
+				type: "column",
+				showInLegend: false, 
+				dataPoints: [
+				<?php foreach($sou_wise as $sl){ ?>
+					{ label: '<?php echo $sl['s_name']; ?>', y: <?php echo $sl['d_cn']; ?> },
+				<?php } ?>
+				]
+			}]
+		};
+		$("#all_sou_bar_chart").CanvasJSChart(all_sou_options);
+	/* source wise bar chart */
 	/*work */
 	var work_options = {
 		exportEnabled: true,
@@ -690,10 +782,24 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			</form>
 			</div>
 			<div>
-			
-			<div class="col-md-12">
-				<div id="all_opd_pie_chart" style="height: 300px; width: 100%;"></div>
+				<div class="col-md-12">
+					<div id="all_opd_pie_chart" style="height: 300px; width: 100%;"></div>
+				</div>
 			</div>
+			<div>
+				<div class="col-md-12">
+					<div id="all_depart_bar_chart" style="height: 300px; width: 100%;"></div>
+				</div>
+			</div>
+			<div>
+				<div class="col-md-12">
+					<div id="all_loc_bar_chart" style="height: 300px; width: 100%;"></div>
+				</div>
+			</div>
+			<div>
+				<div class="col-md-12">
+					<div id="all_sou_bar_chart" style="height: 300px; width: 100%;"></div>
+				</div>
 			</div>
 			<div class="clearfix">&nbsp;</div>
 			<div class="clearfix">&nbsp;</div>
@@ -853,19 +959,19 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				<div class="col-md-3 form-group mt-5">
 						<select class="form-control" name="w_priority">
 							<option value="">Select Prioritization</option>
-							<option value="ALL" <?php if($e_w_p['w_priority']=='ALL'){ echo "selected"; } ?>>ALL</option>
-							<option value="High" <?php if($e_w_p['w_priority']=='High'){ echo "selected"; } ?>>High</option>
-							<option value="Low" <?php if($e_w_p['w_priority']=='Low'){ echo "selected"; } ?>>Low</option>
-							<option value="Medium" <?php if($e_w_p['w_priority']=='Medium'){ echo "selected"; } ?>>Medium</option>
+							<option value="ALL" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='ALL'){ echo "selected"; } ?>>ALL</option>
+							<option value="High" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='High'){ echo "selected"; } ?>>High</option>
+							<option value="Low"  <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='Low'){ echo "selected"; } ?>>Low</option>
+							<option value="Medium" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='Medium'){ echo "selected"; } ?>>Medium</option>
 						</select>
 				</div>
 				<div class="col-md-3 form-group mt-5">
 						<select class="form-control" name="w_stat">
 							<option value="">Select status</option>
-							<option value="ALL" <?php if($e_w_p['w_stat']=='ALL'){ echo "selected"; } ?>>ALL</option>
-							<option value="0" <?php if($e_w_p['w_stat']=='0'){ echo "selected"; } ?>>Pending</option>
-							<option value="1" <?php if($e_w_p['w_stat']=='1'){ echo "selected"; } ?>>In progress</option>
-							<option value="2" <?php if($e_w_p['w_stat']=='2'){ echo "selected"; } ?>>Completed</option>
+							<option value="ALL" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='ALL'){ echo "selected"; } ?>>ALL</option>
+							<option value="0" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='0'){ echo "selected"; } ?>>Pending</option>
+							<option value="1" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='1'){ echo "selected"; } ?>>In progress</option>
+							<option value="2" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='2'){ echo "selected"; } ?>>Completed</option>
 						</select>
 				</div>			
 				<div class="col-md-2 form-group mt-5">
