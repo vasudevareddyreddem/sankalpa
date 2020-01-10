@@ -29,10 +29,50 @@ class Work_model extends CI_Model
 		$this->db->order_by('aw.a_w_id','desc');
 		return $this->db->get()->result_array();	
 	}
-	public  function emp_work_list($emp){
+	public  function work_search_list($emp,$pro,$from_date,$to_date,$stat){
+		$inbetweentime="DATE_FORMAT(aw.created_at,'%Y-%m-%d') BETWEEN '".$from_date."' AND '".$to_date."'";
 		$this->db->select('a.name as emp_name,ass.name as assignby,aw.a_w_id,aw.emp_id,aw.prioritization,aw.from_date,aw.to_date,aw.total_day,aw.message,aw.status,aw.created_at,')->from('assign_work as aw');
 		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
 		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
+		if($pro!='ALL' && $pro!=''){
+			$this->db->where('aw.prioritization',$pro);
+		}
+		if($from_date!='' && $to_date!=''){
+			$this->db->where($inbetweentime);
+		}
+		if($stat!='' && $stat!='ALL'){
+			$this->db->where('aw.status',$stat);
+		}
+		if($emp!='' && $emp!='ALL'){
+			$this->db->where('aw.emp_id',$emp);
+		}
+		$this->db->order_by('aw.a_w_id','desc');
+		return $this->db->get()->result_array();	
+	}
+	public  function emp_work_list($emp){
+		
+		
+		$this->db->select('a.name as emp_name,ass.name as assignby,aw.a_w_id,aw.emp_id,aw.prioritization,aw.from_date,aw.to_date,aw.total_day,aw.message,aw.status,aw.created_at,')->from('assign_work as aw');
+		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
+		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
+		$this->db->where('aw.emp_id',$emp);
+		return $this->db->get()->result_array();	
+	}
+	public  function emp_work_search_list($emp,$pro,$from_date,$to_date,$stat){
+		
+		$inbetweentime="DATE_FORMAT(aw.created_at,'%Y-%m-%d') BETWEEN '".$from_date."' AND '".$to_date."'";
+		$this->db->select('a.name as emp_name,ass.name as assignby,aw.a_w_id,aw.emp_id,aw.prioritization,aw.from_date,aw.to_date,aw.total_day,aw.message,aw.status,aw.created_at,')->from('assign_work as aw');
+		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
+		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
+		if($pro!='ALL' && $pro!=''){
+			$this->db->where('aw.prioritization',$pro);
+		}
+		if($from_date!='' && $to_date!=''){
+			$this->db->where($inbetweentime);
+		}
+		if($stat!='' && $stat!='ALL'){
+			$this->db->where('aw.status',$stat);
+		}
 		$this->db->where('aw.emp_id',$emp);
 		return $this->db->get()->result_array();	
 	}	
@@ -63,7 +103,26 @@ class Work_model extends CI_Model
 		return $this->db->get()->result_array();
 	}
 	
-	public  function get_emp_works_list($empid,$pro,$from_date,$to_date){
+	public  function get_export_emp_works_list($empid,$pro,$from_date,$to_date,$stat){
+		$inbetweentime="DATE_FORMAT(aw.created_at,'%Y-%m-%d') BETWEEN '".$from_date."' AND '".$to_date."'";
+		$this->db->select('a.name,aw.a_w_id,aw.from_date,aw.to_date,aw.prioritization,aw.to_date,aw.total_day,aw.to_date,aw.message,aw.to_date,aw.status,ass.name as assignby,')->from('assign_work as aw');
+		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
+		$this->db->join('admin as ass','ass.a_id=aw.created_by','left');
+		if($empid!='ALL' && $empid!=''){
+			$this->db->where('aw.emp_id',$empid);
+		}
+		if($pro!='ALL' && $pro!=''){
+			$this->db->where('aw.prioritization',$pro);
+		}
+		if($from_date!='' && $to_date!=''){
+			$this->db->where($inbetweentime);
+		}
+		if($stat!='' && $stat!='ALL'){
+			$this->db->where('aw.status',$stat);
+		}		
+		return $this->db->get()->result_array();
+	}
+	public  function get_emp_works_list($empid,$pro,$from_date,$to_date,$stat){
 		$inbetweentime="DATE_FORMAT(aw.created_at,'%Y-%m-%d') BETWEEN '".$from_date."' AND '".$to_date."'";
 		$this->db->select('a.name,aw.a_w_id,aw.from_date,aw.to_date,aw.prioritization,aw.to_date,aw.total_day,aw.to_date,aw.message,aw.to_date,aw.status,ass.name as assignby,')->from('assign_work as aw');
 		$this->db->join('admin as a','a.a_id=aw.emp_id','left');
@@ -71,11 +130,14 @@ class Work_model extends CI_Model
 
 		if($empid!='ALL'){
 			$this->db->where('aw.emp_id',$empid);
-		}if($pro!='ALL'){
+		}if($pro!='ALL' && $pro!=''){
 			$this->db->where('aw.prioritization',$pro);
 		}
 		if($from_date!='' && $to_date!=''){
 			$this->db->where($inbetweentime);
+		}
+		if($stat!='' && $stat!='ALL'){
+			$this->db->where('aw.status',$stat);
 		}		
 		return $this->db->get()->result_array();
 	}
@@ -83,13 +145,13 @@ class Work_model extends CI_Model
 	public  function get_feedback_list($from_date,$to_date,$type,$depart,$location,$source){
 		$inbetweentime="fb.date BETWEEN '".$from_date."' AND '".$to_date."'";
 		$this->db->select('fb.*')->from('feed_back as fb');
-		if($type!='ALL'){
+		if($type!='ALL' && $type!=''){
 			$this->db->where('fb.type',$type);	
-		}if($depart!='ALL'){
+		}if($depart!='ALL' && $depart!=''){
 			$this->db->where('fb.department',$depart);	
-		}if($location!='ALL'){
+		}if($location!='ALL' && $location!=''){
 			$this->db->where('fb.location',$location);	
-		}if($source!='ALL'){
+		}if($source!='ALL' && $source!=''){
 			$this->db->where('fb.source',$source);	
 		}
 		if($from_date!='' && $to_date!=''){
@@ -160,6 +222,38 @@ class Work_model extends CI_Model
 		//$this->db->where('aw.emp_id',$empid);
 		$this->db->where('DATE_FORMAT(aw.created_at,"%Y-%m-%d")',date('Y-m-d'));				
 		return $this->db->get()->result_array();
+	}
+	public  function d_list(){
+		$this->db->select('name')->from('department');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();
+	}
+	public  function location_list(){
+		$this->db->select('l_name')->from('locations');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();	
+	}
+	public  function source_list(){
+		$this->db->select('s_name')->from('source');
+		$this->db->where('status',1);
+		return $this->db->get()->result_array();	
+	}
+	public  function get_dep_feedback_list($from_date,$to_date,$type,$depart,$location,$source){
+		$inbetweentime="fb.date BETWEEN '".$from_date."' AND '".$to_date."'";
+		$this->db->select('COUNT(fb.f_b_id) AS cnt')->from('feed_back as fb');
+		if($type!='ALL' && $type!=''){
+			$this->db->where('fb.type',$type);	
+		}if($depart!='ALL' && $depart!=''){
+			$this->db->where('fb.department',$depart);	
+		}if($location!='ALL' && $location!=''){
+			$this->db->where('fb.location',$location);	
+		}if($source!='ALL' && $source!=''){
+			$this->db->where('fb.source',$source);	
+		}
+		if($from_date!='' && $to_date!=''){
+			$this->db->where($inbetweentime);
+		}
+		return $this->db->get()->row_array();
 	}
 	
 	

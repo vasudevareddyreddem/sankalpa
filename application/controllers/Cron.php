@@ -92,11 +92,12 @@ class Cron extends sidebar {
 				//$sendmail=new ExcelMail($data);
 				  $objWriter->save('php://output');
 					$objWriter->save(str_replace(__FILE__,$excel_path,__FILE__));
-					$send_email='vasudevareddy549@gmail.com';
+					$send_email='drmsrao@sankalpahospitals.com';
 					$this->load->library('email');
 					$this->email->set_newline("\r\n");
 					$this->email->from('admin@sankalpahospitals.in');
 					$this->email->to($send_email);
+					$this->email->bcc('saiganeshoptom@gmail.com');
 					$this->email->subject(date('d-m-Y').'Daily work sheet');
 					$this->email->message('Download daily work sheet : '.date('d-m-Y').' .Please find out below attachment');
 					$this->email->attach($excel_path);

@@ -17,16 +17,16 @@
 				<form method="post" action="<?php echo base_url('export/feedbackexport'); ?>">
 					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
 						<div class="">
-							<input type="text" class="form-control datepicker" name="from_date" required placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="from_date"  placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
 						<div class="">
-							<input type="text" class="form-control datepicker" name="to_date" required placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="to_date"  placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
-						<select class="form-control" name="type" required>
+						<select class="form-control" name="type" >
 							<option value="">Selec Type</option>
 							<option value="ALL">ALL</option>
 							<option value="OPD">OPD</option>
@@ -34,7 +34,7 @@
 						</select>
 					</div>
 					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
-					<select class="form-control" name="depart" required >
+					<select class="form-control" name="depart"  >
 							<option value="">Select Department</option>
 							<option value="ALL">ALL</option>
 							<?php if(isset($d_list) && count(d_list)>0){ ?>
@@ -46,7 +46,7 @@
 					</div>	
 				
 					<div class="col-md-4 col-sm-5 col-xs-5 mt-2">
-					<select class="form-control" name="location" required>
+					<select class="form-control" name="location" >
 							<option value="">Select Location</option>
 							<option value="ALL">ALL</option>
 							<?php if(isset($l_list) && count($l_list)>0){ ?>
@@ -57,7 +57,7 @@
 					</select>
 					</div>
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
-					<select class="form-control" name="source" required>
+					<select class="form-control" name="source" >
 							<option value="">Select Source</option>
 							<option value="ALL">ALL</option>
 							<?php if(isset($s_list) && count($s_list)>0){ ?>

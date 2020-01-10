@@ -166,10 +166,7 @@
 					<li> <a href="<?php echo base_url('dashboard'); ?>">DASHBOARD </a></li>
 					
 					
-					<?php if($hms_details['role_id']==3){ ?>
-						
-						
-					<?php } ?>
+					
 					<?php if($hms_details['role_id']==1){ ?>
 						
 						<!--<li class="treeview">
@@ -195,7 +192,7 @@
 							</ul>
 						</li>-->
 						<li class="treeview">
-							<a href="<?php echo base_url('user/feedback'); ?>">   <span>Feed Back List</span>
+							<a href="<?php echo base_url('user/feedback'); ?>">   <span>Feedback Reports</span>
 								<span class="pull-right-container">
 								  <i class="fa fa-angle-left pull-right"></i>
 								</span>
@@ -204,6 +201,7 @@
 						
 					<?php }else if($hms_details['role_id']==2){ ?>
 						<li class="treeview"> <a href="<?php echo base_url('assignwork/lists'); ?>"> ASSIGNED TASK </a></li>							
+						<li class="treeview"> <a href="<?php echo base_url('incidentbook/add'); ?>"> INCIDENT BOOK </a></li>							
 								
 					<?php } ?>
 					<?php if(isset($m_list) && count($m_list)>0){ ?>

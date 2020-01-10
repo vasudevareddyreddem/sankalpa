@@ -26,21 +26,16 @@
 										<input type="hidden" name="<?=$csrf['name'];?>" value="<?=$csrf['hash'];?>" />
 
 					 <div class=" row ">
-                        <div class=" col-md-12">
+                        <div class=" col-md-8">
                            
-						   <div class="form-group col-md-6">
+						   <div class="form-group col-md-12">
                               <label class="col-lg-4 control-label">Assigned date</label>
                               <div class="col-md-8">
                                  <input type="text" class="form-control datepicker" id="from_date" name="from_date" placeholder="Select Assigned date" value="<?php echo date('d-m-Y'); ?>" />
                               </div>
                            </div>
-						   <div class="form-group col-md-6">
-                              <label class="col-lg-4 control-label">Expected date of completion</label>
-                              <div class="col-md-8">
-                                 <input type="text" class="form-control datepicker" id="to_date" name="to_date" placeholder="Select Expected date of completion" value="<?php echo date('d-m-Y'); ?>" />
-                              </div>
-                           </div>
-						   <div class="form-group col-md-6">
+						  
+						   <div class="form-group col-md-12">
                               <label class="col-lg-4 control-label">Prioritization</label>
                               <div class="col-md-8">
                                  <select name="prioritization" class="form-control" >
@@ -51,7 +46,7 @@
 								 </select>
                               </div>
                            </div> 
-						   <div class="form-group col-md-6">
+						   <div class="form-group col-md-12">
                               <label class="col-lg-4 control-label">Employee name</label>
                               <div class="col-md-8">
                                  <select name="emp_id[]" class="form-control select2" multiple>
@@ -65,14 +60,14 @@
                               </div>
                            </div>
 						   <div class="form-group col-md-12">
-                              <label class="col-lg-2 control-label">Task Details</label>
-                              <div class="col-md-10">
+                              <label class="col-lg-4 control-label">Task Details</label>
+                              <div class="col-md-8">
                                  <textarea type="text" class="form-control" name="message" placeholder="Enter Task Details" /></textarea>
                               </div>
                            </div>
                         </div>
 						<div class="form-group">
-                           <div class="col-lg-6 text-center">
+                           <div class="col-lg-12 text-center">
                               <button type="submit" class="btn btn-primary  " name="signup" value="Sign up">Assign</button>
                            </div>
                         </div>

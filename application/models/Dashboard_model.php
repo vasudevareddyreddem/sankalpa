@@ -62,7 +62,6 @@ class Dashboard_model extends CI_Model
 		$this->db->select('COUNT(lr.id) AS cnt')->from('login_report as lr');
 		$this->db->join('admin as a','a.a_id=lr.a_id','left');
 		$this->db->where('a.role_id',2);
-		$this->db->group_by('lr.a_id');
 		$this->db->where('lr.create_at',$date);
         return $this->db->get()->row_array();
 	}
@@ -84,29 +83,29 @@ class Dashboard_model extends CI_Model
 		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
 		$this->db->where('fb.type','OPD');
 		$this->db->where('fa.answer',$t);
-		if($dep!=''){
+		if($dep!='' && $dep!='ALL'){
 			$this->db->where('fb.department',$dep);
-		}if($loc!=''){
+		}if($loc!='' && $loc!='ALL'){
 			$this->db->where('fb.location',$loc);
-		}if($sou!=''){
+		}if($sou!='' && $sou!='ALL'){
 			$this->db->where('fb.source',$sou);
 		}
         return $this->db->get()->row_array();
 	}
 	
 	public  function get_all_opd_tatol($t,$fd,$td,$dep,$loc,$sou){
-		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$inbetweentime="fa.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as  fa');
 		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
 		$this->db->where('fb.type',$t);
 		if($fd!='' && $td!=''){
 			$this->db->where($inbetweentime);
 		}
-		if($dep!=''){
+		if($dep!='' && $dep!='ALL'){
 			$this->db->where('fb.department',$dep);
-		}if($loc!=''){
+		}if($loc!='' && $loc!='ALL'){
 			$this->db->where('fb.location',$loc);
-		}if($sou!=''){
+		}if($sou!='' && $sou!='ALL'){
 			$this->db->where('fb.source',$sou);
 		}
         return $this->db->get()->row_array();
@@ -114,7 +113,7 @@ class Dashboard_model extends CI_Model
 	
 	/* graphs  purpose */	
 	public  function  get_ipd_percentage($t,$fd,$td,$dep,$loc,$sou){
-		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$inbetweentime="fa.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
 		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
 		$this->db->where('fb.type','IPD');
@@ -122,26 +121,26 @@ class Dashboard_model extends CI_Model
 		if($fd!='' && $td!=''){
 			$this->db->where($inbetweentime);
 		}
-		if($dep!=''){
+		if($dep!='' && $dep!='ALL'){
 			$this->db->where('fb.department',$dep);
-		}if($loc!=''){
+		}if($loc!='' && $loc!='ALL'){
 			$this->db->where('fb.location',$loc);
-		}if($sou!=''){
+		}if($sou!='' && $sou!='ALL'){
 			$this->db->where('fb.source',$sou);
 		}
         return $this->db->get()->row_array();
 	}
 	
 	public  function get_all_ipd_tatol($t,$fd,$td,$dep,$loc,$sou){
-		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$inbetweentime="fa.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as  fa');
 		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
 		$this->db->where('fb.type',$t);
-		if($dep!=''){
+		if($dep!='' && $dep!='ALL'){
 			$this->db->where('fb.department',$dep);
-		}if($loc!=''){
+		}if($loc!='' && $loc!='ALL'){
 			$this->db->where('fb.location',$loc);
-		}if($sou!=''){
+		}if($sou!='' && $sou!='ALL'){
 			$this->db->where('fb.source',$sou);
 		}
         return $this->db->get()->row_array();
@@ -155,36 +154,36 @@ class Dashboard_model extends CI_Model
 	}
 	
 	public  function  get_question_taotal($qid,$fd,$td,$dep,$loc,$sou){
-		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$inbetweentime="fa.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
 		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
 		$this->db->where('fa.q_id',$qid);
 		if($fd!='' && $td!=''){
 			$this->db->where($inbetweentime);
 		}
-		if($dep!=''){
+		if($dep!='' && $dep!='ALL'){
 			$this->db->where('fb.department',$dep);
-		}if($loc!=''){
+		}if($loc!='' && $loc!='ALL'){
 			$this->db->where('fb.location',$loc);
-		}if($sou!=''){
+		}if($sou!='' && $sou!='ALL'){
 			$this->db->where('fb.source',$sou);
 		}
         return $this->db->get()->row_array();
 	}
 	
 	public function get_qeu_percentage($qid,$t,$fd,$td,$dep,$loc,$sou){
-		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$inbetweentime="fa.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
 		$this->db->join('feed_back as fb','fb.f_b_id=fa.f_b_id','left');
 		$this->db->where('fa.q_id',$qid);
 		$this->db->where('fa.answer',$t);
 		if($fd!='' && $td!=''){
 			$this->db->where($inbetweentime);
-		}if($dep!=''){
+		}if($dep!='' && $dep!='ALL'){
 			$this->db->where('fb.department',$dep);
-		}if($loc!=''){
+		}if($loc!='' && $loc!='ALL'){
 			$this->db->where('fb.location',$loc);
-		}if($sou!=''){
+		}if($sou!='' && $sou!='ALL'){
 			$this->db->where('fb.source',$sou);
 		}
         return $this->db->get()->row_array();
@@ -193,11 +192,11 @@ class Dashboard_model extends CI_Model
 	/* month wise data */
 	
 	public function month_wise_op_data($t,$pt,$fd,$td){
-		$inbetweentime="date BETWEEN '".$fd."' AND '".$td."'";
+		$inbetweentime="fa.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('fa.created_at,COUNT(fa.f_d_a_id) AS cnt')->from('feed_back_answer as fa');
 		$this->db->join('question as q','q.q_id=fa.q_id','left');
 		$this->db->where('fa.answer',$t);
-		if($pt!=''){
+		if($pt!='' && $pt!='ALL'){
 			$this->db->where('q.type',$pt);
 		}
 		$this->db->where("DATE_FORMAT(fa.created_at,'%Y')", date('Y'));
@@ -208,10 +207,17 @@ class Dashboard_model extends CI_Model
         return $this->db->get()->result_array();
 	}
 	
-	public  function get_work_high_compete($pr,$st){
+	public  function get_work_high_compete($pr,$st,$w_e_n,$w_p_y,$w_st){
 		$this->db->select('COUNT(aw.a_w_id) AS cnt')->from('assign_work as aw');
 		$this->db->where('aw.prioritization',$pr);
 		$this->db->where('aw.status',$st);
+		if(isset($w_e_n) && $w_e_n!='' && $w_e_n!='ALL'){
+			$this->db->where('aw.emp_id',$w_e_n);
+		}if(isset($w_p_y) && $w_p_y!='' && $w_p_y!='ALL'){
+			$this->db->where('aw.prioritization',$w_p_y);
+		}if(isset($w_st) && $w_st!='' && $w_st!='ALL'){
+			$this->db->where('aw.status',$w_st);
+		}
 		return $this->db->get()->row_array();
 	}
 	public  function get_emp_work_high_compete($pr,$st,$aid){
@@ -220,6 +226,17 @@ class Dashboard_model extends CI_Model
 		$this->db->where('aw.status',$st);
 		$this->db->where('aw.emp_id',$aid);
 		return $this->db->get()->row_array();
+	}
+	public  function get_emp_list(){
+		$this->db->select('a_id,name')->from('admin');
+		$this->db->where('status',1);
+		$this->db->where('role_id',2);
+		return $this->db->get()->result_array();
+	}
+	public  function get_incident_book(){
+		$this->db->select('a.name as createby,ib.name,ib.d_time,ib.incident,ib.staff_nurse,ib.image,ib.status,ib.created_at,ib.created_by')->from('incident as ib');
+		$this->db->join('admin as a','a.a_id=ib.created_by','left');
+		return $this->db->get()->result_array();
 	}
 	
 	

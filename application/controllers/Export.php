@@ -36,7 +36,7 @@ class Export extends sidebar {
                 //retrive contries table data
 				$post=$this->input->post();
 				//echo '<pre>';print_r($post);
-				$w_list=$this->Work_model->get_emp_works_list($post['emp_id'],$post['priority'],$post['from_date'],$post['to_date']);
+				$w_list=$this->Work_model->get_export_emp_works_list($post['emp_id'],$post['priority'],$post['from_date'],$post['to_date'],$post['stat']);
 				//echo $this->db->last_query();
 				//echo '<pre>';print_r($w_list);exit;
 				if(isset($w_list) && count($w_list)>0){
@@ -79,7 +79,7 @@ class Export extends sidebar {
                 $this->excel->getActiveSheet()->fromArray($exceldata, null, 'A2');
                  
                 
-                $filename=$post['emp_id'].'_'.$post['priority'].'_work_shhet_list.xls'; //save our workbook as this file name
+                $filename='Employee_work_shhet_list.xls'; //save our workbook as this file name
                 header('Content-Type: application/vnd.ms-excel'); //mime type
                 header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
                 header('Cache-Control: max-age=0'); //no cache
@@ -97,34 +97,27 @@ class Export extends sidebar {
 	}
 	
 	public  function feedbackexport(){
-			$this->excel->setActiveSheetIndex(0);
-                //name the worksheet
+				$this->excel->setActiveSheetIndex(0);
                 $this->excel->getActiveSheet()->setTitle('FEED BACK RATING LIST');
-                //set cell A1 content with some text
-                $this->excel->getActiveSheet()->setCellValue('A2', 'S.NO');
-                $this->excel->getActiveSheet()->setCellValue('B2', 'TYPE');
-                $this->excel->getActiveSheet()->setCellValue('C2', 'NAME');
-                $this->excel->getActiveSheet()->setCellValue('D2', 'MOBILE NUMBER');
-                $this->excel->getActiveSheet()->setCellValue('E2', 'DEPARTMENT');
-                $this->excel->getActiveSheet()->setCellValue('F2', 'TOWN');
-                $this->excel->getActiveSheet()->setCellValue('G2', 'SOURCE');
-                $this->excel->getActiveSheet()->setCellValue('H2', 'RATING');
-                //$this->excel->getActiveSheet()->setCellValue('I1', 'QUEATION WISE RATIONG');
-                $this->excel->getActiveSheet()->setCellValue('I2', 'DATE');
-                 for($col = ord('A'); $col <= ord('C'); $col++){ //set column dimension $this->excel->getActiveSheet()->getColumnDimension(chr($col))->setAutoSize(true);
-							 //change the font size
+                $this->excel->getActiveSheet()->setCellValue('A3', 'S.NO');
+                $this->excel->getActiveSheet()->setCellValue('B3', 'TYPE');
+                $this->excel->getActiveSheet()->setCellValue('C3', 'NAME');
+                $this->excel->getActiveSheet()->setCellValue('D3', 'MOBILE NUMBER');
+                $this->excel->getActiveSheet()->setCellValue('E3', 'DEPARTMENT');
+                $this->excel->getActiveSheet()->setCellValue('F3', 'TOWN');
+                $this->excel->getActiveSheet()->setCellValue('G3', 'SOURCE');
+                $this->excel->getActiveSheet()->setCellValue('H3', 'RATING');
+                $this->excel->getActiveSheet()->setCellValue('I3', 'DATE');
+                 for($col = ord('A'); $col <= ord('C'); $col++){
 						$this->excel->getActiveSheet()->getStyle(chr($col))->getFont()->setSize(12);
 						$this->excel->getActiveSheet()->getStyle(chr($col))->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 					}
-                //retrive contries table data
 				$post=$this->input->post();
-				//echo '<pre>';print_r($post);exit;
 				$w_list=$this->Work_model->get_feedback_list($post['from_date'],$post['to_date'],$post['type'],$post['depart'],$post['location'],$post['source']);
 				//echo $this->db->last_query();
 				//echo '<pre>';print_r($w_list);exit;
 				if(isset($w_list) && count($w_list)>0){
-					$opc=$ipc=1;$opd_vg=$ipd_avg=$opd_cnt=$ipd_cnt='';$cnt_sno=1;foreach ($w_list as $row){
-						//echo '<pre>';print_r($q_e);
+					$dep_list=$loc_list=$sour_list=array();$opc=$ipc=1;$opd_vg=$ipd_avg=$opd_cnt=$ipd_cnt='';$cnt_sno=1;foreach ($w_list as $row){
 						$data[$row['f_b_id']]['sno'] = $cnt_sno;
 						$data[$row['f_b_id']]['type']= $row['type'];
 						$data[$row['f_b_id']]['name']= $row['name'];
@@ -134,7 +127,6 @@ class Export extends sidebar {
 						$data[$row['f_b_id']]['source']= $row['source'];
 						$data[$row['f_b_id']]['rat']= $row['q_percent'].' ( '.$row['q_rating'].' )';
 						$data[$row['f_b_id']]['date']= $row['date'];
-						//$data[$row['f_b_id']]['q_rating_cnt']= $row['q_rating_cnt'];
 						if($row['type']=='IPD'){
 							$ipd_cnt +=$opc;
 							$ipd_avg +=$row['q_percent'];
@@ -142,14 +134,37 @@ class Export extends sidebar {
 							$opd_cnt +=$ipc;
 							$opd_vg +=$row['q_percent'];
 						}
-						//$data[$row['f_b_id']]['q_ans']=  str_replace(",","\n",$row['q_ans']);
-						
+						$dep_list[]=$row['department'];
+						$loc_list[]=$row['location'];
+						$sour_list[]=$row['source'];						
 					$cnt_sno++;}
 				}else{
-					$ipd_cnt=0;
-					$ipd_avg=0;
-					$opd_cnt=0;
-					$opd_vg=0;					
+					$ipd_cnt=0;$ipd_avg=0;$opd_cnt=0;$opd_vg=0;
+				}
+				
+				if( isset($dep_list) && count($dep_list)>0){
+					$dt=array_unique($dep_list);
+					foreach($dt as $l){
+						$d_cnt=$this->Work_model->get_dep_feedback_list($post['from_date'],$post['to_date'],$post['type'],$l,$post['location'],$post['source']);
+						$depat_wise_cnt[]=($l.' : '.$d_cnt['cnt']);
+						$dep_d=implode(" , ",$depat_wise_cnt);
+					}
+				}
+				if( isset($loc_list) && count($loc_list)>0){
+					$lt=array_unique($loc_list);
+					foreach($lt as $l){
+						$l_cnt=$this->Work_model->get_dep_feedback_list($post['from_date'],$post['to_date'],$post['type'],$post['depart'],$l,$post['source']);
+						$location_wise_cnt[]=($l.' : '.$l_cnt['cnt']);
+					}
+					$loc_d=implode(" , ",$location_wise_cnt);
+				}
+				if( isset($sour_list) && count($sour_list)>0){
+					$st=array_unique($sour_list);
+					foreach($st as $l){
+						$s_cnt=$this->Work_model->get_dep_feedback_list($post['from_date'],$post['to_date'],$post['type'],$post['depart'],$post['location'],$l);
+						$sou_wise_cnt[]=($l.' : '.$s_cnt['cnt']);
+					}
+					$sou_d=implode(" , ",$sou_wise_cnt);
 				}
 				if(!empty($data)){
 					$in_list=$data;	
@@ -236,10 +251,21 @@ class Export extends sidebar {
                 $this->excel->getActiveSheet()->setCellValue('G1', '');
                 $this->excel->getActiveSheet()->setCellValue('H1', '');
                 $this->excel->getActiveSheet()->setCellValue('I1', '');
+				/*paramets wise data */
+				$this->excel->getActiveSheet()->setCellValue('A2', '');
+                $this->excel->getActiveSheet()->setCellValue('B2', '');
+                $this->excel->getActiveSheet()->setCellValue('C2', '');
+                $this->excel->getActiveSheet()->setCellValue('D2', '');
+                $this->excel->getActiveSheet()->setCellValue('E2', isset($dep_d)?$dep_d:'');
+                $this->excel->getActiveSheet()->setCellValue('F2',isset($loc_d)?$loc_d:'');
+                $this->excel->getActiveSheet()->setCellValue('G2', isset($sou_d)?$sou_d:'');
+                $this->excel->getActiveSheet()->setCellValue('H2', '');
+                $this->excel->getActiveSheet()->setCellValue('I2', '');
+				/*paramets wise data */
 				
 				$this->excel->getActiveSheet()->getStyle('B1')->getFont()->getColor()->setARGB($coist);
 				$this->excel->getActiveSheet()->getStyle('D1')->getFont()->getColor()->setARGB($cpist);
-                $this->excel->getActiveSheet()->fromArray($exceldata, null, 'A3');                
+                $this->excel->getActiveSheet()->fromArray($exceldata, null, 'A4');                
                 $filename='user_Feedback_rating_list.xls'; //save our workbook as this file name
                 header('Content-Type: application/vnd.ms-excel'); //mime type
                 header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
@@ -274,7 +300,7 @@ class Export extends sidebar {
                 //retrive contries table data
 				$post=$this->input->post();
 				//echo '<pre>';print_r($post);
-				$w_list=$this->Work_model->get_emp_works_list($l_d['a_id'],$post['priority'],$post['from_date'],$post['to_date']);
+				$w_list=$this->Work_model->get_emp_works_list($l_d['a_id'],$post['priority'],$post['from_date'],$post['to_date'],$post['stat']);
 				//echo $this->db->last_query();
 				//echo '<pre>';print_r($w_list);exit;
 				if(isset($w_list) && count($w_list)>0){

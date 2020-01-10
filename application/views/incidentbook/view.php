@@ -5,13 +5,7 @@
       </h1>
       <ol class="breadcrumb">
          <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-		 <?php 
-		 $l_data=$this->session->userdata('hms_details');
-		 if( $l_data['role_id']==2){ ?>
-         <li><a href="<?php echo base_url('assignwork/lists'); ?>"><i class="fa fa-list"></i> list</a></li>
-		 <?php }else{ ?>
-		  <li><a href="<?php echo base_url('assignwork/index'); ?>"><i class="fa fa-list"></i> list</a></li>
-		 <?php } ?>
+         <li><a href="<?php echo base_url('assignwork/index'); ?>"><i class="fa fa-list"></i> list</a></li>
          <li class="active">Assign Task View</li>
       </ol>
    </section>

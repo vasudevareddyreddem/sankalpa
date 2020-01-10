@@ -226,7 +226,7 @@ box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 							<div class="col-md-1 col-xs-3 col-sm-3 text-center">
 								<div class="feed-radio">
 									<input type="radio"  name="anser[<?php echo $qli['qno']; ?>]" value="Poor" required>
-									<img src="<?php echo base_url(); ?>assets/back/img/avg.png">
+									<img src="<?php echo base_url(); ?>assets/back/img/poor.png">
 								</div>
 								<small>Poor</small>
 							</div>

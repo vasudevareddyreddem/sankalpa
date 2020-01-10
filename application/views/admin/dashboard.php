@@ -37,43 +37,43 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
-			$op_vp_dec1++;
+			$op_vp_dec1+=$cri['cnt'];
 			}
 			if($dat[1] == 11)
 			{
-				$op_vp_nov1++;
+				$op_vp_nov1+=$cri['cnt'];
 			}
 			if($dat[1] == 10)
 			{
-				$op_vp_oct1++;
+				$op_vp_oct1+=$cri['cnt'];
 			}
 			if($dat[1] == '09')
 			{
-				$op_vp_sep1++;
+				$op_vp_sep1+=$cri['cnt'];
 			}if($dat[1] == '08')
 			{
-				$op_vp_aug1++;
+				$op_vp_aug1+=$cri['cnt'];
 			}if($dat[1] == '07')
 			{
-				$op_vp_jul1++;
+				$op_vp_jul1+=$cri['cnt'];
 			}if($dat[1] == '06')
 			{
-				$op_vp_jun1++;
+				$op_vp_jun1+=$cri['cnt'];
 			}if($dat[1] == '05')
 			{
-				$op_vp_may1++;
+				$op_vp_may1+=$cri['cnt'];
 			}if($dat[1] == 04)
 			{
-				$op_vp_apr1++;
+				$op_vp_apr1+=$cri['cnt'];
 			}if($dat[1] == 03)
 			{
-				$op_vp_mar1++;
+				$op_vp_mar1+=$cri['cnt'];
 			}if($dat[1] == 02)
 			{
-				$op_vp_feb1++;
+				$op_vp_feb1+=$cri['cnt'];
 			}if($dat[1] == 01)
 			{
-				$op_vp_jan1++;
+				$op_vp_jan1+=$cri['cnt'];
 			}
 		}	
 	}
@@ -83,43 +83,43 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
-			$op_p_dec1++;
+			$op_p_dec1+=$cri['cnt'];
 			}
 			if($dat[1] == 11)
 			{
-				$op_p_nov1++;
+				$op_p_nov1+=$cri['cnt'];
 			}
 			if($dat[1] == 10)
 			{
-				$op_p_oct1++;
+				$op_p_oct1+=$cri['cnt'];
 			}
 			if($dat[1] == '09')
 			{
-				$op_p_sep1++;
+				$op_p_sep1+=$cri['cnt'];
 			}if($dat[1] == '08')
 			{
-				$op_p_aug1++;
+				$op_p_aug1+=$cri['cnt'];
 			}if($dat[1] == '07')
 			{
-				$op_p_jul1++;
+				$op_p_jul1+=$cri['cnt'];
 			}if($dat[1] == '06')
 			{
-				$op_p_jun1++;
+				$op_p_jun1+=$cri['cnt'];
 			}if($dat[1] == '05')
 			{
-				$op_p_may1++;
+				$op_p_may1+=$cri['cnt'];
 			}if($dat[1] == 04)
 			{
-				$op_p_apr1++;
+				$op_p_apr1+=$cri['cnt'];
 			}if($dat[1] == 03)
 			{
-				$op_p_mar1++;
+				$op_p_mar1+=$cri['cnt'];
 			}if($dat[1] == 02)
 			{
-				$op_p_feb1++;
+				$op_p_feb1+=$cri['cnt'];
 			}if($dat[1] == 01)
 			{
-				$op_p_jan1++;
+				$op_p_jan1+=$cri['cnt'];
 			}
 		}	
 	}
@@ -129,43 +129,43 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
-			$op_a_dec1++;
+			$op_a_dec1+=$cri['cnt'];
 			}
 			if($dat[1] == 11)
 			{
-				$op_a_nov1++;
+				$op_a_nov1+=$cri['cnt'];
 			}
 			if($dat[1] == 10)
 			{
-				$op_a_oct1++;
+				$op_a_oct1+=$cri['cnt'];
 			}
 			if($dat[1] == '09')
 			{
-				$op_a_sep1++;
+				$op_a_sep1+=$cri['cnt'];
 			}if($dat[1] == '08')
 			{
-				$op_a_aug1++;
+				$op_a_aug1+=$cri['cnt'];
 			}if($dat[1] == '07')
 			{
-				$op_a_jul1++;
+				$op_a_jul1+=$cri['cnt'];
 			}if($dat[1] == '06')
 			{
-				$op_a_jun1++;
+				$op_a_jun1+=$cri['cnt'];
 			}if($dat[1] == '05')
 			{
-				$op_a_may1++;
+				$op_a_may1+=$cri['cnt'];
 			}if($dat[1] == 04)
 			{
-				$op_a_apr1++;
+				$op_a_apr1+=$cri['cnt'];
 			}if($dat[1] == 03)
 			{
-				$op_a_mar1++;
+				$op_a_mar1+=$cri['cnt'];
 			}if($dat[1] == 02)
 			{
-				$op_a_feb1++;
+				$op_a_feb1+=$cri['cnt'];
 			}if($dat[1] == 01)
 			{
-				$op_a_jan1++;
+				$op_a_jan1+=$cri['cnt'];
 			}
 		}	
 	}
@@ -175,43 +175,43 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
-			$op_g_dec1++;
+			$op_g_dec1+=$cri['cnt'];
 			}
 			if($dat[1] == 11)
 			{
-				$op_g_nov1++;
+				$op_g_nov1+=$cri['cnt'];
 			}
 			if($dat[1] == 10)
 			{
-				$op_g_oct1++;
+				$op_g_oct1+=$cri['cnt'];
 			}
 			if($dat[1] == '09')
 			{
-				$op_g_sep1++;
+				$op_g_sep1+=$cri['cnt'];
 			}if($dat[1] == '08')
 			{
-				$op_g_aug1++;
+				$op_g_aug1+=$cri['cnt'];
 			}if($dat[1] == '07')
 			{
-				$op_g_jul1++;
+				$op_g_jul1+=$cri['cnt'];
 			}if($dat[1] == '06')
 			{
-				$op_g_jun1++;
+				$op_g_jun1+=$cri['cnt'];
 			}if($dat[1] == '05')
 			{
-				$op_g_may1++;
+				$op_g_may1+=$cri['cnt'];
 			}if($dat[1] == 04)
 			{
-				$op_g_apr1++;
+				$op_g_apr1+=$cri['cnt'];
 			}if($dat[1] == 03)
 			{
-				$op_g_mar1++;
+				$op_g_mar1+=$cri['cnt'];
 			}if($dat[1] == 02)
 			{
-				$op_g_feb1++;
+				$op_g_feb1+=$cri['cnt'];
 			}if($dat[1] == 01)
 			{
-				$op_g_jan1++;
+				$op_g_jan1+=$cri['cnt'];
 			}
 		}	
 	}
@@ -221,50 +221,52 @@ $op_vp_dec1=$op_vp_jan1=$op_vp_feb1=$op_vp_mar1=$op_vp_apr1=$op_vp_may1=$op_vp_j
 		$dat = explode("-", $cri['created_at']);
 			if($dat[1] == 12)
 			{
-			$op_e_dec1++;
+			$op_e_dec1+=$cri['cnt'];
 			}
 			if($dat[1] == 11)
 			{
-				$op_e_nov1++;
+				$op_e_nov1+=$cri['cnt'];
 			}
 			if($dat[1] == 10)
 			{
-				$op_e_oct1++;
+				$op_e_oct1+=$cri['cnt'];
 			}
 			if($dat[1] == '09')
 			{
-				$op_e_sep1++;
+				$op_e_sep1+=$cri['cnt'];
 			}if($dat[1] == '08')
 			{
-				$op_e_aug1++;
+				$op_e_aug1+=$cri['cnt'];
 			}if($dat[1] == '07')
 			{
-				$op_e_jul1++;
+				$op_e_jul1+=$cri['cnt'];
 			}if($dat[1] == '06')
 			{
-				$op_e_jun1++;
+				$op_e_jun1+=$cri['cnt'];
 			}if($dat[1] == '05')
 			{
-				$op_e_may1++;
+				$op_e_may1+=$cri['cnt'];
 			}if($dat[1] == 04)
 			{
-				$op_e_apr1++;
+				$op_e_apr1+=$cri['cnt'];;
 			}if($dat[1] == 03)
 			{
-				$op_e_mar1++;
+				$op_e_mar1+=$cri['cnt'];
 			}if($dat[1] == 02)
 			{
-				$op_e_feb1++;
+				$op_e_feb1+=$cri['cnt'];
 			}if($dat[1] == 01)
 			{
-				$op_e_jan1++;
+				$op_e_jan1+=$cri['cnt'];
 			}
 		}	
 	}
+	//echo '<pre>';print_r($opd_excellent);exit;
+	//echo $op_e_jan1;exit;
 	?>
 <script>
 window.onload = function () {
-
+ CanvasJS.addColorSet("greenShades",["#ea0001","#f49900","#eed600","#cacd00","#8bd100"]);
 var options = {
 	title: {
 		text: "OPD Patient Feedback",
@@ -274,6 +276,15 @@ var options = {
 			padding:'5',
 			fontColor:'#3f399d',
 	},
+	subtitles:[
+		{
+		text: "Total Questions ( <?php echo isset($opd_q_c)?$opd_q_c:''; ?> )",
+		fontWeight:'bold',
+		fontFamily:'Fira Sans',
+		padding:'5',
+		fontColor:'#a81396',
+		}
+	],
 	
 	animationEnabled: true,
 	data: [{
@@ -285,11 +296,11 @@ var options = {
 		indexLabelFontSize: 15,
 		indexLabel: "{label} - {y}%",
 		dataPoints: [
-			{ y: '<?php echo number_format($opd_vp_p, 2); ?>', label: "Poor",indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc"},
-			{ y: <?php echo number_format($opd_p_p, 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-			{ y: <?php echo number_format($opd_a_p, 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-			{ y: <?php echo number_format($opd_p_g, 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
-			{ y: <?php echo number_format($opd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
+			{ y: '<?php echo number_format($opd_vp_p, 2); ?>', label: "Poor",indexLabelFontColor: "#ea0001",markerColor: "#ea0001",color: "#ea0001"},
+			{ y: <?php echo number_format($opd_p_p, 2); ?>, label: "Average", indexLabelFontColor: "#f49900", markerColor: "#f49900",color: "#f49900"},
+			{ y: <?php echo number_format($opd_a_p, 2); ?>, label: "Good", indexLabelFontColor: "#eed600", markerColor: "#eed600",color: "#eed600"},
+			{ y: <?php echo number_format($opd_p_g, 2); ?>, label: "Very good", indexLabelFontColor: "#cacd00", markerColor: "#cacd00",color: "#cacd00" },
+			{ y: <?php echo number_format($opd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8bd100", markerColor: "#8bd100",color: "#8bd100"}
 		]
 	}]
 };
@@ -303,6 +314,15 @@ var options = {
 			padding:'5',
 			fontColor:'#3f399d',
 	},
+	subtitles:[
+		{
+		text: "Total Questions ( <?php echo isset($ipd_q_c)?$ipd_q_c:''; ?> )",
+		fontWeight:'bold',
+		fontFamily:'Fira Sans',
+		padding:'5',
+		fontColor:'#a81396',
+		}
+	],
 
 	animationEnabled: true,
 	data: [{
@@ -314,11 +334,11 @@ var options = {
 		indexLabelFontSize: 15,
 		indexLabel: "{label} - {y}%",
 		dataPoints: [
-			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
-			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
-			{ y: <?php echo number_format($ipd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
+			{ y: '<?php echo number_format($ipd_vp_p, 2); ?>', label: "Poor", indexLabelFontColor: "#ea0001",markerColor: "#ea0001",color: "#ea0001" },
+			{ y: <?php echo number_format($ipd_p_p, 2); ?>, label: "Average", indexLabelFontColor: "#f49900", markerColor: "#f49900",color: "#f49900"},
+			{ y: <?php echo number_format($ipd_a_p, 2); ?>, label: "Good", indexLabelFontColor: "#eed600", markerColor: "#eed600",color: "#eed600"},
+			{ y: <?php echo number_format($ipd_p_g, 2); ?>, label: "Very good", indexLabelFontColor: "#cacd00", markerColor: "#cacd00",color: "#cacd00" },
+			{ y: <?php echo number_format($ipd_e_p, 2); ?>, label: "Excellent", indexLabelFontColor: "#8bd100", markerColor: "#8bd100",color: "#8bd100"}
 		]
 	}]
 };
@@ -329,11 +349,20 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 							title: {
 								text: "<?php echo $pqli['qno']; ?>. <?php echo $pqli['name']; ?> Feedback",
 								fontWeight:'bold',
-			fontFamily:'Fira Sans',
-			padding:'5',
-			fontColor:'#3f399d',
+								fontFamily:'Fira Sans',
+								padding:'5',
+								fontColor:'#3f399d',
 							},
-							
+							 subtitles:[
+								{
+								text: "Total Questions ( <?php echo $pqli['questions_cnt']; ?> )",
+								fontWeight:'bold',
+								fontFamily:'Fira Sans',
+								padding:'5',
+								fontColor:'#a81396',
+								}
+							],
+												
 							animationEnabled: true,
 							data: [{
 								type: "pie",
@@ -344,11 +373,11 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								indexLabelFontSize: 15,
 								indexLabel: "{label} - {y}%",
 								dataPoints: [
-									{ y: '<?php echo number_format($pqli['vp_p'], 2); ?>', label: "Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
-									{ y: <?php echo number_format($pqli['p_p'], 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-									{ y: <?php echo number_format($pqli['a_p'], 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-									{ y: <?php echo number_format($pqli['p_g'], 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
-									{ y: <?php echo number_format($pqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
+									{ y: '<?php echo number_format($pqli['vp_p'], 2); ?>', label: "Poor", indexLabelFontColor: "#ea0001",markerColor: "#ea0001",color: "#ea0001" },
+									{ y: <?php echo number_format($pqli['p_p'], 2); ?>, label: "Average", indexLabelFontColor: "#f49900", markerColor: "#f49900",color: "#f49900"},
+									{ y: <?php echo number_format($pqli['a_p'], 2); ?>, label: "Good", indexLabelFontColor: "#eed600", markerColor: "#eed600",color: "#eed600"},
+									{ y: <?php echo number_format($pqli['p_g'], 2); ?>, label: "Very good", indexLabelFontColor: "#cacd00", markerColor: "#cacd00",color: "#cacd00" },
+									{ y: <?php echo number_format($pqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8bd100", markerColor: "#8bd100",color: "#8bd100"}
 								]
 							}]
 						};
@@ -365,6 +394,15 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			padding:'5',
 			fontColor:'#3f399d',
 							},
+							subtitles:[
+								{
+								text: "Total Questions ( <?php echo $ipqli['questions_cnt']; ?> )",
+								fontWeight:'bold',
+								fontFamily:'Fira Sans',
+								padding:'5',
+								fontColor:'#a81396',
+								}
+							],
 							
 							animationEnabled: true,
 							data: [{
@@ -376,11 +414,11 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 								indexLabelFontSize: 15,
 								indexLabel: "{label} - {y}%",
 								dataPoints: [
-									{ y: '<?php echo number_format($ipqli['vp_p'], 2); ?>', label: "Poor", indexLabelFontColor: "#4f81bc",markerColor: "#4f81bc" },
-									{ y: <?php echo number_format($ipqli['p_p'], 2); ?>, label: "Average", indexLabelFontColor: "#c0504e", markerColor: "#c0504e"},
-									{ y: <?php echo number_format($ipqli['a_p'], 2); ?>, label: "Good", indexLabelFontColor: "#9bbb58", markerColor: "#9bbb58"},
-									{ y: <?php echo number_format($ipqli['p_g'], 2); ?>, label: "Very good", indexLabelFontColor: "#23bfaa", markerColor: "#23bfaa" },
-									{ y: <?php echo number_format($ipqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8064a1", markerColor: "#8064a1"}
+									{ y: '<?php echo number_format($ipqli['vp_p'], 2); ?>', label: "Poor", indexLabelFontColor: "#ea0001",markerColor: "#ea0001",color: "#ea0001" },
+									{ y: <?php echo number_format($ipqli['p_p'], 2); ?>, label: "Average", indexLabelFontColor: "#f49900", markerColor: "#f49900",color: "#f49900"},
+									{ y: <?php echo number_format($ipqli['a_p'], 2); ?>, label: "Good", indexLabelFontColor: "#eed600", markerColor: "#eed600",color: "#eed600"},
+									{ y: <?php echo number_format($ipqli['p_g'], 2); ?>, label: "Very good", indexLabelFontColor: "#cacd00", markerColor: "#cacd00",color: "#cacd00" },
+									{ y: <?php echo number_format($ipqli['e_p'], 2); ?>, label: "Excellent" , indexLabelFontColor: "#8bd100", markerColor: "#8bd100",color: "#8bd100"}
 								]
 							}]
 						};
@@ -414,6 +452,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			{
 				name: "Poor",
 				type: "spline",
+				color:"#ea0001",
+				lineColor:"#ea0001",
 				showInLegend: true,
 				dataPoints: [
 					{ label: "January", y: <?php echo isset($op_vp_dec1)?$op_vp_dec1:''; ?> },
@@ -432,6 +472,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			},{
 				name: "Average",
 				type: "spline",
+				color:"#f49900",
+				lineColor:"#f49900",
 				showInLegend: true,
 				dataPoints: [
 					{ label: "January", y: <?php echo isset($op_p_jan1)?$op_p_jan1:''; ?> },
@@ -450,6 +492,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			},{
 				name: "Good",
 				type: "spline",
+				color:"#eed600",
+				lineColor:"#eed600",
 				showInLegend: true,
 				dataPoints: [
 					{ label: "January", y: <?php echo isset($op_a_jan1)?$op_a_jan1:''; ?> },
@@ -468,6 +512,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			},{
 				name: "Very good",
 				type: "spline",
+				color:"#cacd00",
+				lineColor:"#cacd00",
 				showInLegend: true,
 				dataPoints: [
 					{ label: "January", y: <?php echo isset($op_g_jan1)?$op_g_jan1:''; ?> },
@@ -486,6 +532,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			},{
 				name: "Excellent",
 				type: "spline",
+				lineColor:"#8bd100",
+				color:"#8bd100",
 				showInLegend: true,
 				dataPoints: [
 					{ label: "January", y: <?php echo isset($op_e_jan1)?$op_e_jan1:''; ?> },
@@ -603,6 +651,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tab_1" data-toggle="tab">Patient Feedback </a></li>
               <li><a href="#tab_2" data-toggle="tab">Employee Dashboard</a></li>
+              <li><a href="#tab_3" data-toggle="tab">Incident book</a></li>
               
             </ul>
             <div class="tab-content">
@@ -612,12 +661,13 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			<div class="col-md-4 form-group mt-5">
 				<label class=" control-label text-white">Patient Type</label>
 				<div class="">
-				<select class="form-control" name="ptype" required>
-					<option value="">select</option>
-					<option value="OPD" <?php if($ptype=='OPD'){ echo "selected";} ?>>OPD</option>
-					<option value="IPD" <?php if($ptype=='IPD'){ echo "selected";} ?>>IPD</option>
-				</select>
-			</div>
+					<select class="form-control" name="ptype">
+						<option value="">select</option>
+						<option value="ALL" <?php if($ptype=='ALL'){ echo "selected";} ?>>ALL</option>
+						<option value="OPD" <?php if($ptype=='OPD'){ echo "selected";} ?>>OPD</option>
+						<option value="IPD" <?php if($ptype=='IPD'){ echo "selected";} ?>>IPD</option>
+					</select>
+				</div>
 			</div>
 			<div class="col-md-3 form-group mt-5">
 					<label class=" control-label text-white">From Date</label>
@@ -667,6 +717,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				<label class="text-white">Department </label>
 				<select class="form-control" name="department">
 					<option value="">Select</option>
+					<option value="ALL" <?php if(isset($p_post['department']) && $p_post['department']=='ALL'){ echo "selected"; } ?>>ALL</option>
 					<?php if(isset($d_list) && count($d_list)>0){ ?>
 						<?php foreach($d_list as $li){ ?>
 							<?php if(isset($p_post['department']) && $p_post['department']==$li['name']){ ?>
@@ -684,6 +735,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 					<label class="text-white">Town </label>
 					<select class="form-control" name="location">
 						<option value="">Select</option>
+						<option value="ALL" <?php if(isset($p_post['location']) && $p_post['location']=='ALL'){ echo "selected"; } ?>>ALL</option>
 						<?php if(isset($l_list) && count($l_list)>0){ ?>
 							<?php foreach($l_list as $li){ ?>
 								<?php if(isset($p_post['location']) && $p_post['location']==$li['l_name']){ ?>
@@ -701,6 +753,7 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				<label class="text-white">Source </label>
 				<select class="form-control" name="source">
 					<option value="">Select</option>
+					<option value="ALL" <?php if(isset($p_post['source']) && $p_post['source']=='ALL'){ echo "selected"; } ?>>ALL</option>
 					<?php if(isset($s_list) && count($s_list)>0){ ?>
 						<?php foreach($s_list as $li){ ?>
 							<?php if($li['s_name']==$p_post['source']){ ?>
@@ -781,6 +834,47 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				</div>
 			</div>
 			<div class="clearfix">&nbsp;</div>
+			<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
+				<form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
+				<div class="col-md-4 form-group mt-5">
+					<select class="form-control" name="w_e_name" >
+						<option value="">Select Employee Name</option>
+						<?php if(isset($emp_l) && count($emp_l)>0){ ?>
+							<?php foreach($emp_l as $li){ ?>
+								<?php if($li['a_id']==$e_w_p['w_e_name']){ ?>
+									<option selected value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+								<?php }else{ ?>
+									<option value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+								<?php } ?>
+							<?php } ?>								
+						<?php } ?>	
+					</select>
+				</div>				
+				<div class="col-md-3 form-group mt-5">
+						<select class="form-control" name="w_priority">
+							<option value="">Select Prioritization</option>
+							<option value="ALL" <?php if($e_w_p['w_priority']=='ALL'){ echo "selected"; } ?>>ALL</option>
+							<option value="High" <?php if($e_w_p['w_priority']=='High'){ echo "selected"; } ?>>High</option>
+							<option value="Low" <?php if($e_w_p['w_priority']=='Low'){ echo "selected"; } ?>>Low</option>
+							<option value="Medium" <?php if($e_w_p['w_priority']=='Medium'){ echo "selected"; } ?>>Medium</option>
+						</select>
+				</div>
+				<div class="col-md-3 form-group mt-5">
+						<select class="form-control" name="w_stat">
+							<option value="">Select status</option>
+							<option value="ALL" <?php if($e_w_p['w_stat']=='ALL'){ echo "selected"; } ?>>ALL</option>
+							<option value="0" <?php if($e_w_p['w_stat']=='0'){ echo "selected"; } ?>>Pending</option>
+							<option value="1" <?php if($e_w_p['w_stat']=='1'){ echo "selected"; } ?>>In progress</option>
+							<option value="2" <?php if($e_w_p['w_stat']=='2'){ echo "selected"; } ?>>Completed</option>
+						</select>
+				</div>			
+				<div class="col-md-2 form-group mt-5">
+						<div class="">
+						<button type="submit" class="btn btn-primary">Search</button>
+						</div>
+				</div>
+				</form>
+			</div>
 			<div class="col-md-7 mt-4">
 				<div id="chartContainer" style="height: 400px; width: 100%;"></div>
 				<div class="clearfix">&nbsp;</div>
@@ -788,6 +882,52 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 		
 			</div>
 			<div class="clearfix">&nbsp;</div>
+			
+              </div>
+              <!-- /.tab-pane -->
+			  <div class="tab-pane " id="tab_3">
+              	<div class="row" style="padding:15px;">
+						<div class="box-body table-responsive">
+							<table id="example1" class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Date  & Time</th>
+										<th>Incident</th>
+										<th>Staff / Nurse</th>
+										<th>Image</th>
+									</tr>
+								</thead>
+								<tbody>
+								<?php if(isset($incident_book) && count($incident_book)>0){ ?>
+								<?php foreach($incident_book as $li){ ?>
+									<tr>
+										<td><?php echo isset($li['name'])?$li['name']:''; ?></td>
+										<td><?php echo isset($li['d_time'])?$li['d_time']:''; ?></td>
+										<td><?php echo isset($li['incident'])?$li['incident']:''; ?></td>
+										<td><?php echo isset($li['staff_nurse'])?$li['staff_nurse']:''; ?></td>
+										<td>
+											<?php if($li['image']!=''){ ?>
+												<img style="width:50px;height:50px;" src="<?php echo base_url('assets/incidentbook/'.$li['image']); ?>">
+											<?php } ?>
+										</td>												
+									</tr>
+								<?php } ?>
+								<?php } ?>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>Name</th>
+										<th>Date  & Time</th>
+										<th>Incident</th>
+										<th>Staff / Nurse</th>
+										<th>Image</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+				</div>
+				<div class="clearfix">&nbsp;</div>
 			
               </div>
               <!-- /.tab-pane -->

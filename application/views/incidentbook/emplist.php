@@ -18,15 +18,15 @@
 				<form method="post" autocomplete="off" action="<?php echo base_url('export/emp_work'); ?>">
 					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
 						<div class="">
-							<input type="text" class="form-control datepicker" name="from_date"  placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="from_date" required placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
 						<div class="">
-							<input type="text" class="form-control datepicker" name="to_date"  placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="to_date" required placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
 						</div>
 					</div>					
-					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
 						<select class="form-control" name="priority">
 							<option value="">Select Prioritization</option>
 							<option value="ALL">ALL</option>
@@ -35,53 +35,8 @@
 							<option value="Medium">Medium</option>
 						</select>
 					</div>	
-					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
-						<select class="form-control" name="stat">
-							<option value="">Select status</option>
-							<option value="ALL">ALL</option>
-							<option value="0">Pending</option>
-							<option value="1">In progress</option>
-							<option value="2">Completed</option>
-						</select>
-					</div>	
-					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
+					<div class="col-md-3 col-xs-2 col-sm-2 mt-2">
 						<button class="btn btn-warning" type="submit">Export</button>
-					</div>
-				</form>
-			</div>
-			<div class="box-header bg-primary">
-				
-				<form method="post" autocomplete="off" action="<?php echo base_url('assignwork/lists'); ?>">
-					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
-						<div class="">
-							<input type="text" class="form-control datepicker" name="from_date"  placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-5 col-xs-5 mt-2">
-						<div class="">
-							<input type="text" class="form-control datepicker" name="to_date"  placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
-						</div>
-					</div>					
-					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
-						<select class="form-control" name="priority">
-							<option value="">Select Prioritization</option>
-							<option value="ALL">ALL</option>
-							<option value="High">High</option>
-							<option value="Low">Low</option>
-							<option value="Medium">Medium</option>
-						</select>
-					</div>	
-					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
-						<select class="form-control" name="stat">
-							<option value="">Select status</option>
-							<option value="ALL">ALL</option>
-							<option value="0">Pending</option>
-							<option value="1">In progress</option>
-							<option value="2">Completed</option>
-						</select>
-					</div>	
-					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
-						<button class="btn btn-warning" type="submit">Search</button>
 					</div>
 				</form>
 			</div>

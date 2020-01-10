@@ -24,6 +24,7 @@
 	<section class="content">
 		<div class="box">
 			<div class="box-header bg-primary">
+			<div class="row">
 				<div class="col-md-2 mt-2">
 					<div class="">	<a class="btn btn-default st-btn add-student-btn" href="<?php echo base_url('assignwork/add'); ?>"><i class="fa fa-plus"></i> Add</a>
 						
@@ -32,12 +33,12 @@
 				<form method="post" action="<?php echo base_url('export/index'); ?>">
 				<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<div class="">
-							<input type="text" class="form-control datepicker" name="from_date" required placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="from_date"  placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<div class="">
-							<input type="text" class="form-control datepicker" name="to_date" required placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="to_date"  placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
@@ -52,18 +53,75 @@
 						</select>
 					</div>
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
-					<select class="form-control" name="priority">
-							<option value="">Select Prioritization</option>
+						<select class="form-control" name="priority">
+								<option value="">Select Prioritization</option>
+								<option value="ALL">ALL</option>
+								<option value="High">High</option>
+								<option value="Low">Low</option>
+								<option value="Medium">Medium</option>
+						</select>
+					</div>
+					<div class="col-md-1 col-sm-5 col-xs-5 mt-2">
+						<select class="form-control" name="stat">
+							<option value="">Select status</option>
 							<option value="ALL">ALL</option>
-							<option value="High">High</option>
-							<option value="Low">Low</option>
-							<option value="Medium">Medium</option>
-					</select>
+							<option value="0">Pending</option>
+							<option value="1">In progress</option>
+							<option value="2">Completed</option>
+						</select>
 					</div>	
-					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
+					<div class="col-md-1 col-xs-2 col-sm-2 mt-2">
 						<button class="btn btn-warning" type="submit">Export</button>
 					</div>
 				</form>
+				</div>
+				<div class="row">
+				<div>&nbsp;</div>
+				<form method="post" action="<?php echo base_url('assignwork/index'); ?>">
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+						<div class="">
+							<input type="text" class="form-control datepicker" name="from_date"  placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2" >
+						<div class="">
+							<input type="text" class="form-control datepicker" name="to_date"  placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+						<select class="form-control" name="emp_id">
+							<option value="">Selec Employee Name</option>
+							<option value="ALL">ALL</option>
+							<?php if(isset($emp_l) && count($emp_l)>0){ ?>
+								<?php foreach($emp_l as $li){ ?>
+									<option value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+								<?php } ?>
+							<?php } ?>
+						</select>
+					</div>
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+						<select class="form-control" name="priority">
+								<option value="">Select Prioritization</option>
+								<option value="ALL">ALL</option>
+								<option value="High">High</option>
+								<option value="Low">Low</option>
+								<option value="Medium">Medium</option>
+						</select>
+					</div>
+					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
+						<select class="form-control" name="stat">
+							<option value="">Select status</option>
+							<option value="ALL">ALL</option>
+							<option value="0">Pending</option>
+							<option value="1">In progress</option>
+							<option value="2">Completed</option>
+						</select>
+					</div>	
+					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
+						<button class="btn btn-warning" type="submit">Search</button>
+					</div>
+				</form>
+				</div>
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body table-responsive">

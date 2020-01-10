@@ -97,6 +97,21 @@ class Feedback extends CI_Controller {
 					$this->Feedback_model->save_question_answer($qa);
 				$cnt++;
 			}
+			
+			/* sms */
+				$apikey=$this->config->item('apikey');
+				$sender=$this->config->item('sender');
+				$mob=isset($post['phone_no'])?$post['phone_no']:'';
+				$hurl="https://www.google.com/search?ei=HrkVXuPZJZuf4-EPodqNuAo&q=sankalpa+super+speciality+hospita";
+				$msg ="Dear ".$post['name'].", please rate us : ".$hurl." ";
+				$ch2 = curl_init();
+				curl_setopt($ch2, CURLOPT_URL,'http://sms.pearlsms.com/public/sms/send');
+				curl_setopt($ch2, CURLOPT_POST, 1);
+				curl_setopt($ch2, CURLOPT_POSTFIELDS,'sender='.$sender.'&smstype=TRANS&numbers='.$mob.'&apikey='.$apikey.'&message='.$msg.'');
+				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+				$server_output = curl_exec ($ch2);
+				curl_close ($ch2);	
+			/* sms */
 			$this->session->set_flashdata('success',"Feedback sent successfully");
 			if($post['f_type']==1){
 				redirect('feedback/ipd');

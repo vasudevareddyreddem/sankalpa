@@ -15,21 +15,27 @@ class Dashboard extends sidebar {
 		{
 			$l_d=$this->session->userdata('hms_details');
 			//echo '<pre>';print_r($l_d);exit; 
+			$data['emp_l']=$this->Dashboard_model->get_emp_list();
 			$post=$this->input->post();
-			
-			
+			//echo '<pre>';print_r($post);exit; 
+			$w_e_n=isset($post['w_e_name'])?$post['w_e_name']:'';
+			$w_p_y=isset($post['w_priority'])?$post['w_priority']:'';
+			$w_st=isset($post['w_stat'])?$post['w_stat']:'';
+			$data['e_w_p']=$post;	
+			$data['incident_book']=$this->Dashboard_model->get_incident_book();	
+			//echo '<pre>';print_r($data);exit; 			
 			/* work */
-			$data['high_com']=$this->Dashboard_model->get_work_high_compete('High',2);
-			$data['high_inp']=$this->Dashboard_model->get_work_high_compete('High',1);
-			$data['high_pen']=$this->Dashboard_model->get_work_high_compete('High',0);
+			$data['high_com']=$this->Dashboard_model->get_work_high_compete('High',2,$w_e_n,$w_p_y,$w_st);
+			$data['high_inp']=$this->Dashboard_model->get_work_high_compete('High',1,$w_e_n,$w_p_y,$w_st);;
+			$data['high_pen']=$this->Dashboard_model->get_work_high_compete('High',0,$w_e_n,$w_p_y,$w_st);;
 			
-			$data['medi_com']=$this->Dashboard_model->get_work_high_compete('Medium',2);
-			$data['medi_inp']=$this->Dashboard_model->get_work_high_compete('Medium',1);
-			$data['medi_pen']=$this->Dashboard_model->get_work_high_compete('Medium',0);
+			$data['medi_com']=$this->Dashboard_model->get_work_high_compete('Medium',2,$w_e_n,$w_p_y,$w_st);
+			$data['medi_inp']=$this->Dashboard_model->get_work_high_compete('Medium',1,$w_e_n,$w_p_y,$w_st);
+			$data['medi_pen']=$this->Dashboard_model->get_work_high_compete('Medium',0,$w_e_n,$w_p_y,$w_st);
 			
-			$data['low_com']=$this->Dashboard_model->get_work_high_compete('Low',2);
-			$data['low_inp']=$this->Dashboard_model->get_work_high_compete('Low',1);
-			$data['low_pen']=$this->Dashboard_model->get_work_high_compete('Low',0);
+			$data['low_com']=$this->Dashboard_model->get_work_high_compete('Low',2,$w_e_n,$w_p_y,$w_st);
+			$data['low_inp']=$this->Dashboard_model->get_work_high_compete('Low',1,$w_e_n,$w_p_y,$w_st);
+			$data['low_pen']=$this->Dashboard_model->get_work_high_compete('Low',0,$w_e_n,$w_p_y,$w_st);
 			//echo '<pre>';print_r($data);exit; 
 			/* work */
 			//echo '<pre>';print_r($data);exit;
@@ -82,7 +88,9 @@ class Dashboard extends sidebar {
 				$ptype=isset($post['ptype'])?$post['ptype']:'';
 				//echo '<pre>';print_r($ptype);exit;
 				$data['emp_act']=$this->Dashboard_model->get_accounts_count(2);
-				$data['emp_present']=$this->Dashboard_model->get_present_absent_list(date('Y-m-d'));				
+				$data['emp_present']=$this->Dashboard_model->get_present_absent_list(date('Y-m-d'));
+				//echo '<pre>';print_r($data['emp_present']);
+				//echo $this->db->last_query();exit;				
 				$data['opd_very_Average']=$this->Dashboard_model->month_wise_op_data('Poor',$ptype,$pfd,$ptd);
 				$data['opd_Average']=$this->Dashboard_model->month_wise_op_data('Average',$ptype,$pfd,$ptd);
 				$data['opd_Good']=$this->Dashboard_model->month_wise_op_data('Good',$ptype,$pfd,$ptd);
@@ -99,12 +107,7 @@ class Dashboard extends sidebar {
 				$opd_a_p=$this->Dashboard_model->get_opd_percentage('Good',$fd,$td,$dep,$loc,$sou);
 				$opd_e_p=$this->Dashboard_model->get_opd_percentage('Excellent',$fd,$td,$dep,$loc,$sou);				
 				$per_tal=$this->Dashboard_model->get_all_opd_tatol('OPD',$fd,$td,$dep,$loc,$sou);
-				//echo '<pre>';print_r($opd_vp_p);
-				//echo '<pre>';print_r($opd_p_p);
-				//echo '<pre>';print_r($opd_p_g);
-				//echo '<pre>';print_r($opd_a_p);
-				//echo '<pre>';print_r($opd_e_p);
-				//echo '<pre>';print_r($per_tal);
+				$data['opd_q_c']=isset($per_tal['cnt'])?$per_tal['cnt']:'';
 				if($per_tal['cnt']!=0){
 				$data['opd_vp_p'] =((($opd_vp_p['cnt'])/($per_tal['cnt']))*100);
 				$data['opd_p_p'] = ((($opd_p_p['cnt'])/($per_tal['cnt'])) * 100);
@@ -114,15 +117,14 @@ class Dashboard extends sidebar {
 				}else{
 				$data['opd_vp_p']=$data['opd_p_p']=$data['opd_p_g']=$data['opd_a_p']=$data['opd_e_p']=0;	
 				}
-				//echo '<pre>';print_r($data);exit;
 				/* ipd */
 				$ipd_vp_p=$this->Dashboard_model->get_ipd_percentage('Poor',$fd,$td,$dep,$loc,$sou);
-				//echo $this->db->last_query();exit;
 				$ipd_p_p=$this->Dashboard_model->get_ipd_percentage('Average',$fd,$td,$dep,$loc,$sou);
 				$ipd_p_g=$this->Dashboard_model->get_ipd_percentage('Very good',$fd,$td,$dep,$loc,$sou);
 				$ipd_a_p=$this->Dashboard_model->get_ipd_percentage('Good',$fd,$td,$dep,$loc,$sou);
 				$ipd_e_p=$this->Dashboard_model->get_ipd_percentage('Excellent',$fd,$td,$dep,$loc,$sou);
 				$iper_tal=$this->Dashboard_model->get_all_ipd_tatol('IPD',$fd,$td,$dep,$loc,$sou);
+				$data['ipd_q_c']=isset($iper_tal['cnt'])?$iper_tal['cnt']:'';
 				if($iper_tal['cnt']!=0){
 					$data['ipd_vp_p'] =((($ipd_vp_p['cnt'])/($iper_tal['cnt']))*100);
 					$data['ipd_p_p'] = ((($ipd_p_p['cnt'])/($iper_tal['cnt'])) * 100);
@@ -156,6 +158,7 @@ class Dashboard extends sidebar {
 					}
 					
 					$datas[$oli['q_id']]=$oli;
+					$datas[$oli['q_id']]['questions_cnt']=$q_tl['cnt'];
 					$datas[$oli['q_id']]['vp_p']=$qpd_vp_p;
 					$datas[$oli['q_id']]['p_p']=$qpd_p_p;
 					$datas[$oli['q_id']]['p_g']=$qpd_p_g;
@@ -186,6 +189,7 @@ class Dashboard extends sidebar {
 					}
 					
 					$idatas[$ili['q_id']]=$ili;
+					$idatas[$ili['q_id']]['questions_cnt']=$iq_tl['cnt'];
 					$idatas[$ili['q_id']]['vp_p']=$iqpd_vp_p;
 					$idatas[$ili['q_id']]['p_p']=$iqpd_p_p;
 					$idatas[$ili['q_id']]['p_g']=$iqpd_p_g;
@@ -195,7 +199,7 @@ class Dashboard extends sidebar {
 				if(!empty($idatas)){
 					$data['ipd_q_list']=$idatas;
 				}
-				//echo '<pre>';print_r($idatas); exit; 
+				//echo '<pre>';print_r($data); exit; 
 				$this->load->view('admin/dashboard',$data);
 			}
 			$this->load->view('admin/footer');
