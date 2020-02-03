@@ -431,138 +431,8 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 	<?php } ?>
 
 
-	
-	/* vvvvv*/
-	
-	
-	var pl_options = {
-		title:{
-			text: "<?php echo isset($ptype)?$ptype:'All '; ?> Patient feedback graph",
-			fontWeight:'bold',
-			fontFamily:'Fira Sans',
-			padding:'5',
-			fontColor:'#3f399d',
-		},
-		axisX: {
-			valueFormatString: "DD"
-		},
-		axisY: {
-			title: "Range",
-			includeZero: false,
-		},
-		
-		animationEnabled: true,
-		data: [
-			{
-				name: "Poor",
-				type: "spline",
-				color:"#ea0001",
-				lineColor:"#ea0001",
-				showInLegend: true,
-				dataPoints: [
-					{ label: "January", y: <?php echo isset($op_vp_dec1)?$op_vp_dec1:''; ?> },
-					{ label: "February", y: <?php echo isset($op_vp_feb1)?$op_vp_feb1:''; ?> },
-					{ label: "March", y: <?php echo isset($op_vp_mar1)?$op_vp_mar1:''; ?> },
-					{ label: "April", y: <?php echo isset($op_vp_apr1)?$op_vp_apr1:''; ?> },
-					{ label: "May", y: <?php echo isset($op_vp_may1)?$op_vp_may1:''; ?> },
-					{ label: "June", y: <?php echo isset($op_vp_jun1)?$op_vp_jun1:''; ?> },
-					{ label: "July", y: <?php echo isset($op_vp_jul1)?$op_vp_jul1:''; ?> },
-					{ label: "August", y: <?php echo isset($op_vp_aug1)?$op_vp_aug1:''; ?> },
-					{ label: "September", y: <?php echo isset($op_vp_sep1)?$op_vp_sep1:''; ?> },
-					{ label: "October", y: <?php echo isset($op_vp_oct1)?$op_vp_oct1:''; ?> },
-					{ label: "November", y: <?php echo isset($op_vp_nov1)?$op_vp_nov1:''; ?> },
-					{ label: "December", y: <?php echo isset($op_vp_dec1)?$op_vp_dec1:''; ?> },
-				]
-			},{
-				name: "Average",
-				type: "spline",
-				color:"#f49900",
-				lineColor:"#f49900",
-				showInLegend: true,
-				dataPoints: [
-					{ label: "January", y: <?php echo isset($op_p_jan1)?$op_p_jan1:''; ?> },
-					{ label: "February", y: <?php echo isset($op_p_feb1)?$op_p_feb1:''; ?> },
-					{ label: "March", y: <?php echo isset($op_p_mar1)?$op_p_mar1:''; ?> },
-					{ label: "April", y: <?php echo isset($op_p_apr1)?$op_p_apr1:''; ?> },
-					{ label: "May", y: <?php echo isset($op_p_may1)?$op_p_may1:''; ?> },
-					{ label: "June", y: <?php echo isset($op_p_jun1)?$op_p_jun1:''; ?> },
-					{ label: "July", y: <?php echo isset($op_p_jul1)?$op_p_jul1:''; ?> },
-					{ label: "August", y: <?php echo isset($op_p_aug1)?$op_p_aug1:''; ?> },
-					{ label: "September", y: <?php echo isset($op_p_sep1)?$op_p_sep1:''; ?> },
-					{ label: "October", y: <?php echo isset($op_p_oct1)?$op_p_oct1:''; ?> },
-					{ label: "November", y: <?php echo isset($op_p_nov1)?$op_p_nov1:''; ?> },
-					{ label: "December", y: <?php echo isset($op_p_dec1)?$op_p_dec1:''; ?> },
-				]
-			},{
-				name: "Good",
-				type: "spline",
-				color:"#eed600",
-				lineColor:"#eed600",
-				showInLegend: true,
-				dataPoints: [
-					{ label: "January", y: <?php echo isset($op_a_jan1)?$op_a_jan1:''; ?> },
-					{ label: "February", y: <?php echo isset($op_a_feb1)?$op_a_feb1:''; ?> },
-					{ label: "March", y: <?php echo isset($op_a_mar1)?$op_a_mar1:''; ?> },
-					{ label: "April", y: <?php echo isset($op_a_apr1)?$op_a_apr1:''; ?> },
-					{ label: "May", y: <?php echo isset($op_a_may1)?$op_a_may1:''; ?> },
-					{ label: "June", y: <?php echo isset($op_a_jun1)?$op_a_jun1:''; ?> },
-					{ label: "July", y: <?php echo isset($op_a_jul1)?$op_a_jul1:''; ?> },
-					{ label: "August", y: <?php echo isset($op_a_aug1)?$op_a_aug1:''; ?> },
-					{ label: "September", y: <?php echo isset($op_a_sep1)?$op_a_sep1:''; ?> },
-					{ label: "October", y: <?php echo isset($op_a_oct1)?$op_a_oct1:''; ?> },
-					{ label: "November", y: <?php echo isset($op_a_nov1)?$op_a_nov1:''; ?> },
-					{ label: "December", y: <?php echo isset($op_a_dec1)?$op_a_dec1:''; ?> },
-				]
-			},{
-				name: "Very good",
-				type: "spline",
-				color:"#cacd00",
-				lineColor:"#cacd00",
-				showInLegend: true,
-				dataPoints: [
-					{ label: "January", y: <?php echo isset($op_g_jan1)?$op_g_jan1:''; ?> },
-					{ label: "February", y: <?php echo isset($op_g_feb1)?$op_g_feb1:''; ?> },
-					{ label: "March", y: <?php echo isset($op_g_mar1)?$op_g_mar1:''; ?> },
-					{ label: "April", y: <?php echo isset($op_g_apr1)?$op_g_apr1:''; ?> },
-					{ label: "May", y: <?php echo isset($op_g_may1)?$op_g_may1:''; ?> },
-					{ label: "June", y: <?php echo isset($op_g_jun1)?$op_g_jun1:''; ?> },
-					{ label: "July", y: <?php echo isset($op_g_jul1)?$op_g_jul1:''; ?> },
-					{ label: "August", y: <?php echo isset($op_g_aug1)?$op_g_aug1:''; ?> },
-					{ label: "September", y: <?php echo isset($op_g_sep1)?$op_g_sep1:''; ?> },
-					{ label: "October", y: <?php echo isset($op_g_oct1)?$op_g_oct1:''; ?> },
-					{ label: "November", y: <?php echo isset($op_g_nov1)?$op_g_nov1:''; ?> },
-					{ label: "December", y: <?php echo isset($op_g_dec1)?$op_g_dec1:''; ?> },
-				]
-			},{
-				name: "Excellent",
-				type: "spline",
-				lineColor:"#8bd100",
-				color:"#8bd100",
-				showInLegend: true,
-				dataPoints: [
-					{ label: "January", y: <?php echo isset($op_e_jan1)?$op_e_jan1:''; ?> },
-					{ label: "February", y: <?php echo isset($op_e_feb1)?$op_e_feb1:''; ?> },
-					{ label: "March", y: <?php echo isset($op_e_mar1)?$op_e_mar1:''; ?> },
-					{ label: "April", y: <?php echo isset($op_e_apr1)?$op_e_apr1:''; ?> },
-					{ label: "May", y: <?php echo isset($op_e_may1)?$op_e_may1:''; ?> },
-					{ label: "June", y: <?php echo isset($op_e_jun1)?$op_e_jun1:''; ?> },
-					{ label: "July", y: <?php echo isset($op_e_jul1)?$op_e_jul1:''; ?> },
-					{ label: "August", y: <?php echo isset($op_e_aug1)?$op_e_aug1:''; ?> },
-					{ label: "September", y: <?php echo isset($op_e_sep1)?$op_e_sep1:''; ?> },
-					{ label: "October", y: <?php echo isset($op_e_oct1)?$op_e_oct1:''; ?> },
-					{ label: "November", y: <?php echo isset($op_e_nov1)?$op_e_nov1:''; ?> },
-					{ label: "December", y: <?php echo isset($op_e_dec1)?$op_e_dec1:''; ?> },
-				]
-			},
-			
-			]
-	};
-	$("#all_opd_pie_chart").CanvasJSChart(pl_options);
-	
-	
-	
-	/* vvvvv*/
 	/* department wise bar chart */
+	<?php if(isset($d_part_wise) && count($d_part_wise)>0){ ?>
 		var all_depart_options = {
 			exportEnabled: true,
 			title:{
@@ -591,8 +461,10 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 			}]
 		};
 		$("#all_depart_bar_chart").CanvasJSChart(all_depart_options);
+<?php } ?>
 	/* department wise bar chart */
 	/* loca wise bar chart */
+	<?php if(isset($loc_wise) && count($loc_wise)>0){ ?>
 		var all_loc_options = {
 			exportEnabled: true,
 			title:{
@@ -615,14 +487,16 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				type: "column",
 				dataPoints: [
 				<?php foreach($loc_wise as $lpl){ ?>
-					{ label: '<?php echo $lpl['l_name']; ?>', y: <?php echo $lpl['d_cn']; ?> },
+					{ label: '<?php echo $lpl['name']; ?>', y: <?php echo $lpl['d_cn']; ?> },
 				<?php } ?>
 				]
 			}]
 		};
 		$("#all_loc_bar_chart").CanvasJSChart(all_loc_options);
+<?php } ?>
 	/* loc wise bar chart */
 	/* source wise bar chart */
+	<?php if(isset($sou_wise) && count($sou_wise)>0){ ?>
 		var all_sou_options = {
 			exportEnabled: true,
 			title:{
@@ -643,12 +517,13 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 				showInLegend: false, 
 				dataPoints: [
 				<?php foreach($sou_wise as $sl){ ?>
-					{ label: '<?php echo $sl['s_name']; ?>', y: <?php echo $sl['d_cn']; ?> },
+					{ label: '<?php echo $sl['name']; ?>', y: <?php echo $sl['d_cn']; ?> },
 				<?php } ?>
 				]
 			}]
 		};
 		$("#all_sou_bar_chart").CanvasJSChart(all_sou_options);
+	<?php } ?>
 	/* source wise bar chart */
 	/*work */
 	var work_options = {
@@ -727,374 +602,377 @@ $("#ipd_pie_chart").CanvasJSChart(options);
 
 </head>
 <div class="content-wrapper">
-	<!-- Content Header (Page header) -->
-	<section class="content-header">
-		<h1> Dashboard <small></small>  </h1>
-		<ol class="breadcrumb">
-			<li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-			<li class="active">Dashboard</li>
-		</ol>
-	</section>
-	<!-- Main content -->
-	<section class="content">
-	 <div class="col-md-12">
-          <!-- Custom Tabs -->
-          <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab_1" data-toggle="tab">Patient Feedback </a></li>
-              <li><a href="#tab_2" data-toggle="tab">Employee Dashboard</a></li>
-              <li><a href="#tab_3" data-toggle="tab">Incident book</a></li>
-              
-            </ul>
-            <div class="tab-content">
-			 <div class="tab-pane active" id="tab_1">
-                	<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
-			<form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
-			<div class="col-md-4 form-group mt-5">
-				<label class=" control-label text-white">Patient Type</label>
-				<div class="">
-					<select class="form-control" name="ptype">
-						<option value="">select</option>
-						<option value="ALL" <?php if($ptype=='ALL'){ echo "selected";} ?>>ALL</option>
-						<option value="OPD" <?php if($ptype=='OPD'){ echo "selected";} ?>>OPD</option>
-						<option value="IPD" <?php if($ptype=='IPD'){ echo "selected";} ?>>IPD</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-3 form-group mt-5">
-					<label class=" control-label text-white">From Date</label>
-					<div class="">
-						<input type="text" class="form-control datepicker" name="pfrom_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
-					</div>
-			</div>
-			<div class="col-md-3 form-group mt-5">
-					<label class=" control-label text-white">To Date</label>
-					<div class="">
-						<input type="text" class="form-control datepicker" name="pto_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
-					</div>
-			</div>			
-			<div class="col-md-2 form-group mt-5">
-					<label class=" control-label">&nbsp;</label>
-					<div class="">
-					<button type="submit" class="btn btn-primary">Search</button>
-					</div>
-			</div>
-			</form>
-			</div>
-			<div>
-				<div class="col-md-12">
-					<div id="all_opd_pie_chart" style="height: 300px; width: 100%;"></div>
-				</div>
-			</div>
-			<div>
-				<div class="col-md-12">
-					<div id="all_depart_bar_chart" style="height: 300px; width: 100%;"></div>
-				</div>
-			</div>
-			<div>
-				<div class="col-md-12">
-					<div id="all_loc_bar_chart" style="height: 300px; width: 100%;"></div>
-				</div>
-			</div>
-			<div>
-				<div class="col-md-12">
-					<div id="all_sou_bar_chart" style="height: 300px; width: 100%;"></div>
-				</div>
-			</div>
-			<div class="clearfix">&nbsp;</div>
-			<div class="clearfix">&nbsp;</div>
-			<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
-			<form id="defaultForm" action="<?php echo base_url('dashboard/index'); ?>" method="post">
-			<div class="col-md-4 form-group">
-				<label class=" control-label text-white">From Date</label>
-				<div class="">
-					<input type="text" class="form-control datepicker" name="from_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
-				</div>
-			</div>
-			<div class="col-md-4 form-group">
-				<label class=" control-label text-white">To Date</label>
-				<div class="">
-					<input type="text" class="form-control datepicker" name="to_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
-				</div>
-			</div>
-			
-			<div class="col-md-4">
-			 <div class="form-group">
-				<label class="text-white">Department </label>
-				<select class="form-control" name="department">
-					<option value="">Select</option>
-					<option value="ALL" <?php if(isset($p_post['department']) && $p_post['department']=='ALL'){ echo "selected"; } ?>>ALL</option>
-					<?php if(isset($d_list) && count($d_list)>0){ ?>
-						<?php foreach($d_list as $li){ ?>
-							<?php if(isset($p_post['department']) && $p_post['department']==$li['name']){ ?>
-								<option selected value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
-								<?php }else{ ?>
-								<option value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
-							<?php } ?>								
-						<?php } ?>								
-					<?php } ?>								
-				</select>
-			  </div>
-			</div>
-			<div class="col-md-4">
-				 <div class="form-group">
-					<label class="text-white">Town </label>
-					<select class="form-control" name="location">
-						<option value="">Select</option>
-						<option value="ALL" <?php if(isset($p_post['location']) && $p_post['location']=='ALL'){ echo "selected"; } ?>>ALL</option>
-						<?php if(isset($l_list) && count($l_list)>0){ ?>
-							<?php foreach($l_list as $li){ ?>
-								<?php if(isset($p_post['location']) && $p_post['location']==$li['l_name']){ ?>
-									<option selected value="<?php echo $li['l_name']; ?>"><?php echo $li['l_name']; ?></option>
-								<?php }else{ ?>
-									<option value="<?php echo $li['l_name']; ?>"><?php echo $li['l_name']; ?></option>
-								<?php } ?>
-							<?php } ?>								
-						<?php } ?>								
-					</select>
-				  </div>
-			</div>
-			<div class="col-md-4">
-			 <div class="form-group">
-				<label class="text-white">Source </label>
-				<select class="form-control" name="source">
-					<option value="">Select</option>
-					<option value="ALL" <?php if(isset($p_post['source']) && $p_post['source']=='ALL'){ echo "selected"; } ?>>ALL</option>
-					<?php if(isset($s_list) && count($s_list)>0){ ?>
-						<?php foreach($s_list as $li){ ?>
-							<?php if($li['s_name']==$p_post['source']){ ?>
-								<option selected value="<?php echo $li['s_name']; ?>"><?php echo $li['s_name']; ?></option>
-							<?php }else{ ?>
-								<option value="<?php echo $li['s_name']; ?>"><?php echo $li['s_name']; ?></option>
-							<?php } ?>
-						<?php } ?>								
-					<?php } ?>	
-				</select>
-			  </div>
-			</div>
-			<div class="col-md-2 form-group">
-					<label class=" control-label">&nbsp;</label>
-					<div class="">
-					<button type="submit" class="btn btn-primary">Search</button>
-					</div>
-			</div>
-			</form>			
-			</div>
-			<div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
-			<div class="col-md-6 ">
-				<div id="opd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
-			</div>
-			<div class="col-md-6 ">
-				<div id="ipd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
-			</div>
-			</div>
-		<div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
-			<div class="col-md-6 mt-4">
-				<?php if(isset($opd_q_list) && count($opd_q_list)>0){ ?>
-					<?php foreach($opd_q_list as $pli){ ?>
-						<div class=" mt-4">
-							<div id="opd<?php echo $pli['q_id']; ?>" style="height: 300px; width: 100%; border:1px solid #ddd"></div>
-						</div>
-					<?php } ?>
-				<?php } ?>
-			</div>
-			<div class="col-md-6 mt-4">
-				<?php if(isset($ipd_q_list) && count($ipd_q_list)>0){ ?>
-					<?php foreach($ipd_q_list as $ipqli){ ?>
-						<div class=" mt-4">
-							<div id="ipd<?php echo $ipqli['q_id']; ?>" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
-						</div>
-					<?php } ?>
-				<?php } ?>
-			</div>
-			
-			
-			<!-- ./col -->
-		</div>
-		<div class="clearfix">&nbsp;</div>
-              </div>
-              <div class="tab-pane " id="tab_2">
-              	<div class="row" style="padding:15px;">
-		<!-- ./col -->
-			<div class="col-lg-6 col-xs-12">
-				<!-- small box -->
-				<div class="small-box bg-green">
-					<div class="inner">
-						<h3><?php echo isset($emp_act['cnt'])?$emp_act['cnt']:''; ?></h3>
-						<p>TOTAL EMPLOYEE </p>
-					</div>
-					<div class="icon"> <i class="fa fa-list"></i>
-					</div> <a href="<?php echo base_url('employee'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
-			<!-- ./col -->
-			<div class="col-lg-6 col-xs-12">
-				<!-- small box -->
-				<div class="small-box bg-red">
-					<div class="inner">
-						<h3><?php echo isset($emp_present['cnt'])?$emp_present['cnt']:'0'; ?>/<?php echo isset($emp_act['cnt'])?$emp_act['cnt']:''; ?></h3>
-						<p>PRESENT AND ABSENT EMPLOYEES </p>
-					</div>
-					<div class="icon"> <i class="fa fa-list"></i>
-					</div> <a href="<?php echo base_url('employee/presentabsent'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				</div>
-			</div>
-			<div class="clearfix">&nbsp;</div>
-			<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
-				<form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
-				<div class="col-md-4 form-group mt-5">
-					<select class="form-control" name="w_e_name" >
-						<option value="">Select Employee Name</option>
-						<?php if(isset($emp_l) && count($emp_l)>0){ ?>
-							<?php foreach($emp_l as $li){ ?>
-								<?php if($li['a_id']==$e_w_p['w_e_name']){ ?>
-									<option selected value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
-								<?php }else{ ?>
-									<option value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
-								<?php } ?>
-							<?php } ?>								
-						<?php } ?>	
-					</select>
-				</div>				
-				<div class="col-md-3 form-group mt-5">
-						<select class="form-control" name="w_priority">
-							<option value="">Select Prioritization</option>
-							<option value="ALL" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='ALL'){ echo "selected"; } ?>>ALL</option>
-							<option value="High" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='High'){ echo "selected"; } ?>>High</option>
-							<option value="Low"  <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='Low'){ echo "selected"; } ?>>Low</option>
-							<option value="Medium" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='Medium'){ echo "selected"; } ?>>Medium</option>
-						</select>
-				</div>
-				<div class="col-md-3 form-group mt-5">
-						<select class="form-control" name="w_stat">
-							<option value="">Select status</option>
-							<option value="ALL" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='ALL'){ echo "selected"; } ?>>ALL</option>
-							<option value="0" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='0'){ echo "selected"; } ?>>Pending</option>
-							<option value="1" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='1'){ echo "selected"; } ?>>In progress</option>
-							<option value="2" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='2'){ echo "selected"; } ?>>Completed</option>
-						</select>
-				</div>			
-				<div class="col-md-2 form-group mt-5">
-						<div class="">
-						<button type="submit" class="btn btn-primary">Search</button>
-						</div>
-				</div>
-				</form>
-			</div>
-			<div class="col-md-7 mt-4">
-				<div id="chartContainer" style="height: 400px; width: 100%;"></div>
-				<div class="clearfix">&nbsp;</div>
-			</div>
-		
-			</div>
-			<div class="clearfix">&nbsp;</div>
-			
-              </div>
-              <!-- /.tab-pane -->
-			  <div class="tab-pane " id="tab_3">
-              	<div class="row" style="padding:15px;">
-						<div class="box-body table-responsive">
-							<table id="example1" class="table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Date  & Time</th>
-										<th>Incident</th>
-										<th>Staff / Nurse</th>
-										<th>Image</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php if(isset($incident_book) && count($incident_book)>0){ ?>
-								<?php foreach($incident_book as $li){ ?>
-									<tr>
-										<td><?php echo isset($li['name'])?$li['name']:''; ?></td>
-										<td><?php echo isset($li['d_time'])?$li['d_time']:''; ?></td>
-										<td><?php echo isset($li['incident'])?$li['incident']:''; ?></td>
-										<td><?php echo isset($li['staff_nurse'])?$li['staff_nurse']:''; ?></td>
-										<td>
-											<?php if($li['image']!=''){ ?>
-												<img style="width:50px;height:50px;" src="<?php echo base_url('assets/incidentbook/'.$li['image']); ?>">
-											<?php } ?>
-										</td>												
-									</tr>
-								<?php } ?>
-								<?php } ?>
-								</tbody>
-								<tfoot>
-									<tr>
-										<th>Name</th>
-										<th>Date  & Time</th>
-										<th>Incident</th>
-										<th>Staff / Nurse</th>
-										<th>Image</th>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-				</div>
-				<div class="clearfix">&nbsp;</div>
-			
-              </div>
-              <!-- /.tab-pane -->
-             
-             	
-              <!-- /.tab-pane -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+   <h1> Dashboard <small></small>  </h1>
+   <ol class="breadcrumb">
+      <li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Dashboard</li>
+   </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+   <div class="col-md-12">
+      <!-- Custom Tabs -->
+      <div class="nav-tabs-custom">
+         <ul class="nav nav-tabs">
+            <li class="<?php if($tab_id==1){ echo 'active';} ?>"><a href="#tab_1" data-toggle="tab">Patient Feedback </a></li>
+            <li class="<?php if($tab_id==2){ echo 'active';} ?>"><a href="#tab_2" data-toggle="tab">Employee Dashboard</a></li>
+            <li class="<?php if($tab_id==3){ echo 'active';} ?>"><a href="#tab_3" data-toggle="tab">Incident book</a></li>
+           <li class="<?php if($tab_id==4){ echo 'active';} ?>"><a href="#tab_4" data-toggle="tab">TAT Avg</a></li>
+           <li class="<?php if($tab_id==5){ echo 'active';} ?>"><a href="#tab_5" data-toggle="tab">Source & location & department</a></li>
+            <li class="<?php if($tab_id==6){ echo 'active';} ?>"><a href="#tab_6" data-toggle="tab">Daily completed work</a></li>
+         </ul>
+         <div class="tab-content">
+            <div class="tab-pane <?php if($tab_id==1){ echo 'active';} ?>" id="tab_1">
+               
+                <div class="clearfix">&nbsp;</div>
+               <div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
+                  <form id="defaultForm" action="<?php echo base_url('dashboard/index'); ?>" method="post">
+                     <div class="col-md-4 form-group">
+                        <label class=" control-label text-white">From Date</label>
+                        <div class="">
+                           <input type="text" class="form-control datepicker" name="from_date" placeholder="Enter From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+                        </div>
+                     </div>
+                     <div class="col-md-4 form-group">
+                        <label class=" control-label text-white">To Date</label>
+                        <div class="">
+                           <input type="text" class="form-control datepicker" name="to_date" placeholder="Enter From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-group">
+                           <label class="text-white">Department </label>
+                           <select class="form-control" name="department">
+                              <option value="">Select</option>
+                              <option value="ALL" <?php if(isset($p_post['department']) && $p_post['department']=='ALL'){ echo "selected"; } ?>>ALL</option>
+                              <?php if(isset($d_list) && count($d_list)>0){ ?>
+                              <?php foreach($d_list as $li){ ?>
+                              <?php if(isset($p_post['department']) && $p_post['department']==$li['name']){ ?>
+                              <option selected value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+                              <?php }else{ ?>
+                              <option value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+                              <?php } ?>								
+                              <?php } ?>								
+                              <?php } ?>								
+                           </select>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-group">
+                           <label class="text-white">Town </label>
+                           <select class="form-control" name="location">
+                              <option value="">Select</option>
+                              <option value="ALL" <?php if(isset($p_post['location']) && $p_post['location']=='ALL'){ echo "selected"; } ?>>ALL</option>
+                              <?php if(isset($l_list) && count($l_list)>0){ ?>
+                              <?php foreach($l_list as $li){ ?>
+                              <?php if(isset($p_post['location']) && $p_post['location']==$li['name']){ ?>
+                              <option selected value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+                              <?php }else{ ?>
+                              <option value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+                              <?php } ?>
+                              <?php } ?>								
+                              <?php } ?>								
+                           </select>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-group">
+                           <label class="text-white">Source </label>
+                           <select class="form-control" name="source">
+                              <option value="">Select</option>
+                              <option value="ALL" <?php if(isset($p_post['source']) && $p_post['source']=='ALL'){ echo "selected"; } ?>>ALL</option>
+                              <?php if(isset($s_list) && count($s_list)>0){ ?>
+                              <?php foreach($s_list as $li){ ?>
+                              <?php if($li['name']==$p_post['source']){ ?>
+                              <option selected value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+                              <?php }else{ ?>
+                              <option value="<?php echo $li['name']; ?>"><?php echo $li['name']; ?></option>
+                              <?php } ?>
+                              <?php } ?>								
+                              <?php } ?>	
+                           </select>
+                        </div>
+                     </div>
+                     <div class="col-md-2 form-group">
+                        <label class=" control-label">&nbsp;</label>
+                        <div class="">
+                           <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
+                  <div class="col-md-6 ">
+                     <div id="opd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
+                  </div>
+                  <div class="col-md-6 ">
+                     <div id="ipd_pie_chart" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
+                  </div>
+               </div>
+               <div class="row" style="padding:8px 15px;margin:0 15px;background:#fff">
+                  <div class="col-md-6 mt-4">
+                     <?php if(isset($opd_q_list) && count($opd_q_list)>0){ ?>
+                     <?php foreach($opd_q_list as $pli){ ?>
+                     <div class=" mt-4">
+                        <div id="opd<?php echo $pli['q_id']; ?>" style="height: 300px; width: 100%; border:1px solid #ddd"></div>
+                     </div>
+                     <?php } ?>
+                     <?php } ?>
+                  </div>
+                  <div class="col-md-6 mt-4">
+                     <?php if(isset($ipd_q_list) && count($ipd_q_list)>0){ ?>
+                     <?php foreach($ipd_q_list as $ipqli){ ?>
+                     <div class=" mt-4">
+                        <div id="ipd<?php echo $ipqli['q_id']; ?>" style="height: 300px; width: 100%;border:1px solid #ddd"></div>
+                     </div>
+                     <?php } ?>
+                     <?php } ?>
+                  </div>
+                  <!-- ./col -->
+               </div>
+               <div class="clearfix">&nbsp;</div>
             </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- nav-tabs-custom -->
-
-	
-		
-			
-			
-	</section>
-	<!-- /.content -->
+            <div class="tab-pane  <?php if($tab_id==2){ echo 'active';} ?>" id="tab_2">
+               <div class="row" style="padding:15px;">
+                  <!-- ./col -->
+                  <div class="col-lg-12 col-xs-12">
+                     <!-- small box -->
+                     <div class="small-box bg-green">
+                        <div class="inner">
+                           <h3><?php echo isset($emp_act['cnt'])?$emp_act['cnt']:''; ?></h3>
+                           <p>TOTAL EMPLOYEE </p>
+                        </div>
+                        <div class="icon"> <i class="fa fa-list"></i>
+                        </div>
+                        <a href="<?php echo base_url('employee'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                     </div>
+                  </div>
+                  <div class="clearfix">&nbsp;</div>
+                  <div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
+                     <form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
+					 <input type="hidden" name="tab_id" value="2">
+                        <div class="col-md-4 form-group mt-5">
+                           <select class="form-control" name="w_e_name" >
+                              <option value="">Select Employee Name</option>
+                              <?php if(isset($emp_l) && count($emp_l)>0){ ?>
+                              <?php foreach($emp_l as $li){ ?>
+                              <?php if($li['a_id']==$e_w_p['w_e_name']){ ?>
+                              <option selected value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+                              <?php }else{ ?>
+                              <option value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+                              <?php } ?>
+                              <?php } ?>								
+                              <?php } ?>	
+                           </select>
+                        </div>
+                        <div class="col-md-3 form-group mt-5">
+                           <select class="form-control" name="w_priority">
+                              <option value="">Select Prioritization</option>
+                              <option value="ALL" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='ALL'){ echo "selected"; } ?>>ALL</option>
+                              <option value="High" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='High'){ echo "selected"; } ?>>High</option>
+                              <option value="Low"  <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='Low'){ echo "selected"; } ?>>Low</option>
+                              <option value="Medium" <?php if( isset($e_w_p['w_priority']) && $e_w_p['w_priority']=='Medium'){ echo "selected"; } ?>>Medium</option>
+                           </select>
+                        </div>
+                        <div class="col-md-3 form-group mt-5">
+                           <select class="form-control" name="w_stat">
+                              <option value="">Select status</option>
+                              <option value="ALL" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='ALL'){ echo "selected"; } ?>>ALL</option>
+                              <option value="0" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='0'){ echo "selected"; } ?>>Pending</option>
+                              <option value="1" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='1'){ echo "selected"; } ?>>In progress</option>
+                              <option value="2" <?php if( isset($e_w_p['w_stat']) && $e_w_p['w_stat']=='2'){ echo "selected"; } ?>>Completed</option>
+                           </select>
+                        </div>
+                        <div class="col-md-2 form-group mt-5">
+                           <div class="">
+                              <button type="submit" class="btn btn-primary">Search</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+                  <div class="col-md-7 mt-4">
+                     <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+                     <div class="clearfix">&nbsp;</div>
+                  </div>
+				  <div class="col-md-5 mt-4">
+                     <div style="padding-top:50px;"><p><b>Completed  : (high: <?php echo isset($high_com['cnt'])?$high_com['cnt']:'0'; ?> )(Medium:<?php echo isset($medi_com['cnt'])?$medi_com['cnt']:''; ?> )(Low:<?php echo isset($low_com['cnt'])?$low_com['cnt']:''; ?> ) </b></p></div>
+					 <div style="padding-top:50px;"><p><b>Pending  : (high:<?php echo isset($high_pen['cnt'])?$high_pen['cnt']:'0'; ?> )(Medium:<?php echo isset($medi_pen['cnt'])?$medi_pen['cnt']:'0'; ?> )(Low:<?php echo isset($low_pen['cnt'])?$low_pen['cnt']:'0'; ?> ) </b></p></div> 
+					 <div style="padding-top:50px;"><p><b>In Progress  : (high:<?php echo isset($high_inp['cnt'])?$high_inp['cnt']:'0'; ?> )(Medium:<?php echo isset($medi_inp['cnt'])?$medi_inp['cnt']:'0'; ?> )(Low:<?php echo isset($low_inp['cnt'])?$low_inp['cnt']:'0'; ?> ) </b></p></div>
+                  </div>
+				  
+               </div>
+               <div class="clearfix">&nbsp;</div>
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane <?php if($tab_id==3){ echo 'active';} ?>" id="tab_3">
+               <div class="row" style="padding:15px;">
+                  <div class="box-body table-responsive">
+                     <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                           <tr>
+                              <th>Name</th>
+                              <th>Date  & Time</th>
+                              <th>Incident</th>
+                              <th>Staff / Nurse</th>
+                              <th>Image</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <?php if(isset($incident_book) && count($incident_book)>0){ ?>
+                           <?php foreach($incident_book as $li){ ?>
+                           <tr>
+                              <td><?php echo isset($li['name'])?$li['name']:''; ?></td>
+                              <td><?php echo isset($li['d_time'])?$li['d_time']:''; ?></td>
+                              <td><?php echo isset($li['incident'])?$li['incident']:''; ?></td>
+                              <td><?php echo isset($li['staff_nurse'])?$li['staff_nurse']:''; ?></td>
+                              <td>
+                                 <?php if($li['image']!=''){ ?>
+                                 <img style="width:50px;height:50px;" src="<?php echo base_url('assets/incidentbook/'.$li['image']); ?>">
+                                 <?php } ?>
+                              </td>
+                           </tr>
+                           <?php } ?>
+                           <?php } ?>
+                        </tbody>
+                        <tfoot>
+                           <tr>
+                              <th>Name</th>
+                              <th>Date  & Time</th>
+                              <th>Incident</th>
+                              <th>Staff / Nurse</th>
+                              <th>Image</th>
+                           </tr>
+                        </tfoot>
+                     </table>
+                  </div>
+               </div>
+               <div class="clearfix">&nbsp;</div>
+            </div> 
+			<!-- /.tab-pane -->
+            <div class="tab-pane <?php if($tab_id==4){ echo 'active';} ?>" id="tab_4">
+               <div class="row" style="padding:15px;">
+                  tab4
+               </div>
+               <div class="clearfix">&nbsp;</div>
+            </div>
+			<!-- /.tab-pane -->
+            <div class="tab-pane <?php if($tab_id==5){ echo 'active';} ?>" id="tab_5">
+               <div class="row" style="padding:15px;">
+					<div class="row" style="padding:8px 15px;margin:0 15px;background:#50a020">
+                     <form id="" action="<?php echo base_url('dashboard/index'); ?>" method="post">
+					 <input type="hidden" name="tab_id" value="5">
+                        <div class="col-md-3 form-group">
+							<label class=" control-label text-white">Select Type</label>
+                           <select class="form-control" name="d_l_s_dep" >
+                              <option value="">Select</option>
+                              <option value="department" <?php if( isset($e_w_p['d_l_s_dep']) && $e_w_p['d_l_s_dep']=='department'){ echo "selected"; } ?>>Department</option>
+                              <option value="location" <?php if( isset($e_w_p['d_l_s_dep']) && $e_w_p['d_l_s_dep']=='location'){ echo "selected"; } ?>>Location</option>
+                              <option value="Source" <?php if( isset($e_w_p['d_l_s_dep']) && $e_w_p['d_l_s_dep']=='Source'){ echo "selected"; } ?>>Source</option>                             	
+                           </select>
+                        </div>
+						<div class="col-md-3 form-group">
+							<label class=" control-label text-white">From Date</label>
+							<div class="">
+							   <input type="text" class="form-control datepicker" name="pfrom_date" placeholder="Enter From Date" value="<?php echo isset($e_w_p['pfrom_date'])?$e_w_p['pfrom_date']:''; ?>" />
+							</div>
+						</div>
+						<div class="col-md-3 form-group">
+							<label class=" control-label text-white">To Date</label>
+							<div class="">
+							   <input type="text" class="form-control datepicker" name="pto_date" placeholder="Enter From Date" value="<?php echo isset($e_w_p['pto_date'])?$e_w_p['pto_date']:''; ?>" />
+							</div>
+						</div>
+						<div class="col-md-3 form-group">
+						<label class=" control-label text-white">&nbsp;</label>
+                           <div class="">
+                              <button type="submit" class="btn btn-primary">Search</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>			   
+                  
+				  <?php if(isset($d_part_wise) && count($d_part_wise)>0){ ?>
+				   <div>
+					  <div class="col-md-12">
+						 <div id="all_depart_bar_chart" style="height: 300px; width: 100%;"></div>
+					  </div>
+				   </div>
+				  <?php } ?>
+				  <?php if(isset($loc_wise) && count($loc_wise)>0){ ?>
+					<div>
+					  <div class="col-md-12">
+						 <div id="all_loc_bar_chart" style="height: 300px; width: 100%;"></div>
+					  </div>
+				   </div>
+				    <?php } ?>
+					<?php if(isset($sou_wise) && count($sou_wise)>0){ ?>
+					   <div>
+						  <div class="col-md-12">
+							 <div id="all_sou_bar_chart" style="height: 300px; width: 100%;"></div>
+						  </div>
+					   </div>
+					<?php } ?>
+               </div>
+            </div>
+			<!-- /.tab-pane -->
+            <div class="tab-pane <?php if($tab_id==6){ echo 'active';} ?>" id="tab_6">
+               <div class="row" style="padding:15px;">
+					Daily work
+               </div>
+            </div>
+            <!-- /.tab-pane -->
+         </div>
+         <!-- /.tab-content -->
+      </div>
+      <!-- nav-tabs-custom -->
+</section>
+<!-- /.content -->
 </div>
-
 <script type="text/javascript">
- $('.datepicker').datepicker({
-		   format: 'dd-mm-yyyy',
-			autoclose: true,	  
-		});
-$(document).ready(function() {
-
-   	 $('#defaultForm').bootstrapValidator({
-   		fields: {
-               from_date: {
-                   validators: {
-					notEmpty: {
-						message: 'From date is required'
-					}
-				}
-               }, to_date: {
-                   validators: {
-					notEmpty: {
-						message: 'TO date is required'
-					}
-				}
-               }, message: {
-                   validators: {
-					notEmpty: {
-						message: 'Comment is required'
-					}
-				}
-               }, 'emp_id[]': {
-                  validators: {
-					notEmpty: {
-						message: 'Employee Name is required'
-					}
-				}
-               }
-           }
-       });
-		$('.datepicker').on('changeDate ', function(e) {
-		$('#defaultForm').bootstrapValidator('revalidateField', 'from_date');
-		});
-		$('.datepicker').on('changeDate ', function(e) {
-		$('#defaultForm').bootstrapValidator('revalidateField', 'to_date');
-		});
+   $('.datepicker').datepicker({
+   	   format: 'dd-mm-yyyy',
+   		autoclose: true,	  
+   	});
+   $(document).ready(function() {
    
-   });
+     	 $('#defaultForm').bootstrapValidator({
+     		fields: {
+                 from_date: {
+                     validators: {
+   				notEmpty: {
+   					message: 'From date is required'
+   				}
+   			}
+                 }, to_date: {
+                     validators: {
+   				notEmpty: {
+   					message: 'TO date is required'
+   				}
+   			}
+                 }, message: {
+                     validators: {
+   				notEmpty: {
+   					message: 'Comment is required'
+   				}
+   			}
+                 }, 'emp_id[]': {
+                    validators: {
+   				notEmpty: {
+   					message: 'Employee Name is required'
+   				}
+   			}
+                 }
+             }
+         });
+   	$('.datepicker').on('changeDate ', function(e) {
+   	$('#defaultForm').bootstrapValidator('revalidateField', 'from_date');
+   	});
+   	$('.datepicker').on('changeDate ', function(e) {
+   	$('#defaultForm').bootstrapValidator('revalidateField', 'to_date');
+   	});
+     
+     });
 </script>
+

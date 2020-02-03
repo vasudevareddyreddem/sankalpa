@@ -17,6 +17,11 @@ class Dashboard extends sidebar {
 			//echo '<pre>';print_r($l_d);exit; 
 			$data['emp_l']=$this->Dashboard_model->get_emp_list();
 			$post=$this->input->post();
+			if(isset($post['tab_id']) && $post['tab_id']!=''){
+				$data['tab_id']=$post['tab_id'];
+			}else{
+				$data['tab_id']=1;
+			}
 			//echo '<pre>';print_r($post);exit; 
 			$w_e_n=isset($post['w_e_name'])?$post['w_e_name']:'';
 			$w_p_y=isset($post['w_priority'])?$post['w_priority']:'';
@@ -62,21 +67,26 @@ class Dashboard extends sidebar {
 			$data['d_list']=$this->Feedback_model->d_list();
 			$data['l_list']=$this->Feedback_model->location_list();
 			$data['s_list']=$this->Feedback_model->source_list();
-			
-			foreach($data['d_list'] as $dli){
-				$d_lis=$this->Dashboard_model->get_depart_wise_feed_list($dli['name']);
-				$data['d_part_wise'][$dli['d_id']]=$dli;
-				$data['d_part_wise'][$dli['d_id']]['d_cn']=$d_lis['cnt'];
+			if( isset($post['d_l_s_dep']) && $post['d_l_s_dep']=='department'){
+				foreach($data['d_list'] as $dli){
+					$d_lis=$this->Dashboard_model->get_depart_wise_feed_list($dli['name'],$pfd,$ptd);
+					$data['d_part_wise'][$dli['d_id']]=$dli;
+					$data['d_part_wise'][$dli['d_id']]['d_cn']=$d_lis['cnt'];
+				}
 			}
-			foreach($data['l_list'] as $lli){
-				$l_lis=$this->Dashboard_model->get_location_wise_feed_list($lli['l_name']);
-				$data['loc_wise'][$lli['l_id']]=$lli;
-				$data['loc_wise'][$lli['l_id']]['d_cn']=$l_lis['cnt'];
+			if( isset($post['d_l_s_dep']) && $post['d_l_s_dep']=='location'){
+				foreach($data['l_list'] as $lli){
+					$l_lis=$this->Dashboard_model->get_location_wise_feed_list($lli['name'],$pfd,$ptd);
+					$data['loc_wise'][$lli['l_id']]=$lli;
+					$data['loc_wise'][$lli['l_id']]['d_cn']=$l_lis['cnt'];
+				}
 			}
-			foreach($data['s_list'] as $sli){
-				$s_lis=$this->Dashboard_model->get_source_wise_feed_list($sli['s_name']);
-				$data['sou_wise'][$sli['s_id']]=$sli;
-				$data['sou_wise'][$sli['s_id']]['d_cn']=$s_lis['cnt'];
+			if( isset($post['d_l_s_dep']) && $post['d_l_s_dep']=='Source'){
+				foreach($data['s_list'] as $sli){
+					$s_lis=$this->Dashboard_model->get_source_wise_feed_list($sli['name'],$pfd,$ptd);
+					$data['sou_wise'][$sli['s_id']]=$sli;
+					$data['sou_wise'][$sli['s_id']]['d_cn']=$s_lis['cnt'];
+				}
 			}
 			//echo '<pre>';print_r($data);exit;
 			$data['f_date']=isset($post['from_date'])?$post['from_date']:'';

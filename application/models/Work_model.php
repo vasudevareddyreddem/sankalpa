@@ -84,6 +84,10 @@ class Work_model extends CI_Model
 	public  function work_update($id,$d){
 		$this->db->where('a_w_id',$id);
 		return $this->db->update('assign_work',$d);
+	}
+	public  function work_delete($id){
+		$this->db->where('a_w_id',$id);
+		return $this->db->delete('assign_work');
 	}	
 	public  function save_work_comments($d){
 		$this->db->insert('assign_work_comments',$d);

@@ -18,9 +18,10 @@ class Assignwork extends sidebar {
 					//echo '<pre>';print_r($post);
 					if(isset($post) && count($post)>0){
 						$data['w_list']=$this->Work_model->work_search_list($post['emp_id'],$post['priority'],$post['from_date'],$post['to_date'],$post['stat']);
+						$data['p_d']=$post;
 					}else{
 						$data['w_list']=$this->Work_model->work_list($l_data['a_id']);
-						
+						$data['p_d']=array();
 					}
 					//echo $this->db->last_query();
 					//echo '<pre>';print_r($data);exit;
@@ -73,6 +74,7 @@ class Assignwork extends sidebar {
 				$data['a_w_id']=$aid;
 				$data['w_d']=$this->Work_model->view_work_details($aid);
 				$data['w_c_list']=$this->Work_model->view_work_comment($aid);
+				
 				//echo $this->db->last_query();
 				//echo '<pre>';print_r($data);exit;
 				$this->load->view('work/view',$data);
@@ -82,7 +84,24 @@ class Assignwork extends sidebar {
 				redirect('admin');
 			}
 	}
-	
+	public function edit()
+	{	
+		if($this->session->userdata('hms_details'))
+			{
+				$l_data=$this->session->userdata('hms_details');
+				$aid=base64_decode($this->uri->segment(3));
+				$data['a_w_id']=$aid;
+				$data['w_d']=$this->Work_model->view_work_details($aid);
+				$data['e_list']=$this->Work_model->emp_list();
+				//echo $this->db->last_query();
+				//echo '<pre>';print_r($data);exit;
+				$this->load->view('work/edit',$data);
+				$this->load->view('admin/footer');
+			}else{
+				$this->session->set_flashdata('error','Please login to continue');
+				redirect('admin');
+			}
+	}	
 	public  function addpost(){
 		if($this->session->userdata('hms_details'))
 			{
@@ -113,6 +132,33 @@ class Assignwork extends sidebar {
 					redirect('assignwork/add');
 				}
 				//echo '<pre>';print_r($post);exit;
+			}else{
+				$this->session->set_flashdata('error','Please login to continue');
+				redirect('admin');
+			}
+	
+	}public  function editpost(){
+		if($this->session->userdata('hms_details'))
+			{
+			$l_data=$this->session->userdata('hms_details');
+			$post=$this->input->post();
+			//echo '<pre>';print_r($post);exit;
+			$ud=array(
+				'from_date'=>isset($post['from_date'])?$post['from_date']:'',
+				'prioritization'=>isset($post['prioritization'])?$post['prioritization']:'',
+				'emp_id'=>isset($post['emp_id'])?$post['emp_id']:'',
+				'message'=>isset($post['message'])?$post['message']:'',
+				'updated_at'=>date('Y-m-d H:i:s'),
+				);
+			//echo '<pre>';print_r($add);exit;
+			$update=$this->Work_model->work_update($post['a_w_id'],$ud);
+			if(count($update)>0){
+					$this->session->set_flashdata('success',"Task updated successfully");	
+					redirect('assignwork');
+				}else{
+					$this->session->set_flashdata('error',"Technical problem will occured. Please try again");
+					redirect('assignwork/edit/'.base64_encode($post['a_w_id']));
+				}
 			}else{
 				$this->session->set_flashdata('error','Please login to continue');
 				redirect('admin');
@@ -185,6 +231,23 @@ class Assignwork extends sidebar {
 			}else{
 				$this->session->set_flashdata('error',"Technical problem will occured. Please try again");
 				redirect('assignwork/lists');
+			}
+		}else{
+			$this->session->set_flashdata('error','Please login to continue');
+			redirect('admin');
+		}
+	}
+	public  function delete(){
+		if($this->session->userdata('hms_details'))
+		{
+			$id=base64_decode($this->uri->segment(3));
+			$update=$this->Work_model->work_delete($id,$u_d);
+			if(count($update)>0){
+				$this->session->set_flashdata('success',"Task deleted successfully");
+				redirect('assignwork');
+			}else{
+				$this->session->set_flashdata('error',"Technical problem will occured. Please try again");
+				redirect('assignwork');
 			}
 		}else{
 			$this->session->set_flashdata('error','Please login to continue');

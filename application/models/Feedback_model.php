@@ -42,17 +42,17 @@ class Feedback_model extends CI_Model
 	}
 	
 	public  function d_list(){
-		$this->db->select('d_id,name,status,created_at')->from('department');
+		$this->db->select('d_id,name as name,status,created_at')->from('department');
 		$this->db->where('status',1);
 		return $this->db->get()->result_array();
 	}
 	public  function location_list(){
-		$this->db->select('l_id,l_name,status,created_at')->from('locations');
+		$this->db->select('l_id,l_name as name ,status,created_at')->from('locations');
 		$this->db->where('status',1);
 		return $this->db->get()->result_array();	
 	}
 	public  function source_list(){
-		$this->db->select('s_id,s_name,status,created_at')->from('source');
+		$this->db->select('s_id,s_name as name,status,created_at')->from('source');
 		$this->db->where('status',1);
 		return $this->db->get()->result_array();	
 	}

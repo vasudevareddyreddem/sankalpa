@@ -1,3 +1,4 @@
+<?php //echo '<pre>';print_r($f_d);exit; ?>
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
@@ -15,8 +16,11 @@
 		<div class="box">
 		<div class="box-header bg-primary">
 				<div class="col-md-6">
-					<div class="">	<a class="btn btn-default st-btn add-student-btn" href="<?php echo base_url('user/feedback'); ?>"><i class="fa fa-plus"></i>Back</a>
-						
+					<div class="col-md-6">
+						<a class="btn btn-default st-btn add-student-btn" href="<?php echo base_url('user/feedback'); ?>"><i class="fa fa-plus"></i>Back</a>
+					</div>
+					<div class="col-md-6">
+						<a class="btn btn-default st-btn add-student-btn pull-right" href="<?php echo base_url('feedback/manufedsubmit/'.$f_d['f_b_id']); ?>"><i class="fa fa-envelope"></i>Send</a>
 					</div>
 				</div>
 			</div>

@@ -83,12 +83,12 @@
 				<form method="post" action="<?php echo base_url('assignwork/index'); ?>">
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<div class="">
-							<input type="text" class="form-control datepicker" name="from_date"  placeholder="Select From Date" value="<?php echo isset($f_date)?$f_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="from_date"  placeholder="Select From Date" value="<?php echo isset($p_d['from_date'])?$p_d['from_date']:''; ?>" />
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2" >
 						<div class="">
-							<input type="text" class="form-control datepicker" name="to_date"  placeholder="Select From Date" value="<?php echo isset($t_date)?$t_date:''; ?>" />
+							<input type="text" class="form-control datepicker" name="to_date"  placeholder="Select From Date" value="<?php echo isset($p_d['to_date'])?$p_d['to_date']:''; ?>" />
 						</div>
 					</div>
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
@@ -97,7 +97,11 @@
 							<option value="ALL">ALL</option>
 							<?php if(isset($emp_l) && count($emp_l)>0){ ?>
 								<?php foreach($emp_l as $li){ ?>
-									<option value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+									<?php if(isset($p_d['emp_id']) && $p_d['emp_id']==$li['a_id']){?>
+										<option selected value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+									<?php }else{ ?>
+										<option value="<?php echo $li['a_id']; ?>"><?php echo $li['name']; ?></option>
+									<?php  } ?>									
 								<?php } ?>
 							<?php } ?>
 						</select>
@@ -105,19 +109,19 @@
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<select class="form-control" name="priority">
 								<option value="">Select Prioritization</option>
-								<option value="ALL">ALL</option>
-								<option value="High">High</option>
-								<option value="Low">Low</option>
-								<option value="Medium">Medium</option>
+								<option value="ALL" <?php if(isset($p_d['priority']) && $p_d['priority']=='ALL'){ echo "selected"; } ?>>ALL</option>
+								<option value="High" <?php if(isset($p_d['priority']) &&$p_d['priority']=='High'){ echo "selected"; } ?>>High</option>
+								<option value="Low" <?php if(isset($p_d['priority']) &&$p_d['priority']=='Low'){ echo "selected"; } ?>>Low</option>
+								<option value="Medium" <?php if(isset($p_d['priority']) &&$p_d['priority']=='Medium'){ echo "selected"; } ?>>Medium</option>
 						</select>
 					</div>
 					<div class="col-md-2 col-sm-5 col-xs-5 mt-2">
 						<select class="form-control" name="stat">
 							<option value="">Select status</option>
-							<option value="ALL">ALL</option>
-							<option value="0">Pending</option>
-							<option value="1">In progress</option>
-							<option value="2">Completed</option>
+							<option value="ALL" <?php if(isset($p_d['stat']) && $p_d['stat']=='ALL'){ echo "selected"; } ?>>ALL</option>
+							<option value="0" <?php if(isset($p_d['stat']) && $p_d['stat']=='0'){ echo "selected"; } ?>>Pending</option>
+							<option value="1" <?php if(isset($p_d['stat']) && $p_d['stat']=='1'){ echo "selected"; } ?>>In progress</option>
+							<option value="2" <?php if(isset($p_d['stat']) && $p_d['stat']=='2'){ echo "selected"; } ?>>Completed</option>
 						</select>
 					</div>	
 					<div class="col-md-2 col-xs-2 col-sm-2 mt-2">
@@ -162,6 +166,9 @@
 							<?php if($li['status']==0){ ?>
 								<a style="margin-top:5px" href="#" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
 							<?php } ?>
+								<a href="<?php echo base_url('assignwork/edit/'.base64_encode($li['a_w_id'])); ?>"  data-toggle="tooltip" title="Edit"><i class="fa fa-edit btn btn-success"></i></a>
+								<a href="<?php echo base_url('assignwork/delete/'.base64_encode($li['a_w_id'])); ?>" data-toggle="tooltip" title="Delete" class="confirmation"><i class="fa fa-trash btn btn-danger"></i></a>
+							
 							</td>						
 						</tr>
 					<?php } ?>

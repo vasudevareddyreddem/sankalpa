@@ -99,7 +99,7 @@ class Feedback extends CI_Controller {
 			}
 			
 			/* sms */
-				$apikey=$this->config->item('apikey');
+				/*$apikey=$this->config->item('apikey');
 				$sender=$this->config->item('sender');
 				$mob=isset($post['phone_no'])?$post['phone_no']:'';
 				$hurl="https://www.google.com/search?ei=HrkVXuPZJZuf4-EPodqNuAo&q=sankalpa+super+speciality+hospita";
@@ -110,7 +110,7 @@ class Feedback extends CI_Controller {
 				curl_setopt($ch2, CURLOPT_POSTFIELDS,'sender='.$sender.'&smstype=TRANS&numbers='.$mob.'&apikey='.$apikey.'&message='.$msg.'');
 				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
 				$server_output = curl_exec ($ch2);
-				curl_close ($ch2);	
+				curl_close ($ch2);	*/
 			/* sms */
 			$this->session->set_flashdata('success',"Feedback sent successfully");
 			if($post['f_type']==1){
@@ -126,6 +126,29 @@ class Feedback extends CI_Controller {
 				redirect('feedback/opd');
 			}
 		}
+	}
+	public  function manufedsubmit(){
+				$post=$this->input->post();
+				$f_id=$this->uri->segment(3);
+				$fd=$this->Feedback_model->get_get_feedback_details($f_id);
+
+				//echo '<pre>';print_r($fd);exit;
+				$apikey=$this->config->item('apikey');
+				$sender=$this->config->item('sender');
+				$mob=isset($fd['phone_no'])?$fd['phone_no']:'';
+				$hurl="https://www.google.com/search?client=firefox-b-d&channel=trow2&sxsrf=ACYBGNTh311-_MZ-S52vGd1M99dUo5I7Og%3A1580725135240&ei=j_M3XrCoDo-T4-EPxImC4AI&q=sankalpa+super+speciality+hospital+in+tirupati&oq=sankala+super+hospital+in+tirupathi&gs_l=psy-ab.3.0.0i8i13i30.10154.13544..15112...2.2..0.125.702.0j6......0....1..gws-wiz.......0i71j0i13.shk7F3qTp9o#lrd=0x3a4d4ba9e58933eb:0x3781e0a648c68044,3,,,";
+				$msg ="Dear ".$fd['name'].", we'd love to  get your honest feedback about your experience : ".$hurl." ";
+				$ch2 = curl_init();
+				curl_setopt($ch2, CURLOPT_URL,'http://sms.pearlsms.com/public/sms/send');
+				curl_setopt($ch2, CURLOPT_POST, 1);
+				curl_setopt($ch2, CURLOPT_POSTFIELDS,'sender='.$sender.'&smstype=TRANS&numbers='.$mob.'&apikey='.$apikey.'&message='.$msg.'');
+				curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);
+				$server_output = curl_exec ($ch2);
+				curl_close ($ch2);	
+			/* sms */
+			$this->session->set_flashdata('success',"Feedback sent successfully");
+			redirect('user/feedback');
+		
 	}
 	
 }

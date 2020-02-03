@@ -258,19 +258,31 @@ class Dashboard_model extends CI_Model
 		$this->db->join('admin as a','a.a_id=ib.created_by','left');
 		return $this->db->get()->result_array();
 	}	
-	public  function get_depart_wise_feed_list($dep){
+	public  function get_depart_wise_feed_list($dep,$fd,$td){
+		$inbetweentime="fb.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fb.f_b_id) AS cnt')->from('feed_back as fb');
 		$this->db->where('fb.department',$dep);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
 		return $this->db->get()->row_array();
 	}
-	public  function get_location_wise_feed_list($loc){
+	public  function get_location_wise_feed_list($loc,$fd,$td){
+		$inbetweentime="fb.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fb.f_b_id) AS cnt')->from('feed_back as fb');
 		$this->db->where('fb.location',$loc);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
 		return $this->db->get()->row_array();
 	}
-	public  function get_source_wise_feed_list($sou){
+	public  function get_source_wise_feed_list($sou,$fd,$td){
+		$inbetweentime="fb.date BETWEEN '".$fd."' AND '".$td."'";
 		$this->db->select('COUNT(fb.f_b_id) AS cnt')->from('feed_back as fb');
 		$this->db->where('fb.source',$sou);
+		if($fd!='' && $td!=''){
+			$this->db->where($inbetweentime);
+		}
 		return $this->db->get()->row_array();
 	}
 	
